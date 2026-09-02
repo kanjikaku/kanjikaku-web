@@ -37,6 +37,14 @@
   --bambu:      #55684A;
   --ocre:       #8A5B25;
 
+  /* Más vivos que en la app: allí van detrás del estudio, aquí delante. */
+  --icono-torii:  #D33A2C;
+  --icono-sakura: #E2748F;
+  --icono-bambu:  #6E9A4E;
+  --icono-fuji:   #4A7BA7;
+  --icono-momiji: #D9722B;
+  --icono-carpas: #C86A3A;
+
   --velo: rgba(250, 247, 240, 0.72);
   --motivo: 0.14;
 
@@ -60,6 +68,13 @@
     --indigo:     #8FB0CE;
     --bambu:      #93AC7B;
     --ocre:       #D9A441;
+    --icono-torii:  #F0604F;
+    --icono-sakura: #F293A9;
+    --icono-bambu:  #8FBF6C;
+    --icono-fuji:   #6FA3CC;
+    --icono-momiji: #F0904A;
+    --icono-carpas: #E28A57;
+
     --velo: rgba(25, 23, 19, 0.72);
     --motivo: 0.17;
   }
@@ -75,6 +90,13 @@
   --indigo:     #8FB0CE;
   --bambu:      #93AC7B;
   --ocre:       #D9A441;
+  --icono-torii:  #F0604F;
+  --icono-sakura: #F293A9;
+  --icono-bambu:  #8FBF6C;
+  --icono-fuji:   #6FA3CC;
+  --icono-momiji: #F0904A;
+  --icono-carpas: #E28A57;
+
   --velo: rgba(25, 23, 19, 0.72);
   --motivo: 0.17;
 }
@@ -112,7 +134,7 @@ a { color: inherit; }
 :root[data-tema="oscuro"] .grano { mix-blend-mode: screen; opacity: .35; }
 
 /* ── Secciones ───────────────────────────────────────────────── */
-section { position: relative; padding-block: clamp(4.5rem, 11vw, 8.5rem); }
+section { position: relative; padding-block: clamp(3rem, 7vw, 5.5rem); }
 .seccion-fondo {
   position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;
 }
@@ -154,7 +176,7 @@ section > .envoltura { position: relative; z-index: 1; }
 .tema-btn:hover { color: var(--sumi); }
 
 /* ── Hero ────────────────────────────────────────────────────── */
-.hero { padding-block: clamp(3rem, 9vw, 6rem) clamp(4rem, 10vw, 7rem); text-align: center; }
+.hero { padding-block: clamp(2.25rem, 6vw, 4rem) clamp(2.75rem, 7vw, 5rem); text-align: center; }
 .hero .sello { display: block; margin: 0 auto clamp(1.25rem, 3vw, 2rem); }
 .logotipo { width: min(100%, 34rem); height: auto; display: block; margin: 0 auto; }
 .logotipo path { fill: var(--sumi); }
@@ -324,9 +346,11 @@ section > .envoltura { position: relative; z-index: 1; }
   width: 2.4rem; flex: none; text-align: center; color: var(--tenue);
   font-family: var(--display); font-size: 1.6rem; line-height: 1;
 }
-.baraja .icono { width: 2.4rem; height: 2.4rem; flex: none; opacity: .8; }
+.baraja .icono { width: 2.4rem; height: 2.4rem; flex: none; }
 .baraja .icono svg { width: 100%; height: 100%; }
-.baraja .icono path { fill: var(--sumi); }
+/* Cada baraja pinta su icono con su color; `--tinta-icono` la pone el JS
+   a partir del motivo, así el CSS no tiene que conocer la lista. */
+.baraja .icono path { fill: var(--tinta-icono, var(--sumi)); }
 .baraja h4 { margin: 0; font-family: var(--display); font-size: 1.02rem; font-weight: 600; }
 .baraja p { margin: .1rem 0 0; font-size: .84rem; color: var(--tenue); }
 .baraja .cuenta { margin-left: auto; font-size: .8rem; color: var(--tenue); white-space: nowrap; }
@@ -814,6 +838,9 @@ function svgDe(trazos, vb, colores) {
   for (const hueco of document.querySelectorAll("[data-icono]")) {
     const trazos = ARTE.motivos[hueco.dataset.icono];
     if (!trazos) continue;
+    /* Su color, no el de la marca: un icono que no se distingue del de al
+       lado no está diciendo cuál es su baraja. */
+    hueco.style.setProperty("--tinta-icono", `var(--icono-${hueco.dataset.icono}, var(--sumi))`);
     hueco.appendChild(svgDe(trazos, "0 0 200 200"));
   }
 })();
