@@ -171,6 +171,7 @@ section > .envoltura { position: relative; z-index: 1; }
   margin: clamp(1.75rem, 4vw, 2.75rem) auto 0; max-width: 24ch; font-weight: 400;
 }
 .lema em { font-style: normal; color: var(--hanko); }
+.atribucion { color: var(--tenue); max-width: 44ch; margin: .95rem auto 0; font-size: .85rem; }
 .entradilla { color: var(--tenue); max-width: 48ch; margin: 1.1rem auto 0; font-size: 1.05rem; }
 
 .botones { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; margin-top: clamp(2rem, 4vw, 2.75rem); }
@@ -186,23 +187,8 @@ section > .envoltura { position: relative; z-index: 1; }
 .boton.principal { background: var(--sumi); color: var(--papel); border-color: var(--sumi); }
 .boton.principal .estado { color: color-mix(in srgb, var(--papel) 70%, transparent); }
 
-/* ── La cita, y el motor que la sostiene ─────────────────────── */
-.cita { text-align: center; }
-.cita blockquote {
-  margin: 0 auto; max-width: 20ch;
-  font-family: var(--display); font-weight: 400;
-  font-size: clamp(1.8rem, 1.1rem + 3.4vw, 3.6rem); line-height: 1.24;
-  text-wrap: balance;
-}
-.cita blockquote em { font-style: normal; color: var(--hanko); }
-.cita .quien {
-  display: block; margin-top: 1.5rem; font-size: .9rem; line-height: 1.5;
-  color: var(--tenue); font-family: var(--texto); max-width: 34ch;
-  margin-inline: auto;
-}
-/* Un filete de pincel entre la cita y lo que la sostiene. */
-.filete { display: block; width: min(60%, 13rem); height: auto; margin: 2.6rem auto 3.4rem; }
-.filete path { fill: var(--sumi); opacity: .2; }
+/* ── El motor que sostiene la frase de la portada ────────────── */
+.seccion-motor { text-align: center; }
 
 .motor {
   display: grid; gap: 1.5rem 2.4rem; grid-template-columns: 1fr;
@@ -315,6 +301,16 @@ section > .envoltura { position: relative; z-index: 1; }
 
 /* Barajas */
 .barajas { display: grid; gap: .7rem; }
+.ideas { margin: 1.1rem 0 0; padding: 0; list-style: none; display: grid; gap: .5rem; }
+.ideas li {
+  position: relative; padding-left: 1.15rem; font-size: .95rem; color: var(--tenue);
+}
+/* Un punto de tinta, no una viñeta de procesador de textos. */
+.ideas li::before {
+  content: ""; position: absolute; left: 0; top: .62em;
+  width: .34rem; height: .34rem; border-radius: 50%; background: var(--hanko); opacity: .7;
+}
+.apunte { font-size: .9rem; margin-top: 1.1rem; }
 .baraja {
   display: flex; align-items: center; gap: .9rem;
   border: 1px solid var(--borde); border-radius: .8rem; padding: .85rem 1rem;
@@ -322,6 +318,12 @@ section > .envoltura { position: relative; z-index: 1; }
   transition: transform .2s ease, border-color .2s ease;
 }
 .baraja:hover { transform: translateX(3px); border-color: var(--sumi); }
+/* La quinta no es una baraja, es un hueco: por eso el trazo se corta. */
+.baraja.tuya { border-style: dashed; background: transparent; }
+.baraja.tuya .mas {
+  width: 2.4rem; flex: none; text-align: center; color: var(--tenue);
+  font-family: var(--display); font-size: 1.6rem; line-height: 1;
+}
 .baraja .icono { width: 2.4rem; height: 2.4rem; flex: none; opacity: .8; }
 .baraja .icono svg { width: 100%; height: 100%; }
 .baraja .icono path { fill: var(--sumi); }
@@ -359,17 +361,15 @@ section > .envoltura { position: relative; z-index: 1; }
 .pieza.usada { opacity: .22; transform: scale(.94); }
 
 /* ── Cifras ──────────────────────────────────────────────────── */
-.cifras { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); margin-top: 2.5rem; }
+.cifras { display: grid; gap: 1.5rem 3rem; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  margin-top: 2.5rem; max-width: 30rem; margin-inline: auto; }
 .cifra { text-align: center; }
 .cifra b { display: block; font-family: var(--display); font-size: clamp(1.9rem, 1.4rem + 2vw, 2.7rem); font-weight: 600; font-variant-numeric: tabular-nums; }
 .cifra span { font-size: .85rem; color: var(--tenue); }
 
 /* ── Pie ─────────────────────────────────────────────────────── */
 footer { border-top: 1px solid var(--borde); padding-block: 3rem 4rem; position: relative; z-index: 1; }
-footer .envoltura { display: grid; gap: 1.75rem; }
-@media (min-width: 46rem) { footer .envoltura { grid-template-columns: 1fr auto; align-items: start; } }
-footer .creditos { font-size: .84rem; color: var(--tenue); max-width: 52ch; }
-footer .creditos a { color: var(--tenue); }
+footer .envoltura { display: flex; justify-content: center; }
 footer nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
 footer nav a { font-size: .88rem; color: var(--tenue); text-decoration: none; }
 footer nav a:hover { color: var(--sumi); }
@@ -398,7 +398,7 @@ footer nav a:hover { color: var(--sumi); }
       <strong style="font-family:var(--display);font-size:1.05rem;font-weight:600">KanjiKaku</strong>
     </a>
     <nav>
-      <a class="opcional" href="#mano">La mano</a>
+      <a class="opcional" href="#motor">El motor</a>
       <a class="opcional" href="#escribir">Escribir</a>
       <a class="opcional" href="#partes">Partes</a>
       <a class="opcional" href="#barajas">Barajas</a>
@@ -421,9 +421,10 @@ footer nav a:hover { color: var(--sumi); }
         <path d="M4,6.2C40,3.4 96,2.1 150,2.4C204,2.7 262,4.2 296,6.6C262,8.4 204,9.2 150,9C96,8.8 40,7.9 4,6.2Z"/>
       </svg>
 
-      <p class="lema">Los kanji no se reconocen.<br>Se <em>escriben</em>.</p>
+      <p class="lema">La mente <em>recuerda</em><br>lo que la mano escribe.</p>
+      <p class="atribucion">Lo que repite mi profesor de japonés, clase tras clase.</p>
       <p class="entradilla">
-        Una app de estudio que te hace dibujarlos con el dedo, trazo a trazo y en
+        Una app de estudio que te hace dibujar los kanji con el dedo, trazo a trazo y en
         su orden. Te enseña de qué están hechos, y te avisa cuando estás
         confundiendo dos que se parecen.
       </p>
@@ -438,28 +439,17 @@ footer nav a:hover { color: var(--sumi); }
       </div>
 
       <div class="cifras">
-        <div class="cifra"><b>2.141</b><span>kanji</span></div>
-        <div class="cifra"><b>9.640</b><span>palabras</span></div>
-        <div class="cifra"><b>22.401</b><span>trazos</span></div>
-        <div class="cifra"><b>4</b><span>barajas de serie</span></div>
+        <div class="cifra"><b>2K</b><span>kanji</span></div>
+        <div class="cifra"><b>9K</b><span>palabras de vocabulario precargadas</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ══ LA MANO Y EL MOTOR ════════════════════════════════ -->
-  <section id="mano" class="cita">
+  <!-- ══ EL MOTOR ══════════════════════════════════════════ -->
+  <section id="motor" class="seccion-motor">
     <div class="seccion-fondo izq" data-motivo="sakura" aria-hidden="true"></div>
     <div class="envoltura">
-      <blockquote class="revela">
-        Lo que la mano escribe,<br>la <em>mente</em> recuerda.
-        <span class="quien">Lo repite mi profesor de japonés, clase tras clase. La app entera está construida sobre esa frase.</span>
-      </blockquote>
-
-      <svg class="filete" viewBox="0 0 300 8" aria-hidden="true">
-        <path d="M6,4.8C46,2.9 104,1.8 152,2C200,2.2 258,3.3 294,5.1C258,6.6 200,7.2 152,7C104,6.8 46,6.2 6,4.8Z"/>
-      </svg>
-
-      <p class="eyebrow revela">Y por eso el motor mira de verdad</p>
+      <p class="eyebrow revela">Por qué esa frase se sostiene</p>
       <h2 class="titulo-seccion revela" style="margin-inline:auto">No basta con «se parece»</h2>
       <p class="parrafo revela" style="margin-inline:auto;text-align:center">
         Dar por bueno un trazo que va del revés es enseñar a escribir mal, con
@@ -632,16 +622,27 @@ footer nav a:hover { color: var(--sumi); }
     <div class="envoltura duo">
       <div class="texto revela">
         <p class="eyebrow">Qué estudiar</p>
-        <h2 class="titulo-seccion">Cuatro barajas de serie, y las que te montes</h2>
+        <h2 class="titulo-seccion">Empiezas por el Noken. No acabas ahí.</h2>
         <p class="parrafo">
-          Vienen los niveles del Noken, el orden de la escuela japonesa, los
-          contadores con sus formas irregulares y las 47 prefecturas con sus
-          capitales. Cada una repartida en tandas, para que empieces por algún
-          sitio.
+          De serie vienen los cinco niveles del Noken y el curso escolar japonés de
+          verdad, el orden en que los aprenden los críos allí. Repartidos en tandas,
+          para que no abras la app y te encuentres una lista de dos mil.
         </p>
         <p class="parrafo">
-          Y puedes montar la tuya: eliges kanji, los repartes en tandas, le pones
-          nombre y la exportas a un archivo para pasársela a quien quieras.
+          Y a partir de ahí montas las tuyas. Divides la baraja en las tandas que
+          quieras y eliges <b>uno a uno</b> los kanji y las palabras que entran en cada
+          una. No eliges de un menú cerrado: eliges del catálogo entero.
+        </p>
+        <ul class="ideas">
+          <li>Los kanji y el vocabulario de las 47 prefecturas.</li>
+          <li>Los contadores, con sus lecturas irregulares aparte.</li>
+          <li>El temario del libro que estés dando este curso.</li>
+          <li>Los que te salieron mal en el último examen.</li>
+        </ul>
+        <p class="parrafo apunte">
+          Y son cuatro ideas de las primeras que se me han ocurrido, no un catálogo.
+          Las dos de arriba vienen ya hechas dentro de la app, montadas con esta
+          misma herramienta: no hay una versión buena para mí y otra para ti.
         </p>
       </div>
       <div class="demo revela">
@@ -666,6 +667,10 @@ footer nav a:hover { color: var(--sumi); }
             <span class="icono" data-icono="fuji" aria-hidden="true"></span>
             <div><h4>Prefecturas</h4><p>Las 47 con sus capitales, por región</p></div>
             <span class="cuenta">9 regiones</span>
+          </article>
+          <article class="baraja tuya">
+            <span class="mas" aria-hidden="true">+</span>
+            <div><h4>La tuya</h4><p>Los kanji y las palabras que elijas, en las tandas que quieras</p></div>
           </article>
         </div>
       </div>
@@ -722,15 +727,6 @@ footer nav a:hover { color: var(--sumi); }
 
 <footer>
   <div class="envoltura">
-    <p class="creditos">
-      KanjiKaku usa datos abiertos y lo dice: los trazos vienen de
-      <a href="https://kanjivg.tagaini.net/">KanjiVG</a> (CC BY-SA 3.0), y los
-      significados y lecturas de
-      <a href="https://www.edrdg.org/wiki/index.php/KANJIDIC_Project">KANJIDIC2</a>
-      y <a href="https://www.edrdg.org/jmdict/j_jmdict.html">JMdict</a>
-      (CC BY-SA 4.0), del EDRDG. La tipografía japonesa es Noto Serif JP, bajo
-      SIL OFL 1.1. Las traducciones al español son propias.
-    </p>
     <nav>
       <a href="/privacidad.html">Privacidad</a>
       <a href="mailto:kanjikakuapp@gmail.com">Contacto</a>
@@ -846,8 +842,8 @@ const alEntrar = new IntersectionObserver((filas) => {
 
 /* ── Las maquetas ────────────────────────────────────────────── */
 
-/* 日, cuatro trazos. Dibujados a mano aquí: no salen de KanjiVG ni de
-   ningún dato de la app, son cuatro rectángulos con forma de pincelada. */
+/* 日, cuatro trazos. Dibujados a mano aquí, para la maqueta: no salen
+   de ningún dato de la app, son cuatro rectángulos con forma de pincelada. */
 const TRAZOS_DIA = [
   // 1 · la vertical de la izquierda, de arriba abajo
   "M57,38 C62,36 67,39 67,44 L67,172 C67,178 57,178 56,172 L56,43 C56,40 56,39 57,38 Z",
