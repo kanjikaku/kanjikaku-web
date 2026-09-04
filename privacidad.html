@@ -334,6 +334,14 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
      frases, y con texto plano se perderían al cambiar de idioma. */
   var nodos = document.querySelectorAll("[data-en]");
   var botones = document.querySelectorAll(".lang button");
+  /* El título de la pestaña y la descripción también se leen —y la segunda
+     es lo que enseña el buscador—, así que también cambian de idioma. Se
+     quedaban en español con la página entera en inglés. */
+  var TITULO = { es: document.title, en: "Privacy policy · KanjiKaku" };
+  var META = {
+    es: "Qué guarda KanjiKaku, dónde lo guarda y cuándo sale a internet. La versión corta: tu progreso no sale de tu teléfono.",
+    en: "What KanjiKaku stores, where it stores it and when it goes online. The short version: your progress never leaves your phone."
+  };
 
   function pon(idioma) {
     for (var i = 0; i < nodos.length; i++) {
@@ -342,6 +350,9 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       n.innerHTML = idioma === "en" ? n.dataset.en : n.dataset.es;
     }
     document.documentElement.lang = idioma;
+    document.title = TITULO[idioma];
+    var desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.setAttribute("content", META[idioma]);
     for (var j = 0; j < botones.length; j++) {
       botones[j].setAttribute("aria-pressed", String(botones[j].dataset.lang === idioma));
     }

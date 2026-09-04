@@ -175,6 +175,24 @@ section > .envoltura { position: relative; z-index: 1; }
 }
 .tema-btn:hover { color: var(--sumi); }
 
+/* ── Idioma ──────────────────────────────────────────────────
+   El mismo control que ya tiene privacidad.html, con los nombres de
+   variable de esta página. El español va en el HTML y el inglés viaja en
+   `data-en`, así que la portada se lee entera aunque el JavaScript no
+   llegue nunca — y el buscador indexa las dos versiones. */
+.lang {
+  display: flex; align-items: center;
+  border: 1px solid var(--borde);
+  border-radius: 999px; padding: 2px; gap: 2px;
+}
+.lang button {
+  appearance: none; border: 0; background: transparent; color: var(--tenue);
+  font: inherit; font-size: 12px; font-weight: 500; letter-spacing: .08em;
+  padding: 4px 10px; border-radius: 999px; cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--sumi); color: var(--papel); }
+@media (max-width: 30rem) { .lang button { padding: 4px 7px; } }
+
 /* ── Hero ────────────────────────────────────────────────────── */
 .hero { padding-block: clamp(2.25rem, 6vw, 4rem) clamp(2.75rem, 7vw, 5rem); text-align: center; }
 .hero .sello { display: block; margin: 0 auto clamp(1.25rem, 3vw, 2rem); }
@@ -417,17 +435,21 @@ footer nav a:hover { color: var(--sumi); }
 
 <header class="cabecera">
   <div class="envoltura">
-    <a class="marca-mini" href="#top" aria-label="KanjiKaku, inicio">
+    <a class="marca-mini" href="#top" aria-label="KanjiKaku, inicio" data-en-aria="KanjiKaku, home">
       <span id="marca-mini-svg" aria-hidden="true"></span>
       <strong style="font-family:var(--display);font-size:1.05rem;font-weight:600">KanjiKaku</strong>
     </a>
     <nav>
-      <a class="opcional" href="#motor">El motor</a>
-      <a class="opcional" href="#escribir">Escribir</a>
-      <a class="opcional" href="#partes">Partes</a>
-      <a class="opcional" href="#barajas">Barajas</a>
-      <a href="#tenerla">Tenerla</a>
-      <button class="tema-btn" id="tema" type="button" aria-label="Cambiar entre claro y oscuro">◐</button>
+      <a class="opcional" href="#motor" data-en="The engine">El motor</a>
+      <a class="opcional" href="#escribir" data-en="Writing">Escribir</a>
+      <a class="opcional" href="#partes" data-en="Parts">Partes</a>
+      <a class="opcional" href="#barajas" data-en="Decks">Barajas</a>
+      <a href="#tenerla" data-en="Getting it">Tenerla</a>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="tema-btn" id="tema" type="button" aria-label="Cambiar entre claro y oscuro" data-en-aria="Switch between light and dark">◐</button>
     </nav>
   </div>
 </header>
@@ -445,9 +467,9 @@ footer nav a:hover { color: var(--sumi); }
         <path d="M4,6.2C40,3.4 96,2.1 150,2.4C204,2.7 262,4.2 296,6.6C262,8.4 204,9.2 150,9C96,8.8 40,7.9 4,6.2Z"/>
       </svg>
 
-      <p class="lema">La mente <em>recuerda</em><br>lo que la mano escribe.</p>
-      <p class="atribucion">Lo que repite mi profesor de japonés, clase tras clase.</p>
-      <p class="entradilla">
+      <p class="lema" data-en="The mind &lt;em&gt;remembers&lt;/em&gt;&lt;br&gt;what the hand writes.">La mente <em>recuerda</em><br>lo que la mano escribe.</p>
+      <p class="atribucion" data-en="What my Japanese teacher repeats, class after class.">Lo que repite mi profesor de japonés, clase tras clase.</p>
+      <p class="entradilla" data-en="A study app that makes you draw kanji with your finger, stroke by stroke and in the right order. It shows you what they are made of, and warns you when you are mixing up two that look alike.">
         Una app de estudio que te hace dibujar los kanji con el dedo, trazo a trazo y en
         su orden. Te enseña de qué están hechos, y te avisa cuando estás
         confundiendo dos que se parecen.
@@ -455,16 +477,16 @@ footer nav a:hover { color: var(--sumi); }
 
       <div class="botones">
         <a class="boton principal" href="#tenerla">
-          Android <span class="estado">· pronto</span>
+          Android <span class="estado" data-en="· soon">· pronto</span>
         </a>
         <a class="boton" href="#tenerla">
-          iOS <span class="estado">· pronto</span>
+          iOS <span class="estado" data-en="· soon">· pronto</span>
         </a>
       </div>
 
       <div class="cifras">
         <div class="cifra"><b>2K</b><span>kanji</span></div>
-        <div class="cifra"><b>9K</b><span>palabras de vocabulario precargadas</span></div>
+        <div class="cifra"><b>9K</b><span data-en="vocabulary words built in">palabras de vocabulario precargadas</span></div>
       </div>
     </div>
   </section>
@@ -473,9 +495,9 @@ footer nav a:hover { color: var(--sumi); }
   <section id="motor" class="seccion-motor">
     <div class="seccion-fondo izq" data-motivo="sakura" aria-hidden="true"></div>
     <div class="envoltura">
-      <p class="eyebrow revela">Por qué esa frase se sostiene</p>
-      <h2 class="titulo-seccion revela" style="margin-inline:auto">No basta con «se parece»</h2>
-      <p class="parrafo revela" style="margin-inline:auto;text-align:center">
+      <p class="eyebrow revela" data-en="Why that saying holds up">Por qué esa frase se sostiene</p>
+      <h2 class="titulo-seccion revela" style="margin-inline:auto" data-en="«Close enough» is not enough">No basta con «se parece»</h2>
+      <p class="parrafo revela" style="margin-inline:auto;text-align:center" data-en="Accepting a stroke drawn backwards is teaching bad handwriting, very politely. So every stroke is checked against the kanji's real one, and you are told which went wrong and why.">
         Dar por bueno un trazo que va del revés es enseñar a escribir mal, con
         mucha educación. Así que cada trazo se compara con el trazo real del
         kanji, y se dice cuál ha fallado y por qué.
@@ -483,28 +505,28 @@ footer nav a:hover { color: var(--sumi); }
 
       <div class="motor">
         <article class="revela">
-          <h3>Por dónde empieza</h3>
-          <p>Un trazo que arranca por el extremo contrario no es el mismo trazo, aunque acabe pareciéndose.</p>
+          <h3 data-en="Where it starts">Por dónde empieza</h3>
+          <p data-en="A stroke that starts from the wrong end is not the same stroke, however alike it ends up looking.">Un trazo que arranca por el extremo contrario no es el mismo trazo, aunque acabe pareciéndose.</p>
         </article>
         <article class="revela">
-          <h3>Hacia dónde va</h3>
-          <p>De arriba abajo, de izquierda a derecha. Dibujarlo al revés se detecta y se avisa: es el error que más se fosiliza.</p>
+          <h3 data-en="Which way it goes">Hacia dónde va</h3>
+          <p data-en="Top to bottom, left to right. Drawing it the other way round is caught and flagged: it is the mistake that sets hardest.">De arriba abajo, de izquierda a derecha. Dibujarlo al revés se detecta y se avisa: es el error que más se fosiliza.</p>
         </article>
         <article class="revela">
-          <h3>Qué forma tiene</h3>
-          <p>Contra el trazo de verdad, no contra una caja. Una curva donde tocaba una recta no cuela.</p>
+          <h3 data-en="What shape it has">Qué forma tiene</h3>
+          <p data-en="Against the real stroke, not against a box. A curve where a straight line belonged does not pass.">Contra el trazo de verdad, no contra una caja. Una curva donde tocaba una recta no cuela.</p>
         </article>
         <article class="revela">
-          <h3>En qué orden</h3>
-          <p>Si te saltas uno y lo pones después, la app sabe cuáles has cambiado de sitio y te devuelve a ese tramo, no al kanji entero.</p>
+          <h3 data-en="In what order">En qué orden</h3>
+          <p data-en="If you skip one and add it later, the app knows which ones you moved and sends you back to that stretch, not to the whole kanji.">Si te saltas uno y lo pones después, la app sabe cuáles has cambiado de sitio y te devuelve a ese tramo, no al kanji entero.</p>
         </article>
         <article class="revela">
-          <h3>Y qué has dibujado</h3>
-          <p>El buscador reconoce el kanji por el dibujo. Y si no da con él, rescata por radicales: reconoce las partes aunque falle el conjunto.</p>
+          <h3 data-en="And what you drew">Y qué has dibujado</h3>
+          <p data-en="Search recognises a kanji from your drawing. And when it cannot find it, it falls back to radicals: it recognises the parts even when it misses the whole.">El buscador reconoce el kanji por el dibujo. Y si no da con él, rescata por radicales: reconoce las partes aunque falle el conjunto.</p>
         </article>
         <article class="revela indulto">
-          <h3>Lo que no castiga</h3>
-          <p>Un roce con la palma no cuenta como intento. Y al buscar dibujando, el orden da igual a propósito: quien busca un kanji dibujándolo es justo quien todavía no sabe en qué orden va.</p>
+          <h3 data-en="What it does not punish">Lo que no castiga</h3>
+          <p data-en="A brush of the palm does not count as an attempt. And when searching by drawing, stroke order is ignored on purpose: someone looking a kanji up by drawing it is exactly the person who does not know its order yet.">Un roce con la palma no cuenta como intento. Y al buscar dibujando, el orden da igual a propósito: quien busca un kanji dibujándolo es justo quien todavía no sabe en qué orden va.</p>
         </article>
       </div>
     </div>
@@ -515,29 +537,29 @@ footer nav a:hover { color: var(--sumi); }
     <div class="seccion-fondo izq" data-motivo="bambu" aria-hidden="true"></div>
     <div class="envoltura duo">
       <div class="texto revela">
-        <p class="eyebrow">Se aprende escribiendo</p>
-        <h2 class="titulo-seccion">Con el dedo, y en el orden que toca</h2>
-        <p class="parrafo">
+        <p class="eyebrow" data-en="You learn it by writing it">Se aprende escribiendo</p>
+        <h2 class="titulo-seccion" data-en="With your finger, and in the right order">Con el dedo, y en el orden que toca</h2>
+        <p class="parrafo" data-en="Picking a kanji out of four options is easy, and it fools you. Writing it on a blank grid does not. The app gives you the grid and lets you draw; if you get lost, it shows the next stroke in grey — first its direction, then the whole stroke.">
           Reconocer un kanji entre cuatro opciones es fácil y engaña. Escribirlo
           en blanco no. La app te da la cuadrícula y te deja dibujar; si te
           pierdes, va enseñando el trazo siguiente en gris — primero la
           dirección, luego el trazo entero.
         </p>
-        <p class="parrafo">
+        <p class="parrafo" data-en="Order matters: it is what makes a kanji you have never seen write itself once you recognise its parts.">
           El orden importa: es lo que hace que un kanji que nunca has visto se
           escriba solo cuando reconoces sus partes.
         </p>
       </div>
       <div class="demo revela" data-demo="escribir">
-        <p class="demo-etiqueta">Escribe el kanji · día</p>
-        <svg class="lienzo" viewBox="0 0 220 220" role="img" aria-label="Demostración: el kanji 日 se dibuja trazo a trazo">
+        <p class="demo-etiqueta" data-en="Write the kanji · day">Escribe el kanji · día</p>
+        <svg class="lienzo" viewBox="0 0 220 220" role="img" aria-label="Demostración: el kanji 日 se dibuja trazo a trazo" data-en-aria="Demo: the kanji 日 drawn stroke by stroke">
           <rect x="6" y="6" width="208" height="208" rx="10" fill="none" stroke="var(--borde)"/>
           <path class="guia" d="M110,10 L110,210 M10,110 L210,110"/>
           <g id="trazos-dia"></g>
         </svg>
         <div class="marcador" id="marcador-escribir">
           <span class="tick" aria-hidden="true">✓</span>
-          <span>Cuatro trazos. El segundo gira sin levantar el pincel.</span>
+          <span data-en="Four strokes. The second turns without lifting the brush.">Cuatro trazos. El segundo gira sin levantar el pincel.</span>
         </div>
       </div>
     </div>
@@ -548,27 +570,27 @@ footer nav a:hover { color: var(--sumi); }
     <div class="seccion-fondo" data-motivo="momiji" aria-hidden="true"></div>
     <div class="envoltura duo invertido">
       <div class="texto revela">
-        <p class="eyebrow">De qué está hecho</p>
-        <h2 class="titulo-seccion">Un kanji casi nunca es una forma nueva</h2>
-        <p class="parrafo">
+        <p class="eyebrow" data-en="What it is made of">De qué está hecho</p>
+        <h2 class="titulo-seccion" data-en="A kanji is almost never a new shape">Un kanji casi nunca es una forma nueva</h2>
+        <p class="parrafo" data-en="It is a handful of pieces you already know, arranged differently. The app shows you the ones inside each kanji, with their name and their sense, so the next one you meet does not start from nothing.">
           Es un puñado de piezas que ya conoces, colocadas de otra manera. La app
           te enseña las de cada uno, con su nombre y su sentido, para que el
           siguiente que te encuentres no empiece de cero.
         </p>
-        <p class="parrafo">
+        <p class="parrafo" data-en="And the hints come in levels: first the radical, then the gap, then the stroke. Never the whole answer at once.">
           Y las pistas van por niveles: primero el radical, luego el hueco, luego
           el trazo. Nunca la respuesta entera de golpe.
         </p>
       </div>
       <div class="demo revela" data-demo="partes">
-        <p class="demo-etiqueta">語 · idioma, palabra</p>
+        <p class="demo-etiqueta" data-en="語 · language, word">語 · idioma, palabra</p>
         <span class="kanji-grande" aria-hidden="true">
           <span class="parte" data-parte="0">語</span>
         </span>
         <div class="radicales" id="radicales">
-          <span class="radical" data-i="0"><span class="glifo">言</span><span class="nombre">palabra</span></span>
-          <span class="radical" data-i="1"><span class="glifo">五</span><span class="nombre">cinco</span></span>
-          <span class="radical" data-i="2"><span class="glifo">口</span><span class="nombre">boca</span></span>
+          <span class="radical" data-i="0"><span class="glifo">言</span><span class="nombre" data-en="word">palabra</span></span>
+          <span class="radical" data-i="1"><span class="glifo">五</span><span class="nombre" data-en="five">cinco</span></span>
+          <span class="radical" data-i="2"><span class="glifo">口</span><span class="nombre" data-en="mouth">boca</span></span>
         </div>
       </div>
     </div>
@@ -579,31 +601,31 @@ footer nav a:hover { color: var(--sumi); }
     <div class="seccion-fondo izq" data-motivo="carpas" aria-hidden="true"></div>
     <div class="envoltura duo">
       <div class="texto revela">
-        <p class="eyebrow">Cuando dos se parecen</p>
-        <h2 class="titulo-seccion">«Ese no era, era el otro»</h2>
-        <p class="parrafo">
+        <p class="eyebrow" data-en="When two look alike">Cuando dos se parecen</p>
+        <h2 class="titulo-seccion" data-en="«That was not it, it was the other one»">«Ese no era, era el otro»</h2>
+        <p class="parrafo" data-en="Some pairs have been getting mixed up for years: 未 and 末, 待 and 持, 建 and 健. When you write one for the other, the app does not log it as just another mistake — it tells you which one you wrote, which one you meant, and what tells them apart.">
           Hay parejas que se llevan años confundiéndose: 未 y 末, 待 y 持, 建 y
           健. Cuando escribes uno por otro, la app no te lo cuenta como un fallo
           cualquiera — te dice cuál has escrito, cuál buscabas, y en qué se
           diferencian.
         </p>
-        <p class="parrafo">
+        <p class="parrafo" data-en="Without giving you the answer: what it shows you is where to look.">
           Sin decirte la respuesta: lo que te enseña es dónde mirar.
         </p>
       </div>
       <div class="demo revela" data-demo="confuso">
-        <p class="demo-etiqueta">Escribe el kanji · todavía no</p>
+        <p class="demo-etiqueta" data-en="Write the kanji · not yet">Escribe el kanji · todavía no</p>
         <div class="par-confuso">
           <div class="candidato" id="cand-malo">
             <span class="glifo">末</span>
-            <p class="lectura">まつ · final</p>
+            <p class="lectura" data-en="まつ · end">まつ · final</p>
           </div>
           <div class="candidato" id="cand-bueno">
             <span class="glifo">未</span>
-            <p class="lectura">み · todavía no</p>
+            <p class="lectura" data-en="み · not yet">み · todavía no</p>
           </div>
         </div>
-        <div class="nota-confuso" id="nota-confuso">
+        <div class="nota-confuso" id="nota-confuso" data-en="&lt;b&gt;You wrote 末.&lt;/b&gt; They differ in the top stroke: in 未 the top one is &lt;b&gt;shorter&lt;/b&gt; than the one below it. In 末, longer.">
           <b>Has escrito 末.</b> Se distinguen por el trazo de arriba: en 未 el de
           arriba es <b>más corto</b> que el de abajo. En 末, más largo.
         </div>
@@ -616,20 +638,20 @@ footer nav a:hover { color: var(--sumi); }
     <div class="seccion-fondo" data-motivo="sakura" aria-hidden="true"></div>
     <div class="envoltura duo invertido">
       <div class="texto revela">
-        <p class="eyebrow">Las lecturas</p>
-        <h2 class="titulo-seccion">Se componen, no se eligen de una lista</h2>
-        <p class="parrafo">
+        <p class="eyebrow" data-en="The readings">Las lecturas</p>
+        <h2 class="titulo-seccion" data-en="You build them, you do not pick them off a list">Se componen, no se eligen de una lista</h2>
+        <p class="parrafo" data-en="A four-option test lets you get it right by elimination. Here you build the reading out of the kana pieces the app hands you — and the decoy pieces come from that same kanji's &lt;em&gt;other&lt;/em&gt; readings, which are exactly the ones it gets confused with.">
           Un test de cuatro opciones te deja acertar por descarte. Aquí montas la
           lectura con las piezas de kana que te da la app — y las piezas de
           relleno salen de las <em>otras</em> lecturas del mismo kanji, que es
           justo con las que se confunde.
         </p>
-        <p class="parrafo">
+        <p class="parrafo" data-en="The okurigana is already there. What you build is the part the kanji contributes.">
           El okurigana viene puesto. Lo que compones es lo que el kanji aporta.
         </p>
       </div>
       <div class="demo revela" data-demo="lecturas">
-        <p class="demo-etiqueta">¿Cómo se lee? · 日本語</p>
+        <p class="demo-etiqueta" data-en="How is it read? · 日本語">¿Cómo se lee? · 日本語</p>
         <div class="nubes" id="nubes">
           <div class="nube" data-n="0"></div>
           <div class="nube" data-n="1"></div>
@@ -645,45 +667,45 @@ footer nav a:hover { color: var(--sumi); }
     <div class="seccion-fondo izq" data-motivo="fuji" aria-hidden="true"></div>
     <div class="envoltura duo">
       <div class="texto revela">
-        <p class="eyebrow">Qué estudiar</p>
-        <h2 class="titulo-seccion">Empiezas por el Noken. No acabas ahí.</h2>
-        <p class="parrafo">
+        <p class="eyebrow" data-en="What to study">Qué estudiar</p>
+        <h2 class="titulo-seccion" data-en="You start with the JLPT. You do not end there.">Empiezas por el Noken. No acabas ahí.</h2>
+        <p class="parrafo" data-en="It comes with the five JLPT levels and the real Japanese school years, the order children learn them in over there. Split into batches, so you do not open the app and find a list of two thousand.">
           De serie vienen los cinco niveles del Noken y el curso escolar japonés de
           verdad, el orden en que los aprenden los críos allí. Repartidos en tandas,
           para que no abras la app y te encuentres una lista de dos mil.
         </p>
-        <p class="parrafo">
+        <p class="parrafo" data-en="And from there you build your own. You split a deck into as many batches as you like and pick &lt;b&gt;one by one&lt;/b&gt; the kanji and the words that go into each. You are not choosing from a fixed menu: you are choosing from the whole catalogue.">
           Y a partir de ahí montas las tuyas. Divides la baraja en las tandas que
           quieras y eliges <b>uno a uno</b> los kanji y las palabras que entran en cada
           una. No eliges de un menú cerrado: eliges del catálogo entero.
         </p>
         <ul class="ideas">
-          <li>Los kanji y el vocabulario de las 47 prefecturas.</li>
-          <li>Los contadores, con sus lecturas irregulares aparte.</li>
-          <li>El temario del libro que estés dando este curso.</li>
-          <li>Los que te salieron mal en el último examen.</li>
+          <li data-en="The kanji and vocabulary of the 47 prefectures.">Los kanji y el vocabulario de las 47 prefecturas.</li>
+          <li data-en="The counters, with their irregular readings kept apart.">Los contadores, con sus lecturas irregulares aparte.</li>
+          <li data-en="The syllabus of whatever book you are working through this year.">El temario del libro que estés dando este curso.</li>
+          <li data-en="The ones you got wrong in the last exam.">Los que te salieron mal en el último examen.</li>
         </ul>
-        <p class="parrafo apunte">
+        <p class="parrafo apunte" data-en="Four ideas, not a catalogue. A deck is an empty container: what goes into it is decided by whoever is studying.">
           Cuatro ideas, no un catálogo. La baraja es un recipiente vacío: lo que
           entra dentro lo decide quien estudia.
         </p>
       </div>
       <div class="demo revela">
-        <p class="demo-etiqueta">Barajas</p>
+        <p class="demo-etiqueta" data-en="Decks">Barajas</p>
         <div class="barajas">
           <article class="baraja">
             <span class="icono" data-icono="torii" aria-hidden="true"></span>
-            <div><h4>Niveles JLPT</h4><p>Del N5 al N1, los más frecuentes primero</p></div>
-            <span class="cuenta">101 tandas</span>
+            <div><h4 data-en="JLPT levels">Niveles JLPT</h4><p data-en="From N5 to N1, the most frequent first">Del N5 al N1, los más frecuentes primero</p></div>
+            <span class="cuenta" data-en="101 batches">101 tandas</span>
           </article>
           <article class="baraja">
             <span class="icono" data-icono="sakura" aria-hidden="true"></span>
-            <div><h4>Por curso escolar</h4><p>El orden en que los aprenden en Japón</p></div>
-            <span class="cuenta">109 tandas</span>
+            <div><h4 data-en="By school year">Por curso escolar</h4><p data-en="The order they are learned in Japan">El orden en que los aprenden en Japón</p></div>
+            <span class="cuenta" data-en="109 batches">109 tandas</span>
           </article>
           <article class="baraja tuya">
             <span class="mas" aria-hidden="true">+</span>
-            <div><h4>La tuya</h4><p>Los kanji y las palabras que elijas, en las tandas que quieras</p></div>
+            <div><h4 data-en="Your own">La tuya</h4><p data-en="The kanji and words you choose, in the batches you want">Los kanji y las palabras que elijas, en las tandas que quieras</p></div>
           </article>
         </div>
       </div>
@@ -695,21 +717,21 @@ footer nav a:hover { color: var(--sumi); }
     <div class="seccion-fondo" data-motivo="bambu" aria-hidden="true"></div>
     <div class="envoltura duo invertido">
       <div class="texto revela">
-        <p class="eyebrow">Volver cuando toca</p>
-        <h2 class="titulo-seccion">Cada kanji vuelve justo antes de que se te olvide</h2>
-        <p class="parrafo">
+        <p class="eyebrow" data-en="Coming back at the right time">Volver cuando toca</p>
+        <h2 class="titulo-seccion" data-en="Every kanji comes back just before you forget it">Cada kanji vuelve justo antes de que se te olvide</h2>
+        <p class="parrafo" data-en="Real spaced repetition, kept separate by skill: you can know a kanji's meaning and still not be able to write it. The app keeps those scores apart and asks you what you are weakest at.">
           Repaso espaciado de verdad, y por competencia separada: puedes saberte
           el significado de uno y no saber escribirlo. La app lleva esas cuentas
           por separado y te pregunta lo que peor llevas.
         </p>
-        <p class="parrafo">
+        <p class="parrafo" data-en="Your progress is yours and lives on your phone. There is no account, no server, nothing to sign up for.">
           El progreso es tuyo y vive en tu móvil. No hay cuenta, ni servidor, ni
           nada que registrar.
         </p>
       </div>
       <div class="demo revela">
-        <p class="demo-etiqueta">Últimos 7 días</p>
-        <svg class="semana" viewBox="0 0 240 60" role="img" aria-label="Gráfica de los ejercicios de los últimos siete días, trazada a pincel">
+        <p class="demo-etiqueta" data-en="Last 7 days">Últimos 7 días</p>
+        <svg class="semana" viewBox="0 0 240 60" role="img" aria-label="Gráfica de los ejercicios de los últimos siete días, trazada a pincel" data-en-aria="Chart of the last seven days of exercises, drawn with a brush">
           <path class="trazo" id="trazo-semana" d=""/>
           <g id="puntos-semana"></g>
         </svg>
@@ -722,14 +744,14 @@ footer nav a:hover { color: var(--sumi); }
   <section id="tenerla">
     <div class="seccion-fondo" data-motivo="torii" aria-hidden="true"></div>
     <div class="envoltura" style="text-align:center">
-      <p class="eyebrow revela">Todavía no está</p>
-      <h2 class="titulo-seccion revela" style="margin-inline:auto">Falta poco</h2>
-      <p class="parrafo revela" style="margin-inline:auto;text-align:center">
+      <p class="eyebrow revela" data-en="It is not out yet">Todavía no está</p>
+      <h2 class="titulo-seccion revela" style="margin-inline:auto" data-en="Nearly there">Falta poco</h2>
+      <p class="parrafo revela" style="margin-inline:auto;text-align:center" data-en="It is in testing. Android goes first, iOS follows. If you would like to be told when it can be installed, write to me.">
         Está en pruebas. Android va primero; iOS, detrás. Si quieres que te avise
         cuando se pueda instalar, escríbeme.
       </p>
       <div class="botones revela">
-        <a class="boton principal" href="mailto:kanjikakuapp@gmail.com?subject=Avisadme%20cuando%20est%C3%A9%20KanjiKaku">
+        <a class="boton principal" href="mailto:kanjikakuapp@gmail.com?subject=Avisadme%20cuando%20est%C3%A9%20KanjiKaku" data-en="Notify me">
           Avisadme
         </a>
       </div>
@@ -741,8 +763,8 @@ footer nav a:hover { color: var(--sumi); }
 <footer>
   <div class="envoltura">
     <nav>
-      <a href="/privacidad.html">Privacidad</a>
-      <a href="mailto:kanjikakuapp@gmail.com">Contacto</a>
+      <a href="/privacidad.html" data-en="Privacy">Privacidad</a>
+      <a href="mailto:kanjikakuapp@gmail.com" data-en="Contact">Contacto</a>
     </nav>
   </div>
 </footer>
@@ -1003,6 +1025,53 @@ const DEMOS = {
 })();
 
 for (const n of document.querySelectorAll(".revela, [data-demo]")) alEntrar.observe(n);
+</script>
+
+<script>
+(function () {
+  "use strict";
+  /* El español va en el HTML —así la página funciona sin JavaScript— y el
+     inglés viaja en `data-en`. `innerHTML` y no `textContent` porque hay
+     marcado dentro de algunas frases, y con texto plano se perdería. */
+  var nodos = document.querySelectorAll("[data-en]");
+  var rotulos = document.querySelectorAll("[data-en-aria]");
+  var botones = document.querySelectorAll(".lang button");
+  var TITULO = { es: document.title, en: "KanjiKaku · Kanji, stroke by stroke" };
+  var META = {
+    es: "Kanji, trazo a trazo. Los escribes a mano, te dice de qu\u00e9 est\u00e1n hechos y te avisa cuando confundes dos que se parecen.",
+    en: "Kanji, stroke by stroke. You write them by hand, it tells you what they are made of and warns you when you mix up two that look alike."
+  };
+
+  function pon(idioma) {
+    for (var i = 0; i < nodos.length; i++) {
+      var n = nodos[i];
+      if (!n.dataset.es) n.dataset.es = n.innerHTML;
+      n.innerHTML = idioma === "en" ? n.dataset.en : n.dataset.es;
+    }
+    for (var a = 0; a < rotulos.length; a++) {
+      var r = rotulos[a];
+      if (!r.dataset.esAria) r.dataset.esAria = r.getAttribute("aria-label");
+      r.setAttribute("aria-label", idioma === "en" ? r.dataset.enAria : r.dataset.esAria);
+    }
+    document.documentElement.lang = idioma;
+    document.title = TITULO[idioma];
+    var desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.setAttribute("content", META[idioma]);
+    for (var j = 0; j < botones.length; j++) {
+      botones[j].setAttribute("aria-pressed", String(botones[j].dataset.lang === idioma));
+    }
+    try { localStorage.setItem("kk-lang", idioma); } catch (e) {}
+  }
+
+  var guardado = null;
+  try { guardado = localStorage.getItem("kk-lang"); } catch (e) {}
+  var navegador = (navigator.language || "es").slice(0, 2).toLowerCase();
+  pon(guardado === "en" || guardado === "es" ? guardado : (navegador === "es" ? "es" : "en"));
+
+  for (var k = 0; k < botones.length; k++) {
+    botones[k].addEventListener("click", function () { pon(this.dataset.lang); });
+  }
+})();
 </script>
 </body>
 </html>
