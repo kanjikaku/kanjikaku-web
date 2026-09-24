@@ -1,0 +1,227 @@
+{
+  "_leeme": [
+    "Las ofertas que la app enseña en la pantalla de compra. La app lee este fichero de kanjikaku.com/ofertas.json al abrir esa pantalla; si no llega, no enseña nombre y vende al precio de la tienda.",
+    "Cada oferta: id (una palabra: el nombre y el descuento, launch50, blackfriday10), activa (true/false), desde y hasta (AAAA-MM-DD, los dos días incluidos, en la fecha local del móvil), tiendas (ios, android; sin el campo, las dos) y nombre en cada idioma (si falta uno, cae al inglés).",
+    "SÓLO pone el nombre. El precio rebajado se pone en App Store Connect (calendario de precios del producto) y en Play Console (oferta del producto): la app enseña y cobra siempre el precio que le da la tienda. Por eso todas nacen con activa: false; se pone true cuando el precio ya está rebajado en las consolas para esas fechas.",
+    "Si dos activas coinciden en fecha gana la primera de la lista. Para añadir otra: copiar un bloque y cambiar id, fechas y nombres. El −XX % del nombre es texto: cámbialo a la vez que el descuento de las consolas.",
+    "Se publica con: node web/construir.mjs && node web/publicar.mjs \"mensaje\". La app lo ve en cuanto GitHub Pages refresca (un minuto)."
+  ],
+  "ofertas": [
+    {
+      "id": "launch50",
+      "activa": false,
+      "desde": "2026-10-01",
+      "hasta": "2026-10-31",
+      "tiendas": [
+        "ios",
+        "android"
+      ],
+      "nombre": {
+        "es": "Precio de lanzamiento: −50 %",
+        "en": "Launch price: −50 %",
+        "de": "Einführungspreis: −50 %",
+        "fr": "Prix de lancement : −50 %",
+        "it": "Prezzo di lancio: −50 %",
+        "pt": "Preço de lançamento: −50 %",
+        "nl": "Introductieprijs: −50 %",
+        "sv": "Lanseringspris: −50 %",
+        "pl": "Cena początkowa: −50 %",
+        "ind": "Harga peluncuran: −50 %",
+        "vi": "Giá ra mắt: −50 %",
+        "ko": "출시 기념 가격: −50 %"
+      }
+    },
+    {
+      "id": "blackfriday10",
+      "activa": false,
+      "desde": "2026-11-27",
+      "hasta": "2026-11-30",
+      "tiendas": [
+        "ios",
+        "android"
+      ],
+      "nombre": {
+        "es": "Black Friday: −10 %",
+        "en": "Black Friday: −10 %",
+        "de": "Black Friday: −10 %",
+        "fr": "Black Friday : −10 %",
+        "it": "Black Friday: −10 %",
+        "pt": "Black Friday: −10 %",
+        "nl": "Black Friday: −10 %",
+        "sv": "Black Friday: −10 %",
+        "pl": "Black Friday: −10 %",
+        "ind": "Black Friday: −10 %",
+        "vi": "Black Friday: −10 %",
+        "ko": "블랙 프라이데이: −10 %"
+      }
+    },
+    {
+      "id": "christmas20",
+      "activa": false,
+      "desde": "2026-12-20",
+      "hasta": "2027-01-06",
+      "tiendas": [
+        "ios",
+        "android"
+      ],
+      "nombre": {
+        "es": "Navidad: −20 %",
+        "en": "Christmas: −20 %",
+        "de": "Weihnachten: −20 %",
+        "fr": "Noël : −20 %",
+        "it": "Natale: −20 %",
+        "pt": "Natal: −20 %",
+        "nl": "Kerst: −20 %",
+        "sv": "Jul: −20 %",
+        "pl": "Boże Narodzenie: −20 %",
+        "ind": "Natal: −20 %",
+        "vi": "Giáng sinh: −20 %",
+        "ko": "크리스마스: −20 %"
+      }
+    },
+    {
+      "id": "shogatsu15",
+      "activa": false,
+      "desde": "2027-01-01",
+      "hasta": "2027-01-03",
+      "tiendas": [
+        "ios",
+        "android"
+      ],
+      "nombre": {
+        "es": "Año Nuevo japonés (正月): −15 %",
+        "en": "Japanese New Year (正月): −15 %",
+        "de": "Japanisches Neujahr (正月): −15 %",
+        "fr": "Nouvel An japonais (正月) : −15 %",
+        "it": "Capodanno giapponese (正月): −15 %",
+        "pt": "Ano Novo japonês (正月): −15 %",
+        "nl": "Japans Nieuwjaar (正月): −15 %",
+        "sv": "Japanskt nyår (正月): −15 %",
+        "pl": "Japoński Nowy Rok (正月): −15 %",
+        "ind": "Tahun Baru Jepang (正月): −15 %",
+        "vi": "Tết Nhật Bản (正月): −15 %",
+        "ko": "일본 설날 (正月): −15 %"
+      }
+    },
+    {
+      "id": "hanami10",
+      "activa": false,
+      "desde": "2027-03-25",
+      "hasta": "2027-04-10",
+      "tiendas": [
+        "ios",
+        "android"
+      ],
+      "nombre": {
+        "es": "Hanami (花見): −10 %",
+        "en": "Hanami (花見): −10 %",
+        "de": "Hanami (花見): −10 %",
+        "fr": "Hanami (花見) : −10 %",
+        "it": "Hanami (花見): −10 %",
+        "pt": "Hanami (花見): −10 %",
+        "nl": "Hanami (花見): −10 %",
+        "sv": "Hanami (花見): −10 %",
+        "pl": "Hanami (花見): −10 %",
+        "ind": "Hanami (花見): −10 %",
+        "vi": "Hanami (花見): −10 %",
+        "ko": "하나미 (花見): −10 %"
+      }
+    },
+    {
+      "id": "goldenweek15",
+      "activa": false,
+      "desde": "2027-04-29",
+      "hasta": "2027-05-05",
+      "tiendas": [
+        "ios",
+        "android"
+      ],
+      "nombre": {
+        "es": "Golden Week: −15 %",
+        "en": "Golden Week: −15 %",
+        "de": "Golden Week: −15 %",
+        "fr": "Golden Week : −15 %",
+        "it": "Golden Week: −15 %",
+        "pt": "Golden Week: −15 %",
+        "nl": "Golden Week: −15 %",
+        "sv": "Golden Week: −15 %",
+        "pl": "Golden Week: −15 %",
+        "ind": "Golden Week: −15 %",
+        "vi": "Golden Week: −15 %",
+        "ko": "골든 위크: −15 %"
+      }
+    },
+    {
+      "id": "tanabata10",
+      "activa": false,
+      "desde": "2027-07-07",
+      "hasta": "2027-07-07",
+      "tiendas": [
+        "ios",
+        "android"
+      ],
+      "nombre": {
+        "es": "Tanabata (七夕): −10 %",
+        "en": "Tanabata (七夕): −10 %",
+        "de": "Tanabata (七夕): −10 %",
+        "fr": "Tanabata (七夕) : −10 %",
+        "it": "Tanabata (七夕): −10 %",
+        "pt": "Tanabata (七夕): −10 %",
+        "nl": "Tanabata (七夕): −10 %",
+        "sv": "Tanabata (七夕): −10 %",
+        "pl": "Tanabata (七夕): −10 %",
+        "ind": "Tanabata (七夕): −10 %",
+        "vi": "Tanabata (七夕): −10 %",
+        "ko": "타나바타 (七夕): −10 %"
+      }
+    },
+    {
+      "id": "summer15",
+      "activa": false,
+      "desde": "2027-07-15",
+      "hasta": "2027-08-31",
+      "tiendas": [
+        "ios",
+        "android"
+      ],
+      "nombre": {
+        "es": "Oferta de verano: −15 %",
+        "en": "Summer offer: −15 %",
+        "de": "Sommerangebot: −15 %",
+        "fr": "Offre d'été : −15 %",
+        "it": "Offerta estiva: −15 %",
+        "pt": "Oferta de verão: −15 %",
+        "nl": "Zomeraanbieding: −15 %",
+        "sv": "Sommarerbjudande: −15 %",
+        "pl": "Letnia oferta: −15 %",
+        "ind": "Promo musim panas: −15 %",
+        "vi": "Ưu đãi mùa hè: −15 %",
+        "ko": "여름 특가: −15 %"
+      }
+    },
+    {
+      "id": "obon10",
+      "activa": false,
+      "desde": "2027-08-13",
+      "hasta": "2027-08-16",
+      "tiendas": [
+        "ios",
+        "android"
+      ],
+      "nombre": {
+        "es": "Obon (お盆): −10 %",
+        "en": "Obon (お盆): −10 %",
+        "de": "Obon (お盆): −10 %",
+        "fr": "Obon (お盆) : −10 %",
+        "it": "Obon (お盆): −10 %",
+        "pt": "Obon (お盆): −10 %",
+        "nl": "Obon (お盆): −10 %",
+        "sv": "Obon (お盆): −10 %",
+        "pl": "Obon (お盆): −10 %",
+        "ind": "Obon (お盆): −10 %",
+        "vi": "Obon (お盆): −10 %",
+        "ko": "오봉 (お盆): −10 %"
+      }
+    }
+  ]
+}
