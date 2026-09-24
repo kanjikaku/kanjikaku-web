@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chính sách quyền riêng tư · KanjiKaku</title>
+<meta name="description" content="Chính sách quyền riêng tư của ứng dụng KanjiKaku: dữ liệu nào được lưu trữ, lưu trữ ở đâu và mọi trường hợp ứng dụng thiết lập kết nối mạng.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#F3F3EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131619" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@600&display=swap">
+<style>
+/* ─────────────────────────────────────────────────────────────
+   KanjiKaku · política de privacidad
+   Los colores y las tipografías son LOS MISMOS que en index.html.
+   Si cambias la paleta allí, cámbiala aquí: cada página va suelta
+   a propósito, para poder subirlas sin nada más.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  --paper:      #F3F3EE;
+  --paper-sunk: #E7E8E1;
+  --rule:       #D5D7CE;
+  --rule-soft:  #E2E3DB;
+  --sumi:       #15181B;
+  --sumi-soft:  #5A6068;
+  --shu:        #BF3B2B;
+  --shu-ink:    #FFFFFF;
+  --focus:      #BF3B2B;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:      #131619;
+    --paper-sunk: #1B1F23;
+    --rule:       #2C3238;
+    --rule-soft:  #21262B;
+    --sumi:       #E9EAE4;
+    --sumi-soft:  #99A0A8;
+    --shu:        #E0563F;
+    --shu-ink:    #17191B;
+    --focus:      #E0563F;
+  }
+}
+:root[data-theme="dark"] {
+  --paper:      #131619;
+  --paper-sunk: #1B1F23;
+  --rule:       #2C3238;
+  --rule-soft:  #21262B;
+  --sumi:       #E9EAE4;
+  --sumi-soft:  #99A0A8;
+  --shu:        #E0563F;
+  --shu-ink:    #17191B;
+  --focus:      #E0563F;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--sumi);
+  font-family: "Zen Kaku Gothic New", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2 {
+  font-family: "Zen Old Mincho", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: balance;
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+p, ul { margin: 0; }
+a { color: inherit; }
+
+.frame {
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 48px);
+}
+
+.label {
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sumi-soft);
+  margin: 0;
+}
+
+/* ── Cabecera y pie, iguales que en la portada ─────────────── */
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 20px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.seal {
+  display: grid;
+  place-items: center;
+  width: 33px; height: 33px;
+  border-radius: 5px;
+  background: var(--shu);
+  color: var(--shu-ink);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 1;
+  padding-bottom: 1px;
+  flex: none;
+}
+.brand-name {
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.lang {
+  display: flex; align-items: center;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 2px; gap: 2px;
+}
+.lang button {
+  appearance: none; border: 0; background: transparent;
+  color: var(--sumi-soft);
+  font: inherit; font-size: 12px; font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 4px 11px; border-radius: 999px;
+  cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--sumi); color: var(--paper); }
+.lang button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+footer {
+  border-top: 1px solid var(--rule-soft);
+  padding-block: 26px 34px;
+  display: flex; flex-wrap: wrap;
+  gap: 10px 24px;
+  align-items: center; justify-content: space-between;
+  font-size: 13.5px;
+  color: var(--sumi-soft);
+}
+footer a { text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
+footer a:hover { border-bottom-color: var(--sumi-soft); }
+
+/* ── El documento ──────────────────────────────────────────── */
+
+/* Medida corta a propósito: esto se lee, no se ojea. */
+article { max-width: 64ch; padding-block: clamp(44px, 6vw, 72px) clamp(40px, 6vw, 64px); }
+
+article h1 {
+  font-size: clamp(32px, 4.6vw, 44px);
+  margin-top: 12px;
+}
+.fecha { margin-top: 16px; font-size: 14px; color: var(--sumi-soft); }
+
+/* La versión corta, arriba del todo: quien no lea nada más, lee esto. */
+.resumen {
+  margin-top: 34px;
+  background: var(--paper-sunk);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 22px 24px;
+}
+.resumen p { font-size: 17px; }
+.resumen p + p { margin-top: 10px; color: var(--sumi-soft); font-size: 15px; }
+
+section { margin-top: 44px; }
+section h2 {
+  font-size: 21px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+section > p, section > ul { margin-top: 14px; }
+section p + p { margin-top: 12px; }
+
+ul { padding-left: 0; list-style: none; }
+li { position: relative; padding-left: 20px; }
+li + li { margin-top: 9px; }
+/* Un guion largo en vez de un punto: es una lista de frases, no un menú. */
+li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--sumi-soft);
+}
+
+/* Los enlaces del cuerpo se ven, pero no gritan. */
+article a[href^="http"], article a[href^="mailto"] {
+  text-decoration: none;
+  border-bottom: 1px solid var(--shu);
+  padding-bottom: 1px;
+}
+article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--shu); }
+
+.volver {
+  margin-top: 46px;
+  padding-top: 26px;
+  border-top: 1px solid var(--rule-soft);
+  font-size: 14.5px;
+}
+.volver a { text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
+.volver a:hover { border-bottom-color: var(--sumi); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+  <link rel="alternate" hreflang="en" href="https://kanjikaku.com/privacidad.html">
+  <link rel="alternate" hreflang="es" href="https://kanjikaku.com/es/privacidad.html">
+  <link rel="alternate" hreflang="de" href="https://kanjikaku.com/de/privacidad.html">
+  <link rel="alternate" hreflang="fr" href="https://kanjikaku.com/fr/privacidad.html">
+  <link rel="alternate" hreflang="it" href="https://kanjikaku.com/it/privacidad.html">
+  <link rel="alternate" hreflang="pt" href="https://kanjikaku.com/pt/privacidad.html">
+  <link rel="alternate" hreflang="nl" href="https://kanjikaku.com/nl/privacidad.html">
+  <link rel="alternate" hreflang="sv" href="https://kanjikaku.com/sv/privacidad.html">
+  <link rel="alternate" hreflang="pl" href="https://kanjikaku.com/pl/privacidad.html">
+  <link rel="alternate" hreflang="id" href="https://kanjikaku.com/ind/privacidad.html">
+  <link rel="alternate" hreflang="vi" href="https://kanjikaku.com/vi/privacidad.html">
+  <link rel="alternate" hreflang="ko" href="https://kanjikaku.com/ko/privacidad.html">
+  <link rel="alternate" hreflang="x-default" href="https://kanjikaku.com/privacidad.html">
+</head>
+<body>
+
+<div class="frame">
+  <header class="top">
+    <a class="brand" href="index.html" aria-label="KanjiKaku">
+      <span class="seal" aria-hidden="true">書</span>
+      <span class="brand-name">KanjiKaku</span>
+    </a>
+    <div class="lang"><details><summary aria-label="Idioma / Language"><svg class="globo" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 2.6 4.2 5.6 4.2 9s-1.4 6.4-4.2 9c-2.8-2.6-4.2-5.6-4.2-9S9.2 5.6 12 3z"/></svg><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#DA251D"/><polygon points="1.5,.45 1.66,.93 2.16,.93 1.76,1.23 1.91,1.7 1.5,1.41 1.09,1.7 1.24,1.23 .84,.93 1.34,.93" fill="#FFFF00"/></svg><span class="codigo">VI</span></summary>
+        <ul lang="vi" aria-label="Tiếng Việt">
+          <li><a href="/privacidad.html" hreflang="en" lang="en" aria-label="English"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#012169"/><path d="M0 0L3 2M3 0L0 2" stroke="#fff" stroke-width=".5"/><path d="M0 0L3 2M3 0L0 2" stroke="#C8102E" stroke-width=".2"/><path d="M1.5 0V2M0 1H3" stroke="#fff" stroke-width=".6"/><path d="M1.5 0V2M0 1H3" stroke="#C8102E" stroke-width=".35"/></svg><span>English</span></a></li>
+          <li><a href="/es/privacidad.html" hreflang="es" lang="es" aria-label="Español"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#AA151B"/><rect y=".5" width="3" height="1" fill="#F1BF00"/></svg><span>Español</span></a></li>
+          <li><a href="/de/privacidad.html" hreflang="de" lang="de" aria-label="Deutsch"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#000"/><rect y=".667" width="3" height=".667" fill="#D00"/><rect y="1.333" width="3" height=".667" fill="#FFCE00"/></svg><span>Deutsch</span></a></li>
+          <li><a href="/fr/privacidad.html" hreflang="fr" lang="fr" aria-label="Français"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#0055A4"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#EF4135"/></svg><span>Français</span></a></li>
+          <li><a href="/it/privacidad.html" hreflang="it" lang="it" aria-label="Italiano"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg><span>Italiano</span></a></li>
+          <li><a href="/pt/privacidad.html" hreflang="pt" lang="pt" aria-label="Português"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="1.2" height="2" fill="#006600"/><rect x="1.2" width="1.8" height="2" fill="#FF0000"/><circle cx="1.2" cy="1" r=".42" fill="#FFE800"/><circle cx="1.2" cy="1" r=".24" fill="#FF0000"/></svg><span>Português</span></a></li>
+          <li><a href="/nl/privacidad.html" hreflang="nl" lang="nl" aria-label="Nederlands"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#21468B"/><rect width="3" height="1.333" fill="#fff"/><rect width="3" height=".667" fill="#AE1C28"/></svg><span>Nederlands</span></a></li>
+          <li><a href="/sv/privacidad.html" hreflang="sv" lang="sv" aria-label="Svenska"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#006AA7"/><rect x=".9" width=".4" height="2" fill="#FECC00"/><rect y=".8" width="3" height=".4" fill="#FECC00"/></svg><span>Svenska</span></a></li>
+          <li><a href="/pl/privacidad.html" hreflang="pl" lang="pl" aria-label="Polski"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect y="1" width="3" height="1" fill="#DC143C"/></svg><span>Polski</span></a></li>
+          <li><a href="/ind/privacidad.html" hreflang="id" lang="id" aria-label="Bahasa Indonesia"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="3" height="1" fill="#CE1126"/></svg><span>Bahasa Indonesia</span></a></li>
+          <li><a href="#" hreflang="vi" lang="vi" aria-label="Tiếng Việt" aria-current="page"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#DA251D"/><polygon points="1.5,.45 1.66,.93 2.16,.93 1.76,1.23 1.91,1.7 1.5,1.41 1.09,1.7 1.24,1.23 .84,.93 1.34,.93" fill="#FFFF00"/></svg><span>Tiếng Việt</span></a></li>
+          <li><a href="/ko/privacidad.html" hreflang="ko" lang="ko" aria-label="한국어"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><path d="M1.5 1a.4.4 0 0 1 .8 0 .4.4 0 0 1-.8 0z" fill="#0047A0" transform="rotate(-30 1.5 1)"/><path d="M1.5 1a.4.4 0 0 0-.8 0 .4.4 0 0 0 .8 0" fill="#CD2E3A" transform="rotate(-30 1.5 1)"/><circle cx="1.5" cy="1" r=".4" fill="none"/><path d="M1.1 1a.4.4 0 0 1 .8 0 .4.4 0 0 0 .8 0" fill="#CD2E3A" transform="rotate(-30 1.5 1)"/><path d="M1.9 1a.4.4 0 0 1-.8 0 .4.4 0 0 0-.8 0" fill="#0047A0" transform="rotate(-30 1.5 1)"/></svg><span>한국어</span></a></li>
+        </ul></details></div>
+  </header>
+</div>
+
+<main class="frame">
+  <article>
+    <p class="label">Chính sách quyền riêng tư</p>
+    <h1>Chính sách quyền riêng tư cho ứng dụng KanjiKaku</h1>
+    <p class="fecha">Cập nhật lần cuối: 24 tháng 9 năm 2026</p>
+
+    <div class="resumen">
+      <p>Tóm tắt: dữ liệu học tập không rời khỏi thiết bị của người dùng. Ứng dụng không yêu cầu tài khoản, không lưu trữ thông tin trên bất kỳ máy chủ nào do nhà phát triển vận hành, không hiển thị quảng cáo và không thực hiện phân tích.</p>
+      <p>Các phần dưới đây trình bày chi tiết những dữ liệu được lưu trữ, nơi lưu trữ và mọi trường hợp ứng dụng thiết lập kết nối mạng.</p>
+    </div>
+
+    <section>
+      <h2>Dữ liệu được lưu trữ và vị trí lưu trữ</h2>
+      <p>Toàn bộ dữ liệu học tập — các chữ kanji đã tra cứu, mức độ thành thạo được ghi nhận cho từng chữ, các bộ thẻ và đợt học, cài đặt ứng dụng cùng lịch sử phiên học — đều được ghi vào một tệp ngay trong ứng dụng, trên thiết bị của người dùng.</p>
+      <p>Dữ liệu đó chỉ lưu lại tại đây. Dữ liệu không được sao chép sang bất kỳ máy chủ nào và cả nhà phát triển lẫn bên thứ ba đều không thể truy cập. Việc gỡ cài đặt ứng dụng sẽ xóa toàn bộ dữ liệu này.</p>
+      <p>Ứng dụng cũng lưu trữ một bản ghi cục bộ về việc luyện viết: các nét đã vẽ trong những lần thử không thành công và một dòng thông số cho mỗi lần thử. Bản ghi này được giới hạn tối đa 100 ký tự và 500 lần thử, các mục cũ nhất sẽ bị loại bỏ. Mục đích duy nhất của bản ghi là cho phép người dùng tự nguyện gửi cho nhà phát triển; bản ghi không bao giờ được truyền đi tự động và có thể bị xóa trong phần Cài đặt.</p>
+    </section>
+
+    <section>
+      <h2>Những điều ứng dụng không thực hiện</h2>
+      <ul>
+        <li>Ứng dụng không yêu cầu tài khoản và không yêu cầu đăng ký. Ứng dụng không yêu cầu cung cấp tên, địa chỉ email hay độ tuổi.</li>
+        <li>Nhà phát triển không vận hành bất kỳ máy chủ nào lưu trữ tiến trình của người dùng.</li>
+        <li>Ứng dụng không hiển thị quảng cáo và không tích hợp bất kỳ mạng lưới quảng cáo nào.</li>
+        <li>Ứng dụng không thực hiện phân tích, không theo dõi việc sử dụng và không sử dụng mã định danh quảng cáo. Tính năng báo cáo sự cố có tồn tại; tính năng này bị tắt trừ khi người dùng chủ động bật và được mô tả trong một phần riêng bên dưới.</li>
+        <li>Dữ liệu không bao giờ bị bán hoặc chia sẻ với bên thứ ba, vì không có dữ liệu nào được thu thập cho mục đích đó.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Kết nối mạng</h2>
+      <p>Ứng dụng thiết lập kết nối mạng trong các trường hợp được liệt kê dưới đây. Không có trường hợp nào truyền dữ liệu học tập.</p>
+      <p>1 · <strong>Cập nhật.</strong> Khi khởi chạy, ứng dụng sẽ gửi yêu cầu tới dịch vụ cập nhật của Expo Application Services (Expo, Hoa Kỳ) để xác định xem có phiên bản mới hơn hay không. Yêu cầu đó cho phép dịch vụ này ghi nhận dữ liệu kỹ thuật: địa chỉ IP của thiết bị, hệ điều hành và phiên bản ứng dụng. Quá trình này không truyền bất kỳ dữ liệu học tập nào. Chính sách quyền riêng tư của Expo hiện có tại <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</p>
+      <p>2 · <strong>Tổng hợp giọng nói.</strong> Khi ứng dụng đọc to một từ tiếng Nhật, thao tác này được chuyển giao cho công cụ chuyển văn bản thành giọng nói của chính thiết bị. Bản thân ứng dụng không tự truyền bất kỳ dữ liệu nào; việc công cụ hệ thống đó có sử dụng mạng hay không phụ thuộc vào thiết bị và cấu hình của thiết bị.</p>
+      <p>3 · <strong>Báo cáo sự cố, tuân theo sự đồng ý của người dùng.</strong> Được mô tả trong phần tương ứng bên dưới. Tính năng này bị tắt trừ khi người dùng kích hoạt.</p>
+    </section>
+
+    <section>
+      <h2>Xuất và nhập bản sao lưu</h2>
+      <p>Người dùng có thể xuất một bản sao dữ liệu học tập bất kỳ lúc nào. Ứng dụng sẽ tạo một tệp và chuyển tệp đó tới hộp thoại chia sẻ của hệ điều hành; đích đến tiếp theo của tệp hoàn toàn do người dùng quyết định, và kể từ thời điểm đó, tệp sẽ chịu sự điều chỉnh của các điều khoản thuộc dịch vụ được gửi tới. Ứng dụng không tải tệp lên bất kỳ nơi nào.</p>
+      <p>Thao tác nhập hoạt động theo chiều ngược lại: người dùng chọn một tệp, ứng dụng sẽ đọc tệp đó và thay thế dữ liệu học tập hiện tại bằng nội dung của tệp. Ứng dụng chỉ đọc duy nhất tệp được chọn rõ ràng.</p>
+    </section>
+
+    <section>
+      <h2>Lời nhắc</h2>
+      <p>Nếu lời nhắc hàng ngày được bật, lời nhắc sẽ được lên lịch ngay trên thiết bị. Không có máy chủ thông báo và không có mã thông báo đẩy (push token): ứng dụng không thể xác định xem lời nhắc đã được xem hay chưa, và không có thông báo nào bắt nguồn từ bên ngoài thiết bị.</p>
+    </section>
+
+    <section>
+      <h2>Quyền truy cập</h2>
+      <ul>
+        <li>Thông báo — chỉ được yêu cầu nếu tính năng nhắc nhở hằng ngày được bật.</li>
+        <li>Tệp — chỉ được yêu cầu tại thời điểm xuất hoặc nhập dữ liệu, và giới hạn ở tệp được chọn.</li>
+        <li>Micro — chỉ được yêu cầu đối với các bài tập có tính năng đọc to, và chỉ hoạt động trong khi nhấn giữ nút tương ứng. Quá trình nhận diện được thực hiện trên thiết bị; xem phần bên dưới.</li>
+        <li>Ứng dụng không truy cập máy ảnh, dữ liệu vị trí, danh bạ hoặc hình ảnh.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Tính năng đọc to và micro</h2>
+      <p>Một số bài tập cho phép đọc to từ thay vì nhập chữ. Micro chỉ được bật trong khi nhấn giữ nút tương ứng, và chỉ sau khi quyền truy cập đã được cấp.</p>
+      <p><strong>Quá trình nhận diện được thực hiện trên thiết bị.</strong> Ứng dụng yêu cầu nhận diện trên thiết bị từ trình nhận diện giọng nói của máy và không sử dụng phương thức nào khác: nếu thiết bị không thể nhận diện tiếng Nhật khi không có kết nối mạng, tính năng này sẽ không được cung cấp.</p>
+      <p>Không có âm thanh nào được ghi âm hoặc lưu giữ. Ứng dụng nhận văn bản đã được nhận diện, so sánh với cách đọc dự kiến và hủy bỏ nó. Không có tệp âm thanh nào được ghi lại, và không có dữ liệu âm thanh nào rời khỏi ứng dụng.</p>
+    </section>
+
+    <section>
+      <h2>Báo cáo sự cố</h2>
+      <p>Ứng dụng có thể gửi báo cáo khi bị đóng đột ngột để lỗi có thể được khắc phục. <strong>Tính năng này bị tắt theo mặc định.</strong> Sự đồng ý được yêu cầu trong lần khởi chạy đầu tiên, và không có dữ liệu nào được gửi đi cho đến khi được chấp thuận.</p>
+      <p>Khi được bật, báo cáo sẽ được gửi tới Sentry (Functional Software, Inc., Hoa Kỳ), dịch vụ thu thập các báo cáo này. Báo cáo chứa bản chất và vị trí của lỗi trong mã nguồn, phiên bản ứng dụng và kiểu máy của thiết bị.</p>
+      <p>Báo cáo không chứa dữ liệu học tập, bộ thẻ, cài đặt ứng dụng hay bất kỳ thông tin nào nhận dạng người dùng: tùy chọn đính kèm dữ liệu cá nhân đã bị vô hiệu hóa trong mã nguồn. Báo cáo có thể được tắt lại bất cứ lúc nào trong mục Cài đặt.</p>
+      <p>Chính sách quyền riêng tư của Sentry có sẵn tại <a href="https://sentry.io/privacy/" rel="noopener">sentry.io/privacy</a>.</p>
+    </section>
+
+    <section>
+      <h2>Trẻ vị thành niên</h2>
+      <p>Ứng dụng không thu thập dữ liệu cá nhân của bất kỳ người dùng nào, bất kể độ tuổi. Ứng dụng không yêu cầu tên, địa chỉ email hoặc ngày sinh, và do đó không nắm giữ bất kỳ dữ liệu nào liên quan đến trẻ vị thành niên để có thể lưu trữ hoặc xử lý theo cách khác biệt.</p>
+    </section>
+
+    <section>
+      <h2>Hỗ trợ qua email</h2>
+      <p>Khi người dùng gửi thư báo cáo sự cố hoặc gửi bản ghi nét viết từ mục Cài đặt, nhà phát triển sẽ nhận được nội dung được gửi kèm địa chỉ email gửi đến.</p>
+      <ul>
+        <li><strong>Dữ liệu nhận được.</strong> Địa chỉ email, nội dung tin nhắn và tệp đính kèm nếu có. Tệp chứa các nét viết, số liệu, phiên bản ứng dụng và cài đặt ứng dụng; tệp không chứa bất kỳ thông tin nào nhận dạng người dùng.</li>
+        <li><strong>Mục đích.</strong> Đánh giá vấn đề được báo cáo, phản hồi và xác định những điểm mà ứng dụng khiến việc viết tay trở nên khó khăn hơn dự kiến.</li>
+        <li><strong>Cơ sở pháp lý.</strong> Sự đồng ý của người dùng, được thể hiện thông qua việc gửi tin nhắn. Không có hoạt động xử lý nào diễn ra nếu không có hành động này.</li>
+        <li><strong>Thời gian lưu trữ.</strong> Cho đến khi vấn đề được giải quyết, và trong mọi trường hợp không quá sáu tháng.</li>
+      </ul>
+      <p>Người dùng có thể yêu cầu xóa địa chỉ email và bất kỳ tài liệu nào đã gửi vào bất kỳ lúc nào tại địa chỉ được cung cấp bên dưới. Bản thân ứng dụng vẫn tiếp tục không tự ý truyền bất kỳ dữ liệu nào.</p>
+    </section>
+
+    <section>
+      <h2>Quyền của chủ thể dữ liệu</h2>
+      <p>Các quyền truy cập, cải chính và xóa dữ liệu thường được đặt ra với giả định rằng một bên đang nắm giữ dữ liệu. Trường hợp này không phải như vậy: dữ liệu nằm trên thiết bị của người dùng và thuộc quyền kiểm soát của người dùng. Dữ liệu có thể được kiểm tra bằng cách xuất một bản sao và có thể xóa từ cài đặt ứng dụng hoặc bằng cách gỡ cài đặt ứng dụng.</p>
+    </section>
+
+    <section>
+      <h2>Các thay đổi đối với chính sách này</h2>
+      <p>Khi có bất kỳ thay đổi nào đối với các nội dung trên, trang này sẽ được chỉnh sửa và ngày hiển thị bên trên sẽ được cập nhật tương ứng. Không có danh sách gửi thư để gửi thông báo; ngày hiển thị là phương tiện xác minh.</p>
+    </section>
+
+    <section>
+      <!-- Álvaro, 24-sep-2026: doce idiomas y «prevalece la versión inglesa».
+           La raíz de la web es el inglés, así que la versión que manda es la de
+           la dirección enviada a las tiendas: kanjikaku.com/privacidad.html -->
+      <h2>Các phiên bản ngôn ngữ</h2>
+      <p>Chính sách này được công bố bằng nhiều ngôn ngữ. Trường hợp có sự khác biệt giữa các phiên bản, phiên bản tiếng Anh sẽ được ưu tiên áp dụng.</p>
+    </section>
+
+    <section>
+      <h2>Liên hệ</h2>
+      <p>Mọi thắc mắc liên quan đến chính sách này: <a href="mailto:kanjikakuapp@gmail.com">kanjikakuapp@gmail.com</a>.</p>
+    </section>
+
+    <p class="volver"><a href="./">← Quay lại KanjiKaku</a></p>
+  </article>
+</main>
+
+<div class="frame">
+  <footer>
+    <span>© 2026 KanjiKaku</span>
+    <a href="./">Trang chủ</a>
+  </footer>
+</div>
+
+
+
+</body>
+</html>

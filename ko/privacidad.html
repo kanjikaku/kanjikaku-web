@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보 처리방침 · KanjiKaku</title>
+<meta name="description" content="KanjiKaku 앱의 개인정보 처리방침: 어떤 데이터가 어디에 저장되는지, 그리고 앱이 네트워크에 연결되는 모든 경우를 안내합니다.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#F3F3EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131619" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@600&display=swap">
+<style>
+/* ─────────────────────────────────────────────────────────────
+   KanjiKaku · política de privacidad
+   Los colores y las tipografías son LOS MISMOS que en index.html.
+   Si cambias la paleta allí, cámbiala aquí: cada página va suelta
+   a propósito, para poder subirlas sin nada más.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  --paper:      #F3F3EE;
+  --paper-sunk: #E7E8E1;
+  --rule:       #D5D7CE;
+  --rule-soft:  #E2E3DB;
+  --sumi:       #15181B;
+  --sumi-soft:  #5A6068;
+  --shu:        #BF3B2B;
+  --shu-ink:    #FFFFFF;
+  --focus:      #BF3B2B;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:      #131619;
+    --paper-sunk: #1B1F23;
+    --rule:       #2C3238;
+    --rule-soft:  #21262B;
+    --sumi:       #E9EAE4;
+    --sumi-soft:  #99A0A8;
+    --shu:        #E0563F;
+    --shu-ink:    #17191B;
+    --focus:      #E0563F;
+  }
+}
+:root[data-theme="dark"] {
+  --paper:      #131619;
+  --paper-sunk: #1B1F23;
+  --rule:       #2C3238;
+  --rule-soft:  #21262B;
+  --sumi:       #E9EAE4;
+  --sumi-soft:  #99A0A8;
+  --shu:        #E0563F;
+  --shu-ink:    #17191B;
+  --focus:      #E0563F;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--sumi);
+  font-family: "Zen Kaku Gothic New", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2 {
+  font-family: "Zen Old Mincho", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: balance;
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+p, ul { margin: 0; }
+a { color: inherit; }
+
+.frame {
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 48px);
+}
+
+.label {
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sumi-soft);
+  margin: 0;
+}
+
+/* ── Cabecera y pie, iguales que en la portada ─────────────── */
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 20px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.seal {
+  display: grid;
+  place-items: center;
+  width: 33px; height: 33px;
+  border-radius: 5px;
+  background: var(--shu);
+  color: var(--shu-ink);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 1;
+  padding-bottom: 1px;
+  flex: none;
+}
+.brand-name {
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.lang {
+  display: flex; align-items: center;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 2px; gap: 2px;
+}
+.lang button {
+  appearance: none; border: 0; background: transparent;
+  color: var(--sumi-soft);
+  font: inherit; font-size: 12px; font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 4px 11px; border-radius: 999px;
+  cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--sumi); color: var(--paper); }
+.lang button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+footer {
+  border-top: 1px solid var(--rule-soft);
+  padding-block: 26px 34px;
+  display: flex; flex-wrap: wrap;
+  gap: 10px 24px;
+  align-items: center; justify-content: space-between;
+  font-size: 13.5px;
+  color: var(--sumi-soft);
+}
+footer a { text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
+footer a:hover { border-bottom-color: var(--sumi-soft); }
+
+/* ── El documento ──────────────────────────────────────────── */
+
+/* Medida corta a propósito: esto se lee, no se ojea. */
+article { max-width: 64ch; padding-block: clamp(44px, 6vw, 72px) clamp(40px, 6vw, 64px); }
+
+article h1 {
+  font-size: clamp(32px, 4.6vw, 44px);
+  margin-top: 12px;
+}
+.fecha { margin-top: 16px; font-size: 14px; color: var(--sumi-soft); }
+
+/* La versión corta, arriba del todo: quien no lea nada más, lee esto. */
+.resumen {
+  margin-top: 34px;
+  background: var(--paper-sunk);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 22px 24px;
+}
+.resumen p { font-size: 17px; }
+.resumen p + p { margin-top: 10px; color: var(--sumi-soft); font-size: 15px; }
+
+section { margin-top: 44px; }
+section h2 {
+  font-size: 21px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+section > p, section > ul { margin-top: 14px; }
+section p + p { margin-top: 12px; }
+
+ul { padding-left: 0; list-style: none; }
+li { position: relative; padding-left: 20px; }
+li + li { margin-top: 9px; }
+/* Un guion largo en vez de un punto: es una lista de frases, no un menú. */
+li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--sumi-soft);
+}
+
+/* Los enlaces del cuerpo se ven, pero no gritan. */
+article a[href^="http"], article a[href^="mailto"] {
+  text-decoration: none;
+  border-bottom: 1px solid var(--shu);
+  padding-bottom: 1px;
+}
+article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--shu); }
+
+.volver {
+  margin-top: 46px;
+  padding-top: 26px;
+  border-top: 1px solid var(--rule-soft);
+  font-size: 14.5px;
+}
+.volver a { text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
+.volver a:hover { border-bottom-color: var(--sumi); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+  <link rel="alternate" hreflang="en" href="https://kanjikaku.com/privacidad.html">
+  <link rel="alternate" hreflang="es" href="https://kanjikaku.com/es/privacidad.html">
+  <link rel="alternate" hreflang="de" href="https://kanjikaku.com/de/privacidad.html">
+  <link rel="alternate" hreflang="fr" href="https://kanjikaku.com/fr/privacidad.html">
+  <link rel="alternate" hreflang="it" href="https://kanjikaku.com/it/privacidad.html">
+  <link rel="alternate" hreflang="pt" href="https://kanjikaku.com/pt/privacidad.html">
+  <link rel="alternate" hreflang="nl" href="https://kanjikaku.com/nl/privacidad.html">
+  <link rel="alternate" hreflang="sv" href="https://kanjikaku.com/sv/privacidad.html">
+  <link rel="alternate" hreflang="pl" href="https://kanjikaku.com/pl/privacidad.html">
+  <link rel="alternate" hreflang="id" href="https://kanjikaku.com/ind/privacidad.html">
+  <link rel="alternate" hreflang="vi" href="https://kanjikaku.com/vi/privacidad.html">
+  <link rel="alternate" hreflang="ko" href="https://kanjikaku.com/ko/privacidad.html">
+  <link rel="alternate" hreflang="x-default" href="https://kanjikaku.com/privacidad.html">
+</head>
+<body>
+
+<div class="frame">
+  <header class="top">
+    <a class="brand" href="index.html" aria-label="KanjiKaku">
+      <span class="seal" aria-hidden="true">書</span>
+      <span class="brand-name">KanjiKaku</span>
+    </a>
+    <div class="lang"><details><summary aria-label="Idioma / Language"><svg class="globo" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 2.6 4.2 5.6 4.2 9s-1.4 6.4-4.2 9c-2.8-2.6-4.2-5.6-4.2-9S9.2 5.6 12 3z"/></svg><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><path d="M1.5 1a.4.4 0 0 1 .8 0 .4.4 0 0 1-.8 0z" fill="#0047A0" transform="rotate(-30 1.5 1)"/><path d="M1.5 1a.4.4 0 0 0-.8 0 .4.4 0 0 0 .8 0" fill="#CD2E3A" transform="rotate(-30 1.5 1)"/><circle cx="1.5" cy="1" r=".4" fill="none"/><path d="M1.1 1a.4.4 0 0 1 .8 0 .4.4 0 0 0 .8 0" fill="#CD2E3A" transform="rotate(-30 1.5 1)"/><path d="M1.9 1a.4.4 0 0 1-.8 0 .4.4 0 0 0-.8 0" fill="#0047A0" transform="rotate(-30 1.5 1)"/></svg><span class="codigo">KO</span></summary>
+        <ul lang="ko" aria-label="한국어">
+          <li><a href="/privacidad.html" hreflang="en" lang="en" aria-label="English"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#012169"/><path d="M0 0L3 2M3 0L0 2" stroke="#fff" stroke-width=".5"/><path d="M0 0L3 2M3 0L0 2" stroke="#C8102E" stroke-width=".2"/><path d="M1.5 0V2M0 1H3" stroke="#fff" stroke-width=".6"/><path d="M1.5 0V2M0 1H3" stroke="#C8102E" stroke-width=".35"/></svg><span>English</span></a></li>
+          <li><a href="/es/privacidad.html" hreflang="es" lang="es" aria-label="Español"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#AA151B"/><rect y=".5" width="3" height="1" fill="#F1BF00"/></svg><span>Español</span></a></li>
+          <li><a href="/de/privacidad.html" hreflang="de" lang="de" aria-label="Deutsch"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#000"/><rect y=".667" width="3" height=".667" fill="#D00"/><rect y="1.333" width="3" height=".667" fill="#FFCE00"/></svg><span>Deutsch</span></a></li>
+          <li><a href="/fr/privacidad.html" hreflang="fr" lang="fr" aria-label="Français"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#0055A4"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#EF4135"/></svg><span>Français</span></a></li>
+          <li><a href="/it/privacidad.html" hreflang="it" lang="it" aria-label="Italiano"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg><span>Italiano</span></a></li>
+          <li><a href="/pt/privacidad.html" hreflang="pt" lang="pt" aria-label="Português"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="1.2" height="2" fill="#006600"/><rect x="1.2" width="1.8" height="2" fill="#FF0000"/><circle cx="1.2" cy="1" r=".42" fill="#FFE800"/><circle cx="1.2" cy="1" r=".24" fill="#FF0000"/></svg><span>Português</span></a></li>
+          <li><a href="/nl/privacidad.html" hreflang="nl" lang="nl" aria-label="Nederlands"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#21468B"/><rect width="3" height="1.333" fill="#fff"/><rect width="3" height=".667" fill="#AE1C28"/></svg><span>Nederlands</span></a></li>
+          <li><a href="/sv/privacidad.html" hreflang="sv" lang="sv" aria-label="Svenska"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#006AA7"/><rect x=".9" width=".4" height="2" fill="#FECC00"/><rect y=".8" width="3" height=".4" fill="#FECC00"/></svg><span>Svenska</span></a></li>
+          <li><a href="/pl/privacidad.html" hreflang="pl" lang="pl" aria-label="Polski"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect y="1" width="3" height="1" fill="#DC143C"/></svg><span>Polski</span></a></li>
+          <li><a href="/ind/privacidad.html" hreflang="id" lang="id" aria-label="Bahasa Indonesia"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="3" height="1" fill="#CE1126"/></svg><span>Bahasa Indonesia</span></a></li>
+          <li><a href="/vi/privacidad.html" hreflang="vi" lang="vi" aria-label="Tiếng Việt"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#DA251D"/><polygon points="1.5,.45 1.66,.93 2.16,.93 1.76,1.23 1.91,1.7 1.5,1.41 1.09,1.7 1.24,1.23 .84,.93 1.34,.93" fill="#FFFF00"/></svg><span>Tiếng Việt</span></a></li>
+          <li><a href="#" hreflang="ko" lang="ko" aria-label="한국어" aria-current="page"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><path d="M1.5 1a.4.4 0 0 1 .8 0 .4.4 0 0 1-.8 0z" fill="#0047A0" transform="rotate(-30 1.5 1)"/><path d="M1.5 1a.4.4 0 0 0-.8 0 .4.4 0 0 0 .8 0" fill="#CD2E3A" transform="rotate(-30 1.5 1)"/><circle cx="1.5" cy="1" r=".4" fill="none"/><path d="M1.1 1a.4.4 0 0 1 .8 0 .4.4 0 0 0 .8 0" fill="#CD2E3A" transform="rotate(-30 1.5 1)"/><path d="M1.9 1a.4.4 0 0 1-.8 0 .4.4 0 0 0-.8 0" fill="#0047A0" transform="rotate(-30 1.5 1)"/></svg><span>한국어</span></a></li>
+        </ul></details></div>
+  </header>
+</div>
+
+<main class="frame">
+  <article>
+    <p class="label">개인정보 처리방침</p>
+    <h1>KanjiKaku 애플리케이션 개인정보 처리방침</h1>
+    <p class="fecha">최종 수정일: 2026년 9월 24일</p>
+
+    <div class="resumen">
+      <p>요약: 학습 데이터는 사용자의 기기 외부로 전송되지 않습니다. 본 애플리케이션은 계정 생성을 요구하지 않으며, 개발자가 운영하는 어떠한 서버에도 데이터를 저장하지 않고, 광고를 표시하거나 분석 도구를 실행하지 않습니다.</p>
+      <p>다음 항목들은 저장되는 데이터의 종류와 저장 위치, 본 애플리케이션이 네트워크 연결을 생성하는 모든 경우를 상세히 규정합니다.</p>
+    </div>
+
+    <section>
+      <h2>저장되는 데이터 및 저장 위치</h2>
+      <p>조회한 한자, 각 한자별 숙련도 기록, 덱 및 묶음, 애플리케이션 설정, 세션 기록을 포함한 모든 학습 데이터는 사용자 기기 내 애플리케이션 전용 파일에 저장됩니다.</p>
+      <p>해당 데이터는 기기 내에만 보관됩니다. 어떠한 서버로도 복사되지 않으며 개발자나 제3자가 접근할 수 없습니다. 애플리케이션 삭제 시 해당 데이터도 함께 삭제됩니다.</p>
+      <p>본 애플리케이션은 필기 연습과 관련하여 실패한 시도에서 입력된 획 정보 및 각 시도에 대한 수치 데이터를 로컬 기기에 기록합니다. 이 기록은 최대 100자 및 500회 시도까지 보관되며 초과 시 가장 오래된 기록부터 순차적으로 파기됩니다. 해당 기록의 유일한 목적은 사용자가 자발적으로 개발자에게 오류 내역을 전송할 수 있도록 하는 것이며, 자동으로 전송되지 않고 '설정' 메뉴에서 언제든지 삭제할 수 있습니다.</p>
+    </section>
+
+    <section>
+      <h2>본 애플리케이션이 수행하지 않는 행위</h2>
+      <ul>
+        <li>계정 생성이나 회원가입을 요구하지 않습니다. 성명, 이메일 주소, 연령 등의 정보를 일절 요구하지 않습니다.</li>
+        <li>개발자는 사용자의 학습 진행 상황을 저장하는 서버를 운영하지 않습니다.</li>
+        <li>광고를 표시하지 않으며 광고 네트워크를 연동하지 않습니다.</li>
+        <li>데이터 분석이나 사용 현황 추적을 수행하지 않으며 광고 식별자를 사용하지 않습니다. 오류 보고 기능이 존재하나 사용자가 직접 활성화하지 않는 한 비활성화 상태로 유지되며, 이에 대한 상세 내용은 아래 별도 항목에 기술되어 있습니다.</li>
+        <li>해당 목적을 위한 데이터를 수집하지 않으므로 어떠한 데이터도 제3자에게 판매하거나 공유하지 않습니다.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>네트워크 연결</h2>
+      <p>본 애플리케이션은 아래에 명시된 경우에 한하여 네트워크에 연결됩니다. 어떤 경우에도 학습 데이터는 전송되지 않습니다.</p>
+      <p>1 · <strong>업데이트.</strong> 애플리케이션 실행 시, 최신 버전이 있는지 확인하기 위해 Expo Application Services(미국 Expo사)의 업데이트 서비스를 조회합니다. 해당 요청을 통해 기기의 IP 주소, 운영체제, 애플리케이션 버전 등의 기술적 데이터가 해당 서비스에 전달될 수 있습니다. 학습 데이터는 전송되지 않습니다. Expo의 개인정보 처리방침은 <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>에서 확인하실 수 있습니다.</p>
+      <p>2 · <strong>음성 합성.</strong> 애플리케이션이 일본어 단어를 소리 내어 읽을 때는 기기 자체의 텍스트 음성 변환(TTS) 엔진을 사용합니다. 애플리케이션 자체는 어떠한 데이터도 전송하지 않으며, 해당 시스템 엔진의 네트워크 사용 여부는 기기 및 기기 설정에 따릅니다.</p>
+      <p>3 · <strong>오류 보고서(동의 기반).</strong> 하단의 해당 항목에 상세히 설명되어 있습니다. 사용자가 직접 활성화하지 않는 한 비활성화 상태로 유지됩니다.</p>
+    </section>
+
+    <section>
+      <h2>사본 내보내기 및 가져오기</h2>
+      <p>사용자는 언제든지 학습 데이터 사본을 내보낼 수 있습니다. 애플리케이션은 파일을 생성하여 운영체제의 공유 대화상자로 전달할 뿐이며, 이후의 저장 위치는 전적으로 사용자가 결정합니다. 그 시점부터 해당 파일은 전송된 대상 서비스의 이용약관 및 정책을 따릅니다. 애플리케이션은 해당 파일을 어떠한 외부 서버에도 업로드하지 않습니다.</p>
+      <p>가져오기는 역순으로 동작합니다. 사용자가 파일을 선택하면 애플리케이션이 이를 읽어 현재의 학습 데이터를 해당 파일의 내용으로 교체합니다. 사용자가 명시적으로 선택한 파일에 한해서만 접근합니다.</p>
+    </section>
+
+    <section>
+      <h2>알림</h2>
+      <p>일일 알림을 활성화하면 기기 자체에 예약됩니다. 별도의 알림 서버나 푸시 토큰은 존재하지 않습니다. 애플리케이션은 알림 확인 여부를 파악할 수 없으며, 기기 외부에서 생성되는 알림 또한 일절 없습니다.</p>
+    </section>
+
+    <section>
+      <h2>권한</h2>
+      <ul>
+        <li>알림 — 일일 알림을 활성화한 경우에만 요청합니다.</li>
+        <li>파일 — 내보내기 또는 가져오기를 실행하는 시점에만 요청하며, 선택한 파일로 제한됩니다.</li>
+        <li>마이크 — 소리 내어 읽기 기능을 제공하는 학습에서만 요청되며, 해당 버튼을 누르고 있는 동안에만 활성화됩니다. 음성 인식은 기기 내에서 처리됩니다(하단 항목 참조).</li>
+        <li>본 애플리케이션은 카메라, 위치 정보, 연락처 및 사진에 접근하지 않습니다.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>소리 내어 읽기와 마이크</h2>
+      <p>일부 학습에서는 단어를 직접 입력하는 대신 소리 내어 읽을 수 있습니다. 마이크는 권한이 허용된 경우에 한하여, 해당 버튼을 누르고 있는 동안에만 활성화됩니다.</p>
+      <p><strong>음성 인식은 기기 내에서 처리됩니다.</strong> 본 애플리케이션은 기기 자체의 음성 인식기에 온디바이스 인식을 요청하며, 다른 수단은 일절 사용하지 않습니다. 기기에서 네트워크 연결 없이 일본어를 인식할 수 없는 경우 해당 기능은 제공되지 않습니다.</p>
+      <p>오디오는 일절 녹음되거나 보관되지 않습니다. 애플리케이션은 인식된 텍스트만 전달받아 정답 읽기와 대조한 뒤 즉시 폐기합니다. 어떠한 오디오 파일도 생성되지 않으며, 외부로 전송되지 않습니다.</p>
+    </section>
+
+    <section>
+      <h2>오류 보고서</h2>
+      <p>오류 수정을 위해, 애플리케이션이 예기치 않게 종료되는 경우 보고서를 전송할 수 있습니다. <strong>이 기능은 기본적으로 비활성화되어 있습니다.</strong> 앱 최초 실행 시 동의를 요청하며, 동의하기 전까지는 어떠한 정보도 전송되지 않습니다.</p>
+      <p>활성화된 경우 보고서는 해당 수집 서비스인 Sentry(미국 Functional Software, Inc.)로 전송됩니다. 보고서에는 코드 내 결함의 성격과 위치, 애플리케이션 버전 및 기기 모델명이 포함됩니다.</p>
+      <p>학습 데이터, 덱, 애플리케이션 설정 또는 사용자를 식별할 수 있는 정보는 일절 포함되지 않습니다. 개인정보가 첨부될 수 있는 옵션은 코드상에서 비활성화되어 있습니다. 보고서 전송 기능은 설정에서 언제든지 다시 비활성화할 수 있습니다.</p>
+      <p>Sentry의 개인정보 처리방침은 <a href="https://sentry.io/privacy/" rel="noopener">sentry.io/privacy</a>에서 확인하실 수 있습니다.</p>
+    </section>
+
+    <section>
+      <h2>미성년자</h2>
+      <p>본 애플리케이션은 연령과 무관하게 사용자의 어떠한 개인정보도 수집하지 않습니다. 이름, 이메일 주소, 생년월일을 요구하지 않으므로, 별도로 보관하거나 처리해야 할 미성년자 관련 데이터 자체를 보유하지 않습니다.</p>
+    </section>
+
+    <section>
+      <h2>이메일 지원</h2>
+      <p>사용자가 문제를 신고하기 위해 문의하거나 ‘설정’에서 필기 기록을 전송하는 경우, 개발자는 전송된 내용과 발신 이메일 주소를 수신합니다.</p>
+      <ul>
+        <li><strong>수집되는 데이터.</strong> 이메일 주소, 메시지 및 첨부 파일(포함된 경우). 해당 파일에는 획, 수치, 애플리케이션 버전 및 애플리케이션 설정 정보가 포함되며, 사용자를 식별할 수 있는 어떠한 정보도 포함되지 않습니다.</li>
+        <li><strong>목적.</strong> 접수된 문제를 검토하고 답변하며, 애플리케이션이 필기를 의도보다 어렵게 처리하는 부분을 파악하기 위함입니다.</li>
+        <li><strong>법적 근거.</strong> 메시지 전송을 통해 부여된 사용자의 동의. 해당 행위가 없으면 어떠한 처리도 이루어지지 않습니다.</li>
+        <li><strong>보유 기간.</strong> 사안이 해결될 때까지 보관하며, 어떠한 경우에도 6개월을 초과하지 않습니다.</li>
+      </ul>
+      <p>사용자는 하단에 기재된 주소를 통해 언제든지 이메일 주소 및 전송된 모든 자료의 삭제를 요청할 수 있습니다. 애플리케이션 자체는 앞으로도 어떠한 데이터도 독자적으로 전송하지 않습니다.</p>
+    </section>
+
+    <section>
+      <h2>정보주체의 권리</h2>
+      <p>열람, 정정 및 삭제에 관한 권리는 통상적으로 상대방이 데이터를 보유하고 있음을 전제로 합니다. 본 애플리케이션은 이에 해당하지 않습니다. 데이터는 사용자의 기기에만 존재하며 사용자의 통제하에 있습니다. 데이터는 사본을 내보내어 확인하거나, 애플리케이션 설정에서 삭제하거나, 애플리케이션을 기기에서 제거하여 삭제할 수 있습니다.</p>
+    </section>
+
+    <section>
+      <h2>본 방침의 변경</h2>
+      <p>위 사항에 변경이 있을 경우 본 페이지가 수정되며 상단에 표시된 날짜가 그에 맞추어 갱신됩니다. 별도의 공지용 메일링 리스트는 운영되지 않으며, 해당 날짜가 확인의 수단이 됩니다.</p>
+    </section>
+
+    <section>
+      <!-- Álvaro, 24-sep-2026: doce idiomas y «prevalece la versión inglesa».
+           La raíz de la web es el inglés, así que la versión que manda es la de
+           la dirección enviada a las tiendas: kanjikaku.com/privacidad.html -->
+      <h2>언어별 버전</h2>
+      <p>본 정책은 여러 언어로 게시됩니다. 각 버전 간에 차이가 있는 경우 영어 버전이 우선합니다.</p>
+    </section>
+
+    <section>
+      <h2>문의</h2>
+      <p>본 방침에 관한 문의: <a href="mailto:kanjikakuapp@gmail.com">kanjikakuapp@gmail.com</a></p>
+    </section>
+
+    <p class="volver"><a href="./">← KanjiKaku로 돌아가기</a></p>
+  </article>
+</main>
+
+<div class="frame">
+  <footer>
+    <span>© 2026 KanjiKaku</span>
+    <a href="./">홈</a>
+  </footer>
+</div>
+
+
+
+</body>
+</html>
