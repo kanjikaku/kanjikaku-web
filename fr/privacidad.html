@@ -272,7 +272,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Politique de confidentialité</p>
     <h1>Politique de confidentialité de l'application KanjiKaku</h1>
-    <p class="fecha">Dernière mise à jour : 24 septembre 2026</p>
+    <p class="fecha">Dernière mise à jour : 29 septembre 2026</p>
 
     <div class="resumen">
       <p>En résumé : les données d'apprentissage ne quittent pas l'appareil de l'utilisateur. L'application ne nécessite aucun compte, ne stocke rien sur aucun serveur exploité par le développeur, n'affiche aucune publicité et n'effectue aucune analyse.</p>
@@ -303,6 +303,8 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <p>1 · <strong>Mises à jour.</strong> Au lancement, l'application interroge le service de mise à jour d'Expo Application Services (Expo, États-Unis) afin de déterminer s'il existe une version plus récente. Cette requête permet au service d'observer des données techniques : l'adresse IP de l'appareil, son système d'exploitation et la version de l'application. Elle ne transmet aucune donnée d'apprentissage. La politique de confidentialité d'Expo est disponible sur <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</p>
       <p>2 · <strong>Synthèse vocale.</strong> Lorsque l'application lit un mot japonais à voix haute, elle fait appel au moteur de synthèse vocale de l'appareil lui-même. L'application ne transmet rien de son propre chef ; le fait que ce moteur système utilise le réseau dépend de l'appareil et de sa configuration.</p>
       <p>3 · <strong>Rapports de plantage, soumis à consentement.</strong> Décrits dans la section correspondante ci-dessous. Désactivés sauf si l'utilisateur les active.</p>
+      <p>4 · <strong>Offres.</strong> À l'ouverture de l'écran d'achat, l'application télécharge le fichier public kanjikaku.com/ofertas.json, hébergé sur GitHub Pages (GitHub, Inc., États-Unis), afin d'afficher les offres en cours. Ce téléchargement permet au service d'observer l'adresse IP de l'appareil. Il ne transmet aucune donnée d'étude ni aucune autre donnée.</p>
+      <p>5 · <strong>Achats.</strong> L'achat intégré est traité intégralement par l'App Store ou Google Play, selon l'appareil. Le développeur ne reçoit aucune donnée de paiement ; l'application se borne à demander à la boutique si l'achat existe, afin de débloquer le contenu acquis.</p>
     </section>
 
     <section>
@@ -322,7 +324,8 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li>Notifications — demandées uniquement si le rappel quotidien est activé.</li>
         <li>Fichiers — demandés uniquement lors de l'exportation ou de l'importation, et limités au fichier sélectionné.</li>
         <li>Microphone — demandé uniquement pour les exercices proposant la lecture à voix haute, et actif uniquement tant que le bouton correspondant est maintenu enfoncé. La reconnaissance s'effectue sur l'appareil ; voir la section ci-dessous.</li>
-        <li>L'application n'accède ni à l'appareil photo, ni aux données de localisation, ni aux contacts, ni aux photos.</li>
+        <li>Appareil photo et photos — demandés uniquement pour numériser un texte japonais sur une photo, et limités à la photo prise ou sélectionnée. Le texte est reconnu sur l'appareil ; la photo n'est pas conservée et ne quitte pas l'appareil.</li>
+        <li>L'application n'accède ni aux données de localisation ni aux contacts.</li>
       </ul>
     </section>
 

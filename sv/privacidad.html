@@ -272,7 +272,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Integritetspolicy</p>
     <h1>Integritetspolicy för applikationen KanjiKaku</h1>
-    <p class="fecha">Senast uppdaterad: 24 september 2026</p>
+    <p class="fecha">Senast uppdaterad: 29 september 2026</p>
 
     <div class="resumen">
       <p>Sammanfattningsvis: studiedata lämnar inte användarens enhet. Applikationen kräver inget konto, lagrar ingenting på någon server som drivs av utvecklaren, visar ingen reklam och utför ingen analys.</p>
@@ -303,6 +303,8 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <p>1 · <strong>Uppdateringar.</strong> Vid start frågar applikationen uppdateringstjänsten hos Expo Application Services (Expo, USA) om det finns en senare version. Denna förfrågan gör det möjligt för tjänsten att ta del av tekniska uppgifter: enhetens IP-adress, dess operativsystem och applikationsversionen. Inga studiedata överförs. Expos integritetspolicy finns på <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</p>
       <p>2 · <strong>Talsyntes.</strong> När applikationen läser upp ett japanskt ord görs detta via enhetens egen talsyntesmotor. Applikationen överför ingenting på egen hand; huruvida denna systemmotor använder nätverket beror på enheten och dess inställningar.</p>
       <p>3 · <strong>Kraschrapporter med samtycke.</strong> Beskrivs i motsvarande avsnitt nedan. Inaktiverade såvida inte användaren aktiverar dem.</p>
+      <p>4 · <strong>Erbjudanden.</strong> När köpskärmen öppnas hämtar applikationen den offentliga filen kanjikaku.com/ofertas.json, som finns på GitHub Pages (GitHub, Inc., USA), för att visa aktuella erbjudanden. Hämtningen gör det möjligt för tjänsten att se enhetens IP-adress. Inga studiedata eller andra uppgifter överförs.</p>
+      <p>5 · <strong>Köp.</strong> Köpet i applikationen hanteras helt via App Store eller Google Play, beroende på enhet. Utvecklaren tar inte emot några betalningsuppgifter; applikationen frågar endast butiken om köpet finns, för att låsa upp det köpta innehållet.</p>
     </section>
 
     <section>
@@ -322,7 +324,8 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li>Aviseringar — begärs endast om den dagliga påminnelsen är aktiverad.</li>
         <li>Filer — begärs endast vid export eller import och begränsas till den valda filen.</li>
         <li>Mikrofon — begärs endast för övningar som erbjuder högläsning och är aktiv endast medan motsvarande knapp hålls nedtryckt. Igenkänningen sker på enheten; se avsnittet nedan.</li>
-        <li>Applikationen har inte åtkomst till kameran, platsdata, kontakter eller fotografier.</li>
+        <li>Kamera och fotografier — begärs endast vid skanning av japansk text i ett foto och är begränsade till det tagna eller valda fotot. Texten känns igen på enheten; fotot sparas inte och lämnar inte enheten.</li>
+        <li>Applikationen har inte åtkomst till platsdata eller kontakter.</li>
       </ul>
     </section>
 
