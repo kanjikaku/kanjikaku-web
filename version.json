@@ -1,0 +1,15 @@
+{
+  "_leeme": [
+    "El último build de cada tienda. La app lo lee de kanjikaku.com/version.json al arrancar y, si el suyo es más viejo, enseña en el menú «Hay una versión nueva en la tienda» con un botón a la tienda. Ver src/services/versionNueva.ts.",
+    "Al publicar un build nuevo en una tienda (también en la prueba cerrada): subir aquí su número de build (versionCode en Android, CFBundleVersion en iOS) y publicar la web: node web/construir.mjs && node web/publicar.mjs \"mensaje\".",
+    "tienda: la ficha de esa tienda. En iOS va null mientras la app no esté en la App Store: a los testers de TestFlight les avisa TestFlight."
+  ],
+  "android": {
+    "build": 34,
+    "tienda": "https://play.google.com/store/apps/details?id=com.kanjikaku.app"
+  },
+  "ios": {
+    "build": 43,
+    "tienda": null
+  }
+}

@@ -191,6 +191,16 @@ section h2 {
   border-bottom: 1px solid var(--rule-soft);
 }
 section > p, section > ul { margin-top: 14px; }
+/* Cada conexión de red, con su título (30-sep-2026). */
+section h3 {
+  font-family: "Zen Old Mincho", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+  margin: 30px 0 0;
+}
+section h3 + ul, section h3 + p { margin-top: 10px; }
+.base { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--rule-soft); }
 section p + p { margin-top: 12px; }
 
 ul { padding-left: 0; list-style: none; }
@@ -272,17 +282,17 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Datenschutzerklärung</p>
     <h1>Datenschutzerklärung für die Anwendung KanjiKaku</h1>
-    <p class="fecha">Zuletzt aktualisiert: 29. September 2026</p>
+    <p class="fecha">Zuletzt aktualisiert: 30. September 2026</p>
 
     <div class="resumen">
-      <p>Zusammenfassend: Lerndaten verlassen das Gerät des Nutzers nicht. Die Anwendung erfordert kein Konto, speichert keinerlei Daten auf einem vom Entwickler betriebenen Server, zeigt keine Werbung an und führt keine Analysen durch.</p>
-      <p>Die folgenden Abschnitte legen dar, was gespeichert wird, wo es gespeichert wird und bei welchen Gelegenheiten die Anwendung eine Netzwerkverbindung herstellt.</p>
+      <p>Zusammenfassend: Die Lerndaten verbleiben auf dem Gerät des Nutzers. Die Anwendung erfordert kein Konto, der Entwickler betreibt keinen Server, auf dem Nutzerdaten gespeichert werden, und die Anwendung zeigt keine Werbung an und führt kein Tracking durch.</p>
+      <p>Bestimmte Funktionen stellen jedoch Netzwerkverbindungen zu Diensten Dritter her. Die folgenden Abschnitte führen abschließend auf, welche Daten das Gerät verlassen, an wen sie übermittelt werden, zu welchem Zweck und ob die Übermittlung optional ist.</p>
     </div>
 
     <section>
       <h2>Gespeicherte Daten und Speicherort</h2>
       <p>Alle Lerndaten – die nachgeschlagenen Kanji, der für jedes einzelne erfasste Beherrschungsgrad, Decks und Lerneinheiten, die Anwendungseinstellungen sowie der Sitzungsverlauf – werden in eine Datei innerhalb der Anwendung selbst auf dem Gerät des Nutzers geschrieben.</p>
-      <p>Diese Daten verbleiben dort. Sie werden auf keinen Server kopiert und sind weder für den Entwickler noch für Dritte zugänglich. Eine Deinstallation der Anwendung löscht diese Daten.</p>
+      <p>Diese Daten verbleiben dort. Sie werden auf keinen Server kopiert und sind weder für den Entwickler noch für Dritte zugänglich, mit der einzigen im Abschnitt „Absturzberichte“ beschriebenen Ausnahme. Eine Deinstallation der Anwendung löscht diese Daten.</p>
       <p>Die Anwendung führt darüber hinaus ein lokales Protokoll der Schreibübungen: die bei fehlgeschlagenen Versuchen gezeichneten Striche und eine Zeile mit Zahlenwerten zu jedem Versuch. Das Protokoll ist auf 100 Zeichen und 500 Versuche begrenzt; ältere Einträge werden verworfen. Sein einziger Zweck besteht darin, dem Nutzer die freiwillige Übermittlung an den Entwickler zu ermöglichen; es wird niemals automatisch übertragen und kann in den Einstellungen gelöscht werden.</p>
     </section>
 
@@ -292,19 +302,76 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li>Sie erfordert weder ein Konto noch eine Registrierung. Sie fragt weder nach einem Namen, einer E-Mail-Adresse noch nach dem Alter.</li>
         <li>Der Entwickler betreibt keinen Server, auf dem der Lernfortschritt der Nutzer gespeichert wird.</li>
         <li>Sie zeigt keine Werbung an und bindet keine Werbenetzwerke ein.</li>
-        <li>Sie führt keine Analysen und kein Nutzungstracking durch und verwendet keine Werbe-IDs. Eine Absturzberichterstattung ist zwar vorhanden, diese ist jedoch standardmäßig deaktiviert, sofern der Nutzer sie nicht ausdrücklich aktiviert, und wird in einem gesonderten Abschnitt weiter unten beschrieben.</li>
-        <li>Es werden keine Daten an Dritte verkauft oder weitergegeben, da zu diesem Zweck keine Daten erhoben werden.</li>
+        <li>Der Entwickler führt keine Analysen und kein Nutzungs-Tracking durch, und die Anwendung verwendet keine Werbe-IDs. Komponenten Dritter, die eigenständig technische Daten übermitteln, sind im Abschnitt „Netzwerkverbindungen“ aufgeführt.</li>
+        <li>Es werden keine Daten verkauft oder zu Werbe- oder kommerziellen Zwecken an Dritte weitergegeben.</li>
       </ul>
     </section>
 
     <section>
       <h2>Netzwerkverbindungen</h2>
-      <p>Die Anwendung stellt in den nachfolgend aufgeführten Fällen eine Netzwerkverbindung her. Bei keinem dieser Vorgänge werden Lerndaten übertragen.</p>
-      <p>1 · <strong>Aktualisierungen.</strong> Beim Starten fragt die Anwendung den Update-Dienst von Expo Application Services (Expo, Vereinigte Staaten) ab, um festzustellen, ob eine neuere Version verfügbar ist. Diese Abfrage ermöglicht es dem Dienst, technische Daten zu erfassen: die IP-Adresse des Geräts, dessen Betriebssystem und die Version der Anwendung. Es werden keine Lerndaten übertragen. Die Datenschutzerklärung von Expo ist unter <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a> abrufbar.</p>
-      <p>2 · <strong>Sprachausgabe.</strong> Wenn die Anwendung ein japanisches Wort vorliest, greift sie auf die Text-to-Speech-Engine des Geräts selbst zurück. Die Anwendung überträgt von sich aus keinerlei Daten; ob diese systemeigene Engine das Netzwerk nutzt, hängt vom jeweiligen Gerät und dessen Konfiguration ab.</p>
-      <p>3 · <strong>Absturzberichte, vorbehaltlich einer Einwilligung.</strong> Werden im entsprechenden Abschnitt weiter unten beschrieben. Deaktiviert, es sei denn, der Nutzer aktiviert sie ausdrücklich.</p>
-      <p>4 · <strong>Angebote.</strong> Beim Öffnen des Kaufbildschirms lädt die Anwendung die öffentliche Datei kanjikaku.com/ofertas.json herunter, die auf GitHub Pages (GitHub, Inc., Vereinigte Staaten) gehostet wird, um die aktuellen Angebote anzuzeigen. Dieser Abruf ermöglicht es dem Dienst, die IP-Adresse des Geräts zu sehen. Es werden weder Lerndaten noch sonstige Daten übermittelt.</p>
-      <p>5 · <strong>Käufe.</strong> Der In-App-Kauf wird je nach Gerät vollständig über den App Store oder Google Play abgewickelt. Der Entwickler erhält keine Zahlungsdaten; die Anwendung fragt beim Store lediglich ab, ob der Kauf besteht, um die erworbenen Inhalte freizuschalten.</p>
+      <p>Die Anwendung stellt Netzwerkverbindungen ausschließlich in den nachfolgend aufgeführten Fällen her. Für jeden Fall wird angegeben, wann er eintritt, welche Daten das Gerät verlassen, wer sie empfängt, zu welchem Zweck und ob er optional ist. Ist keine Verbindung verfügbar, unterbleibt die jeweilige Funktion, ohne dass das Lernen beeinträchtigt wird.</p>
+
+      <h3>1 · Prüfung auf Aktualisierungen</h3>
+      <ul>
+        <li><strong>Wann.</strong> Bei jedem Start der Anwendung und, solange sie geöffnet bleibt, bei jeder Rückkehr in den Vordergrund, frühestens alle zehn Minuten.</li>
+        <li><strong>Daten, die das Gerät verlassen.</strong> Die IP-Adresse; die Plattform (Android oder iOS); die native Version der Anwendung, der Veröffentlichungskanal und die Kennung der installierten Aktualisierung; sowie eine zufällige Installationskennung, die von der Aktualisierungskomponente selbst erzeugt wird. Es werden keine Lerndaten übermittelt.</li>
+        <li><strong>Empfänger.</strong> Expo Application Services der 650 Industries, Inc. (Vereinigte Staaten). Deren Datenschutzerklärung ist unter <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a> abrufbar.</li>
+        <li><strong>Zweck.</strong> Festzustellen, ob eine neuere Version der Anwendung vorliegt, und diese gegebenenfalls herunterzuladen.</li>
+        <li><strong>Art.</strong> Automatisch; kann in der Anwendung nicht deaktiviert werden. Ohne Verbindung unterbleibt die Prüfung, und die Anwendung läuft mit der installierten Version.</li>
+      </ul>
+
+      <h3>2 · In-App-Käufe</h3>
+      <ul>
+        <li><strong>Wann.</strong> Bei jedem Start der Anwendung, um zu prüfen, ob der Kauf besteht; beim Öffnen des Kaufbildschirms, um den Preis abzurufen; sowie beim Kauf oder bei der Wiederherstellung des Kaufs.</li>
+        <li><strong>Daten, die das Gerät verlassen.</strong> Die Abfrage und gegebenenfalls die Kaufanfrage gehen an das Kaufsystem des Stores (App Store unter iOS, Google Play unter Android), das sie mit dem auf dem Gerät angemeldeten Store-Konto und der Produktkennung bearbeitet. Die Zahlung wird vollständig im Store eingegeben und abgewickelt.</li>
+        <li><strong>Empfänger.</strong> Je nach Gerät Apple Inc. oder Google LLC, die diese Daten nach ihren eigenen Bedingungen und Datenschutzrichtlinien verarbeiten. Der Entwickler erhält weder Zahlungsdaten noch Namen oder E-Mail-Adressen; er erhält vom Store lediglich die von diesem bereitgestellten Verkaufsberichte.</li>
+        <li><strong>Zweck.</strong> Abwicklung des Kaufs und Freischaltung der erworbenen Inhalte auf dem Gerät.</li>
+        <li><strong>Art.</strong> Die Abfrage beim Start erfolgt automatisch. Der Kauf ist optional; ohne ihn stellt die Anwendung die kostenlosen Inhalte bereit.</li>
+      </ul>
+
+      <h3>3 · Aktuelle Angebote und Hinweis auf eine neue Version</h3>
+      <ul>
+        <li><strong>Wann.</strong> Beim Start der Anwendung für den Hinweis auf eine neue Version und beim Öffnen des Kaufbildschirms für die Angebote.</li>
+        <li><strong>Daten, die das Gerät verlassen.</strong> Eine Anfrage zum Herunterladen der öffentlichen Dateien kanjikaku.com/version.json und kanjikaku.com/ofertas.json, durch die der Server die IP-Adresse und die üblichen technischen Daten jeder Verbindung wahrnehmen kann. Es werden keine weiteren Daten übermittelt: Der Vergleich mit der installierten Version erfolgt auf dem Gerät.</li>
+        <li><strong>Empfänger.</strong> GitHub Pages der GitHub, Inc. (Vereinigte Staaten), die die Website kanjikaku.com hostet.</li>
+        <li><strong>Zweck.</strong> Darauf hinzuweisen, dass im Store eine neuere Version der Anwendung verfügbar ist, und die aktuellen Angebote anzuzeigen.</li>
+        <li><strong>Art.</strong> Die Abfrage beim Start erfolgt automatisch; der Hinweis verpflichtet nicht zur Aktualisierung und kann ausgeblendet werden. Die Abfrage der Angebote erfolgt nur, wenn der Nutzer den Kaufbildschirm öffnet.</li>
+      </ul>
+
+      <h3>4 · Absturzberichte</h3>
+      <p>Nur, wenn der Nutzer sie aktiviert. Inhalt, Empfänger und Speicherdauer sind im Abschnitt „Absturzberichte“ beschrieben.</p>
+
+      <h3>5 · Spracherkennung</h3>
+      <ul>
+        <li><strong>Wann.</strong> Nur wenn der Nutzer die standardmäßig deaktivierte Spracherkennung in den Einstellungen der Leseübung aktiviert; in diesem Fall, solange das Mikrofon in dieser Übung geöffnet ist.</li>
+        <li><strong>Daten, die das Gerät verlassen.</strong> Unter iOS sowie unter Android, sofern das Gerät über eine Offline-Erkennung für Japanisch verfügt, keine: Die Erkennung erfolgt auf dem Gerät. Auf Android-Geräten ohne diese Funktion übermittelt die Spracherkennung des Systems das während des Zuhörens aufgenommene Audio zusammen mit dem erwarteten Wort und seiner Lesung, die die Anwendung als Hinweis bereitstellt.</li>
+        <li><strong>Empfänger.</strong> In letzterem Fall Google LLC als Anbieter des Spracherkennungsdienstes des Systems, nach deren eigenen Bedingungen.</li>
+        <li><strong>Zweck.</strong> Transkription der gesprochenen Lesung, um sie mit der erwarteten zu vergleichen.</li>
+        <li><strong>Art.</strong> Optional: Die Spracherkennung ist standardmäßig deaktiviert, kann jederzeit pausiert oder deaktiviert werden, und die Übung lässt sich auch ohne sie lösen.</li>
+      </ul>
+
+      <h3>6 · Sprachausgabe</h3>
+      <ul>
+        <li><strong>Wann.</strong> Wenn die Anwendung einen japanischen Text mit der Systemstimme vorliest.</li>
+        <li><strong>Daten, die das Gerät verlassen.</strong> Unter iOS keine. Unter Android übermittelt die Sprachausgabe des Systems den vorzulesenden Text, wenn die gewählte Stimme eine der in den Einstellungen als „über Internet“ gekennzeichneten ist oder wenn die Standardstimme des Systems über das Netzwerk arbeitet.</li>
+        <li><strong>Empfänger.</strong> Google LLC als Anbieter der Sprachausgabe des Systems, nach deren eigenen Bedingungen.</li>
+        <li><strong>Zweck.</strong> Erzeugung des Audios der Lesung.</li>
+        <li><strong>Art.</strong> Optional: In den Einstellungen kann eine Offline-Stimme gewählt werden; dies wird empfohlen.</li>
+      </ul>
+
+      <h3>7 · Texterkennung in Fotos</h3>
+      <ul>
+        <li><strong>Wann.</strong> Bei Verwendung der Funktion „Aus einem Foto“.</li>
+        <li><strong>Daten, die das Gerät verlassen.</strong> Weder das Foto noch der erkannte Text: Die Erkennung erfolgt auf dem Gerät durch die Komponente ML Kit von Google. Diese Komponente kann eigenständig technische Betriebsdaten an Google übermitteln: Hersteller und Modell des Geräts, Version des Betriebssystems, Name und Version der Anwendung, Installationskennungen, Leistungskennzahlen, Konfiguration der Komponente und Fehlercodes.</li>
+        <li><strong>Empfänger.</strong> Google LLC. Die Aufstellung der Daten ist unter <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener">developers.google.com/ml-kit/android-data-disclosure</a> veröffentlicht.</li>
+        <li><strong>Zweck.</strong> Laut Google die Diagnose der Komponente und die Messung ihrer Nutzung.</li>
+        <li><strong>Art.</strong> Optional: Erfolgt nur, wenn der Nutzer diese Funktion verwendet.</li>
+      </ul>
+
+      <h3>8 · Externe Links</h3>
+      <p>Tippt der Nutzer auf einen Link zu dieser Website oder zu einer E-Mail-Adresse, öffnet die Anwendung ihn im Browser oder in der E-Mail-Anwendung des Geräts. Alles Weitere unterliegt den Bedingungen dieser Anwendungen und der besuchten Website.</p>
+
+      <p class="base"><strong>Rechtsgrundlage.</strong> Das berechtigte Interesse des Entwicklers, die Anwendung aktuell und funktionsfähig zu halten und Käufe zu überprüfen (Fälle 1 bis 3); die Einwilligung des Nutzers bei den Absturzberichten (Fall 4); sowie die Anforderung durch den Nutzer selbst bei Verwendung der jeweiligen Funktion (Fälle 5 bis 8).</p>
     </section>
 
     <section>
@@ -323,30 +390,30 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <ul>
         <li>Benachrichtigungen — werden nur angefordert, wenn die tägliche Erinnerung aktiviert wird.</li>
         <li>Dateien — werden nur beim Exportieren oder Importieren angefordert und beschränken sich auf die ausgewählte Datei.</li>
-        <li>Mikrofon — wird nur für Übungen angefordert, die das Vorlesen anbieten, und ist nur aktiv, solange die entsprechende Schaltfläche gedrückt gehalten wird. Die Erkennung erfolgt auf dem Gerät; siehe nachfolgenden Abschnitt.</li>
-        <li>Kamera und Fotos — werden nur beim Scannen eines japanischen Textes auf einem Foto angefordert und beschränken sich auf das aufgenommene oder ausgewählte Foto. Der Text wird auf dem Gerät erkannt; das Foto wird nicht gespeichert und verlässt das Gerät nicht.</li>
+        <li>Mikrofon und Spracherkennung — werden nur angefordert, wenn der Nutzer die Spracherkennung in den Einstellungen der Leseübung aktiviert; diese Option ist standardmäßig deaktiviert. Siehe den nachfolgenden Abschnitt sowie Fall 5 im Abschnitt „Netzwerkverbindungen“.</li>
+        <li>Kamera und Fotos — werden nur bei Verwendung der Funktion „Aus einem Foto“ angefordert und beschränken sich auf das aufgenommene oder ausgewählte Foto. Der Text wird auf dem Gerät erkannt, und das Foto verlässt das Gerät nicht. Die Anwendung bewahrt das Foto nicht auf; das System kann eine temporäre Kopie im Cache der Anwendung vorhalten, bis es diese löscht.</li>
         <li>Die Anwendung greift nicht auf Standortdaten oder Kontakte zu.</li>
       </ul>
     </section>
 
     <section>
       <h2>Vorlesen und Mikrofon</h2>
-      <p>Bestimmte Übungen ermöglichen es, das Wort laut vorzulesen, anstatt es einzugeben. Das Mikrofon wird nur geöffnet, während die entsprechende Schaltfläche gedrückt gehalten wird, und erst, nachdem die Berechtigung erteilt wurde.</p>
-      <p><strong>Die Erkennung erfolgt auf dem Gerät.</strong> Die Anwendung fordert die geräteeigene Spracherkennung auf, lokal zu arbeiten, und nutzt keine anderen Mittel: Kann das Gerät Japanisch ohne Netzwerkverbindung nicht erkennen, wird die Funktion nicht angeboten.</p>
-      <p>Es werden keine Audiodaten aufgezeichnet und keine Audiodaten gespeichert. Die Anwendung empfängt den erkannten Text, gleicht ihn mit der erwarteten Lesung ab und verwirft ihn. Es wird keine Audiodatei erstellt, und es verlassen keine Audiodaten die Anwendung.</p>
+      <p>Die Leseübung erlaubt es, die Lesung laut auszusprechen, statt sie zu tippen, wenn der Nutzer die Option „Spracherkennung (experimentell)“ in den Einstellungen der Übung aktiviert; die Option ist standardmäßig deaktiviert. Sobald sie aktiviert und die Berechtigung erteilt ist, öffnet sich das Mikrofon automatisch, wenn ein Wort angezeigt wird, und schließt sich beim Tippen auf die entsprechende Schaltfläche, beim Wechsel zu einem anderen Wort oder beim Verlassen der Übung. Die Option „Ich kann gerade nicht sprechen“ setzt es für dreißig Minuten aus.</p>
+      <p><strong>Wo die Erkennung erfolgt.</strong> Unter iOS sowie unter Android, sofern das Gerät über eine Offline-Erkennung für Japanisch verfügt, verlangt die Anwendung, dass die Erkennung auf dem Gerät erfolgt. Auf Android-Geräten ohne diese Fähigkeit fordert die Anwendung zunächst eine Offline-Erkennung an und greift, wenn die Spracherkennung des Systems meldet, Japanisch auf diese Weise nicht erkennen zu können, für den Rest der Sitzung auf die Netzwerkerkennung von Google zurück. In diesem Fall wird das während des Zuhörens aufgenommene Audio gemäß Fall 5 des Abschnitts „Netzwerkverbindungen“ an Google übermittelt.</p>
+      <p>Die Anwendung zeichnet kein Audio auf und speichert keines. Sie empfängt den erkannten Text, vergleicht ihn mit der erwarteten Lesung und verwirft ihn. Es wird keine Audiodatei geschrieben.</p>
     </section>
 
     <section>
       <h2>Absturzberichte</h2>
       <p>Die Anwendung kann einen Bericht übermitteln, wenn sie unerwartet beendet wird, damit der Fehler behoben werden kann. <strong>Diese Funktion ist standardmäßig deaktiviert.</strong> Die Einwilligung wird beim ersten Start abgefragt, und vor ihrer Erteilung wird nichts übermittelt.</p>
-      <p>Falls aktiviert, wird der Bericht an Sentry (Functional Software, Inc., Vereinigte Staaten) übermittelt, den Dienst, der solche Berichte sammelt. Er enthält Art und Ort des Fehlers im Code, die Anwendungsversion sowie das Gerätemodell.</p>
-      <p>Er enthält keine Lerndaten, Decks, Anwendungseinstellungen oder Informationen, die den Nutzer identifizieren: Die Option, mit der personenbezogene Daten angehängt würden, ist im Code deaktiviert. Berichte können in den Einstellungen jederzeit wieder deaktiviert werden.</p>
+      <p>Ist die Funktion aktiviert, wird der Bericht an Sentry (Functional Software, Inc.) übermittelt, das ihn in seiner Datenregion der Europäischen Union (Deutschland) speichert. Er enthält: die Art des Fehlers, seine Stelle im Code und den Aufrufstapel; die Version der Anwendung; das Gerätemodell und die Version des Betriebssystems; eine zufällige Installationskennung, die von der Sentry-Komponente erzeugt wird; die letzten von der Anwendung protokollierten Schritte, etwa die geöffneten Bildschirme, höchstens zwanzig; sowie das zum Zeitpunkt des Fehlers angezeigte Element, etwa das Kanji, das Wort oder die laufende Übung oder, falls die Vokabelsuche geöffnet war, den darin eingegebenen Text.</p>
+      <p>Der Bericht enthält weder den Lernfortschritt noch Decks, Verlauf oder Informationen, die den Nutzer unmittelbar identifizieren, wie Name oder E-Mail-Adresse: Die Option, die personenbezogene Daten einschließlich der IP-Adresse anhängen würde, ist im Code deaktiviert. Die Berichte werden höchstens 30 Tage lang gespeichert und anschließend gelöscht. Die Funktion kann jederzeit in den Einstellungen wieder deaktiviert werden.</p>
       <p>Die Datenschutzerklärung von Sentry ist unter <a href="https://sentry.io/privacy/" rel="noopener">sentry.io/privacy</a> abrufbar.</p>
     </section>
 
     <section>
       <h2>Minderjährige</h2>
-      <p>Die Anwendung erfasst keine personenbezogenen Daten von Nutzern, unabhängig von deren Alter. Sie verlangt weder Namen, E-Mail-Adresse noch Geburtsdatum und verfügt folglich über keinerlei Daten über Minderjährige, die gesondert gespeichert oder verarbeitet werden könnten.</p>
+      <p>Die Anwendung fragt keinen Nutzer, unabhängig von seinem Alter, nach Namen, E-Mail-Adresse oder Geburtsdatum, und der Entwickler verfügt über keinerlei Daten, anhand derer ein Minderjähriger identifiziert werden könnte. Die im Abschnitt „Netzwerkverbindungen“ beschriebenen technischen Daten werden unabhängig vom Alter des Nutzers in gleicher Weise verarbeitet.</p>
     </section>
 
     <section>
@@ -358,12 +425,12 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li><strong>Rechtsgrundlage.</strong> Die Einwilligung des Nutzers, erteilt durch das Absenden der Nachricht. Ohne diese Handlung findet keine Verarbeitung statt.</li>
         <li><strong>Speicherdauer.</strong> Bis zur Klärung des Anliegens und in keinem Fall länger als sechs Monate.</li>
       </ul>
-      <p>Der Nutzer kann die Löschung seiner E-Mail-Adresse sowie sämtlicher übermittelter Materialien jederzeit unter der unten angegebenen Adresse verlangen. Die Anwendung selbst überträgt weiterhin von sich aus keinerlei Daten.</p>
+      <p>Der Nutzer kann jederzeit unter der unten angegebenen Adresse die Löschung seiner E-Mail-Adresse und aller übermittelten Materialien verlangen.</p>
     </section>
 
     <section>
       <h2>Rechte der betroffenen Person</h2>
-      <p>Die Rechte auf Auskunft, Berichtigung und Löschung setzen üblicherweise voraus, dass eine Partei über die Daten verfügt. Dies ist hier nicht der Fall: Die Daten verbleiben auf dem Gerät des Nutzers und unter dessen Kontrolle. Sie können durch den Export einer Kopie eingesehen und über die Einstellungen der Anwendung oder durch Deinstallation der Anwendung gelöscht werden.</p>
+      <p>Die Lerndaten befinden sich auf dem Gerät des Nutzers und unter seiner Kontrolle: Sie können durch Export einer Kopie eingesehen und in den Einstellungen der Anwendung oder durch deren Deinstallation gelöscht werden. Hinsichtlich der Absturzberichte und der Korrespondenz kann der Nutzer seine Rechte auf Auskunft, Berichtigung, Löschung, Widerspruch und Einschränkung der Verarbeitung über die Kontaktadresse geltend machen; da die Berichte keine identifizierenden Daten enthalten, kann es erforderlich sein, das ungefähre Datum des Fehlers anzugeben, um sie aufzufinden. Hinsichtlich der Daten, die Apple und Google nach ihren eigenen Bedingungen verarbeiten, sind diese Rechte gegenüber diesen Unternehmen geltend zu machen. Der Nutzer hat zudem das Recht, bei der zuständigen Datenschutz-Aufsichtsbehörde Beschwerde einzulegen.</p>
     </section>
 
     <section>

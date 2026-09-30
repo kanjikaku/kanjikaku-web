@@ -191,6 +191,16 @@ section h2 {
   border-bottom: 1px solid var(--rule-soft);
 }
 section > p, section > ul { margin-top: 14px; }
+/* Cada conexión de red, con su título (30-sep-2026). */
+section h3 {
+  font-family: "Zen Old Mincho", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+  margin: 30px 0 0;
+}
+section h3 + ul, section h3 + p { margin-top: 10px; }
+.base { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--rule-soft); }
 section p + p { margin-top: 12px; }
 
 ul { padding-left: 0; list-style: none; }
@@ -272,17 +282,17 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Informativa sulla privacy</p>
     <h1>Informativa sulla privacy dell'applicazione KanjiKaku</h1>
-    <p class="fecha">Ultimo aggiornamento: 29 settembre 2026</p>
+    <p class="fecha">Ultimo aggiornamento: 30 settembre 2026</p>
 
     <div class="resumen">
-      <p>In sintesi: i dati di studio non lasciano il dispositivo dell'utente. L'applicazione non richiede alcun account, non archivia alcuna informazione su server gestiti dallo sviluppatore, non mostra pubblicità e non effettua alcuna analisi dei dati.</p>
-      <p>Le sezioni seguenti illustrano quali dati vengono memorizzati, dove vengono conservati e tutte le circostanze in cui l'applicazione stabilisce una connessione di rete.</p>
+      <p>In sintesi: i dati di studio restano sul dispositivo dell'utente. L'applicazione non richiede alcun account, lo sviluppatore non gestisce alcun server che conservi informazioni sugli utenti e l'applicazione non mostra pubblicità né effettua tracciamento.</p>
+      <p>Alcune funzioni stabiliscono tuttavia connessioni di rete con servizi di terzi. Le sezioni seguenti elencano in modo esaustivo quali dati lasciano il dispositivo, a chi vengono trasmessi, per quale finalità e se la trasmissione è facoltativa.</p>
     </div>
 
     <section>
       <h2>Dati memorizzati e relativa ubicazione</h2>
       <p>Tutti i dati di studio — i kanji consultati, il livello di padronanza registrato per ciascuno di essi, i mazzi e i gruppi, le impostazioni dell'applicazione e la cronologia delle sessioni — vengono scritti in un file all'interno dell'applicazione stessa, sul dispositivo dell'utente.</p>
-      <p>Tali dati rimangono sul dispositivo. Non vengono copiati su alcun server e non sono accessibili allo sviluppatore né a terzi. La disinstallazione dell'applicazione comporta la loro eliminazione.</p>
+      <p>Tali dati rimangono lì. Non vengono copiati su alcun server e non sono accessibili allo sviluppatore né a terzi, con la sola eccezione descritta nella sezione «Segnalazioni di arresto anomalo». La disinstallazione dell'applicazione li elimina.</p>
       <p>L'applicazione conserva inoltre un registro locale della pratica di scrittura: i tratti tracciati nei tentativi non riusciti e una riga di dati numerici per ciascun tentativo. Il registro è limitato a un massimo di 100 caratteri e 500 tentativi; le voci più datate vengono scartate. L'unica finalità di tale registro è consentire all'utente di inviarlo volontariamente allo sviluppatore; non viene mai trasmesso automaticamente e può essere eliminato da Impostazioni.</p>
     </section>
 
@@ -292,19 +302,76 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li>Non richiede alcun account né registrazione. Non richiede nome, indirizzo e-mail o età.</li>
         <li>Lo sviluppatore non gestisce alcun server che conservi i progressi degli utenti.</li>
         <li>Non mostra pubblicità e non integra reti pubblicitarie.</li>
-        <li>Non effettua analisi dei dati né tracciamento dell'utilizzo e non fa uso di identificatori pubblicitari. È presente una funzione di segnalazione degli arresti anomali; tale funzione è disattivata a meno che l'utente non la abiliti ed è descritta in una sezione specifica più avanti.</li>
-        <li>Nessun dato viene venduto o condiviso con terzi, in quanto non viene raccolto alcun dato a tale scopo.</li>
+        <li>Lo sviluppatore non effettua analisi né tracciamento dell'utilizzo e l'applicazione non utilizza identificatori pubblicitari. I componenti di terzi che trasmettono autonomamente dati tecnici sono indicati nella sezione «Connessioni di rete».</li>
+        <li>Nessun dato viene venduto o ceduto a terzi per finalità pubblicitarie o commerciali.</li>
       </ul>
     </section>
 
     <section>
       <h2>Connessioni di rete</h2>
-      <p>L'applicazione stabilisce una connessione di rete nelle circostanze elencate di seguito. Nessuna di esse trasmette dati di studio.</p>
-      <p>1 · <strong>Aggiornamenti.</strong> All'avvio, l'applicazione interroga il servizio di aggiornamento di Expo Application Services (Expo, Stati Uniti) per verificare l'eventuale presenza di una versione più recente. Tale richiesta consente al servizio di rilevare dati tecnici: l'indirizzo IP del dispositivo, il relativo sistema operativo e la versione dell'applicazione. Non viene trasmesso alcun dato di studio. L'informativa sulla privacy di Expo è consultabile all'indirizzo <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</p>
-      <p>2 · <strong>Sintesi vocale.</strong> Quando l'applicazione pronuncia ad alta voce una parola giapponese, delega l'operazione al motore di sintesi vocale del dispositivo stesso. L'applicazione non trasmette nulla per proprio conto; l'eventuale utilizzo della rete da parte di tale motore di sistema dipende dal dispositivo e dalla relativa configurazione.</p>
-      <p>3 · <strong>Segnalazioni di arresti anomali, subordinate al consenso.</strong> Vengono descritte nella sezione corrispondente più avanti. Sono disattivate a meno che l'utente non le abiliti.</p>
-      <p>4 · <strong>Offerte.</strong> All'apertura della schermata di acquisto, l'applicazione scarica il file pubblico kanjikaku.com/ofertas.json, ospitato su GitHub Pages (GitHub, Inc., Stati Uniti), al fine di mostrare le offerte in corso. Tale download consente al servizio di rilevare l'indirizzo IP del dispositivo. Non trasmette dati di studio né alcun altro dato.</p>
-      <p>5 · <strong>Acquisti.</strong> L'acquisto in-app è gestito interamente tramite l'App Store o Google Play, a seconda del dispositivo. Lo sviluppatore non riceve dati di pagamento; l'applicazione si limita a chiedere allo store se l'acquisto esiste, al fine di sbloccare il contenuto acquistato.</p>
+      <p>L'applicazione stabilisce connessioni di rete esclusivamente nei casi elencati di seguito. Per ciascuno sono indicati quando si verifica, quali dati lasciano il dispositivo, chi li riceve, per quale finalità e se è facoltativo. In assenza di connessione, la funzione corrispondente non viene eseguita e lo studio non ne risente.</p>
+
+      <h3>1 · Verifica degli aggiornamenti</h3>
+      <ul>
+        <li><strong>Quando.</strong> A ogni avvio dell'applicazione e, finché resta aperta, a ogni ritorno in primo piano, con un intervallo minimo di dieci minuti.</li>
+        <li><strong>Dati che lasciano il dispositivo.</strong> L'indirizzo IP; la piattaforma (Android o iOS); la versione nativa dell'applicazione, il canale di pubblicazione e l'identificatore dell'aggiornamento installato; nonché un identificatore di installazione casuale generato dal componente di aggiornamento stesso. Non vengono trasmessi dati di studio.</li>
+        <li><strong>Destinatario.</strong> Expo Application Services, di 650 Industries, Inc. (Stati Uniti). La relativa informativa sulla privacy è disponibile all'indirizzo <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</li>
+        <li><strong>Finalità.</strong> Verificare se esiste una versione più recente dell'applicazione e, in tal caso, scaricarla.</li>
+        <li><strong>Natura.</strong> Automatica; non può essere disattivata dall'applicazione. In assenza di connessione la verifica non avviene e l'applicazione funziona con la versione installata.</li>
+      </ul>
+
+      <h3>2 · Acquisti in-app</h3>
+      <ul>
+        <li><strong>Quando.</strong> A ogni avvio dell'applicazione, per verificare se l'acquisto esiste; all'apertura della schermata di acquisto, per ottenere il prezzo; e al momento dell'acquisto o del ripristino dell'acquisto.</li>
+        <li><strong>Dati che lasciano il dispositivo.</strong> La richiesta di verifica e, se del caso, la richiesta di acquisto sono inviate al sistema di acquisto dello store (App Store su iOS, Google Play su Android), che le gestisce con l'account dello store connesso sul dispositivo e con l'identificatore del prodotto. Il pagamento viene inserito ed elaborato interamente nello store.</li>
+        <li><strong>Destinatario.</strong> Apple Inc. o Google LLC, a seconda del dispositivo, che trattano tali dati secondo i propri termini e le proprie informative sulla privacy. Lo sviluppatore non riceve dati di pagamento, nomi né indirizzi e-mail; riceve dallo store unicamente i rapporti di vendita che questo mette a disposizione.</li>
+        <li><strong>Finalità.</strong> Gestire l'acquisto e sbloccare sul dispositivo il contenuto acquistato.</li>
+        <li><strong>Natura.</strong> La verifica all'avvio è automatica. L'acquisto è facoltativo; in sua assenza l'applicazione offre il contenuto gratuito.</li>
+      </ul>
+
+      <h3>3 · Offerte in corso e avviso di nuova versione</h3>
+      <ul>
+        <li><strong>Quando.</strong> All'avvio dell'applicazione, per l'avviso di nuova versione, e all'apertura della schermata di acquisto, per le offerte.</li>
+        <li><strong>Dati che lasciano il dispositivo.</strong> Una richiesta di download dei file pubblici kanjikaku.com/version.json e kanjikaku.com/ofertas.json, che consente al server di osservare l'indirizzo IP e i dati tecnici ordinari di qualsiasi connessione. Non viene trasmesso alcun altro dato: il confronto con la versione installata avviene sul dispositivo.</li>
+        <li><strong>Destinatario.</strong> GitHub Pages, di GitHub, Inc. (Stati Uniti), che ospita il sito web kanjikaku.com.</li>
+        <li><strong>Finalità.</strong> Segnalare che nello store è disponibile una versione più recente dell'applicazione e mostrare le offerte in corso.</li>
+        <li><strong>Natura.</strong> La verifica all'avvio è automatica; l'avviso non obbliga ad aggiornare e può essere ignorato. La richiesta delle offerte avviene solo se l'utente apre la schermata di acquisto.</li>
+      </ul>
+
+      <h3>4 · Segnalazioni di arresto anomalo</h3>
+      <p>Soltanto se l'utente le attiva. Il contenuto, il destinatario e il periodo di conservazione sono descritti nella sezione «Segnalazioni di arresto anomalo».</p>
+
+      <h3>5 · Riconoscimento vocale</h3>
+      <ul>
+        <li><strong>Quando.</strong> Solo se l'utente attiva il riconoscimento vocale, disattivato per impostazione predefinita, nelle impostazioni dell'esercizio di lettura; in tal caso, finché il microfono è aperto in tale esercizio.</li>
+        <li><strong>Dati che lasciano il dispositivo.</strong> Su iOS, e su Android quando il dispositivo dispone del riconoscimento del giapponese offline, nessuno: il riconoscimento viene eseguito sul dispositivo. Sui dispositivi Android che ne sono privi, il riconoscitore vocale di sistema trasmette l'audio acquisito durante l'ascolto, insieme alla parola attesa e alla sua lettura, che l'applicazione fornisce come suggerimento.</li>
+        <li><strong>Destinatario.</strong> In quest'ultimo caso, Google LLC, in qualità di fornitore del servizio di riconoscimento vocale di sistema, secondo i propri termini.</li>
+        <li><strong>Finalità.</strong> Trascrivere la lettura pronunciata per confrontarla con quella attesa.</li>
+        <li><strong>Natura.</strong> Facoltativa: il riconoscimento vocale è disattivato per impostazione predefinita, può essere sospeso o disattivato in qualsiasi momento e l'esercizio può essere svolto senza di esso.</li>
+      </ul>
+
+      <h3>6 · Sintesi vocale</h3>
+      <ul>
+        <li><strong>Quando.</strong> Quando l'applicazione legge ad alta voce un testo giapponese con la voce di sistema.</li>
+        <li><strong>Dati che lasciano il dispositivo.</strong> Su iOS, nessuno. Su Android, se la voce selezionata è una di quelle che le Impostazioni indicano come «via internet», o se la voce predefinita di sistema funziona in rete, il motore di sintesi vocale di sistema trasmette il testo da leggere.</li>
+        <li><strong>Destinatario.</strong> Google LLC, in qualità di fornitore del motore di sintesi vocale di sistema, secondo i propri termini.</li>
+        <li><strong>Finalità.</strong> Generare l'audio della lettura.</li>
+        <li><strong>Natura.</strong> Facoltativa: le Impostazioni consentono di scegliere una voce offline, che è quella consigliata.</li>
+      </ul>
+
+      <h3>7 · Lettura del testo nelle fotografie</h3>
+      <ul>
+        <li><strong>Quando.</strong> Quando si utilizza la funzione «Da una foto».</li>
+        <li><strong>Dati che lasciano il dispositivo.</strong> Né la fotografia né il testo riconosciuto: il riconoscimento viene eseguito sul dispositivo dal componente ML Kit di Google. Tale componente può trasmettere autonomamente a Google dati tecnici di funzionamento: produttore e modello del dispositivo, versione del sistema operativo, nome e versione dell'applicazione, identificatori di installazione, metriche sulle prestazioni, configurazione del componente e codici di errore.</li>
+        <li><strong>Destinatario.</strong> Google LLC. L'elenco dei dati è pubblicato all'indirizzo <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener">developers.google.com/ml-kit/android-data-disclosure</a>.</li>
+        <li><strong>Finalità.</strong> Secondo Google, la diagnostica del componente e la misurazione del suo utilizzo.</li>
+        <li><strong>Natura.</strong> Facoltativa: avviene soltanto se l'utente utilizza tale funzione.</li>
+      </ul>
+
+      <h3>8 · Link esterni</h3>
+      <p>Quando l'utente tocca un link a questo sito web o a un indirizzo e-mail, l'applicazione lo apre nel browser o nell'applicazione di posta del dispositivo. Quanto avviene da quel momento è disciplinato dai termini di tali applicazioni e del sito visitato.</p>
+
+      <p class="base"><strong>Base giuridica.</strong> Il legittimo interesse dello sviluppatore a mantenere l'applicazione aggiornata e funzionante e a verificare gli acquisti (casi da 1 a 3); il consenso dell'utente, per le segnalazioni di arresto anomalo (caso 4); e la richiesta dell'utente stesso quando utilizza la funzione in questione (casi da 5 a 8).</p>
     </section>
 
     <section>
@@ -323,30 +390,30 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <ul>
         <li>Notifiche — richieste esclusivamente se viene attivato il promemoria giornaliero.</li>
         <li>File — richiesti esclusivamente al momento dell'esportazione o dell'importazione e limitati al file selezionato.</li>
-        <li>Microfono — richiesto solo per gli esercizi che prevedono la lettura ad alta voce ed è attivo unicamente mentre si tiene premuto il pulsante corrispondente. Il riconoscimento viene eseguito sul dispositivo; si veda la sezione seguente.</li>
-        <li>Fotocamera e fotografie — richieste esclusivamente per la scansione di un testo giapponese in una foto e limitate alla foto scattata o selezionata. Il testo viene riconosciuto sul dispositivo; la foto non viene conservata e non esce dal dispositivo.</li>
+        <li>Microfono e riconoscimento vocale — richiesti solo se l'utente attiva il riconoscimento vocale nelle impostazioni dell'esercizio di lettura, opzione disattivata per impostazione predefinita. Si vedano la sezione seguente e il caso 5 della sezione «Connessioni di rete».</li>
+        <li>Fotocamera e fotografie — richieste solo quando si utilizza la funzione «Da una foto», e limitate alla foto scattata o selezionata. Il testo viene riconosciuto sul dispositivo e la foto non ne esce. L'applicazione non conserva la foto; il sistema può mantenerne una copia temporanea nella cache dell'applicazione fino a quando non la elimina.</li>
         <li>L'applicazione non accede ai dati di localizzazione né ai contatti.</li>
       </ul>
     </section>
 
     <section>
       <h2>Lettura ad alta voce e microfono</h2>
-      <p>Alcuni esercizi consentono di leggere la parola ad alta voce anziché digitarla. Il microfono si attiva esclusivamente mentre si tiene premuto il pulsante corrispondente e solo dopo che l'autorizzazione è stata concessa.</p>
-      <p><strong>Il riconoscimento viene eseguito sul dispositivo.</strong> L'applicazione richiede il riconoscimento sul dispositivo al motore di riconoscimento vocale del dispositivo stesso e non fa uso di alcun altro mezzo: qualora il dispositivo non sia in grado di riconoscere il giapponese senza una connessione di rete, la funzione non viene offerta.</p>
-      <p>Nessun audio viene registrato né conservato. L'applicazione riceve il testo riconosciuto, lo confronta con la lettura prevista e lo scarta. Non viene salvato alcun file audio e nessun audio esce dall'applicazione.</p>
+      <p>L'esercizio di lettura consente di pronunciare la lettura ad alta voce anziché scriverla, se l'utente attiva l'opzione «Riconoscimento vocale (sperimentale)» nelle impostazioni dell'esercizio; l'opzione è disattivata per impostazione predefinita. Una volta attivata e concessa l'autorizzazione, il microfono si apre automaticamente alla comparsa di ogni parola e si chiude quando si tocca il pulsante corrispondente, si passa a un'altra parola o si esce dall'esercizio. L'opzione «Non posso parlare» lo sospende per trenta minuti.</p>
+      <p><strong>Dove avviene il riconoscimento.</strong> Su iOS, e su Android quando il dispositivo dispone del riconoscimento del giapponese offline, l'applicazione richiede che il riconoscimento venga eseguito sul dispositivo. Sui dispositivi Android privi di tale capacità, l'applicazione richiede dapprima il riconoscimento offline e, se il riconoscitore di sistema indica di non poter riconoscere il giapponese in tale modalità, ricorre al riconoscimento in rete di Google per il resto della sessione. In tal caso, l'audio acquisito durante l'ascolto viene trasmesso a Google secondo quanto indicato nel caso 5 della sezione «Connessioni di rete».</p>
+      <p>L'applicazione non registra né conserva alcun audio. Riceve il testo riconosciuto, lo confronta con la lettura attesa e lo scarta. Non viene scritto alcun file audio.</p>
     </section>
 
     <section>
       <h2>Segnalazioni di arresto anomalo</h2>
       <p>L'applicazione può trasmettere una segnalazione in caso di arresto anomalo, al fine di correggere l'errore. <strong>Questa funzione è disattivata per impostazione predefinita.</strong> Il consenso viene richiesto al primo avvio e nessun dato viene trasmesso prima della sua concessione.</p>
-      <p>Qualora venga attivata, la segnalazione viene trasmessa a Sentry (Functional Software, Inc., Stati Uniti), il servizio che raccoglie tali segnalazioni. Essa contiene la natura e la posizione dell'errore all'interno del codice, la versione dell'applicazione e il modello del dispositivo.</p>
-      <p>Non contiene dati di studio, mazzi, impostazioni dell'applicazione né alcuna informazione che identifichi l'utente: l'opzione che allegherebbe dati personali è disattivata nel codice. Le segnalazioni possono essere disattivate nuovamente dalle Impostazioni in qualsiasi momento.</p>
+      <p>Se attivata, la segnalazione viene trasmessa a Sentry (Functional Software, Inc.), che la conserva nella propria regione di dati dell'Unione europea (Germania). Contiene: il tipo di errore, la sua posizione nel codice e lo stack delle chiamate; la versione dell'applicazione; il modello del dispositivo e la versione del sistema operativo; un identificatore di installazione casuale generato dal componente di Sentry; gli ultimi passaggi registrati dall'applicazione, come le schermate aperte, fino a un massimo di venti; e l'elemento visualizzato al momento dell'errore, come il kanji, la parola o l'esercizio in corso oppure, se era aperta la ricerca nel vocabolario, il testo inserito.</p>
+      <p>La segnalazione non contiene i progressi di studio, i mazzi, la cronologia né informazioni che identifichino direttamente l'utente, come il nome o l'indirizzo e-mail: l'opzione che allegherebbe dati personali, compreso l'indirizzo IP, è disattivata nel codice. Le segnalazioni sono conservate per un massimo di 30 giorni e successivamente eliminate. La funzione può essere nuovamente disattivata dalle Impostazioni in qualsiasi momento.</p>
       <p>L'informativa sulla privacy di Sentry è consultabile all'indirizzo <a href="https://sentry.io/privacy/" rel="noopener">sentry.io/privacy</a>.</p>
     </section>
 
     <section>
       <h2>Minori</h2>
-      <p>L'applicazione non raccoglie dati personali di alcun utente, indipendentemente dall'età. Non richiede nome, indirizzo email né data di nascita e, di conseguenza, non dispone di alcun dato relativo a minori che possa essere conservato o trattato in modo differenziato.</p>
+      <p>L'applicazione non richiede ad alcun utente, indipendentemente dall'età, nome, indirizzo e-mail o data di nascita, e lo sviluppatore non dispone di alcun dato che consenta di identificare un minore. I dati tecnici descritti nella sezione «Connessioni di rete» sono trattati allo stesso modo indipendentemente dall'età dell'utente.</p>
     </section>
 
     <section>
@@ -358,12 +425,12 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li><strong>Base giuridica.</strong> Il consenso dell'utente, espresso tramite l'invio del messaggio. In assenza di tale azione non ha luogo alcun trattamento.</li>
         <li><strong>Periodo di conservazione.</strong> Fino alla risoluzione del caso e, in ogni caso, per un periodo non superiore a sei mesi.</li>
       </ul>
-      <p>L'utente può richiedere la cancellazione del proprio indirizzo email e di qualsiasi materiale inviato, in qualsiasi momento, all'indirizzo indicato di seguito. L'applicazione, dal canto suo, continua a non trasmettere alcunché in autonomia.</p>
+      <p>L'utente può chiedere in qualsiasi momento la cancellazione del proprio indirizzo e-mail e di qualsiasi materiale inviato, all'indirizzo indicato di seguito.</p>
     </section>
 
     <section>
       <h2>Diritti dell'interessato</h2>
-      <p>I diritti di accesso, rettifica e cancellazione presuppongono ordinariamente che una parte sia in possesso dei dati. Non è questo il caso: i dati risiedono sul dispositivo dell'utente e sotto il suo controllo. Possono essere consultati esportandone una copia e cancellati dalle impostazioni dell'applicazione o disinstallando l'applicazione stessa.</p>
+      <p>I dati di studio risiedono sul dispositivo dell'utente e sotto il suo controllo: possono essere consultati esportandone una copia ed eliminati dalle impostazioni dell'applicazione o disinstallandola. Per quanto riguarda le segnalazioni di arresto anomalo e la corrispondenza, l'utente può esercitare i diritti di accesso, rettifica, cancellazione, opposizione e limitazione del trattamento scrivendo all'indirizzo di contatto; poiché le segnalazioni non contengono dati identificativi, può essere necessario indicare la data approssimativa dell'errore per individuarle. Per quanto riguarda i dati che Apple e Google trattano secondo i propri termini, tali diritti si esercitano nei confronti di tali soggetti. L'utente ha inoltre il diritto di proporre reclamo all'autorità di controllo competente in materia di protezione dei dati.</p>
     </section>
 
     <section>

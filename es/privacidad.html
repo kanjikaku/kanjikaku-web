@@ -191,6 +191,16 @@ section h2 {
   border-bottom: 1px solid var(--rule-soft);
 }
 section > p, section > ul { margin-top: 14px; }
+/* Cada conexión de red, con su título (30-sep-2026). */
+section h3 {
+  font-family: "Zen Old Mincho", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+  margin: 30px 0 0;
+}
+section h3 + ul, section h3 + p { margin-top: 10px; }
+.base { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--rule-soft); }
 section p + p { margin-top: 12px; }
 
 ul { padding-left: 0; list-style: none; }
@@ -272,17 +282,17 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Política de privacidad</p>
     <h1>Política de privacidad de la aplicación KanjiKaku</h1>
-    <p class="fecha">Última actualización: 29 de septiembre de 2026</p>
+    <p class="fecha">Última actualización: 30 de septiembre de 2026</p>
 
     <div class="resumen">
-      <p>En resumen: los datos de estudio no salen del dispositivo del usuario. La aplicación no requiere cuenta, no almacena información en ningún servidor operado por el desarrollador, no muestra publicidad y no realiza analítica.</p>
-      <p>Los apartados siguientes detallan qué se almacena, dónde se almacena y todas las ocasiones en que la aplicación establece una conexión de red.</p>
+      <p>En resumen: los datos de estudio permanecen en el dispositivo del usuario. La aplicación no requiere cuenta, el desarrollador no opera ningún servidor que almacene información de los usuarios, y la aplicación no muestra publicidad ni realiza seguimiento.</p>
+      <p>No obstante, determinadas funciones establecen conexiones de red con servicios de terceros. Los apartados siguientes enumeran de forma exhaustiva qué datos salen del dispositivo, a quién se transmiten, con qué finalidad y si su transmisión es opcional.</p>
     </div>
 
     <section>
       <h2>Datos almacenados y ubicación</h2>
       <p>Todos los datos de estudio —los kanji consultados, el grado de dominio registrado para cada uno, las barajas y las tandas, los ajustes de la aplicación y el historial de sesiones— se escriben en un archivo dentro de la propia aplicación, en el dispositivo del usuario.</p>
-      <p>Dichos datos permanecen allí. No se copian a ningún servidor y no son accesibles para el desarrollador ni para terceros. La desinstalación de la aplicación los elimina.</p>
+      <p>Dichos datos permanecen allí. No se copian a ningún servidor y no son accesibles para el desarrollador ni para terceros, con la única salvedad descrita en el apartado «Informes de fallos». La desinstalación de la aplicación los elimina.</p>
       <p>La aplicación mantiene además un registro local de la práctica de escritura: los trazos dibujados en los intentos fallidos y una línea de cifras por cada intento. El registro tiene un límite de 100 caracteres y 500 intentos, y las entradas más antiguas se descartan. Su única finalidad es permitir que el usuario lo remita voluntariamente al desarrollador; no se transmite de forma automática y puede eliminarse desde los Ajustes.</p>
     </section>
 
@@ -292,19 +302,76 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li>No requiere cuenta ni registro. No solicita nombre, dirección de correo electrónico ni edad.</li>
         <li>El desarrollador no opera ningún servidor que albergue el progreso de los usuarios.</li>
         <li>No muestra publicidad ni integra redes publicitarias.</li>
-        <li>No realiza analítica ni seguimiento de uso, y no utiliza identificadores publicitarios. Sí existe notificación de fallos; está desactivada salvo que el usuario la active, y se describe en un apartado específico más adelante.</li>
-        <li>No se venden ni se comparten datos con terceros, dado que no se recogen datos con esa finalidad.</li>
+        <li>El desarrollador no realiza analítica ni seguimiento de uso, y la aplicación no utiliza identificadores publicitarios. Los componentes de terceros que remiten datos técnicos por su cuenta se identifican en el apartado «Conexiones de red».</li>
+        <li>No se venden datos ni se ceden a terceros con fines publicitarios o comerciales.</li>
       </ul>
     </section>
 
     <section>
       <h2>Conexiones de red</h2>
-      <p>La aplicación establece conexión de red en las ocasiones que se enumeran a continuación. Ninguna de ellas transmite datos de estudio.</p>
-      <p>1 · <strong>Actualizaciones.</strong> Al iniciarse, la aplicación consulta al servicio de actualizaciones de Expo Application Services (Expo, Estados Unidos) si existe una versión más reciente. Dicha consulta permite al servicio observar datos técnicos: la dirección IP del dispositivo, su sistema operativo y la versión de la aplicación. No transmite datos de estudio. La política de privacidad de Expo está disponible en <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</p>
-      <p>2 · <strong>Síntesis de voz.</strong> Cuando la aplicación lee en voz alta una palabra japonesa, delega en el motor de síntesis del propio dispositivo. La aplicación no transmite nada por su cuenta; que dicho motor del sistema utilice la red depende del dispositivo y de su configuración.</p>
-      <p>3 · <strong>Informes de fallos, sujetos a consentimiento.</strong> Se describen en el apartado correspondiente más adelante. Desactivados salvo que el usuario los active.</p>
-      <p>4 · <strong>Ofertas.</strong> Al abrir la pantalla de compra, la aplicación descarga el archivo público kanjikaku.com/ofertas.json, alojado en GitHub Pages (GitHub, Inc., Estados Unidos), para mostrar las ofertas vigentes. Dicha descarga permite al servicio observar la dirección IP del dispositivo. No transmite datos de estudio ni ningún otro dato.</p>
-      <p>5 · <strong>Compras.</strong> La compra dentro de la aplicación se tramita íntegramente a través de App Store o Google Play, según el dispositivo. El desarrollador no recibe datos de pago; la aplicación se limita a consultar a la tienda si la compra existe, con el fin de desbloquear el contenido adquirido.</p>
+      <p>La aplicación establece conexiones de red únicamente en los supuestos que se enumeran a continuación. Para cada uno se indica cuándo se produce, qué datos salen del dispositivo, quién los recibe, con qué finalidad y si es opcional. Si no hay conexión disponible, la función correspondiente no se realiza y el estudio no se ve afectado.</p>
+
+      <h3>1 · Comprobación de actualizaciones</h3>
+      <ul>
+        <li><strong>Cuándo.</strong> En cada inicio de la aplicación y, mientras permanece abierta, al volver a primer plano, con un intervalo mínimo de diez minutos.</li>
+        <li><strong>Datos que salen del dispositivo.</strong> La dirección IP; la plataforma (Android o iOS); la versión nativa de la aplicación, el canal de publicación y el identificador de la actualización instalada; y un identificador aleatorio de instalación que genera el propio componente de actualizaciones. No se transmiten datos de estudio.</li>
+        <li><strong>Destinatario.</strong> Expo Application Services, de 650 Industries, Inc. (Estados Unidos). Su política de privacidad está disponible en <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</li>
+        <li><strong>Finalidad.</strong> Determinar si existe una versión más reciente de la aplicación y, en su caso, descargarla.</li>
+        <li><strong>Carácter.</strong> Automático; no puede desactivarse desde la aplicación. Sin conexión, la comprobación no se realiza y la aplicación funciona con la versión instalada.</li>
+      </ul>
+
+      <h3>2 · Compras en la aplicación</h3>
+      <ul>
+        <li><strong>Cuándo.</strong> En cada inicio de la aplicación, para comprobar si la compra existe; al abrir la pantalla de compra, para obtener el precio; y al comprar o restaurar la compra.</li>
+        <li><strong>Datos que salen del dispositivo.</strong> La consulta y, en su caso, la solicitud de compra se dirigen al sistema de compras de la tienda (App Store en iOS, Google Play en Android), que las atiende con la cuenta de la tienda iniciada en el dispositivo y el identificador del producto. El pago se introduce y se tramita íntegramente en la tienda.</li>
+        <li><strong>Destinatario.</strong> Apple Inc. o Google LLC, según el dispositivo, que tratan dichos datos conforme a sus propias condiciones y políticas de privacidad. El desarrollador no recibe datos de pago, nombre ni dirección de correo electrónico; únicamente recibe de la tienda los informes de ventas que ésta facilita.</li>
+        <li><strong>Finalidad.</strong> Tramitar la compra y desbloquear en el dispositivo el contenido adquirido.</li>
+        <li><strong>Carácter.</strong> La consulta del inicio es automática. La compra es opcional; sin ella, la aplicación ofrece el contenido gratuito.</li>
+      </ul>
+
+      <h3>3 · Ofertas vigentes y aviso de versión nueva</h3>
+      <ul>
+        <li><strong>Cuándo.</strong> Al iniciar la aplicación, para el aviso de versión nueva, y al abrir la pantalla de compra, para las ofertas.</li>
+        <li><strong>Datos que salen del dispositivo.</strong> Una solicitud de descarga de los archivos públicos kanjikaku.com/version.json y kanjikaku.com/ofertas.json, que permite al servidor observar la dirección IP y los datos técnicos ordinarios de toda conexión. No se transmite ningún otro dato: la comparación con la versión instalada se hace en el dispositivo.</li>
+        <li><strong>Destinatario.</strong> GitHub Pages, de GitHub, Inc. (Estados Unidos), que aloja el sitio web kanjikaku.com.</li>
+        <li><strong>Finalidad.</strong> Avisar de que hay una versión más reciente de la aplicación en la tienda y mostrar las ofertas vigentes.</li>
+        <li><strong>Carácter.</strong> La consulta del inicio es automática; el aviso no obliga a actualizar y puede descartarse. La de las ofertas se produce únicamente si el usuario abre la pantalla de compra.</li>
+      </ul>
+
+      <h3>4 · Informes de fallos</h3>
+      <p>Únicamente si el usuario los activa. Su contenido, su destinatario y su plazo de conservación se describen en el apartado «Informes de fallos».</p>
+
+      <h3>5 · Reconocimiento de voz</h3>
+      <ul>
+        <li><strong>Cuándo.</strong> Sólo si el usuario activa el reconocimiento de voz, desactivado de forma predeterminada, en los ajustes del ejercicio de lectura; en ese caso, mientras el micrófono está abierto en dicho ejercicio.</li>
+        <li><strong>Datos que salen del dispositivo.</strong> En iOS, y en Android cuando el dispositivo dispone de reconocimiento de japonés sin conexión, ninguno: el reconocimiento se realiza en el dispositivo. En los dispositivos Android que carecen de él, el reconocedor de voz del sistema transmite el audio captado mientras dura la escucha, junto con la palabra esperada y su lectura, que la aplicación facilita como indicación.</li>
+        <li><strong>Destinatario.</strong> En este último supuesto, Google LLC, como proveedor del servicio de reconocimiento de voz del sistema, conforme a sus propias condiciones.</li>
+        <li><strong>Finalidad.</strong> Transcribir la lectura pronunciada para compararla con la esperada.</li>
+        <li><strong>Carácter.</strong> Opcional: el reconocimiento de voz está desactivado de forma predeterminada, puede suspenderse o desactivarse en cualquier momento, y el ejercicio puede resolverse sin él.</li>
+      </ul>
+
+      <h3>6 · Síntesis de voz</h3>
+      <ul>
+        <li><strong>Cuándo.</strong> Cuando la aplicación lee en voz alta un texto japonés con la voz del sistema.</li>
+        <li><strong>Datos que salen del dispositivo.</strong> En iOS, ninguno. En Android, si la voz seleccionada es una de las que los Ajustes identifican como «por internet», o si la voz predeterminada del sistema opera por red, el motor de síntesis del sistema transmite el texto que se va a leer.</li>
+        <li><strong>Destinatario.</strong> Google LLC, como proveedor del motor de síntesis de voz del sistema, conforme a sus propias condiciones.</li>
+        <li><strong>Finalidad.</strong> Generar el audio de la lectura.</li>
+        <li><strong>Carácter.</strong> Opcional: los Ajustes permiten elegir una voz sin conexión, que es la recomendada.</li>
+      </ul>
+
+      <h3>7 · Lectura de texto en fotografías</h3>
+      <ul>
+        <li><strong>Cuándo.</strong> Al utilizar la función «Desde una foto».</li>
+        <li><strong>Datos que salen del dispositivo.</strong> Ni la fotografía ni el texto reconocido: el reconocimiento lo efectúa en el dispositivo el componente ML Kit de Google. Dicho componente puede remitir a Google, por su cuenta, datos técnicos de funcionamiento: fabricante y modelo del dispositivo, versión del sistema operativo, nombre y versión de la aplicación, identificadores de instalación, métricas de rendimiento, configuración del componente y códigos de error.</li>
+        <li><strong>Destinatario.</strong> Google LLC. La relación de datos está publicada en <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener">developers.google.com/ml-kit/android-data-disclosure</a>.</li>
+        <li><strong>Finalidad.</strong> Según Google, el diagnóstico del componente y la medición de su uso.</li>
+        <li><strong>Carácter.</strong> Opcional: sólo se produce si el usuario utiliza dicha función.</li>
+      </ul>
+
+      <h3>8 · Enlaces externos</h3>
+      <p>Cuando el usuario pulsa un enlace a este sitio web o a una dirección de correo electrónico, la aplicación lo abre en el navegador o en la aplicación de correo del dispositivo. Lo que ocurra a partir de ese momento se rige por las condiciones de dichas aplicaciones y del sitio visitado.</p>
+
+      <p class="base"><strong>Base jurídica.</strong> El interés legítimo del desarrollador en mantener la aplicación actualizada y operativa y en verificar las compras (supuestos 1 a 3); el consentimiento del usuario, en los informes de fallos (supuesto 4); y la solicitud del propio usuario al utilizar la función de que se trate (supuestos 5 a 8).</p>
     </section>
 
     <section>
@@ -323,31 +390,30 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <ul>
         <li>Notificaciones — se solicitan únicamente si se activa el recordatorio diario.</li>
         <li>Archivos — se solicitan únicamente en el momento de exportar o importar, y se limitan al archivo seleccionado.</li>
-        <li>Micrófono — se solicita únicamente para los ejercicios que ofrecen la lectura en voz alta, y está activo sólo mientras se mantiene pulsado el botón correspondiente. El reconocimiento se realiza en el dispositivo; véase el apartado siguiente.</li>
-        <li>Cámara y fotografías — se solicitan únicamente al escanear un texto japonés en una foto, y se limitan a la foto tomada o seleccionada. El texto se reconoce en el dispositivo; la foto no se conserva y no sale del dispositivo.</li>
+        <li>Micrófono y reconocimiento de voz — se solicitan únicamente si el usuario activa el reconocimiento de voz en los ajustes del ejercicio de lectura, opción desactivada de forma predeterminada. Véanse el apartado siguiente y el supuesto 5 del apartado «Conexiones de red».</li>
+        <li>Cámara y fotografías — se solicitan únicamente al utilizar la función «Desde una foto», y se limitan a la foto tomada o seleccionada. El texto se reconoce en el dispositivo y la foto no sale de él. La aplicación no conserva la foto; el sistema puede mantener una copia temporal en la memoria caché de la aplicación hasta que la elimine.</li>
         <li>La aplicación no accede a los datos de localización ni a los contactos.</li>
       </ul>
     </section>
 
     <section>
       <h2>Lectura en voz alta y micrófono</h2>
-      <p>Determinados ejercicios permiten leer la palabra en voz alta en lugar de escribirla. El micrófono se abre únicamente mientras se mantiene pulsado el botón correspondiente, y sólo después de que se haya concedido el permiso.</p>
-      <p>
-        <strong>El reconocimiento se realiza en el dispositivo.</strong> La aplicación solicita al reconocedor de voz del dispositivo que opere localmente y no emplea ningún otro medio: cuando el dispositivo no puede reconocer japonés sin conexión de red, la función no se ofrece.</p>
-      <p>No se graba ni se conserva audio alguno. La aplicación recibe el texto reconocido, lo compara con la lectura esperada y lo descarta. No se escribe ningún archivo de audio, y ningún audio sale de la aplicación.</p>
+      <p>El ejercicio de lectura permite decir la lectura en voz alta en lugar de escribirla, si el usuario activa la opción «Reconocimiento de voz (experimental)» en los ajustes del ejercicio; la opción está desactivada de forma predeterminada. Una vez activada y concedido el permiso, el micrófono se abre automáticamente al mostrarse cada palabra y se cierra al tocar el botón correspondiente, al pasar a otra palabra o al salir del ejercicio. La opción «No puedo hablar» lo suspende durante treinta minutos.</p>
+      <p><strong>Dónde se realiza el reconocimiento.</strong> En iOS, y en Android cuando el dispositivo dispone de reconocimiento de japonés sin conexión, la aplicación exige que el reconocimiento se realice en el dispositivo. En los dispositivos Android que carecen de dicha capacidad, la aplicación lo solicita primero sin conexión y, si el reconocedor del sistema indica que no puede reconocer japonés de ese modo, recurre al reconocimiento por red de Google durante el resto de la sesión. En ese caso, el audio de la escucha se transmite a Google conforme al supuesto 5 del apartado «Conexiones de red».</p>
+      <p>La aplicación no graba ni conserva audio alguno. Recibe el texto reconocido, lo compara con la lectura esperada y lo descarta. No se escribe ningún archivo de audio.</p>
     </section>
 
     <section>
       <h2>Informes de fallos</h2>
       <p>La aplicación puede transmitir un informe cuando finaliza de forma inesperada, con el fin de corregir el defecto. <strong>Esta función está desactivada de forma predeterminada.</strong> El consentimiento se solicita en el primer inicio, y no se transmite nada hasta que se otorga.</p>
-      <p>En caso de activarse, el informe se transmite a Sentry (Functional Software, Inc., Estados Unidos), servicio que recoge dichos informes. Contiene la naturaleza y la ubicación del defecto dentro del código, la versión de la aplicación y el modelo de dispositivo.</p>
-      <p>No contiene datos de estudio, barajas, ajustes de la aplicación ni información alguna que identifique al usuario: la opción que adjuntaría datos personales está desactivada en el código. Los informes pueden volver a desactivarse desde los Ajustes en cualquier momento.</p>
+      <p>En caso de activarse, el informe se transmite a Sentry (Functional Software, Inc.), que lo almacena en su región de datos de la Unión Europea (Alemania). Contiene: el tipo de error, su ubicación en el código y la pila de llamadas; la versión de la aplicación; el modelo del dispositivo y la versión del sistema operativo; un identificador aleatorio de instalación generado por el componente de Sentry; los últimos pasos registrados por la aplicación, como las pantallas abiertas, hasta un máximo de veinte; y el elemento que figuraba en pantalla en el momento del fallo, como el kanji, la palabra o el ejercicio en curso o, si estaba abierto el buscador de vocabulario, el texto introducido en él.</p>
+      <p>El informe no contiene el progreso de estudio, las barajas, el historial ni información que identifique directamente al usuario, como su nombre o su dirección de correo electrónico: la opción que adjuntaría datos personales, incluida la dirección IP, está desactivada en el código. Los informes se conservan durante un máximo de 30 días y después se eliminan. Pueden volver a desactivarse desde los Ajustes en cualquier momento.</p>
       <p>La política de privacidad de Sentry está disponible en <a href="https://sentry.io/privacy/" rel="noopener">sentry.io/privacy</a>.</p>
     </section>
 
     <section>
       <h2>Menores</h2>
-      <p>La aplicación no recoge datos personales de ningún usuario, con independencia de su edad. No solicita nombre, dirección de correo electrónico ni fecha de nacimiento y, en consecuencia, no dispone de dato alguno relativo a un menor que pudiera almacenarse o tratarse de forma diferenciada.</p>
+      <p>La aplicación no solicita a ningún usuario, con independencia de su edad, nombre, dirección de correo electrónico ni fecha de nacimiento, y el desarrollador no dispone de dato alguno que permita identificar a un menor. Los datos técnicos descritos en el apartado «Conexiones de red» se tratan del mismo modo con independencia de la edad del usuario.</p>
     </section>
 
     <section>
@@ -359,12 +425,12 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li><strong>Base jurídica.</strong> El consentimiento del usuario, prestado mediante el envío del mensaje. No se produce tratamiento alguno en ausencia de dicho acto.</li>
         <li><strong>Plazo de conservación.</strong> Hasta la resolución del asunto y, en ningún caso, más de seis meses.</li>
       </ul>
-      <p>El usuario puede solicitar la supresión de su dirección de correo electrónico y de cualquier material remitido, en cualquier momento, en la dirección indicada más abajo. La aplicación, por su parte, continúa sin transmitir nada por su cuenta.</p>
+      <p>El usuario puede solicitar la supresión de su dirección de correo electrónico y de cualquier material remitido, en cualquier momento, en la dirección indicada más abajo.</p>
     </section>
 
     <section>
       <h2>Derechos del interesado</h2>
-      <p>Los derechos de acceso, rectificación y supresión presuponen ordinariamente que una parte disponga de los datos. No es el caso: los datos residen en el dispositivo del usuario y bajo su control. Pueden consultarse exportando una copia y suprimirse desde los ajustes de la aplicación o desinstalándola.</p>
+      <p>Los datos de estudio residen en el dispositivo del usuario y bajo su control: pueden consultarse exportando una copia y suprimirse desde los ajustes de la aplicación o desinstalándola. Respecto de los informes de fallos y de la correspondencia, el usuario puede ejercer los derechos de acceso, rectificación, supresión, oposición y limitación del tratamiento dirigiéndose a la dirección de contacto; dado que los informes no contienen datos identificativos, puede ser necesario que indique la fecha aproximada del fallo para localizarlos. Respecto de los datos que Apple y Google tratan conforme a sus propias condiciones, los derechos se ejercen ante dichas entidades. El usuario tiene asimismo derecho a presentar una reclamación ante la autoridad de control en materia de protección de datos que corresponda.</p>
     </section>
 
     <section>

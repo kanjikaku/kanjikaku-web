@@ -191,6 +191,16 @@ section h2 {
   border-bottom: 1px solid var(--rule-soft);
 }
 section > p, section > ul { margin-top: 14px; }
+/* Cada conexión de red, con su título (30-sep-2026). */
+section h3 {
+  font-family: "Zen Old Mincho", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+  margin: 30px 0 0;
+}
+section h3 + ul, section h3 + p { margin-top: 10px; }
+.base { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--rule-soft); }
 section p + p { margin-top: 12px; }
 
 ul { padding-left: 0; list-style: none; }
@@ -272,17 +282,17 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Chính sách quyền riêng tư</p>
     <h1>Chính sách quyền riêng tư cho ứng dụng KanjiKaku</h1>
-    <p class="fecha">Cập nhật lần cuối: 29 tháng 9 năm 2026</p>
+    <p class="fecha">Cập nhật lần cuối: 30 tháng 9 năm 2026</p>
 
     <div class="resumen">
-      <p>Tóm tắt: dữ liệu học tập không rời khỏi thiết bị của người dùng. Ứng dụng không yêu cầu tài khoản, không lưu trữ thông tin trên bất kỳ máy chủ nào do nhà phát triển vận hành, không hiển thị quảng cáo và không thực hiện phân tích.</p>
-      <p>Các phần dưới đây trình bày chi tiết những dữ liệu được lưu trữ, nơi lưu trữ và mọi trường hợp ứng dụng thiết lập kết nối mạng.</p>
+      <p>Tóm lại: dữ liệu học tập được lưu lại trên thiết bị của người dùng. Ứng dụng không yêu cầu tài khoản, nhà phát triển không vận hành bất kỳ máy chủ nào lưu trữ thông tin người dùng, và ứng dụng không hiển thị quảng cáo cũng như không thực hiện theo dõi.</p>
+      <p>Tuy nhiên, một số chức năng nhất định có thiết lập kết nối mạng với các dịch vụ của bên thứ ba. Các mục dưới đây liệt kê đầy đủ những dữ liệu nào rời khỏi thiết bị, được truyền cho ai, nhằm mục đích gì và việc truyền đó có mang tính tùy chọn hay không.</p>
     </div>
 
     <section>
       <h2>Dữ liệu được lưu trữ và vị trí lưu trữ</h2>
       <p>Toàn bộ dữ liệu học tập — các chữ kanji đã tra cứu, mức độ thành thạo được ghi nhận cho từng chữ, các bộ thẻ và đợt học, cài đặt ứng dụng cùng lịch sử phiên học — đều được ghi vào một tệp ngay trong ứng dụng, trên thiết bị của người dùng.</p>
-      <p>Dữ liệu đó chỉ lưu lại tại đây. Dữ liệu không được sao chép sang bất kỳ máy chủ nào và cả nhà phát triển lẫn bên thứ ba đều không thể truy cập. Việc gỡ cài đặt ứng dụng sẽ xóa toàn bộ dữ liệu này.</p>
+      <p>Các dữ liệu đó được lưu lại tại đó. Chúng không được sao chép lên bất kỳ máy chủ nào và nhà phát triển cũng như bên thứ ba đều không thể truy cập, ngoại trừ trường hợp duy nhất được mô tả tại mục "Báo cáo sự cố". Việc gỡ cài đặt ứng dụng sẽ xóa các dữ liệu này.</p>
       <p>Ứng dụng cũng lưu trữ một bản ghi cục bộ về việc luyện viết: các nét đã vẽ trong những lần thử không thành công và một dòng thông số cho mỗi lần thử. Bản ghi này được giới hạn tối đa 100 ký tự và 500 lần thử, các mục cũ nhất sẽ bị loại bỏ. Mục đích duy nhất của bản ghi là cho phép người dùng tự nguyện gửi cho nhà phát triển; bản ghi không bao giờ được truyền đi tự động và có thể bị xóa trong phần Cài đặt.</p>
     </section>
 
@@ -292,19 +302,76 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li>Ứng dụng không yêu cầu tài khoản và không yêu cầu đăng ký. Ứng dụng không yêu cầu cung cấp tên, địa chỉ email hay độ tuổi.</li>
         <li>Nhà phát triển không vận hành bất kỳ máy chủ nào lưu trữ tiến trình của người dùng.</li>
         <li>Ứng dụng không hiển thị quảng cáo và không tích hợp bất kỳ mạng lưới quảng cáo nào.</li>
-        <li>Ứng dụng không thực hiện phân tích, không theo dõi việc sử dụng và không sử dụng mã định danh quảng cáo. Tính năng báo cáo sự cố có tồn tại; tính năng này bị tắt trừ khi người dùng chủ động bật và được mô tả trong một phần riêng bên dưới.</li>
-        <li>Dữ liệu không bao giờ bị bán hoặc chia sẻ với bên thứ ba, vì không có dữ liệu nào được thu thập cho mục đích đó.</li>
+        <li>Nhà phát triển không thực hiện phân tích hay theo dõi việc sử dụng, và ứng dụng không sử dụng mã định danh quảng cáo. Các thành phần của bên thứ ba tự gửi dữ liệu kỹ thuật được nêu tại mục "Kết nối mạng".</li>
+        <li>Không có dữ liệu nào bị bán hoặc chuyển giao cho bên thứ ba vì mục đích quảng cáo hay thương mại.</li>
       </ul>
     </section>
 
     <section>
       <h2>Kết nối mạng</h2>
-      <p>Ứng dụng thiết lập kết nối mạng trong các trường hợp được liệt kê dưới đây. Không có trường hợp nào truyền dữ liệu học tập.</p>
-      <p>1 · <strong>Cập nhật.</strong> Khi khởi chạy, ứng dụng sẽ gửi yêu cầu tới dịch vụ cập nhật của Expo Application Services (Expo, Hoa Kỳ) để xác định xem có phiên bản mới hơn hay không. Yêu cầu đó cho phép dịch vụ này ghi nhận dữ liệu kỹ thuật: địa chỉ IP của thiết bị, hệ điều hành và phiên bản ứng dụng. Quá trình này không truyền bất kỳ dữ liệu học tập nào. Chính sách quyền riêng tư của Expo hiện có tại <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</p>
-      <p>2 · <strong>Tổng hợp giọng nói.</strong> Khi ứng dụng đọc to một từ tiếng Nhật, thao tác này được chuyển giao cho công cụ chuyển văn bản thành giọng nói của chính thiết bị. Bản thân ứng dụng không tự truyền bất kỳ dữ liệu nào; việc công cụ hệ thống đó có sử dụng mạng hay không phụ thuộc vào thiết bị và cấu hình của thiết bị.</p>
-      <p>3 · <strong>Báo cáo sự cố, tuân theo sự đồng ý của người dùng.</strong> Được mô tả trong phần tương ứng bên dưới. Tính năng này bị tắt trừ khi người dùng kích hoạt.</p>
-      <p>4 · <strong>Ưu đãi.</strong> Khi mở màn hình mua hàng, ứng dụng tải xuống tệp công khai kanjikaku.com/ofertas.json, được lưu trữ trên GitHub Pages (GitHub, Inc., Hoa Kỳ), để hiển thị các ưu đãi hiện hành. Việc tải xuống này cho phép dịch vụ nhìn thấy địa chỉ IP của thiết bị. Không có dữ liệu học tập hay bất kỳ dữ liệu nào khác được truyền đi.</p>
-      <p>5 · <strong>Mua hàng.</strong> Giao dịch mua trong ứng dụng được xử lý hoàn toàn qua App Store hoặc Google Play, tùy theo thiết bị. Nhà phát triển không nhận dữ liệu thanh toán; ứng dụng chỉ hỏi cửa hàng xem giao dịch mua có tồn tại hay không để mở khóa nội dung đã mua.</p>
+      <p>Ứng dụng chỉ thiết lập kết nối mạng trong các trường hợp được liệt kê dưới đây. Đối với mỗi trường hợp đều nêu rõ thời điểm xảy ra, dữ liệu nào rời khỏi thiết bị, ai là bên nhận, nhằm mục đích gì và có mang tính tùy chọn hay không. Khi không có kết nối, chức năng tương ứng sẽ không được thực hiện và việc học không bị ảnh hưởng.</p>
+
+      <h3>1 · Kiểm tra bản cập nhật</h3>
+      <ul>
+        <li><strong>Thời điểm.</strong> Mỗi lần khởi động ứng dụng và, trong khi ứng dụng vẫn đang mở, mỗi khi ứng dụng trở lại nền trước, với khoảng cách tối thiểu mười phút.</li>
+        <li><strong>Dữ liệu rời khỏi thiết bị.</strong> Địa chỉ IP; nền tảng (Android hoặc iOS); phiên bản gốc của ứng dụng, kênh phát hành và mã định danh của bản cập nhật đã cài đặt; cùng một mã định danh cài đặt ngẫu nhiên do chính thành phần cập nhật tạo ra. Không có dữ liệu học tập nào được truyền đi.</li>
+        <li><strong>Bên nhận.</strong> Expo Application Services, do 650 Industries, Inc. (Hoa Kỳ) vận hành. Chính sách quyền riêng tư của dịch vụ này có tại <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</li>
+        <li><strong>Mục đích.</strong> Xác định xem có phiên bản mới hơn của ứng dụng hay không và, nếu có, tải phiên bản đó xuống.</li>
+        <li><strong>Tính chất.</strong> Tự động; không thể tắt từ trong ứng dụng. Khi không có kết nối, việc kiểm tra không được thực hiện và ứng dụng hoạt động với phiên bản đã cài đặt.</li>
+      </ul>
+
+      <h3>2 · Mua hàng trong ứng dụng</h3>
+      <ul>
+        <li><strong>Thời điểm.</strong> Mỗi lần khởi động ứng dụng, để kiểm tra xem giao dịch mua có tồn tại hay không; khi mở màn hình mua hàng, để lấy giá; và khi mua hoặc khôi phục giao dịch mua.</li>
+        <li><strong>Dữ liệu rời khỏi thiết bị.</strong> Yêu cầu kiểm tra và, nếu có, yêu cầu mua hàng được gửi đến hệ thống mua hàng của cửa hàng (App Store trên iOS, Google Play trên Android), hệ thống này xử lý bằng tài khoản cửa hàng đang đăng nhập trên thiết bị và mã định danh sản phẩm. Việc thanh toán được nhập và xử lý hoàn toàn trong cửa hàng.</li>
+        <li><strong>Bên nhận.</strong> Apple Inc. hoặc Google LLC, tùy theo thiết bị, là các bên xử lý dữ liệu đó theo điều khoản và chính sách quyền riêng tư của riêng họ. Nhà phát triển không nhận được dữ liệu thanh toán, họ tên hay địa chỉ email; nhà phát triển chỉ nhận được các báo cáo bán hàng do cửa hàng cung cấp.</li>
+        <li><strong>Mục đích.</strong> Xử lý giao dịch mua và mở khóa nội dung đã mua trên thiết bị.</li>
+        <li><strong>Tính chất.</strong> Việc kiểm tra khi khởi động diễn ra tự động. Việc mua hàng là tùy chọn; nếu không mua, ứng dụng cung cấp nội dung miễn phí.</li>
+      </ul>
+
+      <h3>3 · Ưu đãi hiện hành và thông báo phiên bản mới</h3>
+      <ul>
+        <li><strong>Khi nào.</strong> Khi khởi động ứng dụng, để thông báo phiên bản mới, và khi mở màn hình mua, để hiển thị ưu đãi.</li>
+        <li><strong>Dữ liệu rời khỏi thiết bị.</strong> Một yêu cầu tải xuống các tệp công khai kanjikaku.com/version.json và kanjikaku.com/ofertas.json, cho phép máy chủ ghi nhận địa chỉ IP và các dữ liệu kỹ thuật thông thường của mọi kết nối. Không có dữ liệu nào khác được truyền đi: việc so sánh với phiên bản đã cài đặt được thực hiện trên thiết bị.</li>
+        <li><strong>Bên nhận.</strong> GitHub Pages, do GitHub, Inc. (Hoa Kỳ) vận hành, là nơi lưu trữ trang web kanjikaku.com.</li>
+        <li><strong>Mục đích.</strong> Thông báo rằng trên cửa hàng đã có phiên bản mới hơn của ứng dụng và hiển thị các ưu đãi hiện hành.</li>
+        <li><strong>Tính chất.</strong> Việc kiểm tra khi khởi động diễn ra tự động; thông báo không bắt buộc cập nhật và có thể bỏ qua. Yêu cầu về ưu đãi chỉ diễn ra nếu người dùng mở màn hình mua.</li>
+      </ul>
+
+      <h3>4 · Báo cáo sự cố</h3>
+      <p>Chỉ khi người dùng bật tính năng này. Nội dung, bên nhận và thời hạn lưu giữ được mô tả tại mục "Báo cáo sự cố".</p>
+
+      <h3>5 · Nhận dạng giọng nói</h3>
+      <ul>
+        <li><strong>Thời điểm.</strong> Chỉ khi người dùng bật tính năng nhận diện giọng nói, vốn bị tắt theo mặc định, trong phần cài đặt của bài tập đọc; khi đó, trong thời gian micro đang mở trong bài tập này.</li>
+        <li><strong>Dữ liệu rời khỏi thiết bị.</strong> Trên iOS, và trên Android khi thiết bị có sẵn khả năng nhận dạng tiếng Nhật ngoại tuyến: không có dữ liệu nào, vì việc nhận dạng được thực hiện trên thiết bị. Trên các thiết bị Android không có khả năng đó, trình nhận dạng giọng nói của hệ thống sẽ truyền âm thanh thu được trong lúc nghe, kèm theo từ cần đọc và cách đọc của từ đó do ứng dụng cung cấp làm gợi ý.</li>
+        <li><strong>Bên nhận.</strong> Trong trường hợp sau cùng này, Google LLC, với tư cách là nhà cung cấp dịch vụ nhận dạng giọng nói của hệ thống, theo điều khoản của riêng mình.</li>
+        <li><strong>Mục đích.</strong> Chuyển cách đọc được phát âm thành văn bản để so sánh với cách đọc cần đạt.</li>
+        <li><strong>Tính chất.</strong> Tùy chọn: tính năng nhận diện giọng nói bị tắt theo mặc định, có thể tạm dừng hoặc tắt bất kỳ lúc nào, và có thể hoàn thành bài tập mà không cần đến nó.</li>
+      </ul>
+
+      <h3>6 · Tổng hợp giọng nói</h3>
+      <ul>
+        <li><strong>Thời điểm.</strong> Khi ứng dụng đọc to một văn bản tiếng Nhật bằng giọng đọc của hệ thống.</li>
+        <li><strong>Dữ liệu rời khỏi thiết bị.</strong> Trên iOS: không có. Trên Android, nếu giọng đọc được chọn là một trong những giọng được đánh dấu "qua internet" trong phần Cài đặt, hoặc nếu giọng đọc mặc định của hệ thống hoạt động qua mạng, công cụ tổng hợp giọng nói của hệ thống sẽ truyền đi văn bản cần đọc.</li>
+        <li><strong>Bên nhận.</strong> Google LLC, với tư cách là nhà cung cấp công cụ tổng hợp giọng nói của hệ thống, theo điều khoản của riêng mình.</li>
+        <li><strong>Mục đích.</strong> Tạo âm thanh cho phần đọc.</li>
+        <li><strong>Tính chất.</strong> Tùy chọn: phần Cài đặt cho phép chọn một giọng đọc ngoại tuyến, và đây là lựa chọn được khuyến nghị.</li>
+      </ul>
+
+      <h3>7 · Đọc văn bản trong ảnh</h3>
+      <ul>
+        <li><strong>Thời điểm.</strong> Khi sử dụng chức năng "Từ ảnh chụp".</li>
+        <li><strong>Dữ liệu rời khỏi thiết bị.</strong> Cả bức ảnh lẫn văn bản được nhận dạng đều không được truyền đi: việc nhận dạng được thực hiện trên thiết bị bởi thành phần ML Kit của Google. Thành phần này có thể tự gửi cho Google các dữ liệu kỹ thuật về hoạt động: nhà sản xuất và kiểu máy của thiết bị, phiên bản hệ điều hành, tên và phiên bản ứng dụng, mã định danh cài đặt, số liệu hiệu năng, cấu hình của thành phần và mã lỗi.</li>
+        <li><strong>Bên nhận.</strong> Google LLC. Danh sách dữ liệu được công bố tại <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener">developers.google.com/ml-kit/android-data-disclosure</a>.</li>
+        <li><strong>Mục đích.</strong> Theo Google, nhằm chẩn đoán thành phần và đo lường việc sử dụng thành phần đó.</li>
+        <li><strong>Tính chất.</strong> Tùy chọn: chỉ xảy ra khi người dùng sử dụng chức năng đó.</li>
+      </ul>
+
+      <h3>8 · Liên kết bên ngoài</h3>
+      <p>Khi người dùng chạm vào một liên kết dẫn đến trang web này hoặc đến một địa chỉ email, ứng dụng sẽ mở liên kết đó trong trình duyệt hoặc ứng dụng email của thiết bị. Những gì diễn ra sau đó chịu sự điều chỉnh của các điều khoản của các ứng dụng đó và của trang web được truy cập.</p>
+
+      <p class="base"><strong>Cơ sở pháp lý.</strong> Lợi ích hợp pháp của nhà phát triển trong việc duy trì ứng dụng được cập nhật, hoạt động ổn định và xác minh các giao dịch mua (các trường hợp 1 đến 3); sự đồng ý của người dùng đối với báo cáo sự cố (trường hợp 4); và yêu cầu của chính người dùng khi sử dụng chức năng liên quan (các trường hợp 5 đến 8).</p>
     </section>
 
     <section>
@@ -323,30 +390,30 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <ul>
         <li>Thông báo — chỉ được yêu cầu nếu tính năng nhắc nhở hằng ngày được bật.</li>
         <li>Tệp — chỉ được yêu cầu tại thời điểm xuất hoặc nhập dữ liệu, và giới hạn ở tệp được chọn.</li>
-        <li>Micro — chỉ được yêu cầu đối với các bài tập có tính năng đọc to, và chỉ hoạt động trong khi nhấn giữ nút tương ứng. Quá trình nhận diện được thực hiện trên thiết bị; xem phần bên dưới.</li>
-        <li>Máy ảnh và hình ảnh — chỉ được yêu cầu khi quét văn bản tiếng Nhật trong ảnh, và chỉ giới hạn ở ảnh được chụp hoặc được chọn. Văn bản được nhận dạng trên thiết bị; ảnh không được lưu giữ và không rời khỏi thiết bị.</li>
+        <li>Micro và nhận dạng giọng nói — chỉ được yêu cầu khi người dùng bật tính năng nhận diện giọng nói trong phần cài đặt của bài tập đọc, một tùy chọn bị tắt theo mặc định. Xem phần bên dưới và trường hợp 5 tại mục "Kết nối mạng".</li>
+        <li>Máy ảnh và ảnh — chỉ được yêu cầu khi sử dụng chức năng "Từ ảnh chụp", và chỉ giới hạn ở ảnh được chụp hoặc được chọn. Văn bản được nhận dạng trên thiết bị và ảnh không rời khỏi thiết bị. Ứng dụng không lưu giữ ảnh; hệ thống có thể giữ một bản sao tạm thời trong bộ nhớ đệm của ứng dụng cho đến khi hệ thống xóa bản sao đó.</li>
         <li>Ứng dụng không truy cập dữ liệu vị trí hoặc danh bạ.</li>
       </ul>
     </section>
 
     <section>
       <h2>Tính năng đọc to và micro</h2>
-      <p>Một số bài tập cho phép đọc to từ thay vì nhập chữ. Micro chỉ được bật trong khi nhấn giữ nút tương ứng, và chỉ sau khi quyền truy cập đã được cấp.</p>
-      <p><strong>Quá trình nhận diện được thực hiện trên thiết bị.</strong> Ứng dụng yêu cầu nhận diện trên thiết bị từ trình nhận diện giọng nói của máy và không sử dụng phương thức nào khác: nếu thiết bị không thể nhận diện tiếng Nhật khi không có kết nối mạng, tính năng này sẽ không được cung cấp.</p>
-      <p>Không có âm thanh nào được ghi âm hoặc lưu giữ. Ứng dụng nhận văn bản đã được nhận diện, so sánh với cách đọc dự kiến và hủy bỏ nó. Không có tệp âm thanh nào được ghi lại, và không có dữ liệu âm thanh nào rời khỏi ứng dụng.</p>
+      <p>Bài tập đọc cho phép nói to cách đọc thay vì gõ, nếu người dùng bật tùy chọn "Nhận diện giọng nói (thử nghiệm)" trong phần cài đặt của bài tập; tùy chọn này bị tắt theo mặc định. Sau khi được bật và đã cấp quyền, micro sẽ tự động mở khi mỗi từ được hiển thị và đóng lại khi chạm vào nút tương ứng, khi chuyển sang từ khác hoặc khi thoát khỏi bài tập. Tùy chọn "Hiện tôi không nói được" tạm dừng micro trong ba mươi phút.</p>
+      <p><strong>Nơi thực hiện việc nhận dạng.</strong> Trên iOS, và trên Android khi thiết bị có sẵn khả năng nhận dạng tiếng Nhật ngoại tuyến, ứng dụng yêu cầu việc nhận dạng phải được thực hiện trên thiết bị. Trên các thiết bị Android không có khả năng đó, ứng dụng trước tiên yêu cầu nhận dạng ngoại tuyến và, nếu trình nhận dạng của hệ thống cho biết không thể nhận dạng tiếng Nhật theo cách đó, ứng dụng sẽ chuyển sang nhận dạng qua mạng của Google trong suốt phần còn lại của phiên. Trong trường hợp đó, âm thanh thu được trong lúc nghe sẽ được truyền cho Google theo trường hợp 5 tại mục "Kết nối mạng".</p>
+      <p>Ứng dụng không ghi âm và không lưu giữ bất kỳ âm thanh nào. Ứng dụng nhận văn bản đã được nhận dạng, so sánh với cách đọc cần đạt rồi loại bỏ. Không có tệp âm thanh nào được ghi lại.</p>
     </section>
 
     <section>
       <h2>Báo cáo sự cố</h2>
       <p>Ứng dụng có thể gửi báo cáo khi bị đóng đột ngột để lỗi có thể được khắc phục. <strong>Tính năng này bị tắt theo mặc định.</strong> Sự đồng ý được yêu cầu trong lần khởi chạy đầu tiên, và không có dữ liệu nào được gửi đi cho đến khi được chấp thuận.</p>
-      <p>Khi được bật, báo cáo sẽ được gửi tới Sentry (Functional Software, Inc., Hoa Kỳ), dịch vụ thu thập các báo cáo này. Báo cáo chứa bản chất và vị trí của lỗi trong mã nguồn, phiên bản ứng dụng và kiểu máy của thiết bị.</p>
-      <p>Báo cáo không chứa dữ liệu học tập, bộ thẻ, cài đặt ứng dụng hay bất kỳ thông tin nào nhận dạng người dùng: tùy chọn đính kèm dữ liệu cá nhân đã bị vô hiệu hóa trong mã nguồn. Báo cáo có thể được tắt lại bất cứ lúc nào trong mục Cài đặt.</p>
+      <p>Nếu được bật, báo cáo sẽ được truyền cho Sentry (Functional Software, Inc.), đơn vị lưu trữ báo cáo tại khu vực dữ liệu Liên minh châu Âu (Đức) của mình. Báo cáo bao gồm: loại lỗi, vị trí của lỗi trong mã nguồn và ngăn xếp lệnh gọi; phiên bản ứng dụng; kiểu máy của thiết bị và phiên bản hệ điều hành; một mã định danh cài đặt ngẫu nhiên do thành phần Sentry tạo ra; các bước gần nhất do ứng dụng ghi nhận, chẳng hạn như các màn hình đã mở, tối đa hai mươi bước; và nội dung đang hiển thị trên màn hình vào thời điểm xảy ra lỗi, chẳng hạn như chữ kanji, từ hoặc bài tập đang thực hiện, hoặc, nếu chức năng tìm kiếm từ vựng đang mở, văn bản đã được nhập vào đó.</p>
+      <p>Báo cáo không chứa tiến độ học tập, các bộ thẻ, lịch sử hay bất kỳ thông tin nào nhận dạng trực tiếp người dùng, chẳng hạn như họ tên hoặc địa chỉ email: tùy chọn đính kèm dữ liệu cá nhân, bao gồm cả địa chỉ IP, đã bị tắt trong mã nguồn. Báo cáo được lưu giữ tối đa 30 ngày và sau đó bị xóa. Có thể tắt lại tính năng này trong phần Cài đặt bất kỳ lúc nào.</p>
       <p>Chính sách quyền riêng tư của Sentry có sẵn tại <a href="https://sentry.io/privacy/" rel="noopener">sentry.io/privacy</a>.</p>
     </section>
 
     <section>
       <h2>Trẻ vị thành niên</h2>
-      <p>Ứng dụng không thu thập dữ liệu cá nhân của bất kỳ người dùng nào, bất kể độ tuổi. Ứng dụng không yêu cầu tên, địa chỉ email hoặc ngày sinh, và do đó không nắm giữ bất kỳ dữ liệu nào liên quan đến trẻ vị thành niên để có thể lưu trữ hoặc xử lý theo cách khác biệt.</p>
+      <p>Ứng dụng không yêu cầu bất kỳ người dùng nào, bất kể độ tuổi, cung cấp họ tên, địa chỉ email hay ngày sinh, và nhà phát triển không nắm giữ bất kỳ dữ liệu nào cho phép nhận dạng một người chưa thành niên. Các dữ liệu kỹ thuật được mô tả tại mục "Kết nối mạng" được xử lý như nhau bất kể độ tuổi của người dùng.</p>
     </section>
 
     <section>
@@ -358,12 +425,12 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li><strong>Cơ sở pháp lý.</strong> Sự đồng ý của người dùng, được thể hiện thông qua việc gửi tin nhắn. Không có hoạt động xử lý nào diễn ra nếu không có hành động này.</li>
         <li><strong>Thời gian lưu trữ.</strong> Cho đến khi vấn đề được giải quyết, và trong mọi trường hợp không quá sáu tháng.</li>
       </ul>
-      <p>Người dùng có thể yêu cầu xóa địa chỉ email và bất kỳ tài liệu nào đã gửi vào bất kỳ lúc nào tại địa chỉ được cung cấp bên dưới. Bản thân ứng dụng vẫn tiếp tục không tự ý truyền bất kỳ dữ liệu nào.</p>
+      <p>Người dùng có thể yêu cầu xóa địa chỉ email của mình và mọi tài liệu đã gửi, vào bất kỳ lúc nào, qua địa chỉ được nêu bên dưới.</p>
     </section>
 
     <section>
       <h2>Quyền của chủ thể dữ liệu</h2>
-      <p>Các quyền truy cập, cải chính và xóa dữ liệu thường được đặt ra với giả định rằng một bên đang nắm giữ dữ liệu. Trường hợp này không phải như vậy: dữ liệu nằm trên thiết bị của người dùng và thuộc quyền kiểm soát của người dùng. Dữ liệu có thể được kiểm tra bằng cách xuất một bản sao và có thể xóa từ cài đặt ứng dụng hoặc bằng cách gỡ cài đặt ứng dụng.</p>
+      <p>Dữ liệu học tập nằm trên thiết bị của người dùng và thuộc quyền kiểm soát của người dùng: có thể xem dữ liệu bằng cách xuất một bản sao và xóa dữ liệu trong phần cài đặt của ứng dụng hoặc bằng cách gỡ cài đặt ứng dụng. Đối với báo cáo sự cố và thư từ trao đổi, người dùng có thể thực hiện các quyền truy cập, chỉnh sửa, xóa, phản đối và hạn chế xử lý bằng cách liên hệ qua địa chỉ liên lạc; do báo cáo không chứa dữ liệu nhận dạng, có thể cần cung cấp ngày gần đúng xảy ra sự cố để tìm ra báo cáo. Đối với dữ liệu mà Apple và Google xử lý theo điều khoản của riêng họ, các quyền này được thực hiện đối với các đơn vị đó. Người dùng cũng có quyền khiếu nại lên cơ quan giám sát có thẩm quyền về bảo vệ dữ liệu.</p>
     </section>
 
     <section>

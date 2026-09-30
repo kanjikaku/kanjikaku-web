@@ -191,6 +191,16 @@ section h2 {
   border-bottom: 1px solid var(--rule-soft);
 }
 section > p, section > ul { margin-top: 14px; }
+/* Cada conexión de red, con su título (30-sep-2026). */
+section h3 {
+  font-family: "Zen Old Mincho", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+  margin: 30px 0 0;
+}
+section h3 + ul, section h3 + p { margin-top: 10px; }
+.base { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--rule-soft); }
 section p + p { margin-top: 12px; }
 
 ul { padding-left: 0; list-style: none; }
@@ -272,17 +282,17 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Privacy policy</p>
     <h1>Privacy policy for the KanjiKaku application</h1>
-    <p class="fecha">Last updated: 29 September 2026</p>
+    <p class="fecha">Last updated: 30 September 2026</p>
 
     <div class="resumen">
-      <p>In summary: study data does not leave the user's device. The application requires no account, stores nothing on any server operated by the developer, displays no advertising and performs no analytics.</p>
-      <p>The sections below set out what is stored, where it is stored, and every occasion on which the application establishes a network connection.</p>
+      <p>In summary: study data remains on the user's device. The application requires no account, the developer operates no server that stores user information, and the application displays no advertising and performs no tracking.</p>
+      <p>Certain functions do, however, establish network connections with third-party services. The sections below list exhaustively which data leaves the device, to whom it is transmitted, for what purpose, and whether its transmission is optional.</p>
     </div>
 
     <section>
       <h2>Data stored, and where</h2>
       <p>All study data — the kanji consulted, the level of mastery recorded for each one, decks and batches, application settings and session history — is written to a file within the application itself, on the user's device.</p>
-      <p>That data remains there. It is not copied to any server and is not accessible to the developer or to any third party. Uninstalling the application deletes it.</p>
+      <p>That data remains there. It is not copied to any server and is not accessible to the developer or to any third party, with the sole exception described in the section "Crash reports". Uninstalling the application deletes it.</p>
       <p>The application additionally maintains a local record of handwriting practice: the strokes drawn in unsuccessful attempts and a line of figures for each attempt. The record is capped at 100 characters and 500 attempts, and the oldest entries are discarded. Its sole purpose is to allow the user to send it to the developer voluntarily; it is never transmitted automatically and may be deleted from Settings.</p>
     </section>
 
@@ -292,19 +302,76 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li>It requires no account and no registration. It does not request a name, an email address or an age.</li>
         <li>The developer operates no server holding user progress.</li>
         <li>It displays no advertising and integrates no advertising networks.</li>
-        <li>It performs no analytics, no usage tracking and uses no advertising identifiers. Crash reporting does exist; it is disabled unless the user enables it, and is described in a separate section below.</li>
-        <li>No data is sold or shared with third parties, as no data is collected for that purpose.</li>
+        <li>The developer performs no analytics or usage tracking, and the application uses no advertising identifiers. Third-party components that send technical data on their own account are identified in the section "Network connections".</li>
+        <li>No data is sold or disclosed to third parties for advertising or commercial purposes.</li>
       </ul>
     </section>
 
     <section>
       <h2>Network connections</h2>
-      <p>The application establishes a network connection on the occasions listed below. None of them transmits study data.</p>
-      <p>1 · <strong>Updates.</strong> On launch, the application queries the update service of Expo Application Services (Expo, United States) to determine whether a more recent version exists. That request allows the service to observe technical data: the device IP address, its operating system and the application version. It transmits no study data. Expo's privacy policy is available at <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</p>
-      <p>2 · <strong>Speech synthesis.</strong> When the application reads a Japanese word aloud, it delegates to the text-to-speech engine of the device itself. The application transmits nothing on its own account; whether that system engine uses the network depends on the device and its configuration.</p>
-      <p>3 · <strong>Crash reports, subject to consent.</strong> Described in the corresponding section below. Disabled unless the user enables them.</p>
-      <p>4 · <strong>Offers.</strong> When the purchase screen is opened, the application downloads the public file kanjikaku.com/ofertas.json, hosted on GitHub Pages (GitHub, Inc., United States), in order to display current offers. This download allows the service to observe the device's IP address. It transmits no study data and no other data.</p>
-      <p>5 · <strong>Purchases.</strong> The in-app purchase is processed entirely through the App Store or Google Play, depending on the device. The developer receives no payment data; the application only asks the store whether the purchase exists, in order to unlock the purchased content.</p>
+      <p>The application establishes network connections only in the cases listed below. For each one, the following are stated: when it occurs, which data leaves the device, who receives it, for what purpose, and whether it is optional. If no connection is available, the corresponding function is not performed and studying is unaffected.</p>
+
+      <h3>1 · Update checks</h3>
+      <ul>
+        <li><strong>When.</strong> On each launch of the application and, while it remains open, whenever it returns to the foreground, at intervals of no less than ten minutes.</li>
+        <li><strong>Data leaving the device.</strong> The IP address; the platform (Android or iOS); the native version of the application, the release channel and the identifier of the installed update; and a random installation identifier generated by the update component itself. No study data is transmitted.</li>
+        <li><strong>Recipient.</strong> Expo Application Services, operated by 650 Industries, Inc. (United States). Its privacy policy is available at <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</li>
+        <li><strong>Purpose.</strong> To determine whether a more recent version of the application exists and, if so, to download it.</li>
+        <li><strong>Nature.</strong> Automatic; it cannot be disabled from within the application. Without a connection, the check does not take place and the application runs with the installed version.</li>
+      </ul>
+
+      <h3>2 · In-app purchases</h3>
+      <ul>
+        <li><strong>When.</strong> On each launch of the application, to check whether the purchase exists; when the purchase screen is opened, to obtain the price; and when purchasing or restoring the purchase.</li>
+        <li><strong>Data leaving the device.</strong> The query and, where applicable, the purchase request are sent to the store's purchasing system (the App Store on iOS, Google Play on Android), which handles them using the store account signed in on the device and the product identifier. Payment is entered and processed entirely within the store.</li>
+        <li><strong>Recipient.</strong> Apple Inc. or Google LLC, depending on the device, which process that data under their own terms and privacy policies. The developer receives no payment data, name or email address; it receives from the store only the sales reports the store provides.</li>
+        <li><strong>Purpose.</strong> To process the purchase and to unlock the purchased content on the device.</li>
+        <li><strong>Nature.</strong> The check at launch is automatic. The purchase is optional; without it, the application provides the free content.</li>
+      </ul>
+
+      <h3>3 · Current offers and new-version notice</h3>
+      <ul>
+        <li><strong>When.</strong> When the application starts, for the new-version notice, and when the purchase screen is opened, for the offers.</li>
+        <li><strong>Data leaving the device.</strong> A request to download the public files kanjikaku.com/version.json and kanjikaku.com/ofertas.json, which allows the server to observe the IP address and the ordinary technical data of any connection. No other data is transmitted: the comparison with the installed version is made on the device.</li>
+        <li><strong>Recipient.</strong> GitHub Pages, operated by GitHub, Inc. (United States), which hosts the kanjikaku.com website.</li>
+        <li><strong>Purpose.</strong> To notify that a more recent version of the application is available in the store and to display the current offers.</li>
+        <li><strong>Nature.</strong> The check at start-up is automatic; the notice does not require updating and may be dismissed. The offers request occurs only if the user opens the purchase screen.</li>
+      </ul>
+
+      <h3>4 · Crash reports</h3>
+      <p>Only if the user enables them. Their content, recipient and retention period are described in the section "Crash reports".</p>
+
+      <h3>5 · Speech recognition</h3>
+      <ul>
+        <li><strong>When.</strong> Only if the user enables speech recognition, which is disabled by default, in the settings of the reading exercise; in that case, while the microphone is open in that exercise.</li>
+        <li><strong>Data leaving the device.</strong> On iOS, and on Android where the device has offline Japanese recognition, none: recognition is performed on the device. On Android devices that lack it, the system speech recogniser transmits the audio captured while listening, together with the expected word and its reading, which the application supplies as a hint.</li>
+        <li><strong>Recipient.</strong> In the latter case, Google LLC, as provider of the system speech recognition service, under its own terms.</li>
+        <li><strong>Purpose.</strong> To transcribe the spoken reading so that it can be compared with the expected one.</li>
+        <li><strong>Nature.</strong> Optional: speech recognition is disabled by default, may be paused or disabled at any time, and the exercise can be completed without it.</li>
+      </ul>
+
+      <h3>6 · Speech synthesis</h3>
+      <ul>
+        <li><strong>When.</strong> When the application reads Japanese text aloud using the system voice.</li>
+        <li><strong>Data leaving the device.</strong> On iOS, none. On Android, if the selected voice is one of those identified in Settings as "online", or if the system's default voice operates over the network, the system text-to-speech engine transmits the text to be read.</li>
+        <li><strong>Recipient.</strong> Google LLC, as provider of the system text-to-speech engine, under its own terms.</li>
+        <li><strong>Purpose.</strong> To generate the audio of the reading.</li>
+        <li><strong>Nature.</strong> Optional: Settings allow an offline voice to be selected, which is the recommended option.</li>
+      </ul>
+
+      <h3>7 · Reading text in photographs</h3>
+      <ul>
+        <li><strong>When.</strong> When the "From a photo" function is used.</li>
+        <li><strong>Data leaving the device.</strong> Neither the photograph nor the recognised text: recognition is performed on the device by Google's ML Kit component. That component may, on its own account, send Google technical operating data: device manufacturer and model, operating system version, application name and version, installation identifiers, performance metrics, component configuration and error codes.</li>
+        <li><strong>Recipient.</strong> Google LLC. The list of data is published at <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener">developers.google.com/ml-kit/android-data-disclosure</a>.</li>
+        <li><strong>Purpose.</strong> According to Google, diagnostics of the component and measurement of its use.</li>
+        <li><strong>Nature.</strong> Optional: it occurs only if the user uses that function.</li>
+      </ul>
+
+      <h3>8 · External links</h3>
+      <p>When the user taps a link to this website or to an email address, the application opens it in the device's browser or email application. What happens from that point is governed by the terms of those applications and of the site visited.</p>
+
+      <p class="base"><strong>Legal basis.</strong> The developer's legitimate interest in keeping the application up to date and operational and in verifying purchases (cases 1 to 3); the user's consent, for crash reports (case 4); and the user's own request when using the function concerned (cases 5 to 8).</p>
     </section>
 
     <section>
@@ -323,30 +390,30 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <ul>
         <li>Notifications — requested only if the daily reminder is enabled.</li>
         <li>Files — requested only at the moment of exporting or importing, and limited to the file selected.</li>
-        <li>Microphone — requested only for the exercises that offer reading aloud, and active only while the corresponding button is held. Recognition is performed on the device; see the section below.</li>
-        <li>Camera and photographs — requested only when scanning Japanese text in a photo, and limited to the photo taken or selected. The text is recognised on the device; the photo is not kept and does not leave the device.</li>
+        <li>Microphone and speech recognition — requested only if the user enables speech recognition in the settings of the reading exercise, an option that is disabled by default. See the section below and case 5 of the section "Network connections".</li>
+        <li>Camera and photographs — requested only when the "From a photo" function is used, and limited to the photo taken or selected. The text is recognised on the device and the photo does not leave it. The application does not keep the photo; the system may hold a temporary copy in the application's cache until it clears it.</li>
         <li>The application does not access location data or contacts.</li>
       </ul>
     </section>
 
     <section>
       <h2>Reading aloud and the microphone</h2>
-      <p>Certain exercises allow the word to be read aloud instead of typed. The microphone is opened only while the corresponding button is held, and only after the permission has been granted.</p>
-      <p><strong>Recognition is performed on the device.</strong> The application requests on-device recognition from the device speech recogniser and uses no other means: where the device cannot recognise Japanese without a network connection, the function is not offered.</p>
-      <p>No audio is recorded and no audio is retained. The application receives the recognised text, compares it with the expected reading and discards it. No audio file is written, and no audio leaves the application.</p>
+      <p>The reading exercise allows the reading to be said aloud instead of typed, if the user enables the option "Voice recognition (experimental)" in the exercise settings; the option is disabled by default. Once it is enabled and the permission has been granted, the microphone opens automatically when each word is shown and closes when the corresponding button is tapped, when moving on to another word or when leaving the exercise. The option "I can't speak right now" suspends it for thirty minutes.</p>
+      <p><strong>Where recognition takes place.</strong> On iOS, and on Android where the device has offline Japanese recognition, the application requires recognition to be performed on the device. On Android devices lacking that capability, the application first requests offline recognition and, if the system recogniser indicates that it cannot recognise Japanese in that way, falls back to Google's network recognition for the remainder of the session. In that case, the audio captured while listening is transmitted to Google as described in case 5 of the section "Network connections".</p>
+      <p>The application neither records nor retains any audio. It receives the recognised text, compares it with the expected reading and discards it. No audio file is written.</p>
     </section>
 
     <section>
       <h2>Crash reports</h2>
       <p>The application is able to transmit a report when it terminates unexpectedly, so that the defect can be corrected. <strong>This function is disabled by default.</strong> Consent is requested on first launch, and nothing is transmitted until it is granted.</p>
-      <p>Where enabled, the report is transmitted to Sentry (Functional Software, Inc., United States), the service that collects such reports. It contains the nature and location of the defect within the code, the application version and the device model.</p>
-      <p>It does not contain study data, decks, application settings or any information identifying the user: the option that would attach personal data is disabled in the code. Reports may be disabled again from Settings at any time.</p>
+      <p>Where enabled, the report is transmitted to Sentry (Functional Software, Inc.), which stores it in its European Union data region (Germany). It contains: the type of error, its location in the code and the call stack; the application version; the device model and operating system version; a random installation identifier generated by the Sentry component; the last steps recorded by the application, such as the screens opened, up to a maximum of twenty; and the item on screen at the time of the failure, such as the kanji, word or exercise in progress or, if the vocabulary search was open, the text entered in it.</p>
+      <p>The report does not contain study progress, decks, history or any information that directly identifies the user, such as a name or email address: the option that would attach personal data, including the IP address, is disabled in the code. Reports are retained for a maximum of 30 days and are then deleted. Reporting may be disabled again from Settings at any time.</p>
       <p>Sentry's privacy policy is available at <a href="https://sentry.io/privacy/" rel="noopener">sentry.io/privacy</a>.</p>
     </section>
 
     <section>
       <h2>Minors</h2>
-      <p>The application collects no personal data from any user, irrespective of age. It does not request a name, an email address or a date of birth, and therefore holds no data relating to a minor that could be stored or processed differently.</p>
+      <p>The application does not request a name, an email address or a date of birth from any user, irrespective of age, and the developer holds no data capable of identifying a minor. The technical data described in the section "Network connections" is processed in the same way irrespective of the user's age.</p>
     </section>
 
     <section>
@@ -358,12 +425,12 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li><strong>Legal basis.</strong> The consent of the user, given by sending the message. No processing occurs in the absence of that act.</li>
         <li><strong>Retention period.</strong> Until the matter is resolved, and in no case longer than six months.</li>
       </ul>
-      <p>The user may request deletion of the email address and of any material sent, at any time, at the address given below. The application itself continues to transmit nothing on its own account.</p>
+      <p>The user may request deletion of the email address and of any material sent, at any time, at the address given below.</p>
     </section>
 
     <section>
       <h2>Rights of the data subject</h2>
-      <p>The rights of access, rectification and erasure ordinarily presuppose that a party holds the data. That is not the case here: the data resides on the user's device and under the user's control. It may be inspected by exporting a copy and deleted from the application settings or by uninstalling the application.</p>
+      <p>Study data resides on the user's device and under the user's control: it may be inspected by exporting a copy and deleted from the application settings or by uninstalling the application. With regard to crash reports and correspondence, the user may exercise the rights of access, rectification, erasure, objection and restriction of processing by writing to the contact address; since reports contain no identifying data, it may be necessary to state the approximate date of the failure in order to locate them. With regard to data that Apple and Google process under their own terms, those rights are exercised before those entities. The user also has the right to lodge a complaint with the competent data protection supervisory authority.</p>
     </section>
 
     <section>

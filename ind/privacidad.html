@@ -191,6 +191,16 @@ section h2 {
   border-bottom: 1px solid var(--rule-soft);
 }
 section > p, section > ul { margin-top: 14px; }
+/* Cada conexión de red, con su título (30-sep-2026). */
+section h3 {
+  font-family: "Zen Old Mincho", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+  margin: 30px 0 0;
+}
+section h3 + ul, section h3 + p { margin-top: 10px; }
+.base { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--rule-soft); }
 section p + p { margin-top: 12px; }
 
 ul { padding-left: 0; list-style: none; }
@@ -272,17 +282,17 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Kebijakan privasi</p>
     <h1>Kebijakan privasi untuk aplikasi KanjiKaku</h1>
-    <p class="fecha">Terakhir diperbarui: 29 September 2026</p>
+    <p class="fecha">Terakhir diperbarui: 30 September 2026</p>
 
     <div class="resumen">
-      <p>Ringkasnya: data pembelajaran tidak keluar dari perangkat pengguna. Aplikasi ini tidak memerlukan akun, tidak menyimpan apa pun di server mana pun yang dioperasikan oleh pengembang, tidak menampilkan iklan, dan tidak melakukan analitik.</p>
-      <p>Bagian-bagian di bawah ini menjelaskan apa yang disimpan, tempat penyimpanannya, dan setiap situasi ketika aplikasi melakukan koneksi jaringan.</p>
+      <p>Ringkasnya: data belajar tetap berada di perangkat pengguna. Aplikasi tidak memerlukan akun, pengembang tidak mengoperasikan server apa pun yang menyimpan informasi pengguna, dan aplikasi tidak menampilkan iklan maupun melakukan pelacakan.</p>
+      <p>Namun, fungsi tertentu membuat koneksi jaringan dengan layanan pihak ketiga. Bagian-bagian berikut mencantumkan secara lengkap data apa yang keluar dari perangkat, kepada siapa data tersebut dikirimkan, untuk tujuan apa, dan apakah pengirimannya bersifat opsional.</p>
     </div>
 
     <section>
       <h2>Data yang disimpan dan lokasinya</h2>
       <p>Semua data pembelajaran — kanji yang dipelajari, tingkat penguasaan yang tercatat untuk setiap kanji, dek dan kelompok, pengaturan aplikasi, serta riwayat sesi — ditulis ke sebuah berkas di dalam aplikasi itu sendiri, di perangkat pengguna.</p>
-      <p>Data tersebut tetap berada di perangkat. Data tidak disalin ke server mana pun dan tidak dapat diakses oleh pengembang maupun pihak ketiga. Menghapus instalasi aplikasi akan menghapus data tersebut.</p>
+      <p>Data tersebut tetap berada di sana. Data tidak disalin ke server mana pun dan tidak dapat diakses oleh pengembang maupun pihak ketiga, dengan satu-satunya pengecualian yang dijelaskan pada bagian "Laporan kerusakan". Menghapus instalasi aplikasi akan menghapus data tersebut.</p>
       <p>Selain itu, aplikasi menyimpan catatan lokal mengenai latihan tulisan tangan: goresan yang dibuat pada percobaan yang gagal dan satu baris angka untuk setiap percobaan. Catatan ini dibatasi maksimal 100 karakter dan 500 percobaan, dan entri terlama akan dihapus. Satu-satunya tujuan catatan ini adalah agar pengguna dapat mengirimkannya secara sukarela kepada pengembang; data tidak pernah dikirimkan secara otomatis dan dapat dihapus dari Pengaturan.</p>
     </section>
 
@@ -292,19 +302,76 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li>Aplikasi tidak memerlukan akun maupun pendaftaran. Aplikasi tidak meminta nama, alamat email, atau usia.</li>
         <li>Pengembang tidak mengoperasikan server mana pun yang menyimpan progres pengguna.</li>
         <li>Aplikasi tidak menampilkan iklan dan tidak mengintegrasikan jaringan iklan.</li>
-        <li>Aplikasi tidak melakukan analitik, tidak melacak penggunaan, dan tidak menggunakan pengidentifikasi iklan. Pelaporan kerusakan (crash) memang tersedia; fitur ini dinonaktifkan kecuali diaktifkan oleh pengguna, dan dijelaskan dalam bagian terpisah di bawah ini.</li>
-        <li>Tidak ada data yang dijual atau dibagikan kepada pihak ketiga, karena tidak ada data yang dikumpulkan untuk tujuan tersebut.</li>
+        <li>Pengembang tidak melakukan analitik maupun pelacakan penggunaan, dan aplikasi tidak menggunakan pengenal iklan. Komponen pihak ketiga yang mengirimkan data teknis atas inisiatifnya sendiri disebutkan pada bagian "Koneksi jaringan".</li>
+        <li>Tidak ada data yang dijual atau diserahkan kepada pihak ketiga untuk tujuan periklanan atau komersial.</li>
       </ul>
     </section>
 
     <section>
       <h2>Koneksi jaringan</h2>
-      <p>Aplikasi melakukan koneksi jaringan dalam situasi yang tercantum di bawah ini. Tidak satu pun di antaranya yang mengirimkan data pembelajaran.</p>
-      <p>1 · <strong>Pembaruan.</strong> Saat dibuka, aplikasi meminta informasi ke layanan pembaruan Expo Application Services (Expo, Amerika Serikat) untuk memeriksa ketersediaan versi yang lebih baru. Permintaan tersebut memungkinkan layanan melihat data teknis: alamat IP perangkat, sistem operasinya, dan versi aplikasi. Permintaan ini tidak mengirimkan data pembelajaran. Kebijakan privasi Expo tersedia di <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</p>
-      <p>2 · <strong>Sintesis suara.</strong> Saat aplikasi membaca kata bahasa Jepang dengan lantang, aplikasi melimpahkannya ke mesin text-to-speech perangkat itu sendiri. Aplikasi tidak mengirimkan apa pun secara mandiri; apakah mesin sistem tersebut menggunakan jaringan atau tidak bergantung pada perangkat dan pengaturannya.</p>
-      <p>3 · <strong>Laporan kerusakan, bergantung pada persetujuan.</strong> Dijelaskan pada bagian terkait di bawah ini. Dinonaktifkan kecuali jika pengguna mengaktifkannya.</p>
-      <p>4 · <strong>Penawaran.</strong> Saat layar pembelian dibuka, aplikasi mengunduh berkas publik kanjikaku.com/ofertas.json yang dihosting di GitHub Pages (GitHub, Inc., Amerika Serikat) untuk menampilkan penawaran yang berlaku. Unduhan ini memungkinkan layanan tersebut melihat alamat IP perangkat. Tidak ada data belajar maupun data lain yang dikirimkan.</p>
-      <p>5 · <strong>Pembelian.</strong> Pembelian dalam aplikasi diproses sepenuhnya melalui App Store atau Google Play, sesuai perangkat. Pengembang tidak menerima data pembayaran; aplikasi hanya menanyakan kepada toko apakah pembelian tersebut ada, untuk membuka konten yang dibeli.</p>
+      <p>Aplikasi membuat koneksi jaringan hanya dalam hal-hal yang tercantum di bawah ini. Untuk masing-masing disebutkan kapan terjadi, data apa yang keluar dari perangkat, siapa penerimanya, untuk tujuan apa, dan apakah bersifat opsional. Jika tidak ada koneksi, fungsi yang bersangkutan tidak dijalankan dan kegiatan belajar tidak terpengaruh.</p>
+
+      <h3>1 · Pemeriksaan pembaruan</h3>
+      <ul>
+        <li><strong>Kapan.</strong> Setiap kali aplikasi dijalankan dan, selama aplikasi tetap terbuka, setiap kali aplikasi kembali ke latar depan, dengan selang waktu minimal sepuluh menit.</li>
+        <li><strong>Data yang keluar dari perangkat.</strong> Alamat IP; platform (Android atau iOS); versi native aplikasi, kanal rilis, dan pengenal pembaruan yang terpasang; serta pengenal instalasi acak yang dibuat oleh komponen pembaruan itu sendiri. Tidak ada data belajar yang dikirimkan.</li>
+        <li><strong>Penerima.</strong> Expo Application Services, yang dioperasikan oleh 650 Industries, Inc. (Amerika Serikat). Kebijakan privasinya tersedia di <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</li>
+        <li><strong>Tujuan.</strong> Menentukan apakah tersedia versi aplikasi yang lebih baru dan, jika ada, mengunduhnya.</li>
+        <li><strong>Sifat.</strong> Otomatis; tidak dapat dinonaktifkan dari dalam aplikasi. Tanpa koneksi, pemeriksaan tidak dilakukan dan aplikasi berjalan dengan versi yang terpasang.</li>
+      </ul>
+
+      <h3>2 · Pembelian dalam aplikasi</h3>
+      <ul>
+        <li><strong>Kapan.</strong> Setiap kali aplikasi dijalankan, untuk memeriksa apakah pembelian ada; saat layar pembelian dibuka, untuk memperoleh harga; serta saat melakukan atau memulihkan pembelian.</li>
+        <li><strong>Data yang keluar dari perangkat.</strong> Permintaan pemeriksaan dan, bila ada, permintaan pembelian ditujukan ke sistem pembelian toko (App Store di iOS, Google Play di Android), yang memprosesnya menggunakan akun toko yang masuk di perangkat dan pengenal produk. Pembayaran dimasukkan dan diproses sepenuhnya di toko.</li>
+        <li><strong>Penerima.</strong> Apple Inc. atau Google LLC, tergantung perangkatnya, yang memproses data tersebut berdasarkan ketentuan dan kebijakan privasi mereka sendiri. Pengembang tidak menerima data pembayaran, nama, maupun alamat email; pengembang hanya menerima laporan penjualan yang disediakan oleh toko.</li>
+        <li><strong>Tujuan.</strong> Memproses pembelian dan membuka konten yang dibeli di perangkat.</li>
+        <li><strong>Sifat.</strong> Pemeriksaan saat aplikasi dijalankan bersifat otomatis. Pembelian bersifat opsional; tanpa pembelian, aplikasi menyediakan konten gratis.</li>
+      </ul>
+
+      <h3>3 · Penawaran yang berlaku dan pemberitahuan versi baru</h3>
+      <ul>
+        <li><strong>Kapan.</strong> Saat aplikasi dimulai, untuk pemberitahuan versi baru, dan saat layar pembelian dibuka, untuk penawaran.</li>
+        <li><strong>Data yang keluar dari perangkat.</strong> Permintaan untuk mengunduh berkas publik kanjikaku.com/version.json dan kanjikaku.com/ofertas.json, yang memungkinkan server melihat alamat IP dan data teknis biasa dari setiap koneksi. Tidak ada data lain yang dikirim: perbandingan dengan versi yang terpasang dilakukan di perangkat.</li>
+        <li><strong>Penerima.</strong> GitHub Pages, yang dioperasikan oleh GitHub, Inc. (Amerika Serikat), yang menjadi hos situs web kanjikaku.com.</li>
+        <li><strong>Tujuan.</strong> Memberi tahu bahwa versi aplikasi yang lebih baru tersedia di toko dan menampilkan penawaran yang berlaku.</li>
+        <li><strong>Sifat.</strong> Pemeriksaan saat dimulai berlangsung otomatis; pemberitahuan tidak mewajibkan pembaruan dan dapat diabaikan. Permintaan penawaran hanya terjadi jika pengguna membuka layar pembelian.</li>
+      </ul>
+
+      <h3>4 · Laporan kerusakan</h3>
+      <p>Hanya jika pengguna mengaktifkannya. Isi, penerima, dan jangka waktu penyimpanannya dijelaskan pada bagian "Laporan kerusakan".</p>
+
+      <h3>5 · Pengenalan suara</h3>
+      <ul>
+        <li><strong>Kapan.</strong> Hanya jika pengguna mengaktifkan pengenalan suara, yang secara bawaan nonaktif, di pengaturan latihan membaca; dalam hal itu, selama mikrofon terbuka dalam latihan tersebut.</li>
+        <li><strong>Data yang keluar dari perangkat.</strong> Di iOS, dan di Android apabila perangkat memiliki pengenalan bahasa Jepang secara luring, tidak ada: pengenalan dilakukan di perangkat. Pada perangkat Android yang tidak memilikinya, pengenal suara sistem mengirimkan audio yang direkam selama mendengarkan, beserta kata yang diharapkan dan cara bacanya, yang diberikan aplikasi sebagai petunjuk.</li>
+        <li><strong>Penerima.</strong> Dalam hal yang terakhir tersebut, Google LLC, sebagai penyedia layanan pengenalan suara sistem, berdasarkan ketentuannya sendiri.</li>
+        <li><strong>Tujuan.</strong> Mentranskripsikan bacaan yang diucapkan untuk dibandingkan dengan bacaan yang diharapkan.</li>
+        <li><strong>Sifat.</strong> Opsional: pengenalan suara nonaktif secara bawaan, dapat dijeda atau dinonaktifkan kapan saja, dan latihan dapat diselesaikan tanpanya.</li>
+      </ul>
+
+      <h3>6 · Sintesis suara</h3>
+      <ul>
+        <li><strong>Kapan.</strong> Saat aplikasi membacakan teks bahasa Jepang dengan suara sistem.</li>
+        <li><strong>Data yang keluar dari perangkat.</strong> Di iOS, tidak ada. Di Android, jika suara yang dipilih adalah salah satu yang ditandai di Pengaturan sebagai "lewat internet", atau jika suara bawaan sistem bekerja melalui jaringan, mesin sintesis suara sistem mengirimkan teks yang akan dibacakan.</li>
+        <li><strong>Penerima.</strong> Google LLC, sebagai penyedia mesin sintesis suara sistem, berdasarkan ketentuannya sendiri.</li>
+        <li><strong>Tujuan.</strong> Menghasilkan audio pembacaan.</li>
+        <li><strong>Sifat.</strong> Opsional: Pengaturan memungkinkan pemilihan suara luring, yang merupakan pilihan yang dianjurkan.</li>
+      </ul>
+
+      <h3>7 · Pembacaan teks dalam foto</h3>
+      <ul>
+        <li><strong>Kapan.</strong> Saat menggunakan fungsi "Dari foto".</li>
+        <li><strong>Data yang keluar dari perangkat.</strong> Baik foto maupun teks yang dikenali tidak dikirimkan: pengenalan dilakukan di perangkat oleh komponen ML Kit milik Google. Komponen tersebut dapat, atas inisiatifnya sendiri, mengirimkan data teknis operasional kepada Google: produsen dan model perangkat, versi sistem operasi, nama dan versi aplikasi, pengenal instalasi, metrik kinerja, konfigurasi komponen, dan kode kesalahan.</li>
+        <li><strong>Penerima.</strong> Google LLC. Daftar datanya dipublikasikan di <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener">developers.google.com/ml-kit/android-data-disclosure</a>.</li>
+        <li><strong>Tujuan.</strong> Menurut Google, diagnostik komponen dan pengukuran penggunaannya.</li>
+        <li><strong>Sifat.</strong> Opsional: hanya terjadi jika pengguna menggunakan fungsi tersebut.</li>
+      </ul>
+
+      <h3>8 · Tautan eksternal</h3>
+      <p>Saat pengguna mengetuk tautan ke situs web ini atau ke alamat email, aplikasi membukanya di peramban atau aplikasi email perangkat. Apa yang terjadi setelahnya tunduk pada ketentuan aplikasi-aplikasi tersebut dan situs yang dikunjungi.</p>
+
+      <p class="base"><strong>Dasar hukum.</strong> Kepentingan sah pengembang untuk menjaga aplikasi tetap mutakhir dan berfungsi serta untuk memverifikasi pembelian (hal 1 sampai 3); persetujuan pengguna, untuk laporan kerusakan (hal 4); dan permintaan pengguna sendiri saat menggunakan fungsi yang bersangkutan (hal 5 sampai 8).</p>
     </section>
 
     <section>
@@ -323,30 +390,30 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <ul>
         <li>Notifikasi — diminta hanya jika pengingat harian diaktifkan.</li>
         <li>File — diminta hanya pada saat mengekspor atau mengimpor, dan terbatas pada file yang dipilih.</li>
-        <li>Mikrofon — diminta hanya untuk latihan yang menyediakan pembacaan dengan suara keras, dan hanya aktif saat tombol terkait ditekan dan ditahan. Pengenalan suara dilakukan di perangkat; lihat bagian di bawah ini.</li>
-        <li>Kamera dan foto — hanya diminta saat memindai teks Jepang pada foto, dan terbatas pada foto yang diambil atau dipilih. Teks dikenali di perangkat; foto tidak disimpan dan tidak keluar dari perangkat.</li>
+        <li>Mikrofon dan pengenalan suara — diminta hanya jika pengguna mengaktifkan pengenalan suara di pengaturan latihan membaca, opsi yang secara bawaan nonaktif. Lihat bagian di bawah ini dan hal 5 pada bagian "Koneksi jaringan".</li>
+        <li>Kamera dan foto — diminta hanya saat menggunakan fungsi "Dari foto", dan terbatas pada foto yang diambil atau dipilih. Teks dikenali di perangkat dan foto tidak keluar dari perangkat. Aplikasi tidak menyimpan foto; sistem dapat menyimpan salinan sementara di cache aplikasi hingga sistem menghapusnya.</li>
         <li>Aplikasi ini tidak mengakses data lokasi maupun kontak.</li>
       </ul>
     </section>
 
     <section>
       <h2>Membaca dengan suara keras dan mikrofon</h2>
-      <p>Latihan tertentu memungkinkan kata dibaca dengan suara keras alih-alih diketik. Mikrofon hanya aktif saat tombol terkait ditekan dan ditahan, serta hanya setelah izin diberikan.</p>
-      <p><strong>Pengenalan suara dilakukan di perangkat.</strong> Aplikasi ini meminta pengenalan suara di perangkat dari pengenal ucapan bawaan perangkat dan tidak menggunakan sarana lain: jika perangkat tidak dapat mengenali bahasa Jepang tanpa koneksi internet, fungsi ini tidak disediakan.</p>
-      <p>Tidak ada audio yang direkam dan tidak ada audio yang disimpan. Aplikasi ini menerima teks hasil pengenalan suara, membandingkannya dengan bacaan yang diharapkan, lalu menghapusnya. Tidak ada file audio yang dibuat, dan tidak ada audio yang keluar dari aplikasi ini.</p>
+      <p>Latihan membaca memungkinkan bacaan diucapkan dengan suara keras alih-alih diketik, jika pengguna mengaktifkan opsi "Pengenalan suara (eksperimental)" di pengaturan latihan; opsi ini nonaktif secara bawaan. Setelah diaktifkan dan izin diberikan, mikrofon terbuka secara otomatis setiap kali sebuah kata ditampilkan dan tertutup saat tombol terkait diketuk, saat berpindah ke kata lain, atau saat keluar dari latihan. Opsi "Saya tidak bisa bicara sekarang" menangguhkannya selama tiga puluh menit.</p>
+      <p><strong>Tempat pengenalan dilakukan.</strong> Di iOS, dan di Android apabila perangkat memiliki pengenalan bahasa Jepang secara luring, aplikasi mewajibkan pengenalan dilakukan di perangkat. Pada perangkat Android yang tidak memiliki kemampuan tersebut, aplikasi terlebih dahulu meminta pengenalan secara luring dan, jika pengenal sistem menyatakan tidak dapat mengenali bahasa Jepang dengan cara itu, beralih ke pengenalan melalui jaringan Google untuk sisa sesi. Dalam hal tersebut, audio yang direkam selama mendengarkan dikirimkan kepada Google sebagaimana dijelaskan pada hal 5 di bagian "Koneksi jaringan".</p>
+      <p>Aplikasi tidak merekam maupun menyimpan audio apa pun. Aplikasi menerima teks yang dikenali, membandingkannya dengan bacaan yang diharapkan, lalu membuangnya. Tidak ada berkas audio yang ditulis.</p>
     </section>
 
     <section>
       <h2>Laporan kerusakan</h2>
       <p>Aplikasi ini dapat mengirimkan laporan saat berhenti secara tidak terduga, agar masalah tersebut dapat diperbaiki. <strong>Fungsi ini dinonaktifkan secara bawaan.</strong> Persetujuan diminta saat aplikasi pertama kali dibuka, dan tidak ada data yang dikirimkan hingga persetujuan diberikan.</p>
-      <p>Jika diaktifkan, laporan akan dikirimkan ke Sentry (Functional Software, Inc., Amerika Serikat), layanan yang mengumpulkan laporan tersebut. Laporan ini memuat rincian dan letak kesalahan di dalam kode, versi aplikasi, serta model perangkat.</p>
-      <p>Laporan ini tidak memuat data belajar, dek, pengaturan aplikasi, maupun informasi apa pun yang mengidentifikasi pengguna: opsi yang dapat menyertakan data pribadi dinonaktifkan dalam kode. Pengiriman laporan dapat dinonaktifkan kembali dari Pengaturan kapan saja.</p>
+      <p>Jika diaktifkan, laporan dikirimkan kepada Sentry (Functional Software, Inc.), yang menyimpannya di wilayah data Uni Eropa miliknya (Jerman). Laporan berisi: jenis kesalahan, lokasinya dalam kode, dan tumpukan panggilan; versi aplikasi; model perangkat dan versi sistem operasi; pengenal instalasi acak yang dibuat oleh komponen Sentry; langkah-langkah terakhir yang dicatat oleh aplikasi, seperti layar yang dibuka, paling banyak dua puluh; serta elemen yang tampil di layar saat kegagalan terjadi, seperti kanji, kata, atau latihan yang sedang berlangsung atau, jika pencarian kosakata sedang terbuka, teks yang dimasukkan di dalamnya.</p>
+      <p>Laporan tidak memuat kemajuan belajar, dek, riwayat, maupun informasi yang secara langsung mengidentifikasi pengguna, seperti nama atau alamat email: opsi yang akan melampirkan data pribadi, termasuk alamat IP, dinonaktifkan dalam kode. Laporan disimpan paling lama 30 hari dan kemudian dihapus. Fungsi ini dapat dinonaktifkan kembali dari Pengaturan kapan saja.</p>
       <p>Kebijakan privasi Sentry tersedia di <a href="https://sentry.io/privacy/" rel="noopener">sentry.io/privacy</a>.</p>
     </section>
 
     <section>
       <h2>Anak di bawah umur</h2>
-      <p>Aplikasi ini tidak mengumpulkan data pribadi dari pengguna mana pun, terlepas dari usia pengguna. Aplikasi ini tidak meminta nama, alamat email, maupun tanggal lahir, sehingga tidak menyimpan data apa pun terkait anak di bawah umur yang dapat disimpan atau diproses secara terpisah.</p>
+      <p>Aplikasi tidak meminta nama, alamat email, maupun tanggal lahir dari pengguna mana pun, terlepas dari usianya, dan pengembang tidak memiliki data apa pun yang memungkinkan identifikasi anak di bawah umur. Data teknis yang dijelaskan pada bagian "Koneksi jaringan" diproses dengan cara yang sama terlepas dari usia pengguna.</p>
     </section>
 
     <section>
@@ -358,12 +425,12 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li><strong>Dasar hukum.</strong> Persetujuan pengguna, yang diberikan melalui pengiriman pesan. Tidak ada pemrosesan data yang terjadi tanpa adanya tindakan tersebut.</li>
         <li><strong>Masa retensi.</strong> Hingga masalah terselesaikan, dan tidak lebih dari enam bulan dalam keadaan apa pun.</li>
       </ul>
-      <p>Pengguna dapat meminta penghapusan alamat email dan materi apa pun yang dikirimkan, kapan saja, melalui alamat yang tercantum di bawah ini. Aplikasi ini sendiri tetap tidak mengirimkan data apa pun atas inisiatifnya sendiri.</p>
+      <p>Pengguna dapat meminta penghapusan alamat email dan materi apa pun yang dikirimkan, kapan saja, melalui alamat yang tercantum di bawah ini.</p>
     </section>
 
     <section>
       <h2>Hak subjek data</h2>
-      <p>Hak akses, perbaikan, dan penghapusan biasanya mengandaikan adanya pihak yang menyimpan data tersebut. Hal tersebut tidak berlaku di sini: data berada di perangkat pengguna dan di bawah kendali pengguna. Data dapat diperiksa dengan mengekspor salinannya dan dihapus dari pengaturan aplikasi atau dengan mencopot pemasangan aplikasi.</p>
+      <p>Data belajar berada di perangkat pengguna dan di bawah kendalinya: data tersebut dapat dilihat dengan mengekspor salinan dan dihapus melalui pengaturan aplikasi atau dengan menghapus instalasi aplikasi. Terkait laporan kerusakan dan korespondensi, pengguna dapat menggunakan hak akses, perbaikan, penghapusan, keberatan, dan pembatasan pemrosesan dengan menghubungi alamat kontak; karena laporan tidak memuat data pengenal, mungkin perlu disebutkan perkiraan tanggal terjadinya kegagalan untuk menemukannya. Terkait data yang diproses Apple dan Google berdasarkan ketentuan mereka sendiri, hak-hak tersebut digunakan terhadap entitas tersebut. Pengguna juga berhak mengajukan pengaduan kepada otoritas pengawas pelindungan data yang berwenang.</p>
     </section>
 
     <section>

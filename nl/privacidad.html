@@ -191,6 +191,16 @@ section h2 {
   border-bottom: 1px solid var(--rule-soft);
 }
 section > p, section > ul { margin-top: 14px; }
+/* Cada conexión de red, con su título (30-sep-2026). */
+section h3 {
+  font-family: "Zen Old Mincho", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+  margin: 30px 0 0;
+}
+section h3 + ul, section h3 + p { margin-top: 10px; }
+.base { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--rule-soft); }
 section p + p { margin-top: 12px; }
 
 ul { padding-left: 0; list-style: none; }
@@ -272,17 +282,17 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Privacybeleid</p>
     <h1>Privacybeleid voor de applicatie KanjiKaku</h1>
-    <p class="fecha">Laatst bijgewerkt: 29 september 2026</p>
+    <p class="fecha">Laatst bijgewerkt: 30 september 2026</p>
 
     <div class="resumen">
-      <p>Kort samengevat: studiegegevens verlaten het apparaat van de gebruiker niet. De applicatie vereist geen account, slaat niets op op servers die door de ontwikkelaar worden beheerd, toont geen advertenties en voert geen analyses uit.</p>
-      <p>In de onderstaande gedeelten wordt uiteengezet wat er wordt opgeslagen, waar dit gebeurt en bij welke gelegenheden de applicatie een netwerkverbinding tot stand brengt.</p>
+      <p>Samengevat: de studiegegevens blijven op het apparaat van de gebruiker. De applicatie vereist geen account, de ontwikkelaar beheert geen server waarop gebruikersgegevens worden opgeslagen, en de applicatie toont geen advertenties en voert geen tracking uit.</p>
+      <p>Bepaalde functies maken echter netwerkverbindingen met diensten van derden. De onderstaande afdelingen vermelden uitputtend welke gegevens het apparaat verlaten, aan wie zij worden doorgegeven, met welk doel en of de doorgifte optioneel is.</p>
     </div>
 
     <section>
       <h2>Opgeslagen gegevens en opslaglocatie</h2>
       <p>Alle studiegegevens — de geraadpleegde kanji, het geregistreerde beheersingsniveau per kanji, sets en sessies, applicatie-instellingen en sessiegeschiedenis — worden weggeschreven naar een bestand binnen de applicatie zelf, op het apparaat van de gebruiker.</p>
-      <p>Die gegevens blijven daar bewaard. Ze worden niet naar een server gekopieerd en zijn niet toegankelijk voor de ontwikkelaar of derden. Het verwijderen van de applicatie wist deze gegevens.</p>
+      <p>Deze gegevens blijven daar. Zij worden naar geen enkele server gekopieerd en zijn niet toegankelijk voor de ontwikkelaar of voor derden, met als enige uitzondering hetgeen in de afdeling ‘Crashrapporten’ is beschreven. Door de applicatie te verwijderen worden zij gewist.</p>
       <p>Daarnaast houdt de applicatie een lokaal logboek bij van de schrijfoefeningen: de getekende streken bij mislukte pogingen en een regel met cijfers per poging. Dit logboek is beperkt tot 100 tekens en 500 pogingen; de oudste vermeldingen worden automatisch verwijderd. Het enige doel hiervan is de gebruiker in staat te stellen dit vrijwillig naar de ontwikkelaar te verzenden; het wordt nooit automatisch verzonden en kan worden gewist via Instellingen.</p>
     </section>
 
@@ -292,19 +302,76 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li>De applicatie vereist geen account en geen registratie. Er wordt niet gevraagd om een naam, e-mailadres of leeftijd.</li>
         <li>De ontwikkelaar beheert geen servers waarop de voortgang van gebruikers wordt opgeslagen.</li>
         <li>De applicatie toont geen advertenties en integreert geen advertentienetwerken.</li>
-        <li>De applicatie voert geen analyses of gebruiksmonitoring uit en maakt geen gebruik van advertentie-ID's. Er is wel een functie voor foutrapportage aanwezig; deze is standaard uitgeschakeld tenzij de gebruiker deze activeert, en wordt hieronder in een apart gedeelte beschreven.</li>
-        <li>Er worden geen gegevens verkocht aan of gedeeld met derden, aangezien er voor dat doel geen gegevens worden verzameld.</li>
+        <li>De ontwikkelaar voert geen analyses of gebruikstracking uit, en de applicatie gebruikt geen advertentie-ID's. Componenten van derden die zelfstandig technische gegevens verzenden, worden vermeld in de afdeling ‘Netwerkverbindingen’.</li>
+        <li>Er worden geen gegevens verkocht of voor reclame- of commerciële doeleinden aan derden verstrekt.</li>
       </ul>
     </section>
 
     <section>
       <h2>Netwerkverbindingen</h2>
-      <p>De applicatie brengt uitsluitend in de onderstaande gevallen een netwerkverbinding tot stand. In geen van deze gevallen worden studiegegevens verzonden.</p>
-      <p>1 · <strong>Updates.</strong> Bij het opstarten raadpleegt de applicatie de updatedienst van Expo Application Services (Expo, Verenigde Staten) om te bepalen of er een recentere versie beschikbaar is. Door dit verzoek kan die dienst technische gegevens inzien: het IP-adres van het apparaat, het besturingssysteem en de applicatieversie. Er worden geen studiegegevens verzonden. Het privacybeleid van Expo is te vinden op <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</p>
-      <p>2 · <strong>Spraaksynthese.</strong> Wanneer de applicatie een Japans woord hardop voorleest, delegeert deze die taak naar de tekst-naar-spraakengine van het apparaat zelf. De applicatie verzendt uit eigen beweging niets; of die systeemengine het netwerk gebruikt, hangt af van het apparaat en de instellingen daarvan.</p>
-      <p>3 · <strong>Foutrapporten, onder voorbehoud van toestemming.</strong> Beschreven in het betreffende gedeelte hieronder. Standaard uitgeschakeld tenzij de gebruiker deze inschakelt.</p>
-      <p>4 · <strong>Aanbiedingen.</strong> Bij het openen van het aankoopscherm downloadt de applicatie het openbare bestand kanjikaku.com/ofertas.json, gehost op GitHub Pages (GitHub, Inc., Verenigde Staten), om de actuele aanbiedingen te tonen. Door deze download kan de dienst het IP-adres van het apparaat waarnemen. Er worden geen studiegegevens of andere gegevens verzonden.</p>
-      <p>5 · <strong>Aankopen.</strong> De in-app-aankoop wordt, afhankelijk van het apparaat, volledig afgehandeld via de App Store of Google Play. De ontwikkelaar ontvangt geen betaalgegevens; de applicatie vraagt de winkel uitsluitend of de aankoop bestaat, om de aangeschafte inhoud te ontgrendelen.</p>
+      <p>De applicatie maakt uitsluitend netwerkverbindingen in de hieronder vermelde gevallen. Voor elk geval wordt vermeld wanneer het zich voordoet, welke gegevens het apparaat verlaten, wie ze ontvangt, met welk doel en of het optioneel is. Is er geen verbinding beschikbaar, dan wordt de betreffende functie niet uitgevoerd en blijft het studeren onverminderd mogelijk.</p>
+
+      <h3>1 · Controle op updates</h3>
+      <ul>
+        <li><strong>Wanneer.</strong> Bij elke start van de applicatie en, zolang zij geopend blijft, telkens wanneer zij weer op de voorgrond komt, met een tussenpoos van ten minste tien minuten.</li>
+        <li><strong>Gegevens die het apparaat verlaten.</strong> Het IP-adres; het platform (Android of iOS); de native versie van de applicatie, het publicatiekanaal en de identificatie van de geïnstalleerde update; alsmede een willekeurige installatie-ID die door de updatecomponent zelf wordt aangemaakt. Er worden geen studiegegevens verzonden.</li>
+        <li><strong>Ontvanger.</strong> Expo Application Services van 650 Industries, Inc. (Verenigde Staten). Het privacybeleid daarvan is beschikbaar op <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</li>
+        <li><strong>Doel.</strong> Vaststellen of er een recentere versie van de applicatie bestaat en deze in voorkomend geval downloaden.</li>
+        <li><strong>Aard.</strong> Automatisch; kan niet vanuit de applicatie worden uitgeschakeld. Zonder verbinding vindt de controle niet plaats en werkt de applicatie met de geïnstalleerde versie.</li>
+      </ul>
+
+      <h3>2 · In-app-aankopen</h3>
+      <ul>
+        <li><strong>Wanneer.</strong> Bij elke start van de applicatie, om na te gaan of de aankoop bestaat; bij het openen van het aankoopscherm, om de prijs op te vragen; en bij het doen of herstellen van de aankoop.</li>
+        <li><strong>Gegevens die het apparaat verlaten.</strong> De opvraging en in voorkomend geval het aankoopverzoek worden gericht aan het aankoopsysteem van de winkel (App Store op iOS, Google Play op Android), dat deze afhandelt met het op het apparaat aangemelde winkelaccount en de productidentificatie. De betaling wordt volledig in de winkel ingevoerd en verwerkt.</li>
+        <li><strong>Ontvanger.</strong> Apple Inc. of Google LLC, afhankelijk van het apparaat, die deze gegevens verwerken overeenkomstig hun eigen voorwaarden en privacybeleid. De ontwikkelaar ontvangt geen betalingsgegevens, namen of e-mailadressen; hij ontvangt van de winkel uitsluitend de verkooprapporten die deze ter beschikking stelt.</li>
+        <li><strong>Doel.</strong> De aankoop afhandelen en de gekochte inhoud op het apparaat ontgrendelen.</li>
+        <li><strong>Aard.</strong> De controle bij het starten gebeurt automatisch. De aankoop is optioneel; zonder aankoop biedt de applicatie de gratis inhoud.</li>
+      </ul>
+
+      <h3>3 · Lopende aanbiedingen en melding van een nieuwe versie</h3>
+      <ul>
+        <li><strong>Wanneer.</strong> Bij het starten van de applicatie, voor de melding van een nieuwe versie, en bij het openen van het aankoopscherm, voor de aanbiedingen.</li>
+        <li><strong>Gegevens die het apparaat verlaten.</strong> Een verzoek om de openbare bestanden kanjikaku.com/version.json en kanjikaku.com/ofertas.json te downloaden, waardoor de server het IP-adres en de gebruikelijke technische gegevens van elke verbinding kan waarnemen. Er worden geen andere gegevens verzonden: de vergelijking met de geïnstalleerde versie gebeurt op het apparaat.</li>
+        <li><strong>Ontvanger.</strong> GitHub Pages van GitHub, Inc. (Verenigde Staten), dat de website kanjikaku.com host.</li>
+        <li><strong>Doel.</strong> Melden dat er in de store een recentere versie van de applicatie beschikbaar is en de lopende aanbiedingen tonen.</li>
+        <li><strong>Aard.</strong> De controle bij het starten gebeurt automatisch; de melding verplicht niet tot bijwerken en kan worden weggeklikt. Het verzoek voor de aanbiedingen vindt alleen plaats als de gebruiker het aankoopscherm opent.</li>
+      </ul>
+
+      <h3>4 · Crashrapporten</h3>
+      <p>Uitsluitend als de gebruiker ze inschakelt. De inhoud, de ontvanger en de bewaartermijn worden beschreven in de afdeling ‘Crashrapporten’.</p>
+
+      <h3>5 · Spraakherkenning</h3>
+      <ul>
+        <li><strong>Wanneer.</strong> Alleen als de gebruiker de standaard uitgeschakelde spraakherkenning inschakelt in de instellingen van de leesoefening; in dat geval zolang de microfoon in die oefening open is.</li>
+        <li><strong>Gegevens die het apparaat verlaten.</strong> Op iOS, en op Android wanneer het apparaat over offline herkenning van het Japans beschikt, geen: de herkenning vindt plaats op het apparaat. Op Android-apparaten die daarover niet beschikken, verzendt de spraakherkenning van het systeem de tijdens het luisteren opgenomen audio, samen met het verwachte woord en de lezing ervan, die de applicatie als aanwijzing meegeeft.</li>
+        <li><strong>Ontvanger.</strong> In laatstgenoemd geval Google LLC, als aanbieder van de spraakherkenningsdienst van het systeem, overeenkomstig haar eigen voorwaarden.</li>
+        <li><strong>Doel.</strong> De uitgesproken lezing transcriberen om deze met de verwachte te vergelijken.</li>
+        <li><strong>Aard.</strong> Optioneel: spraakherkenning is standaard uitgeschakeld, kan op elk moment worden gepauzeerd of uitgeschakeld, en de oefening kan zonder worden gemaakt.</li>
+      </ul>
+
+      <h3>6 · Spraaksynthese</h3>
+      <ul>
+        <li><strong>Wanneer.</strong> Wanneer de applicatie een Japanse tekst voorleest met de systeemstem.</li>
+        <li><strong>Gegevens die het apparaat verlaten.</strong> Op iOS geen. Op Android verzendt de spraaksynthese van het systeem de voor te lezen tekst indien de gekozen stem een van de stemmen is die in de Instellingen als ‘via internet’ zijn aangeduid, of indien de standaardstem van het systeem via het netwerk werkt.</li>
+        <li><strong>Ontvanger.</strong> Google LLC, als aanbieder van de spraaksynthese van het systeem, overeenkomstig haar eigen voorwaarden.</li>
+        <li><strong>Doel.</strong> De audio van de lezing genereren.</li>
+        <li><strong>Aard.</strong> Optioneel: in de Instellingen kan een offline stem worden gekozen, wat wordt aanbevolen.</li>
+      </ul>
+
+      <h3>7 · Tekstherkenning in foto's</h3>
+      <ul>
+        <li><strong>Wanneer.</strong> Bij gebruik van de functie ‘Vanuit een foto’.</li>
+        <li><strong>Gegevens die het apparaat verlaten.</strong> Noch de foto noch de herkende tekst: de herkenning wordt op het apparaat uitgevoerd door de component ML Kit van Google. Deze component kan zelfstandig technische werkingsgegevens naar Google verzenden: fabrikant en model van het apparaat, versie van het besturingssysteem, naam en versie van de applicatie, installatie-ID's, prestatiegegevens, configuratie van de component en foutcodes.</li>
+        <li><strong>Ontvanger.</strong> Google LLC. Het overzicht van de gegevens is gepubliceerd op <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener">developers.google.com/ml-kit/android-data-disclosure</a>.</li>
+        <li><strong>Doel.</strong> Volgens Google de diagnose van de component en de meting van het gebruik ervan.</li>
+        <li><strong>Aard.</strong> Optioneel: vindt alleen plaats als de gebruiker deze functie gebruikt.</li>
+      </ul>
+
+      <h3>8 · Externe links</h3>
+      <p>Wanneer de gebruiker op een link naar deze website of naar een e-mailadres tikt, opent de applicatie deze in de browser of de e-mailapplicatie van het apparaat. Wat daarna gebeurt, valt onder de voorwaarden van die applicaties en van de bezochte website.</p>
+
+      <p class="base"><strong>Rechtsgrond.</strong> Het gerechtvaardigd belang van de ontwikkelaar om de applicatie actueel en werkend te houden en aankopen te verifiëren (gevallen 1 tot en met 3); de toestemming van de gebruiker, voor de crashrapporten (geval 4); en het verzoek van de gebruiker zelf bij het gebruik van de betreffende functie (gevallen 5 tot en met 8).</p>
     </section>
 
     <section>
@@ -323,30 +390,30 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <ul>
         <li>Meldingen — worden alleen gevraagd als de dagelijkse herinnering is ingeschakeld.</li>
         <li>Bestanden — worden alleen gevraagd op het moment van exporteren of importeren, en blijven beperkt tot het geselecteerde bestand.</li>
-        <li>Microfoon — wordt alleen gevraagd voor oefeningen waarbij hardop voorlezen mogelijk is, en is uitsluitend actief zolang de desbetreffende knop ingedrukt wordt gehouden. De herkenning vindt plaats op het apparaat; zie het onderstaande gedeelte.</li>
-        <li>Camera en foto's — worden uitsluitend gevraagd bij het scannen van Japanse tekst op een foto en blijven beperkt tot de gemaakte of gekozen foto. De tekst wordt op het apparaat herkend; de foto wordt niet bewaard en verlaat het apparaat niet.</li>
+        <li>Microfoon en spraakherkenning — worden alleen gevraagd als de gebruiker spraakherkenning inschakelt in de instellingen van de leesoefening, een optie die standaard is uitgeschakeld. Zie het onderstaande gedeelte en geval 5 van de afdeling ‘Netwerkverbindingen’.</li>
+        <li>Camera en foto's — worden alleen gevraagd bij gebruik van de functie ‘Vanuit een foto’, en zijn beperkt tot de gemaakte of geselecteerde foto. De tekst wordt op het apparaat herkend en de foto verlaat het apparaat niet. De applicatie bewaart de foto niet; het systeem kan een tijdelijke kopie in de cache van de applicatie bewaren totdat het deze wist.</li>
         <li>De applicatie heeft geen toegang tot locatiegegevens of contacten.</li>
       </ul>
     </section>
 
     <section>
       <h2>Hardop voorlezen en de microfoon</h2>
-      <p>Bij bepaalde oefeningen kan het woord hardop worden uitgesproken in plaats van getypt. De microfoon wordt alleen geactiveerd zolang de desbetreffende knop ingedrukt wordt gehouden, en uitsluitend nadat hiervoor toestemming is verleend.</p>
-      <p><strong>De herkenning vindt plaats op het apparaat.</strong> De applicatie verzoekt de spraakherkenner van het apparaat om lokaal te werken en maakt van geen enkele andere methode gebruik: wanneer het apparaat geen Japans kan herkennen zonder netwerkverbinding, wordt de functie niet aangeboden.</p>
-      <p>Er wordt geen audio opgenomen en er wordt geen audio bewaard. De applicatie ontvangt de herkende tekst, vergelijkt deze met de verwachte lezing en verwijdert deze vervolgens. Er wordt geen audiobestand weggeschreven en er verlaat geen audio de applicatie.</p>
+      <p>De leesoefening maakt het mogelijk de lezing hardop uit te spreken in plaats van te typen, als de gebruiker de optie ‘Spraakherkenning (experimenteel)’ in de instellingen van de oefening inschakelt; de optie is standaard uitgeschakeld. Zodra zij is ingeschakeld en de toestemming is verleend, gaat de microfoon automatisch open wanneer een woord wordt getoond, en sluit zij wanneer op de desbetreffende knop wordt getikt, naar een ander woord wordt gegaan of de oefening wordt verlaten. De optie ‘Ik kan nu niet praten’ schort haar dertig minuten op.</p>
+      <p><strong>Waar de herkenning plaatsvindt.</strong> Op iOS, en op Android wanneer het apparaat over offline herkenning van het Japans beschikt, eist de applicatie dat de herkenning op het apparaat plaatsvindt. Op Android-apparaten zonder die mogelijkheid vraagt de applicatie eerst om offline herkenning en valt zij, indien de spraakherkenning van het systeem aangeeft Japans op die manier niet te kunnen herkennen, voor de rest van de sessie terug op de netwerkherkenning van Google. In dat geval wordt de tijdens het luisteren opgenomen audio aan Google doorgegeven overeenkomstig geval 5 van de afdeling ‘Netwerkverbindingen’.</p>
+      <p>De applicatie neemt geen audio op en bewaart geen audio. Zij ontvangt de herkende tekst, vergelijkt deze met de verwachte lezing en verwijdert hem. Er wordt geen audiobestand weggeschreven.</p>
     </section>
 
     <section>
       <h2>Crashrapporten</h2>
       <p>De applicatie kan een rapport verzenden wanneer deze onverwacht wordt afgesloten, zodat het defect kan worden verholpen. <strong>Deze functie is standaard uitgeschakeld.</strong> Bij de eerste keer opstarten wordt om toestemming gevraagd en er wordt niets verzonden totdat deze is verleend.</p>
-      <p>Indien ingeschakeld, wordt het rapport verzonden naar Sentry (Functional Software, Inc., Verenigde Staten), de dienst die dergelijke rapporten verzamelt. Het rapport bevat de aard en de locatie van het defect in de code, de applicatieversie en het model van het apparaat.</p>
-      <p>Het bevat geen studiegegevens, decks, applicatie-instellingen of gegevens die de gebruiker identificeren: de optie die persoonsgegevens zou toevoegen, is uitgeschakeld in de code. Rapporten kunnen op elk moment weer worden uitgeschakeld via de Instellingen.</p>
+      <p>Indien ingeschakeld, wordt het rapport verzonden naar Sentry (Functional Software, Inc.), dat het opslaat in zijn gegevensregio in de Europese Unie (Duitsland). Het bevat: het soort fout, de plaats ervan in de code en de aanroepstack; de versie van de applicatie; het apparaatmodel en de versie van het besturingssysteem; een willekeurige installatie-ID die door de Sentry-component wordt aangemaakt; de laatste door de applicatie vastgelegde stappen, zoals de geopende schermen, tot een maximum van twintig; en het element dat op het moment van de storing op het scherm stond, zoals de kanji, het woord of de lopende oefening, of, indien de woordenschatzoekfunctie geopend was, de daarin ingevoerde tekst.</p>
+      <p>Het rapport bevat geen studievoortgang, decks, geschiedenis of informatie die de gebruiker rechtstreeks identificeert, zoals naam of e-mailadres: de optie die persoonsgegevens, waaronder het IP-adres, zou toevoegen, is in de code uitgeschakeld. De rapporten worden ten hoogste 30 dagen bewaard en daarna gewist. De functie kan op elk moment opnieuw worden uitgeschakeld via de Instellingen.</p>
       <p>Het privacybeleid van Sentry is te vinden op <a href="https://sentry.io/privacy/" rel="noopener">sentry.io/privacy</a>.</p>
     </section>
 
     <section>
       <h2>Minderjarigen</h2>
-      <p>De applicatie verzamelt geen persoonsgegevens van welke gebruiker dan ook, ongeacht de leeftijd. Er wordt niet gevraagd om een naam, een e-mailadres of een geboortedatum, en de applicatie beschikt derhalve over geen enkele informatie over een minderjarige die op afwijkende wijze zou kunnen worden opgeslagen of verwerkt.</p>
+      <p>De applicatie vraagt geen enkele gebruiker, ongeacht diens leeftijd, om naam, e-mailadres of geboortedatum, en de ontwikkelaar beschikt over geen enkel gegeven waarmee een minderjarige kan worden geïdentificeerd. De in de afdeling ‘Netwerkverbindingen’ beschreven technische gegevens worden ongeacht de leeftijd van de gebruiker op dezelfde wijze verwerkt.</p>
     </section>
 
     <section>
@@ -358,12 +425,12 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li><strong>Rechtsgrond.</strong> De toestemming van de gebruiker, verleend door het verzenden van het bericht. Zonder deze handeling vindt er geen enkele verwerking plaats.</li>
         <li><strong>Bewaartermijn.</strong> Totdat de kwestie is afgehandeld, en in geen geval langer dan zes maanden.</li>
       </ul>
-      <p>De gebruiker kan op elk gewenst moment verzoeken om verwijdering van het e-mailadres en van alle toegezonden materialen via het onderstaande adres. De applicatie zelf blijft ondertussen niets op eigen initiatief verzenden.</p>
+      <p>De gebruiker kan op elk moment via het hieronder vermelde adres verzoeken om verwijdering van zijn e-mailadres en van al het toegezonden materiaal.</p>
     </section>
 
     <section>
       <h2>Rechten van de betrokkene</h2>
-      <p>Het recht op inzage, rectificatie en gegevenswissing veronderstelt doorgaans dat een partij over de gegevens beschikt. Dat is hier niet het geval: de gegevens bevinden zich op het apparaat van de gebruiker en onder diens beheer. Deze kunnen worden ingezien door een kopie te exporteren en worden verwijderd via de applicatie-instellingen of door de applicatie te verwijderen.</p>
+      <p>De studiegegevens bevinden zich op het apparaat van de gebruiker en onder diens controle: zij kunnen worden ingezien door een kopie te exporteren en worden gewist via de instellingen van de applicatie of door deze te verwijderen. Met betrekking tot crashrapporten en correspondentie kan de gebruiker zijn rechten op inzage, rectificatie, wissing, bezwaar en beperking van de verwerking uitoefenen door te schrijven naar het contactadres; aangezien de rapporten geen identificerende gegevens bevatten, kan het nodig zijn de datum van de storing bij benadering te vermelden om ze terug te vinden. Met betrekking tot gegevens die Apple en Google overeenkomstig hun eigen voorwaarden verwerken, worden deze rechten bij die entiteiten uitgeoefend. De gebruiker heeft voorts het recht een klacht in te dienen bij de bevoegde toezichthoudende autoriteit voor gegevensbescherming.</p>
     </section>
 
     <section>

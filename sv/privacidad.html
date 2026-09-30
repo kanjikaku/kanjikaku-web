@@ -191,6 +191,16 @@ section h2 {
   border-bottom: 1px solid var(--rule-soft);
 }
 section > p, section > ul { margin-top: 14px; }
+/* Cada conexión de red, con su título (30-sep-2026). */
+section h3 {
+  font-family: "Zen Old Mincho", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+  margin: 30px 0 0;
+}
+section h3 + ul, section h3 + p { margin-top: 10px; }
+.base { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--rule-soft); }
 section p + p { margin-top: 12px; }
 
 ul { padding-left: 0; list-style: none; }
@@ -272,17 +282,17 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Integritetspolicy</p>
     <h1>Integritetspolicy för applikationen KanjiKaku</h1>
-    <p class="fecha">Senast uppdaterad: 29 september 2026</p>
+    <p class="fecha">Senast uppdaterad: 30 september 2026</p>
 
     <div class="resumen">
-      <p>Sammanfattningsvis: studiedata lämnar inte användarens enhet. Applikationen kräver inget konto, lagrar ingenting på någon server som drivs av utvecklaren, visar ingen reklam och utför ingen analys.</p>
-      <p>Avsnitten nedan redogör för vad som lagras, var det lagras och vid vilka tillfällen applikationen upprättar en nätverksanslutning.</p>
+      <p>Sammanfattningsvis: studiedata stannar på användarens enhet. Applikationen kräver inget konto, utvecklaren driver ingen server som lagrar uppgifter om användarna, och applikationen visar ingen reklam och utför ingen spårning.</p>
+      <p>Vissa funktioner upprättar dock nätverksanslutningar till tredjepartstjänster. Avsnitten nedan anger uttömmande vilka uppgifter som lämnar enheten, till vem de överförs, i vilket syfte och om överföringen är frivillig.</p>
     </div>
 
     <section>
       <h2>Lagrade uppgifter och var de sparas</h2>
       <p>Alla studiedata – de kanji som studerats, den registrerade kunskapsnivån för var och en, kortlekar och omgångar, applikationsinställningar och sessionshistorik – skrivs till en fil i själva applikationen på användarens enhet.</p>
-      <p>Dessa uppgifter stannar där. De kopieras inte till någon server och är inte tillgängliga för varken utvecklaren eller tredje part. Om applikationen avinstalleras raderas de.</p>
+      <p>Dessa uppgifter stannar där. De kopieras inte till någon server och är inte tillgängliga för utvecklaren eller för tredje part, med det enda undantag som beskrivs i avsnittet ”Kraschrapporter”. Avinstallation av applikationen raderar dem.</p>
       <p>Applikationen för dessutom en lokal logg över handskriftsövningar: de drag som ritats vid misslyckade försök och en rad med siffror för varje försök. Loggen är begränsad till 100 tecken och 500 försök, och de äldsta posterna raderas efter hand. Dess enda syfte är att göra det möjligt för användaren att frivilligt skicka den till utvecklaren; den överförs aldrig automatiskt och kan raderas via Inställningar.</p>
     </section>
 
@@ -292,19 +302,76 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li>Den kräver inget konto och ingen registrering. Den efterfrågar inte namn, e-postadress eller ålder.</li>
         <li>Utvecklaren driver ingen server som lagrar användarnas framsteg.</li>
         <li>Den visar ingen reklam och integrerar inga annonsnätverk.</li>
-        <li>Den utför ingen analys eller användningsspårning och använder inga annonsidentifierare. Kraschrapportering finns; den är inaktiverad såvida inte användaren aktiverar den, och beskrivs i ett separat avsnitt nedan.</li>
-        <li>Inga uppgifter säljs eller delas med tredje part, eftersom inga uppgifter samlas in för det ändamålet.</li>
+        <li>Utvecklaren utför ingen analys eller spårning av användningen, och applikationen använder inga annonsidentifierare. Tredjepartskomponenter som på eget initiativ skickar tekniska uppgifter anges i avsnittet ”Nätverksanslutningar”.</li>
+        <li>Inga uppgifter säljs eller lämnas ut till tredje part för reklam- eller kommersiella ändamål.</li>
       </ul>
     </section>
 
     <section>
       <h2>Nätverksanslutningar</h2>
-      <p>Applikationen upprättar en nätverksanslutning vid de tillfällen som anges nedan. Ingen av dessa överför studiedata.</p>
-      <p>1 · <strong>Uppdateringar.</strong> Vid start frågar applikationen uppdateringstjänsten hos Expo Application Services (Expo, USA) om det finns en senare version. Denna förfrågan gör det möjligt för tjänsten att ta del av tekniska uppgifter: enhetens IP-adress, dess operativsystem och applikationsversionen. Inga studiedata överförs. Expos integritetspolicy finns på <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</p>
-      <p>2 · <strong>Talsyntes.</strong> När applikationen läser upp ett japanskt ord görs detta via enhetens egen talsyntesmotor. Applikationen överför ingenting på egen hand; huruvida denna systemmotor använder nätverket beror på enheten och dess inställningar.</p>
-      <p>3 · <strong>Kraschrapporter med samtycke.</strong> Beskrivs i motsvarande avsnitt nedan. Inaktiverade såvida inte användaren aktiverar dem.</p>
-      <p>4 · <strong>Erbjudanden.</strong> När köpskärmen öppnas hämtar applikationen den offentliga filen kanjikaku.com/ofertas.json, som finns på GitHub Pages (GitHub, Inc., USA), för att visa aktuella erbjudanden. Hämtningen gör det möjligt för tjänsten att se enhetens IP-adress. Inga studiedata eller andra uppgifter överförs.</p>
-      <p>5 · <strong>Köp.</strong> Köpet i applikationen hanteras helt via App Store eller Google Play, beroende på enhet. Utvecklaren tar inte emot några betalningsuppgifter; applikationen frågar endast butiken om köpet finns, för att låsa upp det köpta innehållet.</p>
+      <p>Applikationen upprättar nätverksanslutningar endast i de fall som anges nedan. För vart och ett anges när det sker, vilka uppgifter som lämnar enheten, vem som tar emot dem, i vilket syfte och om det är frivilligt. Om ingen anslutning finns utförs inte den aktuella funktionen, och studierna påverkas inte.</p>
+
+      <h3>1 · Kontroll av uppdateringar</h3>
+      <ul>
+        <li><strong>När.</strong> Vid varje start av applikationen och, så länge den är öppen, varje gång den återgår till förgrunden, dock högst en gång per tio minuter.</li>
+        <li><strong>Uppgifter som lämnar enheten.</strong> IP-adressen; plattformen (Android eller iOS); applikationens inbyggda version, publiceringskanalen och identifieraren för den installerade uppdateringen; samt en slumpmässig installationsidentifierare som skapas av uppdateringskomponenten själv. Inga studiedata överförs.</li>
+        <li><strong>Mottagare.</strong> Expo Application Services, som drivs av 650 Industries, Inc. (USA). Dess integritetspolicy finns på <a href="https://expo.dev/privacy" rel="noopener">expo.dev/privacy</a>.</li>
+        <li><strong>Syfte.</strong> Att fastställa om det finns en nyare version av applikationen och i så fall hämta den.</li>
+        <li><strong>Karaktär.</strong> Automatisk; kan inte stängas av i applikationen. Utan anslutning görs ingen kontroll och applikationen körs med den installerade versionen.</li>
+      </ul>
+
+      <h3>2 · Köp i appen</h3>
+      <ul>
+        <li><strong>När.</strong> Vid varje start av applikationen, för att kontrollera om köpet finns; när köpskärmen öppnas, för att hämta priset; samt vid köp eller återställning av köpet.</li>
+        <li><strong>Uppgifter som lämnar enheten.</strong> Förfrågan och i förekommande fall köpbegäran skickas till butikens köpsystem (App Store på iOS, Google Play på Android), som hanterar dem med det butikskonto som är inloggat på enheten och produktidentifieraren. Betalningen anges och behandlas helt i butiken.</li>
+        <li><strong>Mottagare.</strong> Apple Inc. eller Google LLC, beroende på enhet, som behandlar dessa uppgifter enligt sina egna villkor och integritetspolicyer. Utvecklaren tar inte emot några betalningsuppgifter, namn eller e-postadresser; utvecklaren får från butiken endast de försäljningsrapporter som butiken tillhandahåller.</li>
+        <li><strong>Syfte.</strong> Att genomföra köpet och låsa upp det köpta innehållet på enheten.</li>
+        <li><strong>Karaktär.</strong> Kontrollen vid start sker automatiskt. Köpet är frivilligt; utan det erbjuder applikationen det kostnadsfria innehållet.</li>
+      </ul>
+
+      <h3>3 · Aktuella erbjudanden och meddelande om ny version</h3>
+      <ul>
+        <li><strong>När.</strong> När applikationen startas, för meddelandet om ny version, och när köpskärmen öppnas, för erbjudandena.</li>
+        <li><strong>Uppgifter som lämnar enheten.</strong> En begäran om att hämta de offentliga filerna kanjikaku.com/version.json och kanjikaku.com/ofertas.json, vilket gör det möjligt för servern att se IP-adressen och de vanliga tekniska uppgifterna för varje anslutning. Inga andra uppgifter överförs: jämförelsen med den installerade versionen görs på enheten.</li>
+        <li><strong>Mottagare.</strong> GitHub Pages, som drivs av GitHub, Inc. (USA) och som är värd för webbplatsen kanjikaku.com.</li>
+        <li><strong>Ändamål.</strong> Att meddela att en nyare version av applikationen finns i butiken och att visa aktuella erbjudanden.</li>
+        <li><strong>Karaktär.</strong> Kontrollen vid start sker automatiskt; meddelandet tvingar inte till uppdatering och kan avfärdas. Begäran om erbjudanden sker endast om användaren öppnar köpskärmen.</li>
+      </ul>
+
+      <h3>4 · Kraschrapporter</h3>
+      <p>Endast om användaren aktiverar dem. Innehåll, mottagare och lagringstid beskrivs i avsnittet ”Kraschrapporter”.</p>
+
+      <h3>5 · Taligenkänning</h3>
+      <ul>
+        <li><strong>När.</strong> Endast om användaren aktiverar röstigenkänningen, som är avstängd som standard, i läsövningens inställningar; i så fall medan mikrofonen är öppen i den övningen.</li>
+        <li><strong>Uppgifter som lämnar enheten.</strong> På iOS, och på Android när enheten har japansk taligenkänning utan anslutning, inga: igenkänningen sker på enheten. På Android-enheter som saknar detta överför systemets taligenkänning det ljud som fångas under lyssnandet, tillsammans med det förväntade ordet och dess läsning, som applikationen lämnar som ledtråd.</li>
+        <li><strong>Mottagare.</strong> I det senare fallet Google LLC, som leverantör av systemets taligenkänningstjänst, enligt dess egna villkor.</li>
+        <li><strong>Syfte.</strong> Att transkribera den uttalade läsningen för att jämföra den med den förväntade.</li>
+        <li><strong>Karaktär.</strong> Frivillig: röstigenkänningen är avstängd som standard, kan när som helst pausas eller stängas av, och övningen kan genomföras utan den.</li>
+      </ul>
+
+      <h3>6 · Talsyntes</h3>
+      <ul>
+        <li><strong>När.</strong> När applikationen läser upp en japansk text med systemets röst.</li>
+        <li><strong>Uppgifter som lämnar enheten.</strong> På iOS inga. På Android överför systemets talsyntes den text som ska läsas upp om den valda rösten är en av dem som i Inställningar anges som ”via internet”, eller om systemets standardröst fungerar via nätverket.</li>
+        <li><strong>Mottagare.</strong> Google LLC, som leverantör av systemets talsyntes, enligt dess egna villkor.</li>
+        <li><strong>Syfte.</strong> Att generera ljudet för uppläsningen.</li>
+        <li><strong>Karaktär.</strong> Frivillig: i Inställningar kan en röst utan anslutning väljas, vilket rekommenderas.</li>
+      </ul>
+
+      <h3>7 · Textigenkänning i fotografier</h3>
+      <ul>
+        <li><strong>När.</strong> När funktionen ”Från ett foto” används.</li>
+        <li><strong>Uppgifter som lämnar enheten.</strong> Varken fotografiet eller den igenkända texten: igenkänningen utförs på enheten av Googles komponent ML Kit. Denna komponent kan på eget initiativ skicka tekniska driftsuppgifter till Google: enhetens tillverkare och modell, operativsystemets version, applikationens namn och version, installationsidentifierare, prestandamått, komponentens konfiguration och felkoder.</li>
+        <li><strong>Mottagare.</strong> Google LLC. Förteckningen över uppgifterna finns på <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener">developers.google.com/ml-kit/android-data-disclosure</a>.</li>
+        <li><strong>Syfte.</strong> Enligt Google diagnostik av komponenten och mätning av dess användning.</li>
+        <li><strong>Karaktär.</strong> Frivillig: sker endast om användaren använder funktionen.</li>
+      </ul>
+
+      <h3>8 · Externa länkar</h3>
+      <p>När användaren trycker på en länk till denna webbplats eller till en e-postadress öppnar applikationen den i enhetens webbläsare eller e-postapplikation. Vad som sker därefter regleras av villkoren för dessa applikationer och för den besökta webbplatsen.</p>
+
+      <p class="base"><strong>Rättslig grund.</strong> Utvecklarens berättigade intresse av att hålla applikationen uppdaterad och fungerande och av att kontrollera köp (fall 1–3); användarens samtycke när det gäller kraschrapporter (fall 4); samt användarens egen begäran när den aktuella funktionen används (fall 5–8).</p>
     </section>
 
     <section>
@@ -323,30 +390,30 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <ul>
         <li>Aviseringar — begärs endast om den dagliga påminnelsen är aktiverad.</li>
         <li>Filer — begärs endast vid export eller import och begränsas till den valda filen.</li>
-        <li>Mikrofon — begärs endast för övningar som erbjuder högläsning och är aktiv endast medan motsvarande knapp hålls nedtryckt. Igenkänningen sker på enheten; se avsnittet nedan.</li>
-        <li>Kamera och fotografier — begärs endast vid skanning av japansk text i ett foto och är begränsade till det tagna eller valda fotot. Texten känns igen på enheten; fotot sparas inte och lämnar inte enheten.</li>
+        <li>Mikrofon och taligenkänning — begärs endast om användaren aktiverar röstigenkänningen i läsövningens inställningar, ett alternativ som är avstängt som standard. Se avsnittet nedan och fall 5 i avsnittet ”Nätverksanslutningar”.</li>
+        <li>Kamera och fotografier — begärs endast när funktionen ”Från ett foto” används och är begränsade till det tagna eller valda fotot. Texten känns igen på enheten och fotot lämnar den inte. Applikationen sparar inte fotot; systemet kan behålla en tillfällig kopia i applikationens cache tills det rensar den.</li>
         <li>Applikationen har inte åtkomst till platsdata eller kontakter.</li>
       </ul>
     </section>
 
     <section>
       <h2>Högläsning och mikrofonen</h2>
-      <p>Vissa övningar gör det möjligt att läsa ordet högt i stället för att skriva det. Mikrofonen aktiveras endast medan motsvarande knapp hålls nedtryckt och först efter att behörigheten har beviljats.</p>
-      <p><strong>Igenkänningen sker på enheten.</strong> Applikationen begär igenkänning på enheten via enhetens röstigenkänning och använder inga andra medel: om enheten inte kan känna igen japanska utan nätverksanslutning erbjuds inte funktionen.</p>
-      <p>Inget ljud spelas in och inget ljud sparas. Applikationen tar emot den igenkända texten, jämför den med den förväntade läsningen och kasserar den därefter. Ingen ljudfil sparas och inget ljud lämnar applikationen.</p>
+      <p>Läsövningen gör det möjligt att säga läsningen högt i stället för att skriva den, om användaren aktiverar alternativet ”Röstigenkänning (experimentell)” i övningens inställningar; alternativet är avstängt som standard. När det har aktiverats och behörigheten har beviljats öppnas mikrofonen automatiskt när varje ord visas och stängs när motsvarande knapp trycks, när man går vidare till ett annat ord eller när övningen lämnas. Alternativet ”Jag kan inte prata nu” stänger av den i trettio minuter.</p>
+      <p><strong>Var igenkänningen sker.</strong> På iOS, och på Android när enheten har japansk taligenkänning utan anslutning, kräver applikationen att igenkänningen sker på enheten. På Android-enheter som saknar denna förmåga begär applikationen först igenkänning utan anslutning och, om systemets taligenkänning anger att den inte kan känna igen japanska på det sättet, övergår den till Googles nätverksbaserade igenkänning under resten av sessionen. I så fall överförs det ljud som fångas under lyssnandet till Google enligt fall 5 i avsnittet ”Nätverksanslutningar”.</p>
+      <p>Applikationen spelar inte in och sparar inget ljud. Den tar emot den igenkända texten, jämför den med den förväntade läsningen och kastar den. Ingen ljudfil skrivs.</p>
     </section>
 
     <section>
       <h2>Kraschrapporter</h2>
       <p>Applikationen kan skicka en rapport när den avslutas oväntat så att felet kan åtgärdas. <strong>Denna funktion är inaktiverad som standard.</strong> Samtycke begärs vid den första starten och ingenting överförs förrän samtycke har lämnats.</p>
-      <p>Om funktionen aktiveras skickas rapporten till Sentry (Functional Software, Inc., USA), den tjänst som samlar in sådana rapporter. Den innehåller felets art och plats i källkoden, applikationsversion samt enhetsmodell.</p>
-      <p>Den innehåller inga studiedata, kortlekar, applikationsinställningar eller någon information som identifierar användaren: alternativet som skulle bifoga personuppgifter är inaktiverat i källkoden. Rapporter kan när som helst inaktiveras igen under Inställningar.</p>
+      <p>Om funktionen är aktiverad överförs rapporten till Sentry (Functional Software, Inc.), som lagrar den i sin dataregion inom Europeiska unionen (Tyskland). Den innehåller: typen av fel, dess plats i koden och anropsstacken; applikationens version; enhetsmodell och operativsystemets version; en slumpmässig installationsidentifierare som skapas av Sentry-komponenten; de senaste steg som applikationen har registrerat, till exempel öppnade skärmar, högst tjugo; samt det som visades på skärmen när felet inträffade, till exempel det kanji, ord eller den övning som pågick eller, om ordförrådssökningen var öppen, den text som angetts i den.</p>
+      <p>Rapporten innehåller inte studieframsteg, kortlekar, historik eller uppgifter som direkt identifierar användaren, såsom namn eller e-postadress: det alternativ som skulle bifoga personuppgifter, inklusive IP-adressen, är avstängt i koden. Rapporterna sparas i högst 30 dagar och raderas därefter. Funktionen kan när som helst stängas av igen i Inställningar.</p>
       <p>Sentrys integritetspolicy finns tillgänglig på <a href="https://sentry.io/privacy/" rel="noopener">sentry.io/privacy</a>.</p>
     </section>
 
     <section>
       <h2>Minderåriga</h2>
-      <p>Applikationen samlar inte in några personuppgifter från någon användare, oavsett ålder. Den begär varken namn, e-postadress eller födelsedatum och innehar därmed inga uppgifter om minderåriga som skulle kunna lagras eller behandlas på ett särskilt sätt.</p>
+      <p>Applikationen begär inte namn, e-postadress eller födelsedatum av någon användare, oavsett ålder, och utvecklaren har inga uppgifter som gör det möjligt att identifiera en minderårig. De tekniska uppgifter som beskrivs i avsnittet ”Nätverksanslutningar” behandlas på samma sätt oavsett användarens ålder.</p>
     </section>
 
     <section>
@@ -358,12 +425,12 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li><strong>Rättslig grund.</strong> Användarens samtycke, som lämnas genom att meddelandet skickas. Ingen behandling sker utan denna handling.</li>
         <li><strong>Lagringsperiod.</strong> Tills ärendet har lösts, och i vilket fall som helst inte längre än sex månader.</li>
       </ul>
-      <p>Användaren kan när som helst begära radering av sin e-postadress och av allt inskickat material via adressen nedan. Applikationen i sig fortsätter att inte överföra någonting på egen hand.</p>
+      <p>Användaren kan när som helst begära radering av sin e-postadress och av allt material som skickats, via den adress som anges nedan.</p>
     </section>
 
     <section>
       <h2>Den registrerades rättigheter</h2>
-      <p>Rätten till tillgång, rättelse och radering förutsätter normalt att en part innehar uppgifterna. Så är inte fallet här: uppgifterna finns på användarens enhet och under användarens kontroll. De kan granskas genom att exportera en kopia och raderas från applikationens inställningar eller genom att avinstallera applikationen.</p>
+      <p>Studiedata finns på användarens enhet och under dennes kontroll: de kan granskas genom att en kopia exporteras och raderas i applikationens inställningar eller genom att applikationen avinstalleras. När det gäller kraschrapporter och korrespondens kan användaren utöva rätten till tillgång, rättelse, radering, invändning och begränsning av behandling genom att skriva till kontaktadressen; eftersom rapporterna inte innehåller identifierande uppgifter kan det vara nödvändigt att ange ungefärligt datum för felet för att hitta dem. När det gäller uppgifter som Apple och Google behandlar enligt sina egna villkor utövas rättigheterna gentemot dessa aktörer. Användaren har dessutom rätt att lämna in ett klagomål till behörig tillsynsmyndighet för dataskydd.</p>
     </section>
 
     <section>
