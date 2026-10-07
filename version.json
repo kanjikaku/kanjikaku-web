@@ -6,10 +6,10 @@
     "publicada: true cuando la app ya está a la venta en esa tienda (no en pruebas). Sólo la mira la web: sus botones pasan de «pronto» al enlace de la tienda y la página de descarga dice «Ya disponible» (web/construir.mjs)."
   ],
   "android": {
-    "build": 37,
+    "build": 39,
     "version": "1.0.0",
     "tienda": "https://play.google.com/store/apps/details?id=com.kanjikaku.app",
-    "publicada": false
+    "publicada": true
   },
   "ios": {
     "build": 43,
