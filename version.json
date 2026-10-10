@@ -12,9 +12,9 @@
     "publicada": true
   },
   "ios": {
-    "build": 43,
+    "build": 44,
     "version": "1.0.0",
-    "tienda": null,
-    "publicada": false
+    "tienda": "https://apps.apple.com/app/id6808606696",
+    "publicada": true
   }
 }
