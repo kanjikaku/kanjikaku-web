@@ -12,8 +12,8 @@
     "publicada": true
   },
   "ios": {
-    "build": 44,
-    "version": "1.0.0",
+    "build": 50,
+    "version": "1.1.0",
     "tienda": "https://apps.apple.com/app/id6808606696",
     "publicada": true
   }
