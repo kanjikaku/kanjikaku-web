@@ -4,31 +4,32 @@
     "Cada oferta: id (una palabra: el nombre y el descuento, launch50, blackfriday10), activa (true/false), desde y hasta (AAAA-MM-DD, los dos días incluidos, en la fecha local del móvil), tiendas (ios, android; sin el campo, las dos) y nombre en cada idioma (si falta uno, cae al inglés).",
     "SÓLO pone el nombre. El precio rebajado se pone en App Store Connect (calendario de precios del producto) y en Play Console (oferta del producto): la app enseña y cobra siempre el precio que le da la tienda. Por eso todas nacen con activa: false; se pone true cuando el precio ya está rebajado en las consolas para esas fechas.",
     "Si dos activas coinciden en fecha gana la primera de la lista. Para añadir otra: copiar un bloque y cambiar id, fechas y nombres. El −XX % del nombre es texto: cámbialo a la vez que el descuento de las consolas.",
-    "Se publica con: node web/construir.mjs && node web/publicar.mjs \"mensaje\". La app lo ve en cuanto GitHub Pages refresca (un minuto)."
+    "Se publica con: node web/construir.mjs && node web/publicar.mjs \"mensaje\". La app lo ve en cuanto GitHub Pages refresca (un minuto).",
+    "launch70 (15-oct-2026): activa del 15-oct al 14-nov en las dos tiendas (calendario de Apple hasta el 15-nov y oferta lanzamiento-70 de Play hasta el 14-nov a las 23:00 UTC). Apagarla aquí si se cancela la rebaja en las consolas."
   ],
   "ofertas": [
     {
-      "id": "launch50",
-      "activa": false,
-      "desde": "2026-10-01",
-      "hasta": "2026-10-31",
+      "id": "launch70",
+      "activa": true,
+      "desde": "2026-10-15",
+      "hasta": "2026-11-14",
       "tiendas": [
         "ios",
         "android"
       ],
       "nombre": {
-        "es": "Precio de lanzamiento: −50 %",
-        "en": "Launch price: −50 %",
-        "de": "Einführungspreis: −50 %",
-        "fr": "Prix de lancement : −50 %",
-        "it": "Prezzo di lancio: −50 %",
-        "pt": "Preço de lançamento: −50 %",
-        "nl": "Introductieprijs: −50 %",
-        "sv": "Lanseringspris: −50 %",
-        "pl": "Cena początkowa: −50 %",
-        "ind": "Harga peluncuran: −50 %",
-        "vi": "Giá ra mắt: −50 %",
-        "ko": "출시 기념 가격: −50 %"
+        "es": "Precio de lanzamiento: −70 %",
+        "en": "Launch price: −70 %",
+        "de": "Einführungspreis: −70 %",
+        "fr": "Prix de lancement : −70 %",
+        "it": "Prezzo di lancio: −70 %",
+        "pt": "Preço de lançamento: −70 %",
+        "nl": "Introductieprijs: −70 %",
+        "sv": "Lanseringspris: −70 %",
+        "pl": "Cena początkowa: −70 %",
+        "ind": "Harga peluncuran: −70 %",
+        "vi": "Giá ra mắt: −70 %",
+        "ko": "출시 기념 가격: −70 %"
       }
     },
     {

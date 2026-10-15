@@ -3,7 +3,9 @@
     "El último build de cada tienda y su versión. La app lo lee de kanjikaku.com/version.json al arrancar y, si su build es más viejo, enseña en el menú «Hay una versión nueva (1.1.0) en la tienda» con un botón a la tienda. Decide el build; la versión sólo se enseña. Ver src/services/versionNueva.ts y ARQUITECTURA §6.6.",
     "Al publicar un build nuevo en una tienda (también en la prueba cerrada), y no antes: poner aquí su número de build (versionCode en Android, CFBundleVersion en iOS) y su versión (la de app.json), y publicar la web: node web/construir.mjs && node web/publicar.mjs \"mensaje\".",
     "tienda: la ficha de esa tienda. En iOS va null mientras la app no esté en la App Store: a los testers de TestFlight les avisa TestFlight.",
-    "publicada: true cuando la app ya está a la venta en esa tienda (no en pruebas). Sólo la mira la web: sus botones pasan de «pronto» al enlace de la tienda y la página de descarga dice «Ya disponible» (web/construir.mjs)."
+    "publicada: true cuando la app ya está a la venta en esa tienda (no en pruebas). Sólo la mira la web: sus botones pasan de «pronto» al enlace de la tienda y la página de descarga dice «Ya disponible» (web/construir.mjs).",
+    "La web enseña lo nuevo de una versión (bloques <!--si:desde-X--> de las plantillas: en la 1.4.0, el podcast, la copia en la nube, el trazo que sobra, el margen por kanji y la política con la copia) sólo cuando las DOS plataformas están publicada: true con version >= X; manda la menor. Ojo: si Android pone aquí una versión que sólo está en la prueba cerrada mientras iOS ya la tiene en la App Store, la web la daría por publicada. Para mirarlo antes: WEB_VERSION=1.4.0 node web/construir.mjs (ensayo: publicar.mjs se niega hasta construir sin él).",
+    "privacidad_actualizada: la fecha (AAAA-MM-DD) de «Última actualización» de la política cuando cambia con una versión (desde el 1.4.0, la copia en la nube). Se pone el día que se publica esa versión; la web la escribe en el formato de cada idioma."
   ],
   "android": {
     "build": 40,
@@ -16,5 +18,6 @@
     "version": "1.1.0",
     "tienda": "https://apps.apple.com/app/id6808606696",
     "publicada": true
-  }
+  },
+  "privacidad_actualizada": null
 }
