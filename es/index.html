@@ -118,6 +118,13 @@ mark::before { content: ""; position: absolute; inset: .06em 0 -.02em 0; backgro
 .boton { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 700; padding: 14px 22px; border-radius: 999px; border: 1.5px solid currentColor; }
 .boton.principal { background: var(--hanko); border-color: var(--hanko); color: var(--sobre-hanko); }
 .boton .estado { font-weight: 400; opacity: .75; }
+/* Las insignias oficiales de las tiendas, a la misma altura (48 px). La de
+   Google trae 41/250 de margen transparente por cada lado: se descuenta. */
+.insignia { display: inline-flex; align-items: center; line-height: 0; border-radius: 9px; }
+.insignia img { display: block; width: auto; max-width: none; }
+.insignia.ios img { height: 48px; }
+.insignia.android img { height: 72px; margin: -12px; }
+.botones:has(.insignia) { align-items: center; gap: 16px; }
 #enso { position: absolute; z-index: -1; width: 128%; max-width: 760px; left: 50%; top: 50%; transform: translate(-46%, -52%) rotate(20deg); opacity: .95; }
 #enso path { fill: var(--hanko); }
 .icono-sello { position: absolute; top: 4%; right: 6%; width: 86px; transform: rotate(8deg); mix-blend-mode: multiply; }
@@ -283,8 +290,8 @@ footer a:hover { color: var(--oro); }
           confundiendo dos que se parecen.
         </p>
         <div class="botones">
-          <a class="boton principal" href="https://play.google.com/store/apps/details?id=com.kanjikaku.app" data-tienda="android" rel="noopener">Google Play</a>
-          <a class="boton" href="https://apps.apple.com/app/id6808606696" data-tienda="ios" rel="noopener">App Store</a>
+          <a class="insignia android" href="https://play.google.com/store/apps/details?id=com.kanjikaku.app" data-tienda="android" rel="noopener"><img src="/insignias/google-play-es.png" alt="Google Play" height="72"></a>
+          <a class="insignia ios" href="https://apps.apple.com/app/id6808606696" data-tienda="ios" rel="noopener"><img src="/insignias/app-store-es.svg" alt="App Store" height="48"></a>
         </div>
       </div>
       <div class="visual">
@@ -301,9 +308,9 @@ footer a:hover { color: var(--oro); }
   <section class="franja dia" id="anuncio" style="padding-top:0">
     <div class="envoltura">
       <p class="ceja"><span class="sello" aria-hidden="true">映</span><span>Vídeo</span></p>
-      <h2><span>La app,</span> <mark>en 70 segundos</mark></h2>
+      <h2><span>La app,</span> <mark>en 93 segundos</mark></h2>
       <div class="anuncio-caja">
-        <button class="anuncio" type="button" data-yt="QSzQigm9zwA" aria-label="Ver el vídeo en YouTube">
+        <button class="anuncio" type="button" data-yt="5YzekGpENoA" aria-label="Ver el vídeo en YouTube">
           <img src="/medios/es/anuncio.webp" alt="" width="1280" height="720" loading="lazy">
           <span class="reproducir" aria-hidden="true"></span>
         </button>
@@ -497,8 +504,8 @@ footer a:hover { color: var(--oro); }
       <h2>Descárgala gratis</h2>
       <p class="sub">Los 50 primeros kanji, gratis y sin límite de tiempo. Un pago único desbloquea el resto de los kanji y del vocabulario, y las frases de ejemplo.</p>
       <div class="botones">
-        <a class="boton principal" href="https://play.google.com/store/apps/details?id=com.kanjikaku.app" data-tienda="android" rel="noopener">Google Play</a>
-        <a class="boton" href="https://apps.apple.com/app/id6808606696" data-tienda="ios" rel="noopener">App Store</a>
+        <a class="insignia android" href="https://play.google.com/store/apps/details?id=com.kanjikaku.app" data-tienda="android" rel="noopener"><img src="/insignias/google-play-es.png" alt="Google Play" height="72"></a>
+        <a class="insignia ios" href="https://apps.apple.com/app/id6808606696" data-tienda="ios" rel="noopener"><img src="/insignias/app-store-es.svg" alt="App Store" height="48"></a>
       </div>
     </div>
   </section>

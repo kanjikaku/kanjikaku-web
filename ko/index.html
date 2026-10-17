@@ -118,6 +118,13 @@ mark::before { content: ""; position: absolute; inset: .06em 0 -.02em 0; backgro
 .boton { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 700; padding: 14px 22px; border-radius: 999px; border: 1.5px solid currentColor; }
 .boton.principal { background: var(--hanko); border-color: var(--hanko); color: var(--sobre-hanko); }
 .boton .estado { font-weight: 400; opacity: .75; }
+/* Las insignias oficiales de las tiendas, a la misma altura (48 px). La de
+   Google trae 41/250 de margen transparente por cada lado: se descuenta. */
+.insignia { display: inline-flex; align-items: center; line-height: 0; border-radius: 9px; }
+.insignia img { display: block; width: auto; max-width: none; }
+.insignia.ios img { height: 48px; }
+.insignia.android img { height: 72px; margin: -12px; }
+.botones:has(.insignia) { align-items: center; gap: 16px; }
 #enso { position: absolute; z-index: -1; width: 128%; max-width: 760px; left: 50%; top: 50%; transform: translate(-46%, -52%) rotate(20deg); opacity: .95; }
 #enso path { fill: var(--hanko); }
 .icono-sello { position: absolute; top: 4%; right: 6%; width: 86px; transform: rotate(8deg); mix-blend-mode: multiply; }
@@ -279,8 +286,8 @@ footer a:hover { color: var(--oro); }
         <h1><span>한자 쓰기</span> <mark>한 획씩</mark></h1>
         <p class="lead">손가락으로 한자를 한 획씩 올바른 순서대로 쓰게 해주는 학습 앱입니다. 한자가 어떻게 구성되어 있는지 보여주고, 비슷하게 생긴 두 한자를 혼동할 때 알려줍니다.</p>
         <div class="botones">
-          <a class="boton principal" href="https://play.google.com/store/apps/details?id=com.kanjikaku.app" data-tienda="android" rel="noopener">Google Play</a>
-          <a class="boton" href="https://apps.apple.com/app/id6808606696" data-tienda="ios" rel="noopener">App Store</a>
+          <a class="insignia android" href="https://play.google.com/store/apps/details?id=com.kanjikaku.app" data-tienda="android" rel="noopener"><img src="/insignias/google-play-ko.png" alt="Google Play" height="72"></a>
+          <a class="insignia ios" href="https://apps.apple.com/app/id6808606696" data-tienda="ios" rel="noopener"><img src="/insignias/app-store-ko.svg" alt="App Store" height="48"></a>
         </div>
       </div>
       <div class="visual">
@@ -297,9 +304,9 @@ footer a:hover { color: var(--oro); }
   <section class="franja dia" id="anuncio" style="padding-top:0">
     <div class="envoltura">
       <p class="ceja"><span class="sello" aria-hidden="true">映</span><span>영상</span></p>
-      <h2><span>앱을</span> <mark>70초 만에</mark></h2>
+      <h2><span>앱을</span> <mark>93초 만에</mark></h2>
       <div class="anuncio-caja">
-        <button class="anuncio" type="button" data-yt="huW7wYiFO_Y" aria-label="YouTube에서 영상 보기">
+        <button class="anuncio" type="button" data-yt="t8AQHn7NQTM" aria-label="YouTube에서 영상 보기">
           <img src="/medios/ko/anuncio.webp" alt="" width="1280" height="720" loading="lazy">
           <span class="reproducir" aria-hidden="true"></span>
         </button>
@@ -493,8 +500,8 @@ footer a:hover { color: var(--oro); }
       <h2>무료로 다운로드하세요</h2>
       <p class="sub">처음 50자는 기간 제한 없이 무료입니다. 한 번 결제하면 나머지 한자와 어휘, 그리고 예문이 열립니다.</p>
       <div class="botones">
-        <a class="boton principal" href="https://play.google.com/store/apps/details?id=com.kanjikaku.app" data-tienda="android" rel="noopener">Google Play</a>
-        <a class="boton" href="https://apps.apple.com/app/id6808606696" data-tienda="ios" rel="noopener">App Store</a>
+        <a class="insignia android" href="https://play.google.com/store/apps/details?id=com.kanjikaku.app" data-tienda="android" rel="noopener"><img src="/insignias/google-play-ko.png" alt="Google Play" height="72"></a>
+        <a class="insignia ios" href="https://apps.apple.com/app/id6808606696" data-tienda="ios" rel="noopener"><img src="/insignias/app-store-ko.svg" alt="App Store" height="48"></a>
       </div>
     </div>
   </section>
