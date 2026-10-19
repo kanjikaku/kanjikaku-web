@@ -151,6 +151,29 @@ mark::before { content: ""; position: absolute; inset: .06em 0 -.02em 0; backgro
 .al-pie { position: absolute; bottom: -36px; right: 8%; z-index: 3; }
 
 /**/
+/* ── Tres formas de aprender (1.4.0) ───────────────────────────── */
+/* Cartas de dos líneas: el modo y, debajo, para qué sirve. */
+.carta .dos { display: flex; flex-direction: column; line-height: 1.25; }
+.carta .dos small { font-size: 14px; font-weight: 400; color: var(--suave); }
+.modos .carta { min-width: min(100%, 300px); }
+.formas .sub + .cartas { margin-top: 30px; }
+.formas .podcast { margin-top: 30px; }
+/* El clip del podcast va tal cual (ya lleva su teléfono dibujado): en vertical, sin marco de móvil. */
+.clip { width: min(300px, 70vw); aspect-ratio: 9 / 16; border-radius: 26px; overflow: hidden; background: #1C1A17; box-shadow: 0 50px 90px -30px rgba(20,12,4,.55), 0 20px 40px -20px rgba(20,12,4,.35); }
+.clip video { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* Más margen: el naranja del aprobado con margen, el mismo de la app. */
+.sello.naranja { background: var(--naranja); }
+
+/* ── Copia en la nube (1.4.0) ──────────────────────────────────── */
+.copia { text-align: center; padding-bottom: 0; }
+.copia .ceja { justify-content: center; }
+.copia .sub { margin-inline: auto; }
+.copia .cartas { justify-content: center; text-align: left; }
+/* En el móvil, una carta bajo la otra y del mismo ancho: dos anchos distintos centrados parecen torcidos. */
+@media (max-width: 640px) { .copia .cartas { flex-direction: column; align-items: center; } .copia .carta { width: min(100%, 340px); } }
+.copia .aclaracion { max-width: 40em; margin: 26px auto 0; font-size: 14px; color: var(--suave); text-wrap: pretty; }
+
+/**/
 /* ── Origen ────────────────────────────────────────────────────── */
 .formula { display: flex; align-items: center; gap: clamp(8px, 1.4vw, 20px); margin: 42px 0 0; }
 .pieza { display: flex; flex-direction: column; align-items: center; gap: 4px; }
@@ -315,7 +338,27 @@ footer a:hover { color: var(--oro); }
     </div>
   </section>
 
-
+  <!-- ══ TRES FORMAS DE APRENDER (1.4.0) ═══════════════════════ -->
+  <section class="franja dia formas" id="formas" style="padding-top:0">
+    <div class="agua" style="left:-8%;top:4%" aria-hidden="true">学</div>
+    <div class="envoltura fila invertida">
+      <div>
+        <p class="ceja"><span class="sello" aria-hidden="true">学</span><span>세 가지 방법</span></p>
+        <h2><span>세 가지 방법으로</span> <mark>나란히 배우세요</mark></h2>
+        <p class="sub">함께 써도, 따로 써도 됩니다.</p>
+        <ul class="cartas modos">
+          <li class="carta"><span class="sello" aria-hidden="true">書</span><span class="dos"><b>연습 문제</b><small>손글씨 쓰기 포함</small></span></li>
+          <li class="carta"><span class="sello" aria-hidden="true">札</span><span class="dos"><b>플래시카드</b><small>내 속도로 복습</small></span></li>
+          <li class="carta"><span class="sello" aria-hidden="true">聴</span><span class="dos"><b>팟캐스트</b><small>보지 않고 듣기</small></span></li>
+        </ul>
+        <p class="sub podcast">팟캐스트 모드에서는 화면을 보지 않아도 어휘를 일본어와 내 언어로 들려줍니다. 운전할 때, 헬스장에서, 산책하면서 들을 수 있고, 화면이 잠겨도 계속 재생됩니다.</p>
+      </div>
+      <div class="visual">
+        <div class="clip girado-d"><video src="/medios/ko/podcast.mp4" poster="/medios/ko/podcast.jpg" autoplay muted loop playsinline preload="metadata" aria-label="영상: 팟캐스트 모드"></video></div>
+      </div>
+    </div>
+  </section>
+  
   <!-- ══ La frase del profesor ═════════════════════════════════ -->
   <section class="franja noche cita">
     <div class="envoltura">
@@ -336,7 +379,9 @@ footer a:hover { color: var(--oro); }
           <li class="carta"><span class="sello" aria-hidden="true">向</span><span>획 방향</span></li>
           <li class="carta"><span class="sello" aria-hidden="true">似</span><span>비슷한 한자</span></li>
           <li class="carta"><span class="sello" aria-hidden="true">部</span><span>잘못된 위치의 부수</span></li>
-        </ul>
+          <li class="carta"><span class="sello" aria-hidden="true">余</span><span>남는 획</span></li>
+          <li class="carta"><span class="sello naranja" aria-hidden="true">寛</span><span>잘 안 써지는 한자는 더 여유 있게</span></li>
+                  </ul>
       </div>
       <div class="visual">
         <div class="pareja">
@@ -491,7 +536,24 @@ footer a:hover { color: var(--oro); }
     </div>
   </section>
 
-
+  <!-- ══ COPIA EN LA NUBE (1.4.0) ══════════════════════════════ -->
+  <!-- Lo que hace de verdad (docs/COPIA-EN-LA-NUBE.md): en iOS, el iCloud del
+       usuario con «Copia en iCloud» encendido; en Android, la copia de Google
+       si está activada, una vez al día como mucho. Por eso la aclaración. -->
+  <section class="franja noche copia" id="copia">
+    <div class="agua" style="right:-6%;top:-8%" aria-hidden="true">守</div>
+    <div class="envoltura">
+      <p class="ceja"><span class="sello" aria-hidden="true">守</span><span>클라우드 백업</span></p>
+      <h2><span>학습 기록은</span> <mark>안전하게</mark></h2>
+      <p class="sub">앱을 삭제해도 다시 설치하면 학습 기록이 돌아옵니다.</p>
+      <ul class="cartas en-fila">
+        <li class="carta"><span class="sello" aria-hidden="true">雲</span><span class="dos"><b>iPhone</b><small>내 iCloud에</small></span></li>
+        <li class="carta"><span class="sello" aria-hidden="true">控</span><span class="dos"><b>Android</b><small>내 Google 백업에</small></span></li>
+      </ul>
+      <p class="aclaracion">휴대폰에서 iCloud 또는 Google 백업이 켜져 있어야 합니다. Android에서는 시스템이 하루에 한 번까지 백업합니다. 백업은 저희 서버가 아니라 내 계정에 저장됩니다.</p>
+    </div>
+  </section>
+  
   <!-- ══ TENERLA ═══════════════════════════════════════════════ -->
   <section class="franja noche tenerla" id="tenerla">
     <div class="envoltura">

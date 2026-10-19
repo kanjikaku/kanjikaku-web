@@ -282,17 +282,18 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Integritetspolicy</p>
     <h1>Integritetspolicy för applikationen KanjiKaku</h1>
-    <p class="fecha">Senast uppdaterad: 30 september 2026</p>
+    <p class="fecha">Senast uppdaterad: 18 oktober 2026</p>
     
     <div class="resumen">
-      <p>Sammanfattningsvis: studiedata stannar på användarens enhet. Applikationen kräver inget konto, utvecklaren driver ingen server som lagrar uppgifter om användarna, och applikationen visar ingen reklam och utför ingen spårning.</p>
+      <p>Sammanfattningsvis: studiedata stannar på användarens enhet och, om användaren har aktiverat den, i användarens egen säkerhetskopia i iCloud eller hos Google. Applikationen kräver inget konto, utvecklaren driver ingen server som lagrar uppgifter om användarna, och applikationen visar ingen reklam och utför ingen spårning.</p>
             <p>Vissa funktioner upprättar dock nätverksanslutningar till tredjepartstjänster. Avsnitten nedan anger uttömmande vilka uppgifter som lämnar enheten, till vem de överförs, i vilket syfte och om överföringen är frivillig.</p>
     </div>
 
     <section>
       <h2>Lagrade uppgifter och var de sparas</h2>
       <p>Alla studiedata – de kanji som studerats, den registrerade kunskapsnivån för var och en, kortlekar och omgångar, applikationsinställningar och sessionshistorik – skrivs till en fil i själva applikationen på användarens enhet.</p>
-      <p>Dessa uppgifter stannar där. De kopieras inte till någon server och är inte tillgängliga för utvecklaren eller för tredje part, med det enda undantag som beskrivs i avsnittet ”Kraschrapporter”. Avinstallation av applikationen raderar dem.</p>
+      <p>Dessa uppgifter stannar där och är inte tillgängliga för utvecklaren eller för tredje part, med det undantag som beskrivs i avsnittet ”Kraschrapporter”. Avinstallation av applikationen raderar dem från enheten.</p>
+      <p>Säkerhetskopia på användarens konto. På iOS sparar applikationen, så länge alternativet ”Säkerhetskopia i iCloud” i applikationens inställningar är aktiverat, vilket det är som standard, en komprimerad kopia av studiedata och inställningar i användarens egen iCloud, som Apple lagrar enligt sina egna villkor. På Android inkluderar systemet applikationens förloppsfil i Googles säkerhetskopia, om användaren har aktiverat den. Utvecklaren har inte tillgång till någon av kopiorna. Båda finns kvar efter avinstallation och gör det möjligt att återställa framstegen när applikationen installeras på nytt.</p>
             <p>Applikationen för dessutom en lokal logg över handskriftsövningar: de drag som ritats vid misslyckade försök och en rad med siffror för varje försök. Loggen är begränsad till 100 tecken och 500 försök, och de äldsta posterna raderas efter hand. Dess enda syfte är att göra det möjligt för användaren att frivilligt skicka den till utvecklaren; den överförs aldrig automatiskt och kan raderas via Inställningar.</p>
     </section>
 
@@ -301,7 +302,8 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <ul>
         <li>Den kräver inget konto och ingen registrering. Den efterfrågar inte namn, e-postadress eller ålder.</li>
         <li>Utvecklaren driver ingen server som lagrar användarnas framsteg.</li>
-        <li>Den visar ingen reklam och integrerar inga annonsnätverk.</li>
+        <li>Säkerhetskopiorna i iCloud och hos Google lagras på användarens konto, inte på utvecklarens.</li>
+                <li>Den visar ingen reklam och integrerar inga annonsnätverk.</li>
         <li>Utvecklaren utför ingen analys eller spårning av användningen, och applikationen använder inga annonsidentifierare. Tredjepartskomponenter som på eget initiativ skickar tekniska uppgifter anges i avsnittet ”Nätverksanslutningar”.</li>
         <li>Inga uppgifter säljs eller lämnas ut till tredje part för reklam- eller kommersiella ändamål.</li>
       </ul>
@@ -431,7 +433,8 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
     <section>
       <h2>Den registrerades rättigheter</h2>
       <p>Studiedata finns på användarens enhet och under dennes kontroll: de kan granskas genom att en kopia exporteras och raderas i applikationens inställningar eller genom att applikationen avinstalleras. När det gäller kraschrapporter och korrespondens kan användaren utöva rätten till tillgång, rättelse, radering, invändning och begränsning av behandling genom att skriva till kontaktadressen; eftersom rapporterna inte innehåller identifierande uppgifter kan det vara nödvändigt att ange ungefärligt datum för felet för att hitta dem. När det gäller uppgifter som Apple och Google behandlar enligt sina egna villkor utövas rättigheterna gentemot dessa aktörer. Användaren har dessutom rätt att lämna in ett klagomål till behörig tillsynsmyndighet för dataskydd.</p>
-    </section>
+      <p>Säkerhetskopian i iCloud raderas med alternativet ”Ta bort säkerhetskopian i iCloud” i applikationens inställningar eller via enhetens iCloud-inställningar; Googles säkerhetskopia via systeminställningarna. Avinstallation av applikationen raderar dem inte.</p>
+          </section>
 
     <section>
       <h2>Ändringar i denna policy</h2>

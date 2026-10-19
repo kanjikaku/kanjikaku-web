@@ -151,6 +151,29 @@ mark::before { content: ""; position: absolute; inset: .06em 0 -.02em 0; backgro
 .al-pie { position: absolute; bottom: -36px; right: 8%; z-index: 3; }
 
 /**/
+/* ── Tres formas de aprender (1.4.0) ───────────────────────────── */
+/* Cartas de dos líneas: el modo y, debajo, para qué sirve. */
+.carta .dos { display: flex; flex-direction: column; line-height: 1.25; }
+.carta .dos small { font-size: 14px; font-weight: 400; color: var(--suave); }
+.modos .carta { min-width: min(100%, 300px); }
+.formas .sub + .cartas { margin-top: 30px; }
+.formas .podcast { margin-top: 30px; }
+/* El clip del podcast va tal cual (ya lleva su teléfono dibujado): en vertical, sin marco de móvil. */
+.clip { width: min(300px, 70vw); aspect-ratio: 9 / 16; border-radius: 26px; overflow: hidden; background: #1C1A17; box-shadow: 0 50px 90px -30px rgba(20,12,4,.55), 0 20px 40px -20px rgba(20,12,4,.35); }
+.clip video { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* Más margen: el naranja del aprobado con margen, el mismo de la app. */
+.sello.naranja { background: var(--naranja); }
+
+/* ── Copia en la nube (1.4.0) ──────────────────────────────────── */
+.copia { text-align: center; padding-bottom: 0; }
+.copia .ceja { justify-content: center; }
+.copia .sub { margin-inline: auto; }
+.copia .cartas { justify-content: center; text-align: left; }
+/* En el móvil, una carta bajo la otra y del mismo ancho: dos anchos distintos centrados parecen torcidos. */
+@media (max-width: 640px) { .copia .cartas { flex-direction: column; align-items: center; } .copia .carta { width: min(100%, 340px); } }
+.copia .aclaracion { max-width: 40em; margin: 26px auto 0; font-size: 14px; color: var(--suave); text-wrap: pretty; }
+
+/**/
 /* ── Origen ────────────────────────────────────────────────────── */
 .formula { display: flex; align-items: center; gap: clamp(8px, 1.4vw, 20px); margin: 42px 0 0; }
 .pieza { display: flex; flex-direction: column; align-items: center; gap: 4px; }
@@ -315,7 +338,27 @@ footer a:hover { color: var(--oro); }
     </div>
   </section>
 
-
+  <!-- ══ TRES FORMAS DE APRENDER (1.4.0) ═══════════════════════ -->
+  <section class="franja dia formas" id="formas" style="padding-top:0">
+    <div class="agua" style="left:-8%;top:4%" aria-hidden="true">学</div>
+    <div class="envoltura fila invertida">
+      <div>
+        <p class="ceja"><span class="sello" aria-hidden="true">学</span><span>Tre modi</span></p>
+        <h2><span>Tre modi di imparare,</span> <mark>in parallelo</mark></h2>
+        <p class="sub">Usali insieme o separatamente.</p>
+        <ul class="cartas modos">
+          <li class="carta"><span class="sello" aria-hidden="true">書</span><span class="dos"><b>Esercizi</b><small>con scrittura a mano</small></span></li>
+          <li class="carta"><span class="sello" aria-hidden="true">札</span><span class="dos"><b>Flashcard</b><small>per ripassare al tuo ritmo</small></span></li>
+          <li class="carta"><span class="sello" aria-hidden="true">聴</span><span class="dos"><b>Podcast</b><small>per ascoltare senza guardare</small></span></li>
+        </ul>
+        <p class="sub podcast">In modalità podcast, il vocabolario si ascolta in giapponese e nella tua lingua, senza guardare lo schermo: in auto, in palestra o a passeggio. La riproduzione continua anche a schermo bloccato.</p>
+      </div>
+      <div class="visual">
+        <div class="clip girado-d"><video src="/medios/it/podcast.mp4" poster="/medios/it/podcast.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Video: la modalità podcast"></video></div>
+      </div>
+    </div>
+  </section>
+  
   <!-- ══ La frase del profesor ═════════════════════════════════ -->
   <section class="franja noche cita">
     <div class="envoltura">
@@ -336,7 +379,9 @@ footer a:hover { color: var(--oro); }
           <li class="carta"><span class="sello" aria-hidden="true">向</span><span>Direzione di ogni tratto</span></li>
           <li class="carta"><span class="sello" aria-hidden="true">似</span><span>Kanji simili</span></li>
           <li class="carta"><span class="sello" aria-hidden="true">部</span><span>Radicali fuori posto</span></li>
-        </ul>
+          <li class="carta"><span class="sello" aria-hidden="true">余</span><span>Tratti in più</span></li>
+          <li class="carta"><span class="sello naranja" aria-hidden="true">寛</span><span>Più margine se un kanji non ti viene</span></li>
+                  </ul>
       </div>
       <div class="visual">
         <div class="pareja">
@@ -491,7 +536,24 @@ footer a:hover { color: var(--oro); }
     </div>
   </section>
 
-
+  <!-- ══ COPIA EN LA NUBE (1.4.0) ══════════════════════════════ -->
+  <!-- Lo que hace de verdad (docs/COPIA-EN-LA-NUBE.md): en iOS, el iCloud del
+       usuario con «Copia en iCloud» encendido; en Android, la copia de Google
+       si está activada, una vez al día como mucho. Por eso la aclaración. -->
+  <section class="franja noche copia" id="copia">
+    <div class="agua" style="right:-6%;top:-8%" aria-hidden="true">守</div>
+    <div class="envoltura">
+      <p class="ceja"><span class="sello" aria-hidden="true">守</span><span>Backup nel cloud</span></p>
+      <h2><span>I tuoi progressi,</span> <mark>al sicuro</mark></h2>
+      <p class="sub">Se elimini l'app, reinstallandola recuperi i tuoi progressi.</p>
+      <ul class="cartas en-fila">
+        <li class="carta"><span class="sello" aria-hidden="true">雲</span><span class="dos"><b>iPhone</b><small>nel tuo iCloud</small></span></li>
+        <li class="carta"><span class="sello" aria-hidden="true">控</span><span class="dos"><b>Android</b><small>nel tuo backup di Google</small></span></li>
+      </ul>
+      <p class="aclaracion">Serve il backup di iCloud o di Google attivo sul telefono. Su Android, il sistema fa il backup al massimo una volta al giorno. Il backup va sul tuo account, non su un nostro server.</p>
+    </div>
+  </section>
+  
   <!-- ══ TENERLA ═══════════════════════════════════════════════ -->
   <section class="franja noche tenerla" id="tenerla">
     <div class="envoltura">

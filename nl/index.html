@@ -151,6 +151,29 @@ mark::before { content: ""; position: absolute; inset: .06em 0 -.02em 0; backgro
 .al-pie { position: absolute; bottom: -36px; right: 8%; z-index: 3; }
 
 /**/
+/* ── Tres formas de aprender (1.4.0) ───────────────────────────── */
+/* Cartas de dos líneas: el modo y, debajo, para qué sirve. */
+.carta .dos { display: flex; flex-direction: column; line-height: 1.25; }
+.carta .dos small { font-size: 14px; font-weight: 400; color: var(--suave); }
+.modos .carta { min-width: min(100%, 300px); }
+.formas .sub + .cartas { margin-top: 30px; }
+.formas .podcast { margin-top: 30px; }
+/* El clip del podcast va tal cual (ya lleva su teléfono dibujado): en vertical, sin marco de móvil. */
+.clip { width: min(300px, 70vw); aspect-ratio: 9 / 16; border-radius: 26px; overflow: hidden; background: #1C1A17; box-shadow: 0 50px 90px -30px rgba(20,12,4,.55), 0 20px 40px -20px rgba(20,12,4,.35); }
+.clip video { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* Más margen: el naranja del aprobado con margen, el mismo de la app. */
+.sello.naranja { background: var(--naranja); }
+
+/* ── Copia en la nube (1.4.0) ──────────────────────────────────── */
+.copia { text-align: center; padding-bottom: 0; }
+.copia .ceja { justify-content: center; }
+.copia .sub { margin-inline: auto; }
+.copia .cartas { justify-content: center; text-align: left; }
+/* En el móvil, una carta bajo la otra y del mismo ancho: dos anchos distintos centrados parecen torcidos. */
+@media (max-width: 640px) { .copia .cartas { flex-direction: column; align-items: center; } .copia .carta { width: min(100%, 340px); } }
+.copia .aclaracion { max-width: 40em; margin: 26px auto 0; font-size: 14px; color: var(--suave); text-wrap: pretty; }
+
+/**/
 /* ── Origen ────────────────────────────────────────────────────── */
 .formula { display: flex; align-items: center; gap: clamp(8px, 1.4vw, 20px); margin: 42px 0 0; }
 .pieza { display: flex; flex-direction: column; align-items: center; gap: 4px; }
@@ -315,7 +338,27 @@ footer a:hover { color: var(--oro); }
     </div>
   </section>
 
-
+  <!-- ══ TRES FORMAS DE APRENDER (1.4.0) ═══════════════════════ -->
+  <section class="franja dia formas" id="formas" style="padding-top:0">
+    <div class="agua" style="left:-8%;top:4%" aria-hidden="true">学</div>
+    <div class="envoltura fila invertida">
+      <div>
+        <p class="ceja"><span class="sello" aria-hidden="true">学</span><span>Drie manieren</span></p>
+        <h2><span>Drie manieren van leren,</span> <mark>naast elkaar</mark></h2>
+        <p class="sub">Samen of los te gebruiken.</p>
+        <ul class="cartas modos">
+          <li class="carta"><span class="sello" aria-hidden="true">書</span><span class="dos"><b>Oefeningen</b><small>met schrijven met de hand</small></span></li>
+          <li class="carta"><span class="sello" aria-hidden="true">札</span><span class="dos"><b>Flashcards</b><small>herhalen in je eigen tempo</small></span></li>
+          <li class="carta"><span class="sello" aria-hidden="true">聴</span><span class="dos"><b>Podcast</b><small>luisteren zonder te kijken</small></span></li>
+        </ul>
+        <p class="sub podcast">In de podcastmodus hoor je de woordenschat in het Japans en in je eigen taal, zonder naar het scherm te kijken: in de auto, in de sportschool of onderweg. Het afspelen gaat door met het scherm vergrendeld.</p>
+      </div>
+      <div class="visual">
+        <div class="clip girado-d"><video src="/medios/nl/podcast.mp4" poster="/medios/nl/podcast.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Video: de podcastmodus"></video></div>
+      </div>
+    </div>
+  </section>
+  
   <!-- ══ La frase del profesor ═════════════════════════════════ -->
   <section class="franja noche cita">
     <div class="envoltura">
@@ -336,7 +379,9 @@ footer a:hover { color: var(--oro); }
           <li class="carta"><span class="sello" aria-hidden="true">向</span><span>Richting van elke streek</span></li>
           <li class="carta"><span class="sello" aria-hidden="true">似</span><span>Kanji die op elkaar lijken</span></li>
           <li class="carta"><span class="sello" aria-hidden="true">部</span><span>Verkeerd geplaatste radicalen</span></li>
-        </ul>
+          <li class="carta"><span class="sello" aria-hidden="true">余</span><span>Strepen te veel</span></li>
+          <li class="carta"><span class="sello naranja" aria-hidden="true">寛</span><span>Meer speling als een kanji niet wil lukken</span></li>
+                  </ul>
       </div>
       <div class="visual">
         <div class="pareja">
@@ -491,7 +536,24 @@ footer a:hover { color: var(--oro); }
     </div>
   </section>
 
-
+  <!-- ══ COPIA EN LA NUBE (1.4.0) ══════════════════════════════ -->
+  <!-- Lo que hace de verdad (docs/COPIA-EN-LA-NUBE.md): en iOS, el iCloud del
+       usuario con «Copia en iCloud» encendido; en Android, la copia de Google
+       si está activada, una vez al día como mucho. Por eso la aclaración. -->
+  <section class="franja noche copia" id="copia">
+    <div class="agua" style="right:-6%;top:-8%" aria-hidden="true">守</div>
+    <div class="envoltura">
+      <p class="ceja"><span class="sello" aria-hidden="true">守</span><span>Back-up in de cloud</span></p>
+      <h2><span>Je voortgang,</span> <mark>veilig bewaard</mark></h2>
+      <p class="sub">Verwijder je de app, dan krijg je je voortgang terug als je hem opnieuw installeert.</p>
+      <ul class="cartas en-fila">
+        <li class="carta"><span class="sello" aria-hidden="true">雲</span><span class="dos"><b>iPhone</b><small>in je iCloud</small></span></li>
+        <li class="carta"><span class="sello" aria-hidden="true">控</span><span class="dos"><b>Android</b><small>in je Google-back-up</small></span></li>
+      </ul>
+      <p class="aclaracion">Daarvoor moet de iCloud- of Google-back-up op je telefoon aanstaan. Op Android maakt het systeem de back-up hooguit één keer per dag. De back-up gaat naar je eigen account, niet naar een server van ons.</p>
+    </div>
+  </section>
+  
   <!-- ══ TENERLA ═══════════════════════════════════════════════ -->
   <section class="franja noche tenerla" id="tenerla">
     <div class="envoltura">
