@@ -11,6 +11,6 @@
 </head>
 <body>
 <p><a id="ir" href="/es/">KanjiKaku →</a></p>
-<script>var d="/es/";d+="?o=tiktok";document.getElementById("ir").href=d;var ya=0;function ir(){if(!ya){ya=1;location.replace(d)}}addEventListener("load",function(){setTimeout(ir,250)});setTimeout(ir,1500);</script>
+<script>var d="/es/";d+="?o=tiktok";var k=(location.search.match(/[?&]k=([0-9a-f]{4,5})/)||[])[1];if(k&&d.indexOf("referrer=")>0)d+="%26utm_content%3D"+k;document.getElementById("ir").href=d;var ya=0;function ir(){if(!ya){ya=1;location.replace(d)}}addEventListener("load",function(){setTimeout(ir,250)});setTimeout(ir,1500);</script>
 </body>
 </html>
