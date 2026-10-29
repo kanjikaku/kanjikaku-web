@@ -836,5 +836,15 @@ const TINTA_JI = /*tinta-ji*/{"kanji":"字","trazos":[{"inicio":[52.4,9.8],"foto
   pintar();
 })();
 </script>
+<script>
+/* Si se llegó desde una red (/ig/, /tt/, /yt/ traen ?o=), los botones de las tiendas lo pasan a /ir/
+   para que la marca de la tienda diga la red. Ver `paso` en construir.mjs. */
+(function () {
+  var o = (location.search.match(/[?&]o=([a-z]+)/) || [])[1];
+  if (!o) return;
+  var a = document.querySelectorAll('a[href^="/ir/"]');
+  for (var i = 0; i < a.length; i++) a[i].href = a[i].getAttribute("href") + "?o=" + o;
+})();
+</script>
 </body>
 </html>
