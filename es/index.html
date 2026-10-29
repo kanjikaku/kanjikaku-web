@@ -846,8 +846,11 @@ const TINTA_JI = /*tinta-ji*/{"kanji":"字","trazos":[{"inicio":[52.4,9.8],"foto
   /* Con la red en la ruta (/ir/play/es/instagram/), que es lo que Cloudflare cuenta; otra cosa, en ?o=. */
   var enRuta = ["youtube", "instagram", "tiktok", "promo"].indexOf(o) >= 0;
   /* Y el kanji del vídeo, si viene (?k=65e5): las páginas de /ir/ lo pasan a Play. */
-  var k = (location.search.match(/[?&]k=([0-9a-f]{4,5})/) || [])[1];
+  var k = (location.search.match(/[?&]k=([0-9a-f]{4,5}[sv]?)/) || [])[1];
   var sufijo = (enRuta ? o + "/" : "?o=" + o) + (k ? (enRuta ? "?" : "&") + "k=" + k : "");
+  /* Una invitación abierta en la web (?o=promo&i=<id>): las tiendas, con esa invitación. */
+  var inv = (location.search.match(/[?&]i=([23456789a-z]{6})/) || [])[1];
+  if (o === "promo" && inv) sufijo = "promo/" + inv + "/";
   for (var i = 0; i < a.length; i++) a[i].href = a[i].getAttribute("href") + sufijo;
 })();
 </script>
