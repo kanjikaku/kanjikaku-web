@@ -284,7 +284,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Chính sách quyền riêng tư</p>
     <h1>Chính sách quyền riêng tư cho ứng dụng KanjiKaku</h1>
-    <p class="fecha">Cập nhật lần cuối: 21 tháng 10 năm 2026</p>
+    <p class="fecha">Cập nhật lần cuối: 29 tháng 10 năm 2026</p>
     
     <div class="resumen">
       <p>Tóm lại: dữ liệu học tập được lưu lại trên thiết bị của người dùng và, nếu người dùng đã bật, trong bản sao lưu iCloud hoặc Google của chính người dùng. Ứng dụng không yêu cầu tài khoản, nhà phát triển không vận hành bất kỳ máy chủ nào lưu trữ thông tin người dùng, và ứng dụng không hiển thị quảng cáo cũng như không thực hiện theo dõi.</p>
@@ -375,8 +375,26 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <h3>8 · Liên kết bên ngoài</h3>
       <p>Khi người dùng chạm vào một liên kết dẫn đến trang web này hoặc đến một địa chỉ email, ứng dụng sẽ mở liên kết đó trong trình duyệt hoặc ứng dụng email của thiết bị. Những gì diễn ra sau đó chịu sự điều chỉnh của các điều khoản của các ứng dụng đó và của trang web được truy cập.</p>
 
+      <h3>9 · Tải giọng đọc</h3>
+      <ul>
+        <li><strong>Khi nào.</strong> Khi mở mục “Âm thanh và giọng đọc” trong Cài đặt, để xem có những giọng đọc nào, và khi người dùng nhấn “Tải về” ở một giọng.</li>
+        <li><strong>Dữ liệu rời khỏi thiết bị.</strong> Một yêu cầu tải chỉ mục giọng đọc và, nếu có, gói đã chọn, cho phép máy chủ thấy địa chỉ IP và các dữ liệu kỹ thuật thông thường của mọi kết nối. Không truyền dữ liệu học tập nào, cũng không truyền mã định danh của người dùng hay thiết bị.</li>
+        <li><strong>Bên nhận.</strong> Cloudflare, Inc. (Hoa Kỳ), đơn vị lưu trữ các gói giọng đọc thay mặt nhà phát triển. Chính sách quyền riêng tư của họ có tại <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">cloudflare.com/privacypolicy</a>.</li>
+        <li><strong>Mục đích.</strong> Tải về thiết bị các giọng đọc tiếng Nhật cho từ và câu ví dụ, từ đó phát được mà không cần kết nối.</li>
+        <li><strong>Tính chất.</strong> Không bắt buộc. Nếu không tải giọng đọc nào, từ và câu được phát bằng các bản ghi âm có sẵn trong ứng dụng và bằng giọng của hệ thống.</li>
+      </ul>
 
-      <p class="base"><strong>Cơ sở pháp lý.</strong> Lợi ích hợp pháp của nhà phát triển trong việc duy trì ứng dụng được cập nhật, hoạt động ổn định và xác minh các giao dịch mua (các trường hợp 1 đến 3); sự đồng ý của người dùng đối với báo cáo sự cố (trường hợp 4); và yêu cầu của chính người dùng khi sử dụng chức năng liên quan (các trường hợp 5 đến 8).</p>
+      <!-- Los códigos de centro (29-oct-2026): scripts/cloudflare/worker-codigos.js y src/services/codigosDeCentro.ts. -->
+      <h3>10 · Mã của cơ sở giáo dục (chỉ Android)</h3>
+      <ul>
+        <li><strong>Khi nào.</strong> Khi người dùng nhập mã do cơ sở giáo dục của mình cung cấp và, khi còn lưu một mã, mỗi lần ứng dụng khởi động, để kiểm tra mã vẫn còn hiệu lực.</li>
+        <li><strong>Dữ liệu rời khỏi thiết bị.</strong> Mã đã nhập và một mã định danh cài đặt ngẫu nhiên do ứng dụng tạo ra, không xác định người dùng, cùng với địa chỉ IP và các dữ liệu kỹ thuật thông thường của mọi kết nối. Không có dữ liệu học tập nào được truyền đi.</li>
+        <li><strong>Bên nhận.</strong> Cloudflare, Inc. (Hoa Kỳ), cung cấp dịch vụ thay mặt nhà phát triển. Với mỗi mã, trong thời gian mã còn tồn tại, hệ thống lưu các mã định danh cài đặt đã sử dụng mã đó cùng ngày kiểm tra đầu tiên và gần nhất. Địa chỉ IP chỉ được dùng dưới dạng băm để giới hạn các lần thử không thành công và được xóa trong vòng hai mươi bốn giờ.</li>
+        <li><strong>Mục đích.</strong> Kiểm tra mã tồn tại, chưa hết hạn và còn chỗ; đếm số lượt cài đặt sử dụng mã; và mở khóa nội dung đến ngày đã định cho mã đó.</li>
+        <li><strong>Tính chất.</strong> Không bắt buộc: chỉ xảy ra nếu người dùng nhập mã.</li>
+      </ul>
+      
+      <p class="base"><strong>Cơ sở pháp lý.</strong> Lợi ích hợp pháp của nhà phát triển trong việc duy trì ứng dụng được cập nhật, hoạt động ổn định và xác minh các giao dịch mua (các trường hợp 1 đến 3); sự đồng ý của người dùng đối với báo cáo sự cố (trường hợp 4); và yêu cầu của chính người dùng khi sử dụng chức năng liên quan (các trường hợp 5 đến 10).</p>
           </section>
 
     <section>

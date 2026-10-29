@@ -8,8 +8,8 @@
     "privacidad_actualizada: la fecha (AAAA-MM-DD) de «Última actualización» de la política cuando cambia con una versión (desde el 1.4.0, la copia en la nube). Se pone el día que se publica esa versión; la web la escribe en el formato de cada idioma."
   ],
   "android": {
-    "build": 46,
-    "version": "1.4.2",
+    "build": 47,
+    "version": "1.5.0",
     "tienda": "https://play.google.com/store/apps/details?id=com.kanjikaku.app",
     "publicada": true
   },
@@ -19,5 +19,5 @@
     "tienda": "https://apps.apple.com/app/id6808606696",
     "publicada": true
   },
-  "privacidad_actualizada": "2026-10-21"
+  "privacidad_actualizada": "2026-10-29"
 }

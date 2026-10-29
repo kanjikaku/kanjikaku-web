@@ -284,7 +284,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Kebijakan privasi</p>
     <h1>Kebijakan privasi untuk aplikasi KanjiKaku</h1>
-    <p class="fecha">Terakhir diperbarui: 21 Oktober 2026</p>
+    <p class="fecha">Terakhir diperbarui: 29 Oktober 2026</p>
     
     <div class="resumen">
       <p>Ringkasnya: data belajar tetap berada di perangkat pengguna dan, jika pengguna mengaktifkannya, di cadangan iCloud atau Google milik pengguna sendiri. Aplikasi tidak memerlukan akun, pengembang tidak mengoperasikan server apa pun yang menyimpan informasi pengguna, dan aplikasi tidak menampilkan iklan maupun melakukan pelacakan.</p>
@@ -375,8 +375,26 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <h3>8 · Tautan eksternal</h3>
       <p>Saat pengguna mengetuk tautan ke situs web ini atau ke alamat email, aplikasi membukanya di peramban atau aplikasi email perangkat. Apa yang terjadi setelahnya tunduk pada ketentuan aplikasi-aplikasi tersebut dan situs yang dikunjungi.</p>
 
+      <h3>9 · Pengunduhan suara</h3>
+      <ul>
+        <li><strong>Kapan.</strong> Saat membuka bagian “Audio dan suara” di Pengaturan, untuk melihat suara yang tersedia, dan saat pengguna mengetuk “Unduh” pada salah satunya.</li>
+        <li><strong>Data yang keluar dari perangkat.</strong> Permintaan unduhan indeks suara dan, bila berlaku, paket yang dipilih, yang memungkinkan server melihat alamat IP dan data teknis biasa dari setiap koneksi. Tidak ada data belajar maupun pengenal pengguna atau perangkat yang dikirim.</li>
+        <li><strong>Penerima.</strong> Cloudflare, Inc. (Amerika Serikat), yang menyimpan paket suara atas nama pengembang. Kebijakan privasinya tersedia di <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">cloudflare.com/privacypolicy</a>.</li>
+        <li><strong>Tujuan.</strong> Mengunduh ke perangkat suara bahasa Jepang untuk kata dan kalimat contoh, yang sejak saat itu diputar tanpa koneksi.</li>
+        <li><strong>Sifat.</strong> Opsional. Tanpa mengunduh suara apa pun, kata dan kalimat diputar dengan rekaman yang disertakan dalam aplikasi dan dengan suara sistem.</li>
+      </ul>
 
-      <p class="base"><strong>Dasar hukum.</strong> Kepentingan sah pengembang untuk menjaga aplikasi tetap mutakhir dan berfungsi serta untuk memverifikasi pembelian (hal 1 sampai 3); persetujuan pengguna, untuk laporan kerusakan (hal 4); dan permintaan pengguna sendiri saat menggunakan fungsi yang bersangkutan (hal 5 sampai 8).</p>
+      <!-- Los códigos de centro (29-oct-2026): scripts/cloudflare/worker-codigos.js y src/services/codigosDeCentro.ts. -->
+      <h3>10 · Kode lembaga pendidikan (hanya Android)</h3>
+      <ul>
+        <li><strong>Kapan.</strong> Saat pengguna memasukkan kode yang diberikan oleh lembaga pendidikannya dan, selama ada kode yang tersimpan, setiap kali aplikasi dijalankan, untuk memeriksa bahwa kode tersebut masih berlaku.</li>
+        <li><strong>Data yang keluar dari perangkat.</strong> Kode yang dimasukkan dan pengenal instalasi acak yang dibuat oleh aplikasi, yang tidak mengidentifikasi pengguna, serta alamat IP dan data teknis umum dari setiap koneksi. Tidak ada data belajar yang dikirim.</li>
+        <li><strong>Penerima.</strong> Cloudflare, Inc. (Amerika Serikat), yang menyediakan layanan atas nama pengembang. Untuk setiap kode disimpan, selama kode tersebut ada, pengenal instalasi yang telah menggunakannya serta tanggal pemeriksaan pertama dan terakhir. Alamat IP hanya digunakan dalam bentuk hash untuk membatasi percobaan yang gagal dan dihapus dalam waktu dua puluh empat jam.</li>
+        <li><strong>Tujuan.</strong> Memeriksa bahwa kode ada, belum kedaluwarsa, dan masih memiliki tempat; menghitung berapa banyak instalasi yang menggunakannya; dan membuka konten sampai tanggal yang ditetapkan untuk kode tersebut.</li>
+        <li><strong>Sifat.</strong> Opsional: hanya terjadi jika pengguna memasukkan kode.</li>
+      </ul>
+      
+      <p class="base"><strong>Dasar hukum.</strong> Kepentingan sah pengembang untuk menjaga aplikasi tetap mutakhir dan berfungsi serta untuk memverifikasi pembelian (hal 1 sampai 3); persetujuan pengguna, untuk laporan kerusakan (hal 4); dan permintaan pengguna sendiri saat menggunakan fungsi yang bersangkutan (hal 5 sampai 10).</p>
           </section>
 
     <section>

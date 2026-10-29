@@ -284,7 +284,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Privacybeleid</p>
     <h1>Privacybeleid voor de applicatie KanjiKaku</h1>
-    <p class="fecha">Laatst bijgewerkt: 21 oktober 2026</p>
+    <p class="fecha">Laatst bijgewerkt: 29 oktober 2026</p>
     
     <div class="resumen">
       <p>Samengevat: de studiegegevens blijven op het apparaat van de gebruiker en, indien deze dat heeft ingeschakeld, in diens eigen iCloud- of Google-back-up. De applicatie vereist geen account, de ontwikkelaar beheert geen server waarop gebruikersgegevens worden opgeslagen, en de applicatie toont geen advertenties en voert geen tracking uit.</p>
@@ -375,8 +375,26 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <h3>8 · Externe links</h3>
       <p>Wanneer de gebruiker op een link naar deze website of naar een e-mailadres tikt, opent de applicatie deze in de browser of de e-mailapplicatie van het apparaat. Wat daarna gebeurt, valt onder de voorwaarden van die applicaties en van de bezochte website.</p>
 
+      <h3>9 · Stemmen downloaden</h3>
+      <ul>
+        <li><strong>Wanneer.</strong> Bij het openen van het onderdeel ‘Audio en stem’ in de Instellingen, om te zien welke stemmen beschikbaar zijn, en wanneer de gebruiker bij een ervan op ‘Downloaden’ tikt.</li>
+        <li><strong>Gegevens die het apparaat verlaten.</strong> Een downloadverzoek voor de stemmenindex en, in voorkomend geval, voor het gekozen pakket, waardoor de server het IP-adres en de gewone technische gegevens van elke verbinding kan waarnemen. Er worden geen studiegegevens en geen gebruikers- of apparaat-ID’s verzonden.</li>
+        <li><strong>Ontvanger.</strong> Cloudflare, Inc. (Verenigde Staten), dat de stempakketten namens de ontwikkelaar host. Het privacybeleid is te vinden op <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">cloudflare.com/privacypolicy</a>.</li>
+        <li><strong>Doel.</strong> De Japanse stemmen voor woorden en voorbeeldzinnen naar het apparaat downloaden, die vanaf dan offline worden afgespeeld.</li>
+        <li><strong>Aard.</strong> Optioneel. Zonder een stem te downloaden klinken woorden en zinnen met de opnamen die in de applicatie zijn opgenomen en met de systeemstem.</li>
+      </ul>
 
-      <p class="base"><strong>Rechtsgrond.</strong> Het gerechtvaardigd belang van de ontwikkelaar om de applicatie actueel en werkend te houden en aankopen te verifiëren (gevallen 1 tot en met 3); de toestemming van de gebruiker, voor de crashrapporten (geval 4); en het verzoek van de gebruiker zelf bij het gebruik van de betreffende functie (gevallen 5 tot en met 8).</p>
+      <!-- Los códigos de centro (29-oct-2026): scripts/cloudflare/worker-codigos.js y src/services/codigosDeCentro.ts. -->
+      <h3>10 · Codes van onderwijsinstellingen (alleen Android)</h3>
+      <ul>
+        <li><strong>Wanneer.</strong> Wanneer de gebruiker een code invoert die door zijn onderwijsinstelling is verstrekt en, zolang er een is opgeslagen, bij elke start van de applicatie, om te controleren of die nog geldig is.</li>
+        <li><strong>Gegevens die het apparaat verlaten.</strong> De ingevoerde code en een willekeurige installatie-ID die door de applicatie wordt aangemaakt en de gebruiker niet identificeert, naast het IP-adres en de gebruikelijke technische gegevens van elke verbinding. Er worden geen studiegegevens verzonden.</li>
+        <li><strong>Ontvanger.</strong> Cloudflare, Inc. (Verenigde Staten), die de dienst namens de ontwikkelaar levert. Per code worden, zolang de code bestaat, de installatie-ID's die hem hebben gebruikt en de datum van de eerste en de laatste controle bewaard. Het IP-adres wordt uitsluitend in gehashte vorm gebruikt om mislukte pogingen te beperken en wordt binnen vierentwintig uur verwijderd.</li>
+        <li><strong>Doel.</strong> Controleren of de code bestaat, niet is verlopen en nog plaatsen vrij heeft; tellen hoeveel installaties hem gebruiken; en de inhoud ontgrendelen tot de datum die voor die code is vastgesteld.</li>
+        <li><strong>Aard.</strong> Optioneel: dit gebeurt alleen als de gebruiker een code invoert.</li>
+      </ul>
+      
+      <p class="base"><strong>Rechtsgrond.</strong> Het gerechtvaardigd belang van de ontwikkelaar om de applicatie actueel en werkend te houden en aankopen te verifiëren (gevallen 1 tot en met 3); de toestemming van de gebruiker, voor de crashrapporten (geval 4); en het verzoek van de gebruiker zelf bij het gebruik van de betreffende functie (gevallen 5 tot en met 10).</p>
           </section>
 
     <section>

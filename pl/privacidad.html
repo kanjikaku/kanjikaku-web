@@ -284,7 +284,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Polityka prywatności</p>
     <h1>Polityka prywatności aplikacji KanjiKaku</h1>
-    <p class="fecha">Ostatnia aktualizacja: 21 października 2026 r.</p>
+    <p class="fecha">Ostatnia aktualizacja: 29 października 2026 r.</p>
     
     <div class="resumen">
       <p>W skrócie: dane dotyczące nauki pozostają na urządzeniu użytkownika oraz, jeżeli użytkownik ją włączył, w jego własnej kopii zapasowej iCloud lub Google. Aplikacja nie wymaga konta, deweloper nie prowadzi żadnego serwera przechowującego informacje o użytkownikach, a aplikacja nie wyświetla reklam i nie prowadzi śledzenia.</p>
@@ -375,8 +375,26 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <h3>8 · Linki zewnętrzne</h3>
       <p>Gdy użytkownik dotknie linku do niniejszej witryny lub do adresu e-mail, aplikacja otwiera go w przeglądarce lub w aplikacji pocztowej urządzenia. Dalsze czynności podlegają warunkom tych aplikacji oraz odwiedzanej witryny.</p>
 
+      <h3>9 · Pobieranie głosów</h3>
+      <ul>
+        <li><strong>Kiedy.</strong> Po otwarciu sekcji „Dźwięk i głos” w Ustawieniach, aby sprawdzić, jakie głosy są dostępne, oraz gdy użytkownik dotknie „Pobierz” przy jednym z nich.</li>
+        <li><strong>Dane opuszczające urządzenie.</strong> Żądanie pobrania indeksu głosów oraz, w stosownych przypadkach, wybranego pakietu, które pozwala serwerowi zaobserwować adres IP i zwykłe dane techniczne każdego połączenia. Nie są przesyłane żadne dane dotyczące nauki ani identyfikatory użytkownika lub urządzenia.</li>
+        <li><strong>Odbiorca.</strong> Cloudflare, Inc. (Stany Zjednoczone), który przechowuje pakiety głosowe w imieniu dewelopera. Jego polityka prywatności jest dostępna pod adresem <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">cloudflare.com/privacypolicy</a>.</li>
+        <li><strong>Cel.</strong> Pobranie na urządzenie japońskich głosów dla słów i przykładowych zdań, które od tej chwili odtwarzane są bez połączenia.</li>
+        <li><strong>Charakter.</strong> Opcjonalny. Bez pobrania żadnego głosu słowa i zdania odtwarzane są za pomocą nagrań dołączonych do aplikacji oraz głosu systemowego.</li>
+      </ul>
 
-      <p class="base"><strong>Podstawa prawna.</strong> Prawnie uzasadniony interes dewelopera polegający na utrzymywaniu aplikacji w stanie aktualnym i sprawnym oraz na weryfikacji zakupów (przypadki od 1 do 3); zgoda użytkownika w odniesieniu do raportów o awariach (przypadek 4); oraz żądanie samego użytkownika przy korzystaniu z danej funkcji (przypadki od 5 do 8).</p>
+      <!-- Los códigos de centro (29-oct-2026): scripts/cloudflare/worker-codigos.js y src/services/codigosDeCentro.ts. -->
+      <h3>10 · Kody placówek edukacyjnych (tylko Android)</h3>
+      <ul>
+        <li><strong>Kiedy.</strong> Gdy użytkownik wprowadza kod udostępniony przez swoją placówkę edukacyjną oraz, dopóki jakiś kod jest zapisany, przy każdym uruchomieniu aplikacji, aby sprawdzić, czy nadal jest ważny.</li>
+        <li><strong>Dane opuszczające urządzenie.</strong> Wprowadzony kod oraz losowy identyfikator instalacji wygenerowany przez aplikację, który nie identyfikuje użytkownika, a także adres IP i zwykłe dane techniczne każdego połączenia. Żadne dane dotyczące nauki nie są przesyłane.</li>
+        <li><strong>Odbiorca.</strong> Cloudflare, Inc. (Stany Zjednoczone), który świadczy usługę w imieniu dewelopera. Dla każdego kodu, dopóki istnieje, przechowywane są identyfikatory instalacji, które go użyły, oraz data pierwszego i ostatniego sprawdzenia. Adres IP jest używany wyłącznie w postaci skrótu w celu ograniczenia nieudanych prób i usuwany w ciągu dwudziestu czterech godzin.</li>
+        <li><strong>Cel.</strong> Sprawdzenie, czy kod istnieje, nie wygasł i ma jeszcze wolne miejsca; policzenie, ile instalacji z niego korzysta; oraz odblokowanie treści do daty ustalonej dla tego kodu.</li>
+        <li><strong>Charakter.</strong> Dobrowolny: następuje tylko wtedy, gdy użytkownik wprowadzi kod.</li>
+      </ul>
+      
+      <p class="base"><strong>Podstawa prawna.</strong> Prawnie uzasadniony interes dewelopera polegający na utrzymywaniu aplikacji w stanie aktualnym i sprawnym oraz na weryfikacji zakupów (przypadki od 1 do 3); zgoda użytkownika w odniesieniu do raportów o awariach (przypadek 4); oraz żądanie samego użytkownika przy korzystaniu z danej funkcji (przypadki od 5 do 10).</p>
           </section>
 
     <section>

@@ -284,7 +284,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Informativa sulla privacy</p>
     <h1>Informativa sulla privacy dell'applicazione KanjiKaku</h1>
-    <p class="fecha">Ultimo aggiornamento: 21 ottobre 2026</p>
+    <p class="fecha">Ultimo aggiornamento: 29 ottobre 2026</p>
     
     <div class="resumen">
       <p>In sintesi: i dati di studio restano sul dispositivo dell'utente e, se questi lo ha attivato, nel suo backup di iCloud o di Google. L'applicazione non richiede alcun account, lo sviluppatore non gestisce alcun server che conservi informazioni sugli utenti e l'applicazione non mostra pubblicità né effettua tracciamento.</p>
@@ -375,8 +375,26 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <h3>8 · Link esterni</h3>
       <p>Quando l'utente tocca un link a questo sito web o a un indirizzo e-mail, l'applicazione lo apre nel browser o nell'applicazione di posta del dispositivo. Quanto avviene da quel momento è disciplinato dai termini di tali applicazioni e del sito visitato.</p>
 
+      <h3>9 · Download delle voci</h3>
+      <ul>
+        <li><strong>Quando.</strong> All’apertura della sezione «Audio e voce» delle Impostazioni, per consultare le voci disponibili, e quando l’utente tocca «Scarica» su una di esse.</li>
+        <li><strong>Dati che lasciano il dispositivo.</strong> Una richiesta di download dell’indice delle voci e, se del caso, del pacchetto scelto, che consente al server di osservare l’indirizzo IP e i normali dati tecnici di qualsiasi connessione. Non viene trasmesso alcun dato di studio né alcun identificativo dell’utente o del dispositivo.</li>
+        <li><strong>Destinatario.</strong> Cloudflare, Inc. (Stati Uniti), che ospita i pacchetti di voci per conto dello sviluppatore. La sua informativa sulla privacy è disponibile su <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">cloudflare.com/privacypolicy</a>.</li>
+        <li><strong>Finalità.</strong> Scaricare sul dispositivo le voci giapponesi delle parole e delle frasi di esempio, che da quel momento si ascoltano senza connessione.</li>
+        <li><strong>Natura.</strong> Facoltativo. Senza scaricare alcuna voce, parole e frasi vengono riprodotte con le registrazioni incluse nell’applicazione e con la voce del sistema.</li>
+      </ul>
 
-      <p class="base"><strong>Base giuridica.</strong> Il legittimo interesse dello sviluppatore a mantenere l'applicazione aggiornata e funzionante e a verificare gli acquisti (casi da 1 a 3); il consenso dell'utente, per le segnalazioni di arresto anomalo (caso 4); e la richiesta dell'utente stesso quando utilizza la funzione in questione (casi da 5 a 8).</p>
+      <!-- Los códigos de centro (29-oct-2026): scripts/cloudflare/worker-codigos.js y src/services/codigosDeCentro.ts. -->
+      <h3>10 · Codici dell'istituto (solo Android)</h3>
+      <ul>
+        <li><strong>Quando.</strong> Quando l'utente inserisce un codice fornito dal proprio istituto di istruzione e, finché ne è memorizzato uno, a ogni avvio dell'applicazione, per verificare che sia ancora valido.</li>
+        <li><strong>Dati che lasciano il dispositivo.</strong> Il codice inserito e un identificativo casuale di installazione generato dall'applicazione, che non identifica l'utente, oltre all'indirizzo IP e ai normali dati tecnici di qualsiasi connessione. Non viene trasmesso alcun dato di studio.</li>
+        <li><strong>Destinatario.</strong> Cloudflare, Inc. (Stati Uniti), che fornisce il servizio per conto dello sviluppatore. Per ogni codice si conservano, finché il codice esiste, gli identificativi di installazione che lo hanno utilizzato e la data della prima e dell'ultima verifica. L'indirizzo IP è utilizzato solo sotto forma di impronta, per limitare i tentativi non riusciti, e viene cancellato entro ventiquattro ore.</li>
+        <li><strong>Finalità.</strong> Verificare che il codice esista, non sia scaduto e abbia ancora posti disponibili; contare quante installazioni lo utilizzano; e sbloccare i contenuti fino alla data stabilita per quel codice.</li>
+        <li><strong>Natura.</strong> Facoltativa: avviene solo se l'utente inserisce un codice.</li>
+      </ul>
+      
+      <p class="base"><strong>Base giuridica.</strong> Il legittimo interesse dello sviluppatore a mantenere l'applicazione aggiornata e funzionante e a verificare gli acquisti (casi da 1 a 3); il consenso dell'utente, per le segnalazioni di arresto anomalo (caso 4); e la richiesta dell'utente stesso quando utilizza la funzione in questione (casi da 5 a 10).</p>
           </section>
 
     <section>

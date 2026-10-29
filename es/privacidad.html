@@ -284,7 +284,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Política de privacidad</p>
     <h1>Política de privacidad de la aplicación KanjiKaku</h1>
-    <p class="fecha">Última actualización: 21 de octubre de 2026</p>
+    <p class="fecha">Última actualización: 29 de octubre de 2026</p>
     
     <div class="resumen">
       <p>En resumen: los datos de estudio permanecen en el dispositivo del usuario y, si este la tiene activada, en su propia copia de seguridad de iCloud o de Google. La aplicación no requiere cuenta, el desarrollador no opera ningún servidor que almacene información de los usuarios, y la aplicación no muestra publicidad ni realiza seguimiento.</p>
@@ -375,8 +375,26 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <h3>8 · Enlaces externos</h3>
       <p>Cuando el usuario pulsa un enlace a este sitio web o a una dirección de correo electrónico, la aplicación lo abre en el navegador o en la aplicación de correo del dispositivo. Lo que ocurra a partir de ese momento se rige por las condiciones de dichas aplicaciones y del sitio visitado.</p>
 
+      <h3>9 · Descarga de voces</h3>
+      <ul>
+        <li><strong>Cuándo.</strong> Al abrir el apartado «Audio y voz» de los Ajustes, para consultar qué voces están disponibles, y cuando el usuario pulsa «Descargar» en una de ellas.</li>
+        <li><strong>Datos que salen del dispositivo.</strong> Una solicitud de descarga del índice de voces y, en su caso, del paquete elegido, que permite al servidor observar la dirección IP y los datos técnicos ordinarios de toda conexión. No se transmite ningún dato de estudio ni identificador del usuario o del dispositivo.</li>
+        <li><strong>Destinatario.</strong> Cloudflare, Inc. (Estados Unidos), que aloja los paquetes de voz por cuenta del desarrollador. Su política de privacidad está disponible en <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">cloudflare.com/privacypolicy</a>.</li>
+        <li><strong>Finalidad.</strong> Descargar en el dispositivo las voces japonesas de las palabras y de las frases de ejemplo, que a partir de ese momento suenan sin conexión.</li>
+        <li><strong>Carácter.</strong> Opcional. Sin descargar ninguna voz, las palabras y las frases suenan con las grabaciones incluidas en la aplicación y con la voz del sistema.</li>
+      </ul>
 
-      <p class="base"><strong>Base jurídica.</strong> El interés legítimo del desarrollador en mantener la aplicación actualizada y operativa y en verificar las compras (supuestos 1 a 3); el consentimiento del usuario, en los informes de fallos (supuesto 4); y la solicitud del propio usuario al utilizar la función de que se trate (supuestos 5 a 8).</p>
+      <!-- Los códigos de centro (29-oct-2026): scripts/cloudflare/worker-codigos.js y src/services/codigosDeCentro.ts. -->
+      <h3>10 · Códigos de centro (sólo Android)</h3>
+      <ul>
+        <li><strong>Cuándo.</strong> Cuando el usuario introduce un código facilitado por su centro de estudios y, mientras tenga uno guardado, en cada inicio de la aplicación, para comprobar que sigue vigente.</li>
+        <li><strong>Datos que salen del dispositivo.</strong> El código introducido y un identificador aleatorio de instalación generado por la aplicación, que no identifica al usuario, además de la dirección IP y los datos técnicos ordinarios de toda conexión. No se transmite ningún dato de estudio.</li>
+        <li><strong>Destinatario.</strong> Cloudflare, Inc. (Estados Unidos), que presta el servicio por cuenta del desarrollador. Por cada código se conservan, mientras el código exista, los identificadores de instalación que lo han utilizado y la fecha de la primera y de la última comprobación. La dirección IP sólo se utiliza, en forma de huella, para limitar los intentos fallidos, y se elimina en un plazo de veinticuatro horas.</li>
+        <li><strong>Finalidad.</strong> Comprobar que el código existe, que no ha caducado y que le quedan plazas; contar cuántas instalaciones lo utilizan; y desbloquear el contenido hasta la fecha fijada para ese código.</li>
+        <li><strong>Carácter.</strong> Opcional: sólo se produce si el usuario introduce un código.</li>
+      </ul>
+      
+      <p class="base"><strong>Base jurídica.</strong> El interés legítimo del desarrollador en mantener la aplicación actualizada y operativa y en verificar las compras (supuestos 1 a 3); el consentimiento del usuario, en los informes de fallos (supuesto 4); y la solicitud del propio usuario al utilizar la función de que se trate (supuestos 5 a 10).</p>
           </section>
 
     <section>

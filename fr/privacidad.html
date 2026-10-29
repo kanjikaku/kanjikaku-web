@@ -284,7 +284,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Politique de confidentialité</p>
     <h1>Politique de confidentialité de l'application KanjiKaku</h1>
-    <p class="fecha">Dernière mise à jour : 21 octobre 2026</p>
+    <p class="fecha">Dernière mise à jour : 29 octobre 2026</p>
     
     <div class="resumen">
       <p>En résumé : les données d'étude restent sur l'appareil de l'utilisateur et, si celui-ci l'a activée, dans sa propre sauvegarde iCloud ou Google. L'application ne requiert aucun compte, le développeur n'exploite aucun serveur stockant des informations relatives aux utilisateurs, et l'application n'affiche aucune publicité et n'effectue aucun suivi.</p>
@@ -375,8 +375,26 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <h3>8 · Liens externes</h3>
       <p>Lorsque l'utilisateur touche un lien vers ce site web ou vers une adresse électronique, l'application l'ouvre dans le navigateur ou dans l'application de messagerie de l'appareil. La suite est régie par les conditions de ces applications et du site consulté.</p>
 
+      <h3>9 · Téléchargement de voix</h3>
+      <ul>
+        <li><strong>Quand.</strong> À l’ouverture de la rubrique « Audio et voix » des Réglages, pour consulter les voix disponibles, et lorsque l’utilisateur touche « Télécharger » sur l’une d’elles.</li>
+        <li><strong>Données quittant l’appareil.</strong> Une demande de téléchargement de l’index des voix et, le cas échéant, du paquet choisi, qui permet au serveur d’observer l’adresse IP et les données techniques ordinaires de toute connexion. Aucune donnée d’étude ni aucun identifiant de l’utilisateur ou de l’appareil n’est transmis.</li>
+        <li><strong>Destinataire.</strong> Cloudflare, Inc. (États-Unis), qui héberge les paquets de voix pour le compte du développeur. Sa politique de confidentialité est disponible sur <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">cloudflare.com/privacypolicy</a>.</li>
+        <li><strong>Finalité.</strong> Télécharger sur l’appareil les voix japonaises des mots et des phrases d’exemple, qui sont ensuite lues hors connexion.</li>
+        <li><strong>Caractère.</strong> Facultatif. Sans télécharger de voix, les mots et les phrases sont lus avec les enregistrements inclus dans l’application et avec la voix du système.</li>
+      </ul>
 
-      <p class="base"><strong>Base juridique.</strong> L'intérêt légitime du développeur à maintenir l'application à jour et opérationnelle et à vérifier les achats (cas 1 à 3) ; le consentement de l'utilisateur, pour les rapports de plantage (cas 4) ; et la demande de l'utilisateur lui-même lorsqu'il utilise la fonction concernée (cas 5 à 8).</p>
+      <!-- Los códigos de centro (29-oct-2026): scripts/cloudflare/worker-codigos.js y src/services/codigosDeCentro.ts. -->
+      <h3>10 · Codes d'établissement (Android uniquement)</h3>
+      <ul>
+        <li><strong>Quand.</strong> Lorsque l'utilisateur saisit un code fourni par son établissement d'enseignement et, tant qu'un code est enregistré, à chaque démarrage de l'application, afin de vérifier qu'il est toujours valide.</li>
+        <li><strong>Données quittant l’appareil.</strong> Le code saisi et un identifiant d'installation aléatoire généré par l'application, qui n'identifie pas l'utilisateur, ainsi que l'adresse IP et les données techniques ordinaires de toute connexion. Aucune donnée d'étude n'est transmise.</li>
+        <li><strong>Destinataire.</strong> Cloudflare, Inc. (États-Unis), qui fournit le service pour le compte du développeur. Pour chaque code sont conservés, tant que le code existe, les identifiants d'installation qui l'ont utilisé ainsi que la date de la première et de la dernière vérification. L'adresse IP n'est utilisée que sous forme d'empreinte, afin de limiter les tentatives infructueuses, et elle est supprimée dans un délai de vingt-quatre heures.</li>
+        <li><strong>Finalité.</strong> Vérifier que le code existe, qu'il n'a pas expiré et qu'il reste des places ; compter le nombre d'installations qui l'utilisent ; et débloquer le contenu jusqu'à la date fixée pour ce code.</li>
+        <li><strong>Caractère.</strong> Facultatif : cela ne se produit que si l'utilisateur saisit un code.</li>
+      </ul>
+      
+      <p class="base"><strong>Base juridique.</strong> L'intérêt légitime du développeur à maintenir l'application à jour et opérationnelle et à vérifier les achats (cas 1 à 3) ; le consentement de l'utilisateur, pour les rapports de plantage (cas 4) ; et la demande de l'utilisateur lui-même lorsqu'il utilise la fonction concernée (cas 5 à 10).</p>
           </section>
 
     <section>

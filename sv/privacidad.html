@@ -284,7 +284,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Integritetspolicy</p>
     <h1>Integritetspolicy för applikationen KanjiKaku</h1>
-    <p class="fecha">Senast uppdaterad: 21 oktober 2026</p>
+    <p class="fecha">Senast uppdaterad: 29 oktober 2026</p>
     
     <div class="resumen">
       <p>Sammanfattningsvis: studiedata stannar på användarens enhet och, om användaren har aktiverat den, i användarens egen säkerhetskopia i iCloud eller hos Google. Applikationen kräver inget konto, utvecklaren driver ingen server som lagrar uppgifter om användarna, och applikationen visar ingen reklam och utför ingen spårning.</p>
@@ -375,8 +375,26 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <h3>8 · Externa länkar</h3>
       <p>När användaren trycker på en länk till denna webbplats eller till en e-postadress öppnar applikationen den i enhetens webbläsare eller e-postapplikation. Vad som sker därefter regleras av villkoren för dessa applikationer och för den besökta webbplatsen.</p>
 
+      <h3>9 · Nedladdning av röster</h3>
+      <ul>
+        <li><strong>När.</strong> När avsnittet ”Ljud och röst” i Inställningar öppnas, för att se vilka röster som finns, och när användaren trycker på ”Ladda ner” för någon av dem.</li>
+        <li><strong>Uppgifter som lämnar enheten.</strong> En begäran om nedladdning av röstindexet och, i förekommande fall, av det valda paketet, vilket gör att servern kan se IP-adressen och de vanliga tekniska uppgifterna för varje anslutning. Inga studieuppgifter och ingen identifierare för användaren eller enheten överförs.</li>
+        <li><strong>Mottagare.</strong> Cloudflare, Inc. (USA), som lagrar röstpaketen för utvecklarens räkning. Dess integritetspolicy finns på <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">cloudflare.com/privacypolicy</a>.</li>
+        <li><strong>Ändamål.</strong> Att ladda ner de japanska rösterna för ord och exempelmeningar till enheten, som därefter spelas upp utan anslutning.</li>
+        <li><strong>Karaktär.</strong> Frivilligt. Utan nedladdade röster spelas ord och meningar upp med de inspelningar som ingår i applikationen och med systemets röst.</li>
+      </ul>
 
-      <p class="base"><strong>Rättslig grund.</strong> Utvecklarens berättigade intresse av att hålla applikationen uppdaterad och fungerande och av att kontrollera köp (fall 1–3); användarens samtycke när det gäller kraschrapporter (fall 4); samt användarens egen begäran när den aktuella funktionen används (fall 5–8).</p>
+      <!-- Los códigos de centro (29-oct-2026): scripts/cloudflare/worker-codigos.js y src/services/codigosDeCentro.ts. -->
+      <h3>10 · Koder från utbildningsinstitutioner (endast Android)</h3>
+      <ul>
+        <li><strong>När.</strong> När användaren anger en kod som tillhandahållits av hens utbildningsinstitution och, så länge en kod är sparad, vid varje start av applikationen, för att kontrollera att den fortfarande gäller.</li>
+        <li><strong>Uppgifter som lämnar enheten.</strong> Den angivna koden och en slumpmässig installationsidentifierare som skapas av applikationen och som inte identifierar användaren, samt IP-adressen och de sedvanliga tekniska uppgifterna för varje anslutning. Inga studieuppgifter överförs.</li>
+        <li><strong>Mottagare.</strong> Cloudflare, Inc. (USA), som tillhandahåller tjänsten för utvecklarens räkning. För varje kod sparas, så länge koden finns, de installationsidentifierare som har använt den samt datum för den första och den senaste kontrollen. IP-adressen används endast i hashad form för att begränsa misslyckade försök och raderas inom tjugofyra timmar.</li>
+        <li><strong>Ändamål.</strong> Att kontrollera att koden finns, inte har gått ut och har platser kvar; att räkna hur många installationer som använder den; och att låsa upp innehållet till och med det datum som fastställts för koden.</li>
+        <li><strong>Karaktär.</strong> Frivillig: sker endast om användaren anger en kod.</li>
+      </ul>
+      
+      <p class="base"><strong>Rättslig grund.</strong> Utvecklarens berättigade intresse av att hålla applikationen uppdaterad och fungerande och av att kontrollera köp (fall 1–3); användarens samtycke när det gäller kraschrapporter (fall 4); samt användarens egen begäran när den aktuella funktionen används (fall 5–10).</p>
           </section>
 
     <section>

@@ -284,7 +284,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Política de privacidade</p>
     <h1>Política de privacidade do aplicativo KanjiKaku</h1>
-    <p class="fecha">Última atualização: 21 de outubro de 2026</p>
+    <p class="fecha">Última atualização: 29 de outubro de 2026</p>
     
     <div class="resumen">
       <p>Em resumo: os dados de estudo permanecem no dispositivo do usuário e, se este o tiver ativado, em seu próprio backup do iCloud ou do Google. O aplicativo não exige conta, o desenvolvedor não opera nenhum servidor que armazene informações dos usuários, e o aplicativo não exibe publicidade nem realiza rastreamento.</p>
@@ -375,8 +375,26 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <h3>8 · Links externos</h3>
       <p>Quando o usuário toca em um link para este site ou para um endereço de e-mail, o aplicativo o abre no navegador ou no aplicativo de e-mail do dispositivo. O que ocorrer a partir desse momento se rege pelas condições desses aplicativos e do site visitado.</p>
 
+      <h3>9 · Download de vozes</h3>
+      <ul>
+        <li><strong>Quando.</strong> Ao abrir a seção «Áudio e voz» dos Ajustes, para consultar quais vozes estão disponíveis, e quando o usuário toca em «Baixar» em uma delas.</li>
+        <li><strong>Dados que saem do dispositivo.</strong> Uma solicitação de download do índice de vozes e, se for o caso, do pacote escolhido, que permite ao servidor observar o endereço IP e os dados técnicos ordinários de qualquer conexão. Não é transmitido nenhum dado de estudo nem identificador do usuário ou do dispositivo.</li>
+        <li><strong>Destinatário.</strong> Cloudflare, Inc. (Estados Unidos), que hospeda os pacotes de voz por conta do desenvolvedor. Sua política de privacidade está disponível em <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">cloudflare.com/privacypolicy</a>.</li>
+        <li><strong>Finalidade.</strong> Baixar no dispositivo as vozes japonesas das palavras e das frases de exemplo, que a partir de então tocam sem conexão.</li>
+        <li><strong>Caráter.</strong> Opcional. Sem baixar nenhuma voz, as palavras e as frases tocam com as gravações incluídas no aplicativo e com a voz do sistema.</li>
+      </ul>
 
-      <p class="base"><strong>Fundamento jurídico.</strong> O interesse legítimo do desenvolvedor em manter o aplicativo atualizado e operacional e em verificar as compras (situações 1 a 3); o consentimento do usuário, nos relatórios de falhas (situação 4); e a solicitação do próprio usuário ao utilizar a função em questão (situações 5 a 8).</p>
+      <!-- Los códigos de centro (29-oct-2026): scripts/cloudflare/worker-codigos.js y src/services/codigosDeCentro.ts. -->
+      <h3>10 · Códigos da instituição (só Android)</h3>
+      <ul>
+        <li><strong>Quando.</strong> Quando o usuário insere um código fornecido pela sua instituição de ensino e, enquanto houver um guardado, a cada início do aplicativo, para verificar se continua válido.</li>
+        <li><strong>Dados que saem do dispositivo.</strong> O código inserido e um identificador aleatório de instalação gerado pelo aplicativo, que não identifica o usuário, além do endereço IP e dos dados técnicos comuns de qualquer conexão. Nenhum dado de estudo é transmitido.</li>
+        <li><strong>Destinatário.</strong> Cloudflare, Inc. (Estados Unidos), que presta o serviço em nome do desenvolvedor. Para cada código são conservados, enquanto o código existir, os identificadores de instalação que o utilizaram e a data da primeira e da última verificação. O endereço IP é usado apenas na forma de hash, para limitar as tentativas malsucedidas, e é eliminado em até vinte e quatro horas.</li>
+        <li><strong>Finalidade.</strong> Verificar se o código existe, se não expirou e se ainda tem vagas; contar quantas instalações o utilizam; e desbloquear o conteúdo até a data fixada para esse código.</li>
+        <li><strong>Caráter.</strong> Opcional: só ocorre se o usuário inserir um código.</li>
+      </ul>
+      
+      <p class="base"><strong>Fundamento jurídico.</strong> O interesse legítimo do desenvolvedor em manter o aplicativo atualizado e operacional e em verificar as compras (situações 1 a 3); o consentimento do usuário, nos relatórios de falhas (situação 4); e a solicitação do próprio usuário ao utilizar a função em questão (situações 5 a 10).</p>
           </section>
 
     <section>

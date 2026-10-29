@@ -284,7 +284,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Datenschutzerklärung</p>
     <h1>Datenschutzerklärung für die Anwendung KanjiKaku</h1>
-    <p class="fecha">Zuletzt aktualisiert: 21. Oktober 2026</p>
+    <p class="fecha">Zuletzt aktualisiert: 29. Oktober 2026</p>
     
     <div class="resumen">
       <p>Zusammenfassend: Die Lerndaten verbleiben auf dem Gerät des Nutzers und, sofern dieser sie aktiviert hat, in seiner eigenen iCloud- oder Google-Sicherung. Die Anwendung erfordert kein Konto, der Entwickler betreibt keinen Server, auf dem Nutzerdaten gespeichert werden, und die Anwendung zeigt keine Werbung an und führt kein Tracking durch.</p>
@@ -375,8 +375,26 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <h3>8 · Externe Links</h3>
       <p>Tippt der Nutzer auf einen Link zu dieser Website oder zu einer E-Mail-Adresse, öffnet die Anwendung ihn im Browser oder in der E-Mail-Anwendung des Geräts. Alles Weitere unterliegt den Bedingungen dieser Anwendungen und der besuchten Website.</p>
 
+      <h3>9 · Herunterladen von Stimmen</h3>
+      <ul>
+        <li><strong>Wann.</strong> Beim Öffnen des Bereichs „Audio und Stimme“ in den Einstellungen, um abzufragen, welche Stimmen verfügbar sind, und wenn der Nutzer bei einer davon auf „Herunterladen“ tippt.</li>
+        <li><strong>Daten, die das Gerät verlassen.</strong> Eine Anfrage zum Herunterladen des Stimmenverzeichnisses und gegebenenfalls des gewählten Pakets, die es dem Server ermöglicht, die IP-Adresse und die üblichen technischen Daten jeder Verbindung zu erkennen. Es werden weder Lerndaten noch Kennungen des Nutzers oder des Geräts übermittelt.</li>
+        <li><strong>Empfänger.</strong> Cloudflare, Inc. (Vereinigte Staaten), die die Stimmpakete im Auftrag des Entwicklers bereitstellt. Ihre Datenschutzerklärung ist unter <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">cloudflare.com/privacypolicy</a> abrufbar.</li>
+        <li><strong>Zweck.</strong> Die japanischen Stimmen für die Wörter und Beispielsätze auf das Gerät herunterzuladen, die von da an ohne Verbindung abgespielt werden.</li>
+        <li><strong>Art.</strong> Freiwillig. Ohne heruntergeladene Stimme werden Wörter und Sätze mit den in der Anwendung enthaltenen Aufnahmen und mit der Systemstimme wiedergegeben.</li>
+      </ul>
 
-      <p class="base"><strong>Rechtsgrundlage.</strong> Das berechtigte Interesse des Entwicklers, die Anwendung aktuell und funktionsfähig zu halten und Käufe zu überprüfen (Fälle 1 bis 3); die Einwilligung des Nutzers bei den Absturzberichten (Fall 4); sowie die Anforderung durch den Nutzer selbst bei Verwendung der jeweiligen Funktion (Fälle 5 bis 8).</p>
+      <!-- Los códigos de centro (29-oct-2026): scripts/cloudflare/worker-codigos.js y src/services/codigosDeCentro.ts. -->
+      <h3>10 · Codes von Bildungseinrichtungen (nur Android)</h3>
+      <ul>
+        <li><strong>Wann.</strong> Wenn die Nutzerin oder der Nutzer einen von der eigenen Bildungseinrichtung bereitgestellten Code eingibt und, solange ein Code gespeichert ist, bei jedem Start der Anwendung, um zu prüfen, ob er noch gültig ist.</li>
+        <li><strong>Daten, die das Gerät verlassen.</strong> Der eingegebene Code und eine von der Anwendung erzeugte zufällige Installationskennung, die keine Person identifiziert, sowie die IP-Adresse und die üblichen technischen Daten jeder Verbindung. Es werden keine Lerndaten übermittelt.</li>
+        <li><strong>Empfänger.</strong> Cloudflare, Inc. (Vereinigte Staaten), die den Dienst im Auftrag des Entwicklers erbringt. Für jeden Code werden, solange er besteht, die Installationskennungen, die ihn verwendet haben, sowie das Datum der ersten und der letzten Prüfung gespeichert. Die IP-Adresse wird ausschließlich als Hashwert verwendet, um fehlgeschlagene Versuche zu begrenzen, und innerhalb von vierundzwanzig Stunden gelöscht.</li>
+        <li><strong>Zweck.</strong> Prüfen, ob der Code existiert, nicht abgelaufen ist und noch Plätze frei hat; zählen, wie viele Installationen ihn verwenden; und die Inhalte bis zu dem für diesen Code festgelegten Datum freischalten.</li>
+        <li><strong>Art.</strong> Freiwillig: Dies geschieht nur, wenn ein Code eingegeben wird.</li>
+      </ul>
+      
+      <p class="base"><strong>Rechtsgrundlage.</strong> Das berechtigte Interesse des Entwicklers, die Anwendung aktuell und funktionsfähig zu halten und Käufe zu überprüfen (Fälle 1 bis 3); die Einwilligung des Nutzers bei den Absturzberichten (Fall 4); sowie die Anforderung durch den Nutzer selbst bei Verwendung der jeweiligen Funktion (Fälle 5 bis 10).</p>
           </section>
 
     <section>
