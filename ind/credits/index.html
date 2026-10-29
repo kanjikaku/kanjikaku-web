@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kredit dan lisensi · KanjiKaku</title>
+<meta name="description" content="Sumber terbuka, suara, dan musik aplikasi KanjiKaku dan videonya, beserta pembuat dan lisensinya.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#F3F3EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131619" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@600&display=swap">
+<style>
+/* ─────────────────────────────────────────────────────────────
+   KanjiKaku · créditos y licencias (29-oct-2026)
+   Los colores y las tipografías son LOS MISMOS que en index.html.
+   Si cambias la paleta allí, cámbiala aquí: cada página va suelta
+   a propósito, para poder subirlas sin nada más.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  --paper:      #F3F3EE;
+  --paper-sunk: #E7E8E1;
+  --rule:       #D5D7CE;
+  --rule-soft:  #E2E3DB;
+  --sumi:       #15181B;
+  --sumi-soft:  #5A6068;
+  --shu:        #BF3B2B;
+  --shu-ink:    #FFFFFF;
+  --focus:      #BF3B2B;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:      #131619;
+    --paper-sunk: #1B1F23;
+    --rule:       #2C3238;
+    --rule-soft:  #21262B;
+    --sumi:       #E9EAE4;
+    --sumi-soft:  #99A0A8;
+    --shu:        #E0563F;
+    --shu-ink:    #17191B;
+    --focus:      #E0563F;
+  }
+}
+:root[data-theme="dark"] {
+  --paper:      #131619;
+  --paper-sunk: #1B1F23;
+  --rule:       #2C3238;
+  --rule-soft:  #21262B;
+  --sumi:       #E9EAE4;
+  --sumi-soft:  #99A0A8;
+  --shu:        #E0563F;
+  --shu-ink:    #17191B;
+  --focus:      #E0563F;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--sumi);
+  font-family: "Zen Kaku Gothic New", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2 {
+  font-family: "Zen Old Mincho", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: balance;
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+p, ul { margin: 0; }
+a { color: inherit; }
+
+.frame {
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 48px);
+}
+
+.label {
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sumi-soft);
+  margin: 0;
+}
+
+/* ── Cabecera y pie, iguales que en la portada ─────────────── */
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 20px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.marca { display: block; width: 33px; height: 33px; flex: none; }
+.marca svg { display: block; width: 100%; height: 100%; }
+.brand-name {
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+/* El selector de idioma: el mismo desplegable que la portada (globo,
+   bandera y código a la vista; la lista al tocar), con las variables de esta
+   página. Hasta el 24-sep-2026 aquí seguía el CSS de los dos botones ES/EN
+   y el desplegable salía apilado en vertical. */
+.lang { position: relative; }
+.lang details > summary {
+  list-style: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid var(--rule); border-radius: 999px; padding: 4px 10px 4px 8px;
+  color: var(--sumi-soft); font: inherit; font-size: 12px; font-weight: 600; letter-spacing: .08em;
+}
+.lang details > summary::-webkit-details-marker { display: none; }
+.lang details > summary:hover, .lang details[open] > summary { color: var(--sumi); border-color: var(--sumi); }
+.lang .globo { width: 16px; height: 16px; }
+.lang .bandera { width: 18px; height: 12px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,.08); flex: none; }
+.lang ul {
+  position: absolute; right: 0; top: calc(100% + 6px); z-index: 30;
+  margin: 0; padding: 6px; list-style: none; min-width: 12.5rem;
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.14);
+}
+.lang li a {
+  display: flex; align-items: center; gap: 9px;
+  padding: 7px 10px; border-radius: 8px;
+  text-decoration: none; color: var(--sumi); font: inherit; font-size: 14px;
+}
+.lang li a:hover { background: var(--paper-sunk); }
+.lang li a[aria-current="page"] { background: var(--sumi); color: var(--paper); }
+@media (max-width: 30rem) { .lang ul { right: -.5rem; } }
+.lang summary:focus-visible, a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+footer {
+  border-top: 1px solid var(--rule-soft);
+  padding-block: 26px 34px;
+  display: flex; flex-wrap: wrap;
+  gap: 10px 24px;
+  align-items: center; justify-content: space-between;
+  font-size: 13.5px;
+  color: var(--sumi-soft);
+}
+footer a { text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
+footer a:hover { border-bottom-color: var(--sumi-soft); }
+
+/* ── El documento ──────────────────────────────────────────── */
+
+/* Medida corta a propósito: esto se lee, no se ojea. */
+article { max-width: 64ch; padding-block: clamp(44px, 6vw, 72px) clamp(40px, 6vw, 64px); }
+
+article h1 {
+  font-size: clamp(32px, 4.6vw, 44px);
+  margin-top: 12px;
+}
+.fecha { margin-top: 16px; font-size: 14px; color: var(--sumi-soft); }
+
+/* La versión corta, arriba del todo: quien no lea nada más, lee esto. */
+.resumen {
+  margin-top: 34px;
+  background: var(--paper-sunk);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 22px 24px;
+}
+.resumen p { font-size: 17px; }
+.resumen p + p { margin-top: 10px; color: var(--sumi-soft); font-size: 15px; }
+
+section { margin-top: 44px; }
+section h2 {
+  font-size: 21px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+section > p, section > ul { margin-top: 14px; }
+/* Cada conexión de red, con su título (30-sep-2026). */
+section h3 {
+  font-family: "Zen Old Mincho", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+  margin: 30px 0 0;
+}
+section h3 + ul, section h3 + p { margin-top: 10px; }
+.base { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--rule-soft); }
+section p + p { margin-top: 12px; }
+
+ul { padding-left: 0; list-style: none; }
+li { position: relative; padding-left: 20px; }
+li + li { margin-top: 9px; }
+/* Un guion largo en vez de un punto: es una lista de frases, no un menú. */
+li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--sumi-soft);
+}
+
+/* Los enlaces del cuerpo se ven, pero no gritan. */
+article a[href^="http"], article a[href^="mailto"] {
+  text-decoration: none;
+  border-bottom: 1px solid var(--shu);
+  padding-bottom: 1px;
+}
+article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--shu); }
+
+.volver {
+  margin-top: 46px;
+  padding-top: 26px;
+  border-top: 1px solid var(--rule-soft);
+  font-size: 14.5px;
+}
+.volver a { text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
+.volver a:hover { border-bottom-color: var(--sumi); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+.fuentes li span { display: block; font-size: 13px; color: var(--sumi-soft); letter-spacing: .02em; }
+.fuentes li b { font-weight: 700; }
+</style>
+  <!-- Cloudflare Web Analytics: estadísticas de visitas sin cookies (Álvaro, 21-oct-2026). Sólo la web, no la app. -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "d8c616bf14f34918895f8801a5d23112"}'></script>
+  <link rel="alternate" hreflang="en" href="https://kanjikaku.com/credits/">
+  <link rel="alternate" hreflang="es" href="https://kanjikaku.com/es/credits/">
+  <link rel="alternate" hreflang="de" href="https://kanjikaku.com/de/credits/">
+  <link rel="alternate" hreflang="fr" href="https://kanjikaku.com/fr/credits/">
+  <link rel="alternate" hreflang="it" href="https://kanjikaku.com/it/credits/">
+  <link rel="alternate" hreflang="pt" href="https://kanjikaku.com/pt/credits/">
+  <link rel="alternate" hreflang="nl" href="https://kanjikaku.com/nl/credits/">
+  <link rel="alternate" hreflang="sv" href="https://kanjikaku.com/sv/credits/">
+  <link rel="alternate" hreflang="pl" href="https://kanjikaku.com/pl/credits/">
+  <link rel="alternate" hreflang="id" href="https://kanjikaku.com/ind/credits/">
+  <link rel="alternate" hreflang="vi" href="https://kanjikaku.com/vi/credits/">
+  <link rel="alternate" hreflang="ko" href="https://kanjikaku.com/ko/credits/">
+  <link rel="alternate" hreflang="x-default" href="https://kanjikaku.com/credits/">
+</head>
+<body>
+
+<div class="frame">
+  <header class="top">
+    <a class="brand" href="../" aria-label="KanjiKaku">
+      <!-- La marca de la app (enso rojo con 文), la misma que la portada:
+           el constructor la mete aquí desde arte.json (24-sep-2026; antes
+           era el sello 書 de la 1.0, que ya no es la marca). -->
+      <span class="marca" aria-hidden="true"><svg viewBox="0 0 100 100" role="img" aria-label="KanjiKaku"><path d="M36.6,16.8L38.8,16.2L45.6,15.3L52.3,15.1L56.8,15.5L58.9,16.1L63.2,17.5L67.2,19.4L69.1,20.6L72.7,23.3L74.5,24.7L76,26.3L77.5,28L80.1,31.7L81.3,33.6L82.9,37.8L83.6,39.9L84.7,44.3L84.9,46.5L85.1,51L84.7,55.5L84.3,57.7L82.9,62L82,64L79.9,68L75.9,73.4L72.8,76.6L71,77.9L67.3,80.5L65.3,81.4L61.1,83L56.8,84.3L59.7,90.1L62.3,89.5L67.2,87.5L69.6,86.4L74.1,83.7L76.2,82L80.2,78.5L83.6,74.5L85.2,72.3L88,67.8L89.1,65.3L90.7,60.2L91.7,54.9L92,52.2L92,46.8L91.8,44.1L91,38.8L90.1,36.2L88.2,31.1L85.5,26.4L83.8,24.2L80.3,20L78.4,18.1L76.3,16.3L74.1,14.6L69.4,11.7L67,10.5L61.7,8.8L59.1,8.2L53.6,7.3L50.9,7.4L45.4,7.6L42.8,8.1L40.1,8.8L37.6,9.9L35.2,11.1L33.2,12.4L32.7,14.5L33.8,16.4L35.9,17Z" fill="var(--shu)"/><path d="M63.8,81.7L61.7,82.6L57.4,83.8L55.3,84.2L53.1,84.5L50.9,84.7L48.6,84.7L44.2,84.4L42,84L37.6,82.9L33.5,81.2L31.4,80.2L29.5,79L27.6,77.7L24.6,75.3L24.4,75.3L24.4,75.5L25,76.1L28.6,79L30.5,80.3L32.5,81.5L34.5,82.5L36.6,83.4L41,84.9L43.3,85.4L45.5,85.7L47.8,85.9L50.1,85.9L54.7,85.6L57,85.1L59.2,84.6L61.4,83.9L63.5,83.1Z" fill="var(--shu)"/><path d="M63.9,82.1L61.8,82.9L57.5,84.2L55.3,84.6L53.1,85L50.9,85.1L48.6,85.1L44.1,84.7L39.7,83.8L37.5,83.1L33.3,81.4L31.3,80.4L29.3,79.2L27.5,77.9L25.7,76.5L22.3,73.3L20.8,71.5L18.5,68.3L18.4,68.3L18.3,68.4L20.1,71.1L21.5,73L23,74.7L24.7,76.4L26.4,78L28.3,79.4L32.2,81.9L34.3,83L38.7,84.6L40.9,85.2L45.5,86.1L47.8,86.2L52.5,86.2L54.8,86L57.1,85.6L59.3,85.1L63.7,83.5Z" fill="var(--shu)"/><path d="M64.1,82.5L62,83.3L57.6,84.6L55.4,85L50.9,85.4L48.6,85.5L44.1,85.1L41.8,84.7L37.4,83.5L35.3,82.7L33.2,81.8L31.1,80.7L27.3,78.1L25.4,76.7L23.7,75.1L22.1,73.5L20.6,71.7L18.3,68.5L18,68.5L18,68.6L19.8,71.3L21.2,73.2L22.8,75L24.4,76.7L26.2,78.2L28,79.7L30,81L32,82.2L34.1,83.3L36.3,84.2L40.8,85.6L43.1,86.1L45.4,86.5L47.8,86.7L50.1,86.7L54.8,86.4L57.1,86L59.4,85.5L61.7,84.7L63.8,83.9Z" fill="var(--shu)"/><path d="M64.2,82.8L62.1,83.7L59.9,84.3L55.5,85.4L50.9,85.8L48.6,85.8L44,85.5L41.7,85.1L37.3,83.8L35.1,83L33,82L31,80.9L29,79.6L25.3,76.8L23.6,75.3L21.9,73.6L20.4,71.8L17.7,67.9L16.5,65.9L15.5,63.7L14.6,61.5L13.6,58.4L13.4,58.4L13.4,58.5L13.8,60.1L14.5,62.4L15.4,64.6L16.5,66.8L17.6,68.9L18.9,70.9L20.4,72.8L21.9,74.7L23.6,76.4L25.3,78L27.2,79.6L31.2,82.2L33.2,83.3L35.4,84.3L37.6,85.2L39.9,85.8L44.6,86.8L47,87L49.3,87.1L51.7,87L56.4,86.4L58.8,86L61,85.4L63.3,84.6Z" fill="var(--shu)"/><path d="M64.4,83.1L62.2,84.1L60,84.8L55.5,85.8L50.9,86.3L48.6,86.3L43.9,85.8L41.7,85.4L37.2,84.1L35,83.2L32.9,82.2L30.8,81.2L28.8,79.9L26.9,78.6L25.1,77.1L21.7,73.7L20.2,71.9L18.8,70L17.6,68L16.4,65.9L14.5,61.6L13.7,59.3L13.1,57L12.7,54.6L12.4,52.2L12.2,49.8L12.3,46.5L12.2,46.4L12,46.5L11.9,48.2L11.9,50.6L12,53.1L12.3,55.5L12.8,57.9L13.4,60.2L14.2,62.5L15.1,64.8L16.1,67L17.3,69.1L18.6,71.1L20,73.1L23.2,76.8L25,78.4L26.9,79.9L28.9,81.3L30.9,82.6L33.1,83.7L35.3,84.7L39.9,86.1L42.2,86.7L44.6,87.1L46.9,87.4L49.3,87.5L54.1,87.3L56.5,87L58.8,86.4L61.2,85.8L63.4,84.9Z" fill="var(--shu)"/><path d="M64.6,83.6L62.4,84.4L60.1,85.1L57.9,85.8L55.6,86.2L50.9,86.7L48.6,86.7L46.2,86.6L43.9,86.3L41.6,85.8L39.3,85.2L37,84.5L32.7,82.6L30.7,81.4L26.7,78.8L24.9,77.3L23.1,75.7L21.5,74L19.9,72.2L18.5,70.2L17.2,68.2L15,63.9L14.1,61.7L13.4,59.4L12.8,57L12.4,54.6L12,50.6L11.9,50.5L11.7,50.5L11.9,53.9L12.2,56.3L12.7,58.7L14.2,63.4L15.1,65.7L16.2,67.9L17.4,70L18.8,72L20.3,74L21.8,75.8L23.6,77.5L25.4,79.1L27.4,80.6L29.4,81.9L31.5,83.2L33.7,84.3L38.2,86.1L40.5,86.8L42.9,87.3L45.3,87.7L50.1,87.9L52.6,87.8L55,87.5L57.4,87.1L59.7,86.5L64.3,85.1Z" fill="var(--shu)"/><path d="M64.7,83.9L62.5,84.8L60.3,85.5L58,86.1L55.6,86.6L50.9,87.1L48.5,87.1L43.8,86.6L41.5,86.2L39.2,85.6L36.9,84.9L34.7,83.9L30.5,81.7L26.5,79.1L24.6,77.6L22.9,75.9L21.2,74.2L19.7,72.3L18.2,70.4L17,68.3L14.8,64L13.9,61.8L13.2,59.4L12.6,57.1L12.1,54.7L11.8,52.2L11.7,49.8L11.8,46.4L11.7,46.3L11.5,46.5L11.3,48.1L11.3,50.6L11.5,53.1L11.8,55.5L12.2,58L12.8,60.4L13.6,62.7L14.5,65L15.5,67.3L16.7,69.4L18,71.6L19.4,73.6L22.7,77.2L24.6,78.9L26.5,80.4L28.5,81.9L30.6,83.1L35,85.3L39.6,86.9L42,87.5L46.9,88.2L49.3,88.3L51.8,88.3L54.2,88.1L59,87.2L61.4,86.5L63.7,85.7Z" fill="var(--shu)"/><path d="M64.9,84.3L62.7,85.2L60.4,86L58.1,86.6L55.7,87L50.9,87.5L48.5,87.5L43.8,86.9L39.1,85.9L36.8,85.2L32.4,83.2L30.3,82.1L28.2,80.8L26.2,79.4L24.4,77.8L21,74.4L18.1,70.5L16.8,68.4L14.6,64.1L13.7,61.8L12.9,59.5L12.3,57.1L11.9,54.7L11.6,52.3L11.5,49.8L11.6,47.3L11.8,44.9L12.1,42.4L12.7,40L13.3,37.6L14.2,35.3L14.1,35.1L13.9,35.2L13,37.5L12.3,39.9L11.7,42.3L11.3,44.8L11,47.3L11,49.8L11,52.3L11.3,54.8L11.7,57.2L12.2,59.7L12.9,62.1L13.8,64.4L14.7,66.7L15.9,68.9L17.2,71.1L18.6,73.1L20.2,75.1L21.9,76.9L23.7,78.6L27.6,81.7L29.7,83L31.8,84.3L34.1,85.4L38.7,87.1L41.1,87.8L43.6,88.2L46,88.5L48.5,88.6L53.4,88.5L55.9,88.2L60.7,87.1L65.4,85.6Z" fill="var(--shu)"/><path d="M65.1,84.7L62.8,85.6L60.5,86.3L58.1,87L55.8,87.4L50.9,87.9L46.1,87.7L43.7,87.4L39,86.2L36.7,85.5L34.4,84.6L32.2,83.6L30.1,82.4L26,79.7L24.2,78.1L22.4,76.4L20.7,74.6L19.2,72.7L17.8,70.7L16.4,68.6L15.3,66.5L14.2,64.2L12.6,59.6L12,57.2L11.5,54.7L11.3,52.3L11.2,49.8L11.2,47.3L11.4,44.8L11.7,43.1L11.5,43L11.4,43L10.9,46.4L10.7,49L10.8,51.5L11,54L11.3,56.5L11.8,58.9L12.4,61.4L13.3,63.7L15.3,68.3L16.6,70.5L18,72.6L19.5,74.6L21.1,76.5L22.8,78.3L24.7,80L28.8,82.9L30.9,84.2L33.2,85.3L35.5,86.3L40.2,87.8L42.7,88.4L45.1,88.8L47.6,89L50.1,89.1L55.1,88.8L57.6,88.4L60,87.8L62.4,87.1L64.8,86.2Z" fill="var(--shu)"/><path d="M65.2,85.2L63,86L60.6,86.8L55.8,87.8L53.4,88.2L50.9,88.2L48.5,88.2L46.1,88L41.2,87.3L38.9,86.6L36.5,85.8L34.2,85L32,83.9L29.9,82.7L27.8,81.4L23.9,78.3L22.2,76.6L20.5,74.8L18.9,72.9L17.5,70.9L16.2,68.8L14.9,66.6L13.9,64.4L13,62L12.3,59.7L11.7,57.2L11.2,54.8L11,52.3L10.9,49.8L11.1,45.6L10.9,45.4L10.8,45.5L10.5,48.9L10.5,51.5L10.7,54L11.1,56.5L11.5,59L12.2,61.4L13,63.8L13.9,66.2L15,68.5L16.3,70.7L17.6,72.8L19.2,74.8L20.9,76.7L22.6,78.5L24.5,80.2L26.5,81.8L28.6,83.2L30.8,84.4L33,85.7L35.3,86.7L37.7,87.5L40.1,88.2L45.1,89.2L47.6,89.4L50.1,89.4L52.7,89.3L55.2,89.1L57.7,88.7L60.1,88.2L64.9,86.6Z" fill="var(--shu)"/><path d="M65.4,85.4L63.1,86.4L60.7,87.2L58.3,87.8L55.9,88.2L51,88.7L48.5,88.6L43.6,88.1L38.7,87L36.4,86.2L31.9,84.2L29.7,83L27.6,81.7L25.6,80.2L21.9,76.9L20.2,75.1L18.6,73.1L17.1,71.1L14.6,66.8L13.6,64.5L12.7,62.2L11.9,59.8L11.3,57.3L10.9,54.8L10.6,52.2L10.5,52.2L10.3,52.3L10.5,54.9L10.9,57.4L11.5,59.9L12.2,62.3L13,64.7L14.1,67L16.5,71.5L17.9,73.6L19.5,75.6L21.2,77.5L24.9,81L27,82.6L29.1,83.9L31.4,85.2L33.7,86.3L36,87.3L38.4,88.1L40.9,88.7L43.4,89.2L45.9,89.6L48.4,89.9L51,89.9L53.5,89.7L58.6,89L61.1,88.4L63.5,87.6L65.9,86.6Z" fill="var(--shu)"/><path d="M65.5,85.8L63.2,86.8L60.8,87.5L58.4,88.1L55.9,88.6L53.5,88.9L51,89.1L48.5,89.1L43.5,88.5L41,88L38.6,87.4L36.3,86.6L31.7,84.5L29.5,83.3L27.4,82L25.3,80.5L23.4,78.9L21.6,77.2L19.8,75.4L18.2,73.4L16.8,71.3L15.4,69.2L14.2,67L13.2,64.7L12.3,62.3L12.1,62.2L12,62.4L12.8,64.8L13.8,67.2L15,69.4L16.3,71.6L17.8,73.8L19.4,75.8L21.1,77.7L22.9,79.5L26.8,82.8L28.9,84.2L31.2,85.5L33.5,86.7L38.3,88.5L40.8,89.1L45.9,90L48.4,90.2L51,90.2L53.6,90.1L58.7,89.4L61.2,88.8L63.7,88L66.1,87.1Z" fill="var(--shu)"/><path d="M65.7,86.2L63.4,87.2L60.9,87.9L58.5,88.5L53.5,89.3L51,89.5L48.5,89.4L45.9,89.2L43.4,88.9L41,88.4L38.5,87.8L33.8,85.9L31.5,84.9L29.3,83.7L27.1,82.3L23.1,79.2L21.3,77.5L19.5,75.6L17.9,73.6L16.5,71.5L15.1,69.4L13.9,67.1L13.7,67L13.6,67.3L16.1,71.8L17.6,73.9L19.1,76L20.8,77.9L22.7,79.7L24.6,81.4L26.6,83L28.8,84.5L31,85.8L33.3,87L35.7,88L38.2,88.9L40.7,89.5L43.2,90L48.4,90.6L51,90.6L56.2,90.2L58.8,89.8L61.3,89.2L63.8,88.5L66.2,87.4Z" fill="var(--shu)"/><path d="M65.9,86.7L61.1,88.3L58.6,88.9L53.5,89.7L48.4,89.8L45.9,89.7L43.4,89.3L40.9,88.8L38.4,88.1L36,87.3L33.6,86.4L31.3,85.3L29,84.1L26.9,82.7L24.8,81.2L22.8,79.6L20.3,77.1L20.1,77.2L20.1,77.4L21.3,78.6L23.2,80.4L27.2,83.7L29.4,85.1L31.7,86.4L34,87.6L36.4,88.6L38.9,89.4L41.5,90.1L46.6,90.8L51.9,91L54.5,90.8L59.7,90L62.3,89.3L64.8,88.5Z" fill="var(--shu)"/><path d="M66.1,87L63.7,88L61.2,88.7L56.1,89.8L53.6,90.1L51,90.3L48.4,90.2L43.3,89.7L40.8,89.2L38.3,88.5L35.9,87.7L31.1,85.6L28.9,84.4L26.7,83L24.6,81.5L22.6,79.8L20.7,78L19,76.1L18.8,76L18.7,76.2L20.4,78.3L22.3,80.1L24.2,81.9L26.3,83.5L28.5,85L30.7,86.3L33.1,87.5L35.5,88.6L38,89.4L40.5,90.2L43.1,90.8L45.7,91.2L48.4,91.4L51,91.4L53.7,91.3L56.3,91.1L58.9,90.6L61.5,89.9L64,89.1L66.5,88.1Z" fill="var(--shu)"/><path d="M47.4,30.5L47.9,32.6L48.6,34.4L49.4,35.7L50.7,37.1L52.6,37.1L54,35.8L53.9,33.9L53.8,33.1L53.2,31.8L52.2,30.3L51.5,29.6L50,28.4L48.9,27.9L47.7,28.2L47.1,29.3Z" fill="var(--sumi)"/><path d="M31.5,43.7L33.5,43.9L42.4,42.6L48.9,42.2L51,42L59,41.6L65.2,41.9L68.5,41.8L69.8,41.3L70.8,39.9L70.5,38.2L69.1,37.2L67.4,37.2L64.8,37.4L58.6,38.2L50.7,38.7L42,38.8L35,38.5L33,38.5L32.3,38.6L30.6,38.9L29.2,40.1L29,42L30.3,43.5Z" fill="var(--sumi)"/><path d="M55,42.6L54.6,44.3L52.8,49.5L51.3,52.1L49.5,54.8L46.7,58.1L44.5,60.5L40.6,64L33.5,69.3L30.8,71.1L30.9,71.2L38.7,67.9L41.2,66.5L45.2,64.1L46.7,63L49.4,61L52.4,58.3L54.9,55.5L57.1,52.7L58.6,49.7L60,46.2L60.3,43.2L59.8,41.3L58,40.3L56,40.8Z" fill="var(--sumi)"/><path d="M41.8,44.1L43.5,47.6L45.9,52L47.6,54.6L49.4,57.2L51.4,59.7L54.9,63.7L56.4,65.3L58.9,67.4L61.5,69.4L64.3,71.3L66.2,72.3L67.5,72.8L69.5,72.9L70.3,72.6L71.1,72.3L71.4,72.1L71.6,71.7L72.1,70.6L72.2,70L71.4,68.5L71,68.1L69.5,67.4L68.8,67.2L68.1,67.1L67.4,66.9L66.4,66.9L65.8,66.7L65.3,66.5L63.6,65.5L59.4,62.8L56.3,60.3L54.8,58.9L53.4,57.4L50.6,54.4L49.4,52.9L46.5,48.8L44.4,45.6L43.1,43.2L42.6,43L42,43.2L41.7,43.7Z" fill="var(--sumi)"/></svg></span>
+      <span class="brand-name">KanjiKaku</span>
+    </a>
+    <div class="lang"><details><summary aria-label="Idioma / Language"><svg class="globo" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 2.6 4.2 5.6 4.2 9s-1.4 6.4-4.2 9c-2.8-2.6-4.2-5.6-4.2-9S9.2 5.6 12 3z"/></svg><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="3" height="1" fill="#CE1126"/></svg><span class="codigo">ID</span></summary>
+        <ul lang="id" aria-label="Bahasa Indonesia">
+          <li><a href="/credits/" hreflang="en" lang="en" aria-label="English"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#012169"/><path d="M0 0L3 2M3 0L0 2" stroke="#fff" stroke-width=".5"/><path d="M0 0L3 2M3 0L0 2" stroke="#C8102E" stroke-width=".2"/><path d="M1.5 0V2M0 1H3" stroke="#fff" stroke-width=".6"/><path d="M1.5 0V2M0 1H3" stroke="#C8102E" stroke-width=".35"/></svg><span>English</span></a></li>
+          <li><a href="/es/credits/" hreflang="es" lang="es" aria-label="Español"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#AA151B"/><rect y=".5" width="3" height="1" fill="#F1BF00"/></svg><span>Español</span></a></li>
+          <li><a href="/de/credits/" hreflang="de" lang="de" aria-label="Deutsch"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#000"/><rect y=".667" width="3" height=".667" fill="#D00"/><rect y="1.333" width="3" height=".667" fill="#FFCE00"/></svg><span>Deutsch</span></a></li>
+          <li><a href="/fr/credits/" hreflang="fr" lang="fr" aria-label="Français"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#0055A4"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#EF4135"/></svg><span>Français</span></a></li>
+          <li><a href="/it/credits/" hreflang="it" lang="it" aria-label="Italiano"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg><span>Italiano</span></a></li>
+          <li><a href="/pt/credits/" hreflang="pt" lang="pt" aria-label="Português"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#009C3B"/><polygon points="1.5,.22 2.75,1 1.5,1.78 .25,1" fill="#FFDF00"/><circle cx="1.5" cy="1" r=".42" fill="#002776"/></svg><span>Português</span></a></li>
+          <li><a href="/nl/credits/" hreflang="nl" lang="nl" aria-label="Nederlands"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#21468B"/><rect width="3" height="1.333" fill="#fff"/><rect width="3" height=".667" fill="#AE1C28"/></svg><span>Nederlands</span></a></li>
+          <li><a href="/sv/credits/" hreflang="sv" lang="sv" aria-label="Svenska"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#006AA7"/><rect x=".9" width=".4" height="2" fill="#FECC00"/><rect y=".8" width="3" height=".4" fill="#FECC00"/></svg><span>Svenska</span></a></li>
+          <li><a href="/pl/credits/" hreflang="pl" lang="pl" aria-label="Polski"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect y="1" width="3" height="1" fill="#DC143C"/></svg><span>Polski</span></a></li>
+          <li><a href="#" hreflang="id" lang="id" aria-label="Bahasa Indonesia" aria-current="page"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="3" height="1" fill="#CE1126"/></svg><span>Bahasa Indonesia</span></a></li>
+          <li><a href="/vi/credits/" hreflang="vi" lang="vi" aria-label="Tiếng Việt"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#DA251D"/><polygon points="1.5,.45 1.66,.93 2.16,.93 1.76,1.23 1.91,1.7 1.5,1.41 1.09,1.7 1.24,1.23 .84,.93 1.34,.93" fill="#FFFF00"/></svg><span>Tiếng Việt</span></a></li>
+          <li><a href="/ko/credits/" hreflang="ko" lang="ko" aria-label="한국어"><svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><g transform="translate(0.71 0.47) rotate(-56.3)" stroke="#000" stroke-width=".09"><line x1="-.25" x2=".25" y1="-0.16" y2="-0.16"/><line x1="-.25" x2=".25" y1="0" y2="0"/><line x1="-.25" x2=".25" y1="0.16" y2="0.16"/></g><g transform="translate(2.29 0.47) rotate(56.3)" stroke="#000" stroke-width=".09"><line x1="-.25" x2=".25" y1="-0.16" y2="-0.16" stroke-dasharray=".21 .08"/><line x1="-.25" x2=".25" y1="0" y2="0"/><line x1="-.25" x2=".25" y1="0.16" y2="0.16" stroke-dasharray=".21 .08"/></g><g transform="translate(0.71 1.53) rotate(56.3)" stroke="#000" stroke-width=".09"><line x1="-.25" x2=".25" y1="-0.16" y2="-0.16"/><line x1="-.25" x2=".25" y1="0" y2="0" stroke-dasharray=".21 .08"/><line x1="-.25" x2=".25" y1="0.16" y2="0.16"/></g><g transform="translate(2.29 1.53) rotate(-56.3)" stroke="#000" stroke-width=".09"><line x1="-.25" x2=".25" y1="-0.16" y2="-0.16" stroke-dasharray=".21 .08"/><line x1="-.25" x2=".25" y1="0" y2="0" stroke-dasharray=".21 .08"/><line x1="-.25" x2=".25" y1="0.16" y2="0.16" stroke-dasharray=".21 .08"/></g><circle cx="1.5" cy="1" r=".5" fill="#0047A0"/><path d="M1 1A.5.5 0 0 1 2 1A.25.25 0 0 0 1.5 1A.25.25 0 0 1 1 1Z" fill="#CD2E3A" transform="rotate(33.7 1.5 1)"/></svg><span>한국어</span></a></li>
+        </ul></details></div>
+  </header>
+</div>
+
+<!-- Álvaro, 29-oct-2026, por la sesión «Vídeos»: «quiero que dejes de poner los créditos en cada
+     descripción de cada vídeo. Eso está en nuestra web». Las descripciones enlazan aquí y sólo
+     nombran la voz (VOICEVOX pide nombrarla junto a la obra). La parte de la app es la pantalla
+     «Créditos y licencias» (CreditosScreen y licencias.ts): si cambia allí, se cambia aquí. -->
+<main class="frame">
+  <article>
+    <p class="label">KanjiKaku</p>
+    <h1>Kredit dan lisensi</h1>
+
+    <section>
+      <h2>Video</h2>
+      <p>Video KanjiKaku di YouTube, Instagram, dan TikTok memakai sumber-sumber ini, disesuaikan untuk tiap video.</p>
+      <ul class="fuentes">
+        <li><span>Goresan</span><b>KanjiVG</b> · © Ulrich Apel and contributors · <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></li>
+        <li><span>Kata dan arti</span><b>JMdict</b> · Electronic Dictionary Research and Development Group (EDRDG) · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></li>
+        <li><span>Contoh kalimat</span><b>Tatoeba</b> · Tatoeba contributors (incl. the Tanaka Corpus) · <a href="https://creativecommons.org/licenses/by/2.0/fr/">CC BY 2.0 FR</a></li>
+        <li><span>Asal-usul kanji</span><b>makemeahanzi</b> · Shaunak Kishore · <a href="https://www.gnu.org/licenses/lgpl-3.0.html">LGPL v3</a></li>
+        <li><span>Bacaan “sen” (せん)</span><b>Kanji alive</b> · Kanji alive · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li>
+        <li><span>Suara</span><b>VOICEVOX</b> · VOICEVOX:波音リツ · VOICEVOX:冥鳴ひまり · VOICEVOX:玄野武宏 · VOICEVOX:麒ヶ島宗麟 · <a href="https://voicevox.hiroshiba.jp/term/">VOICEVOX</a></li>
+        <li><span>Musik</span><b>KanjiKaku</b> · <i>Musik orisinal</i></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Aplikasi</h2>
+      <p>Goresan, cara baca, dan kamus berasal dari sumber-sumber bebas ini, yang disesuaikan untuk aplikasi.</p>
+      <ul class="fuentes">
+        <li><b>KanjiVG</b> · Ulrich Apel · <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></li>
+        <li><b>JMdict · KANJIDIC2</b> · EDRDG · <a href="https://www.edrdg.org/edrdg/licence.html">CC BY-SA 4.0</a></li>
+        <li><b>Kanji alive</b> · University of Chicago · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li>
+        <li><b>Kanjium</b> · mifunetoshiro · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></li>
+        <li><b>kanji-data</b> · David Gouveia · <a href="https://opensource.org/license/mit">MIT</a></li>
+        <li><b>jlpt-word-list · Tanos</b> · elzup · Jamie Sinclair · Jonathan Waller · <a href="https://opensource.org/license/mit">MIT</a> · <a href="http://www.tanos.co.uk/jlpt/sharing/">CC BY</a></li>
+        <li><b>makemeahanzi</b> · Shaunak Kishore · <a href="https://www.gnu.org/licenses/lgpl-3.0.html">LGPL v3</a></li>
+        <li><b>Unihan</b> · Unicode, Inc. · <a href="https://www.unicode.org/license.txt">Unicode License v3</a></li>
+        <li><b>Noto Sans JP</b> · Google · Adobe · <a href="https://openfontlicense.org/open-font-license-official-text/">OFL 1.1</a></li>
+        <li><b>BIZ UD Mincho</b> · Morisawa · <a href="https://openfontlicense.org/open-font-license-official-text/">OFL 1.1</a></li>
+        <li><b>Klee One</b> · Fontworks · <a href="https://openfontlicense.org/open-font-license-official-text/">OFL 1.1</a></li>
+        <li><b>Yuji Syuku</b> · Kinuta Font Factory · <a href="https://openfontlicense.org/open-font-license-official-text/">OFL 1.1</a></li>
+        <li><b>Leeds Internet Corpora</b> · Serge Sharoff · University of Leeds · <a href="https://creativecommons.org/licenses/by/2.5/">CC BY 2.5</a></li>
+        <li><b>Tatoeba</b> · Tatoeba · Corpus Tanaka · <a href="https://creativecommons.org/licenses/by/2.0/fr/">CC BY 2.0 FR</a></li>
+        <li><b>Wiktionary</b> · Wiktionary contributors · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></li>
+        <li><b>VOICEVOX</b> · VOICEVOX:波音リツ · VOICEVOX:冥鳴ひまり · VOICEVOX:WhiteCUL · VOICEVOX:玄野武宏 · VOICEVOX:麒ヶ島宗麟 · <a href="https://voicevox.hiroshiba.jp/term/">VOICEVOX</a></li>
+      </ul>
+      <p>Lima suara bacaan kanji: Keiko (波音リツ), Hana (冥鳴ひまり), Yuri (WhiteCUL), Riku (玄野武宏) dan Hiroshi (麒ヶ島宗麟).</p>
+      <p>Data turunan KanjiVG tetap berada di bawah CC BY-SA 3.0, dan data turunan KANJIDIC2, JMdict, dan Kanjium di bawah CC BY-SA 4.0.</p>
+    </section>
+
+    <section>
+      <h2>Contoh kalimat</h2>
+      <p>Dari 20.159 kalimat contoh, 12.498 berasal dari Tatoeba, proyek kolaboratif yang mencakup Korpus Tanaka. Kalimat-kalimat ini digunakan dengan lisensi CC BY 2.0 FR, dengan perubahan: dipilih sebagian, sebagian furigana dikoreksi, dan terjemahan ditambahkan.</p>
+      <p>Jika Tatoeba sudah memiliki terjemahan buatan manusia, terjemahan itulah yang digunakan (11 % dari terjemahan kalimat-kalimat ini). Sisanya dibuat dengan model AI (Claude).</p>
+      <p>7.661 kalimat lainnya milik aplikasi: ditulis oleh model AI (Gemini dan Claude), diperiksa oleh model lain, lalu sebuah program memeriksa tingkat kanji, apakah kata tersebut muncul dengan cara bacanya, serta furigananya. Kalimat-kalimat ini juga diterjemahkan dengan model AI. Belum diperiksa oleh penutur asli.</p>
+    </section>
+
+    <section>
+      <h2>Terjemahan dan teks lainnya</h2>
+      <p>Arti berasal dari JMdict dan KANJIDIC2 serta dari tabel sendiri. Arti yang belum ada dalam bahasa Spanyol dan arti dalam bahasa lain, kecuali bahasa Inggris, diterjemahkan dengan model AI (Gemini dan Claude), begitu pula teks antarmuka.</p>
+      <p>Asal-usul setiap kanji didasarkan pada makemeahanzi dan Unihan; sebuah model AI (Gemini) memeriksanya dan menulis beberapa penjelasan sejarah, lalu diterjemahkan dengan model AI.</p>
+      <p>Daftar lengkap lisensi, termasuk perangkat lunak di aplikasi, ada di dalam aplikasi: Pengaturan › Kredit dan lisensi.</p>
+    </section>
+
+    <p class="volver"><a href="../">← Kembali ke KanjiKaku</a></p>
+  </article>
+</main>
+
+<div class="frame">
+  <footer>
+    <span>© 2026 KanjiKaku</span>
+    <a href="../">Beranda</a>
+  </footer>
+</div>
+
+</body>
+</html>
