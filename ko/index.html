@@ -175,6 +175,14 @@ mark::before { content: ""; position: absolute; inset: .06em 0 -.02em 0; backgro
 .copia .sub { margin-inline: auto; }
 .copia .cartas { justify-content: center; text-align: left; }
 /* En el móvil, una carta bajo la otra y del mismo ancho: dos anchos distintos centrados parecen torcidos. */
+.tutoriales .cartas { display: grid; grid-template-columns: repeat(2, minmax(0, 380px)); justify-content: center; }
+.tutoriales .cartas li { display: flex; }
+.tutoriales a.carta { color: inherit; text-decoration: none; width: 100%; transition: transform .2s; }
+@media (max-width: 640px) { .tutoriales .cartas { grid-template-columns: minmax(0, 380px); } }
+.tutoriales a.carta:hover, .tutoriales a.carta:focus-visible { transform: translateY(-2px); }
+.tutoriales .tut-ingles { font-size: 12px; font-weight: 600; color: var(--suave); text-transform: uppercase; letter-spacing: .04em; margin-top: 2px; }
+.tutoriales .envoltura { text-align: center; }
+.tutoriales .dos { text-align: left; }
 @media (max-width: 640px) { .copia .cartas { flex-direction: column; align-items: center; } .copia .carta { width: min(100%, 340px); } }
 .copia .aclaracion { max-width: 40em; margin: 26px auto 0; font-size: 14px; color: var(--suave); text-wrap: pretty; }
 
@@ -633,6 +641,23 @@ footer a:hover { color: var(--oro); }
       <div class="visual">
         <div class="movil girado-d"><img src="/medios/ko/idiomas.webp" alt="" width="600" height="1017" loading="lazy"></div>
       </div>
+    </div>
+  </section>
+
+  <!-- ══ TUTORIALES ════════════════════════════════════════════ -->
+  <!-- Los enlaces pasan por /ir/video/ para contarlos; construir.mjs pone el
+       idioma y quita «En inglés» donde ya hay vídeo propio (tutoriales.json). -->
+  <section class="franja dia tutoriales" id="tutoriales" style="padding-top:0">
+    <div class="envoltura">
+      <p class="ceja"><span class="sello" aria-hidden="true">導</span><span>튜토리얼</span></p>
+      <h2><span>사용법을</span> <mark>영상으로</mark></h2>
+      <p class="sub">앱을 실제로 실행하며 소리와 함께 한 단계씩 보여 줍니다.</p>
+      <ul class="cartas en-fila">
+        <li><a class="carta" href="/ir/video/ruta/ko/" data-tut="ruta" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">道</span><span class="dos"><b>학습 경로 가져오기</b><small>교재나 강좌의 한자를 순서대로</small><small class="tut-ingles">영어 영상</small></span></a></li>
+        <li><a class="carta" href="/ir/video/baraja/ko/" data-tut="baraja" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">札</span><span class="dos"><b>덱을 처음부터 만들기</b><small>직접 고른 한자로</small><small class="tut-ingles">영어 영상</small></span></a></li>
+        <li><a class="carta" href="/ir/video/aprender/ko/" data-tut="aprender" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">学</span><span class="dos"><b>한자를 익히는 방법</b><small>한 세션 전체: 알아보기, 읽기, 쓰기</small><small class="tut-ingles">영어 영상</small></span></a></li>
+        <li><a class="carta" href="/ir/video/codigo/ko/" data-tut="codigo" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">鍵</span><span class="dos"><b>학교 코드 활성화하기</b><small>학교나 학원에서 코드를 받았다면</small><small class="tut-ingles">영어 영상</small></span></a></li>
+      </ul>
     </div>
   </section>
 
