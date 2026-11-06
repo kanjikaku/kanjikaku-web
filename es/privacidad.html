@@ -285,10 +285,10 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Política de privacidad</p>
     <h1>Política de privacidad de la aplicación KanjiKaku</h1>
-    <p class="fecha">Última actualización: 30 de octubre de 2026</p>
+    <p class="fecha">Última actualización: 6 de noviembre de 2026</p>
     
     <div class="resumen">
-      <p>En resumen: los datos de estudio permanecen en el dispositivo del usuario y, si este la tiene activada, en su propia copia de seguridad de iCloud o de Google. La aplicación no requiere cuenta, el desarrollador no opera ningún servidor que almacene información de los usuarios, y la aplicación no muestra publicidad ni realiza seguimiento.</p>
+      <p>En resumen: los datos de estudio permanecen en el dispositivo del usuario y, si este lo tiene activado, en su propia cuenta de iCloud, de Google o de Google Drive. La aplicación no requiere cuenta, el desarrollador no opera ningún servidor que almacene información de los usuarios, y la aplicación no muestra publicidad ni realiza seguimiento.</p>
                   <p>No obstante, determinadas funciones establecen conexiones de red con servicios de terceros. Los apartados siguientes enumeran de forma exhaustiva qué datos salen del dispositivo, a quién se transmiten, con qué finalidad y si su transmisión es opcional.</p>
     </div>
 
@@ -296,7 +296,8 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <h2>Datos almacenados y ubicación</h2>
       <p>Todos los datos de estudio —los kanji consultados, el grado de dominio registrado para cada uno, las barajas y las tandas, los ajustes de la aplicación y el historial de sesiones— se escriben en un archivo dentro de la propia aplicación, en el dispositivo del usuario.</p>
       <p>Dichos datos permanecen allí y no son accesibles para el desarrollador ni para terceros, con la salvedad descrita en el apartado «Informes de fallos». La desinstalación de la aplicación los elimina del dispositivo.</p>
-      <p>Copia de seguridad en la cuenta del usuario. En iOS, mientras la opción «Copia en iCloud» de los Ajustes de la aplicación esté activada, lo que ocurre por defecto, la aplicación guarda una copia comprimida de los datos de estudio y de los ajustes en el iCloud del propio usuario, que Apple almacena conforme a sus condiciones. En Android, si el usuario tiene activada la copia de seguridad de Google, el sistema incluye en ella el archivo de progreso de la aplicación. El desarrollador no tiene acceso a ninguna de las dos copias. Ambas se conservan tras la desinstalación y permiten recuperar el progreso al instalar de nuevo la aplicación.</p>
+      <p>Copia y sincronización en la cuenta del usuario. En iOS, mientras la opción «Copia en iCloud» de los Ajustes de la aplicación esté activada, lo que ocurre por defecto, la aplicación guarda una copia comprimida de los datos de estudio y de los ajustes en el iCloud del propio usuario, que Apple almacena conforme a sus condiciones, y combina con los suyos los datos de las copias guardadas por los demás dispositivos del usuario con la misma cuenta. En Android, si el usuario tiene activada la copia de seguridad de Google, el sistema incluye en ella el archivo de progreso de la aplicación; y, si el usuario activa la opción «Sincronizar con Google Drive», la aplicación procede del mismo modo que en iOS con la carpeta de datos de la aplicación de su Google Drive (supuesto 12 del apartado «Conexiones de red»). El desarrollador no tiene acceso a ninguna de estas copias. Se conservan tras la desinstalación y permiten recuperar el progreso al instalar de nuevo la aplicación.</p>
+      <p>Junto con los datos de estudio, cada dispositivo registra su nombre de modelo (por ejemplo, «Google Pixel 8» o «iPad») y los intervalos de tiempo en que se ha utilizado la aplicación. Estos datos viajan con las copias descritas y con las copias exportadas, y sirven únicamente para indicar al usuario, en los Ajustes, en qué dispositivo ha estudiado y de qué dispositivo proceden los datos combinados.</p>
                   <p>La aplicación mantiene además un registro local de la práctica de escritura: los trazos dibujados en los intentos fallidos y una línea de cifras por cada intento. El registro tiene un límite de 100 caracteres y 500 intentos, y las entradas más antiguas se descartan. Su única finalidad es permitir que el usuario lo remita voluntariamente al desarrollador; no se transmite de forma automática y puede eliminarse desde los Ajustes.</p>
     </section>
 
@@ -305,7 +306,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <ul>
         <li>No requiere cuenta ni registro. No solicita nombre, dirección de correo electrónico ni edad.</li>
         <li>El desarrollador no opera ningún servidor que albergue el progreso de los usuarios.</li>
-        <li>Las copias de seguridad de iCloud y de Google se guardan en la cuenta del usuario, no en la del desarrollador.</li>
+        <li>Las copias de iCloud, de Google y de Google Drive se guardan en la cuenta del usuario, no en la del desarrollador.</li>
                         <li>No muestra publicidad ni integra redes publicitarias.</li>
         <li>El desarrollador no realiza analítica ni seguimiento de uso, y la aplicación no utiliza identificadores publicitarios. Los componentes de terceros que remiten datos técnicos por su cuenta se identifican en el apartado «Conexiones de red».</li>
         <li>No se venden datos ni se ceden a terceros con fines publicitarios o comerciales.</li>
@@ -405,14 +406,22 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li><strong>Carácter.</strong> Automático, una sola vez y sólo en Android.</li>
       </ul>
       
-
-      <p class="base"><strong>Base jurídica.</strong> El interés legítimo del desarrollador en mantener la aplicación actualizada y operativa y en verificar las compras (supuestos 1 a 3); el consentimiento del usuario, en los informes de fallos (supuesto 4); y la solicitud del propio usuario al utilizar la función de que se trate (supuestos 5 a 10) y el interés legítimo del desarrollador en conocer el alcance de sus campañas (supuesto 11).</p>
+      <h3>12 · Sincronización con Google Drive (sólo Android)</h3>
+      <ul>
+        <li><strong>Cuándo.</strong> Sólo si el usuario activa la opción «Sincronizar con Google Drive» en los Ajustes de la aplicación: al abrirla y al volver a ella, para leer las copias de los demás dispositivos, y al salir de ella o al terminar una sesión, para guardar la del dispositivo. Para activarla, el usuario inicia sesión con su cuenta de Google en el diálogo del sistema.</li>
+        <li><strong>Datos que salen del dispositivo.</strong> Los datos de estudio y los ajustes, el nombre de modelo del dispositivo y los intervalos de uso descritos en el apartado «Datos almacenados y ubicación», además de la dirección IP y los datos técnicos ordinarios de toda conexión. La dirección de correo electrónico de la cuenta de Google se muestra en los Ajustes y se conserva únicamente en el dispositivo.</li>
+        <li><strong>Destinatario.</strong> Google LLC (Estados Unidos), que almacena la copia en el Google Drive del propio usuario conforme a sus condiciones y a su política de privacidad, disponible en <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a>. La aplicación solicita únicamente el permiso de acceso a su propia carpeta de datos, que no es visible para el usuario en Google Drive ni accesible para otras aplicaciones, y no accede a ningún otro archivo. El desarrollador no tiene acceso a dicha copia.</li>
+        <li><strong>Finalidad.</strong> Mantener el progreso del usuario al día entre sus dispositivos.</li>
+        <li><strong>Carácter.</strong> Opcional y desactivado por defecto. Puede desactivarse en cualquier momento desde los Ajustes; sin conexión, la aplicación funciona con normalidad.</li>
+      </ul>
+      
+      <p class="base"><strong>Base jurídica.</strong> El interés legítimo del desarrollador en mantener la aplicación actualizada y operativa y en verificar las compras (supuestos 1 a 3); el consentimiento del usuario, en los informes de fallos (supuesto 4); la solicitud del propio usuario al utilizar la función de que se trate (supuestos 5 a 10 y 12); y el interés legítimo del desarrollador en conocer el alcance de sus campañas (supuesto 11).</p>
                 </section>
 
     <section>
       <h2>Exportación e importación de una copia</h2>
       <p>El usuario puede exportar una copia de los datos de estudio en cualquier momento. La aplicación genera un archivo y lo entrega al diálogo de compartir del sistema operativo; su destino posterior lo determina únicamente el usuario y, a partir de ese momento, el archivo se rige por las condiciones del servicio al que se envíe. La aplicación no lo sube a ningún lugar.</p>
-      <p>La importación funciona a la inversa: el usuario selecciona un archivo y la aplicación lo lee y sustituye con su contenido los datos de estudio actuales. Sólo se lee el archivo expresamente seleccionado.</p>
+      <p>La importación funciona a la inversa: el usuario selecciona un archivo y la aplicación combina su contenido con los datos de estudio actuales, conservando de cada elemento el estudiado más recientemente, o bien, si el usuario así lo elige, sustituye estos por aquel. Sólo se lee el archivo expresamente seleccionado.</p>
           </section>
 
     <section>
@@ -466,7 +475,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
     <section>
       <h2>Derechos del interesado</h2>
       <p>Los datos de estudio residen en el dispositivo del usuario y bajo su control: pueden consultarse exportando una copia y suprimirse desde los ajustes de la aplicación o desinstalándola. Respecto de los informes de fallos y de la correspondencia, el usuario puede ejercer los derechos de acceso, rectificación, supresión, oposición y limitación del tratamiento dirigiéndose a la dirección de contacto; dado que los informes no contienen datos identificativos, puede ser necesario que indique la fecha aproximada del fallo para localizarlos. Respecto de los datos que Apple y Google tratan conforme a sus propias condiciones, los derechos se ejercen ante dichas entidades. El usuario tiene asimismo derecho a presentar una reclamación ante la autoridad de control en materia de protección de datos que corresponda.</p>
-      <p>La copia de iCloud se suprime con la opción «Borrar la copia de iCloud» de los Ajustes de la aplicación o desde los ajustes de iCloud del dispositivo; la copia de Google, desde los ajustes del sistema. La desinstalación de la aplicación no las suprime.</p>
+      <p>La copia de iCloud se suprime con la opción «Borrar la copia de iCloud» de los Ajustes de la aplicación o desde los ajustes de iCloud del dispositivo; la copia de Google, desde los ajustes del sistema; y la de Google Drive, desde los ajustes de Google Drive (Gestionar aplicaciones, opción «Eliminar datos ocultos de la aplicación») o retirando a la aplicación el acceso a la cuenta de Google. La desinstalación de la aplicación no las suprime.</p>
                 </section>
 
     <section>

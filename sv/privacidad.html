@@ -285,10 +285,10 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Integritetspolicy</p>
     <h1>Integritetspolicy för applikationen KanjiKaku</h1>
-    <p class="fecha">Senast uppdaterad: 30 oktober 2026</p>
+    <p class="fecha">Senast uppdaterad: 6 november 2026</p>
     
     <div class="resumen">
-      <p>Sammanfattningsvis: studiedata stannar på användarens enhet och, om användaren har aktiverat den, i användarens egen säkerhetskopia i iCloud eller hos Google. Applikationen kräver inget konto, utvecklaren driver ingen server som lagrar uppgifter om användarna, och applikationen visar ingen reklam och utför ingen spårning.</p>
+      <p>Sammanfattningsvis: studieuppgifterna stannar på användarens enhet och, om användaren har aktiverat det, i hens eget iCloud-, Google- eller Google Drive-konto. Appen kräver inget konto, utvecklaren driver ingen server som lagrar uppgifter om användarna, och appen visar ingen reklam och utför ingen spårning.</p>
                   <p>Vissa funktioner upprättar dock nätverksanslutningar till tredjepartstjänster. Avsnitten nedan anger uttömmande vilka uppgifter som lämnar enheten, till vem de överförs, i vilket syfte och om överföringen är frivillig.</p>
     </div>
 
@@ -296,7 +296,8 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <h2>Lagrade uppgifter och var de sparas</h2>
       <p>Alla studiedata – de kanji som studerats, den registrerade kunskapsnivån för var och en, kortlekar och omgångar, applikationsinställningar och sessionshistorik – skrivs till en fil i själva applikationen på användarens enhet.</p>
       <p>Dessa uppgifter stannar där och är inte tillgängliga för utvecklaren eller för tredje part, med det undantag som beskrivs i avsnittet ”Kraschrapporter”. Avinstallation av applikationen raderar dem från enheten.</p>
-      <p>Säkerhetskopia på användarens konto. På iOS sparar applikationen, så länge alternativet ”Säkerhetskopia i iCloud” i applikationens inställningar är aktiverat, vilket det är som standard, en komprimerad kopia av studiedata och inställningar i användarens egen iCloud, som Apple lagrar enligt sina egna villkor. På Android inkluderar systemet applikationens förloppsfil i Googles säkerhetskopia, om användaren har aktiverat den. Utvecklaren har inte tillgång till någon av kopiorna. Båda finns kvar efter avinstallation och gör det möjligt att återställa framstegen när applikationen installeras på nytt.</p>
+      <p>Säkerhetskopiering och synkronisering i användarens konto. På iOS sparar appen, så länge alternativet «Säkerhetskopia i iCloud» i appens Inställningar är aktiverat, vilket det är som standard, en komprimerad kopia av studieuppgifterna och inställningarna i användarens iCloud, som Apple lagrar enligt sina villkor, och slår ihop uppgifterna i de kopior som användarens övriga enheter med samma konto har sparat med sina egna. På Android inkluderar systemet, om användaren har aktiverat Googles säkerhetskopiering, appens framstegsfil i den; och om användaren aktiverar alternativet «Synka med Google Drive» gör appen på samma sätt som på iOS med appens datamapp i användarens Google Drive (fall 12 i avsnittet «Nätverksanslutningar»). Utvecklaren har inte tillgång till någon av dessa kopior. De finns kvar efter avinstallation och gör det möjligt att återfå framstegen när appen installeras på nytt.</p>
+      <p>Tillsammans med studieuppgifterna registrerar varje enhet sitt modellnamn (till exempel «Google Pixel 8» eller «iPad») och de tidsintervall då appen har använts. Dessa uppgifter följer med de beskrivna kopiorna och med exporterade kopior, och används enbart för att visa användaren, i Inställningar, på vilken enhet hen har studerat och från vilken enhet de sammanslagna uppgifterna kommer.</p>
                   <p>Applikationen för dessutom en lokal logg över handskriftsövningar: de drag som ritats vid misslyckade försök och en rad med siffror för varje försök. Loggen är begränsad till 100 tecken och 500 försök, och de äldsta posterna raderas efter hand. Dess enda syfte är att göra det möjligt för användaren att frivilligt skicka den till utvecklaren; den överförs aldrig automatiskt och kan raderas via Inställningar.</p>
     </section>
 
@@ -305,7 +306,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <ul>
         <li>Den kräver inget konto och ingen registrering. Den efterfrågar inte namn, e-postadress eller ålder.</li>
         <li>Utvecklaren driver ingen server som lagrar användarnas framsteg.</li>
-        <li>Säkerhetskopiorna i iCloud och hos Google lagras på användarens konto, inte på utvecklarens.</li>
+        <li>Kopiorna i iCloud, hos Google och i Google Drive sparas i användarens konto, inte i utvecklarens.</li>
                         <li>Den visar ingen reklam och integrerar inga annonsnätverk.</li>
         <li>Utvecklaren utför ingen analys eller spårning av användningen, och applikationen använder inga annonsidentifierare. Tredjepartskomponenter som på eget initiativ skickar tekniska uppgifter anges i avsnittet ”Nätverksanslutningar”.</li>
         <li>Inga uppgifter säljs eller lämnas ut till tredje part för reklam- eller kommersiella ändamål.</li>
@@ -405,14 +406,22 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li><strong>Karaktär.</strong> Automatisk, en enda gång och endast på Android.</li>
       </ul>
       
-
-      <p class="base"><strong>Rättslig grund.</strong> Utvecklarens berättigade intresse av att hålla applikationen uppdaterad och fungerande och av att kontrollera köp (fall 1–3); användarens samtycke när det gäller kraschrapporter (fall 4); samt användarens egen begäran när den aktuella funktionen används (fall 5–10) samt utvecklarens berättigade intresse av att känna till kampanjernas räckvidd (fall 11).</p>
+      <h3>12 · Synkronisering med Google Drive (endast Android)</h3>
+      <ul>
+        <li><strong>När.</strong> Endast om användaren aktiverar alternativet «Synka med Google Drive» i appens Inställningar: när appen öppnas och när användaren återvänder till den, för att läsa de övriga enheternas kopior, och när användaren lämnar den eller avslutar en session, för att spara enhetens kopia. För att aktivera alternativet loggar användaren in med sitt Google-konto i systemets dialogruta.</li>
+        <li><strong>Uppgifter som lämnar enheten.</strong> Studieuppgifterna och inställningarna, enhetens modellnamn och de användningsintervall som beskrivs i avsnittet «Lagrade uppgifter och var de sparas», samt IP-adressen och de vanliga tekniska uppgifterna i varje anslutning. E-postadressen till Google-kontot visas i Inställningar och sparas endast på enheten.</li>
+        <li><strong>Mottagare.</strong> Google LLC (USA), som lagrar kopian i användarens Google Drive enligt sina villkor och sin integritetspolicy, tillgänglig på <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a>. Appen begär endast behörighet att komma åt sin egen datamapp, som inte är synlig för användaren i Google Drive och inte är åtkomlig för andra appar, och kommer inte åt några andra filer. Utvecklaren har inte tillgång till kopian.</li>
+        <li><strong>Ändamål.</strong> Att hålla användarens framsteg uppdaterade mellan hens enheter.</li>
+        <li><strong>Karaktär.</strong> Frivilligt och avaktiverat som standard. Kan när som helst avaktiveras i Inställningar; utan anslutning fungerar appen som vanligt.</li>
+      </ul>
+      
+      <p class="base"><strong>Rättslig grund.</strong> Utvecklarens berättigade intresse av att hålla appen uppdaterad och fungerande och av att verifiera köp (fall 1–3); användarens samtycke, för kraschrapporter (fall 4); användarens egen begäran när hen använder den aktuella funktionen (fall 5–10 och 12); och utvecklarens berättigade intresse av att känna till räckvidden för sina kampanjer (fall 11).</p>
                 </section>
 
     <section>
       <h2>Export och import av en kopia</h2>
       <p>Användaren kan när som helst exportera en kopia av studiedata. Applikationen skapar en fil och skickar den till operativsystemets delningsruta; dess vidare destination avgörs uteslutande av användaren, och från och med den tidpunkten styrs filen av villkoren för den tjänst dit den skickas. Applikationen laddar inte upp den någonstans.</p>
-      <p>Import fungerar i omvänd ordning: användaren väljer en fil, och applikationen läser den och ersätter nuvarande studiedata med dess innehåll. Endast den uttryckligen valda filen läses.</p>
+      <p>Import fungerar omvänt: användaren väljer en fil och appen slår ihop dess innehåll med de aktuella studieuppgifterna och behåller för varje element det som studerats senast, eller ersätter, om användaren väljer det, de aktuella uppgifterna med filens. Endast den uttryckligen valda filen läses.</p>
           </section>
 
     <section>
@@ -466,7 +475,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
     <section>
       <h2>Den registrerades rättigheter</h2>
       <p>Studiedata finns på användarens enhet och under dennes kontroll: de kan granskas genom att en kopia exporteras och raderas i applikationens inställningar eller genom att applikationen avinstalleras. När det gäller kraschrapporter och korrespondens kan användaren utöva rätten till tillgång, rättelse, radering, invändning och begränsning av behandling genom att skriva till kontaktadressen; eftersom rapporterna inte innehåller identifierande uppgifter kan det vara nödvändigt att ange ungefärligt datum för felet för att hitta dem. När det gäller uppgifter som Apple och Google behandlar enligt sina egna villkor utövas rättigheterna gentemot dessa aktörer. Användaren har dessutom rätt att lämna in ett klagomål till behörig tillsynsmyndighet för dataskydd.</p>
-      <p>Säkerhetskopian i iCloud raderas med alternativet ”Ta bort säkerhetskopian i iCloud” i applikationens inställningar eller via enhetens iCloud-inställningar; Googles säkerhetskopia via systeminställningarna. Avinstallation av applikationen raderar dem inte.</p>
+      <p>Kopian i iCloud tas bort med alternativet «Ta bort säkerhetskopian i iCloud» i appens Inställningar eller i enhetens iCloud-inställningar; kopian hos Google i systeminställningarna; och kopian i Google Drive i inställningarna för Google Drive (Hantera appar, alternativet «Radera dolda appdata») eller genom att återkalla appens åtkomst till Google-kontot. Avinstallation av appen tar inte bort dem.</p>
                 </section>
 
     <section>

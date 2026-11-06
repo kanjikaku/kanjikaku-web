@@ -285,10 +285,10 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Kebijakan privasi</p>
     <h1>Kebijakan privasi untuk aplikasi KanjiKaku</h1>
-    <p class="fecha">Terakhir diperbarui: 30 Oktober 2026</p>
+    <p class="fecha">Terakhir diperbarui: 6 November 2026</p>
     
     <div class="resumen">
-      <p>Ringkasnya: data belajar tetap berada di perangkat pengguna dan, jika pengguna mengaktifkannya, di cadangan iCloud atau Google milik pengguna sendiri. Aplikasi tidak memerlukan akun, pengembang tidak mengoperasikan server apa pun yang menyimpan informasi pengguna, dan aplikasi tidak menampilkan iklan maupun melakukan pelacakan.</p>
+      <p>Ringkasnya: data belajar tetap berada di perangkat pengguna dan, jika pengguna mengaktifkannya, di akun iCloud, Google, atau Google Drive miliknya sendiri. Aplikasi tidak memerlukan akun, pengembang tidak mengoperasikan server apa pun yang menyimpan informasi pengguna, dan aplikasi tidak menampilkan iklan maupun melakukan pelacakan.</p>
                   <p>Namun, fungsi tertentu membuat koneksi jaringan dengan layanan pihak ketiga. Bagian-bagian berikut mencantumkan secara lengkap data apa yang keluar dari perangkat, kepada siapa data tersebut dikirimkan, untuk tujuan apa, dan apakah pengirimannya bersifat opsional.</p>
     </div>
 
@@ -296,7 +296,8 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <h2>Data yang disimpan dan lokasinya</h2>
       <p>Semua data pembelajaran — kanji yang dipelajari, tingkat penguasaan yang tercatat untuk setiap kanji, dek dan kelompok, pengaturan aplikasi, serta riwayat sesi — ditulis ke sebuah berkas di dalam aplikasi itu sendiri, di perangkat pengguna.</p>
       <p>Data tersebut tetap berada di sana dan tidak dapat diakses oleh pengembang maupun pihak ketiga, dengan pengecualian yang dijelaskan pada bagian "Laporan kerusakan". Menghapus instalasi aplikasi akan menghapus data tersebut dari perangkat.</p>
-      <p>Cadangan di akun pengguna. Di iOS, selama opsi "Cadangan di iCloud" di pengaturan aplikasi diaktifkan, yang merupakan setelan bawaan, aplikasi menyimpan salinan terkompresi dari data belajar dan pengaturan di iCloud milik pengguna sendiri, yang disimpan oleh Apple berdasarkan ketentuannya sendiri. Di Android, jika pengguna mengaktifkan cadangan Google, sistem menyertakan berkas progres aplikasi di dalamnya. Pengembang tidak memiliki akses ke salinan mana pun. Keduanya tetap tersimpan setelah aplikasi dihapus dan memungkinkan progres dipulihkan saat aplikasi dipasang kembali.</p>
+      <p>Cadangan dan sinkronisasi di akun pengguna. Di iOS, selama opsi «Cadangan di iCloud» di Pengaturan aplikasi aktif, yang merupakan setelan bawaan, aplikasi menyimpan salinan terkompresi dari data belajar dan pengaturan di iCloud milik pengguna, yang disimpan oleh Apple sesuai dengan ketentuannya, dan menggabungkan data dari salinan yang disimpan oleh perangkat lain milik pengguna dengan akun yang sama ke dalam datanya sendiri. Di Android, jika pengguna mengaktifkan cadangan Google, sistem menyertakan file kemajuan aplikasi di dalamnya; dan, jika pengguna mengaktifkan opsi «Sinkronkan dengan Google Drive», aplikasi melakukan hal yang sama seperti di iOS dengan folder data aplikasi di Google Drive miliknya (kasus 12 pada bagian «Koneksi jaringan»). Pengembang tidak memiliki akses ke salinan mana pun. Salinan tersebut tetap tersimpan setelah aplikasi dicopot dan memungkinkan kemajuan dipulihkan saat aplikasi dipasang kembali.</p>
+      <p>Bersama dengan data belajar, setiap perangkat mencatat nama modelnya (misalnya «Google Pixel 8» atau «iPad») dan rentang waktu penggunaan aplikasi. Data ini ikut dalam salinan yang dijelaskan dan dalam salinan yang diekspor, dan hanya digunakan untuk menunjukkan kepada pengguna, di Pengaturan, di perangkat mana ia belajar dan dari perangkat mana data yang digabungkan berasal.</p>
                   <p>Selain itu, aplikasi menyimpan catatan lokal mengenai latihan tulisan tangan: goresan yang dibuat pada percobaan yang gagal dan satu baris angka untuk setiap percobaan. Catatan ini dibatasi maksimal 100 karakter dan 500 percobaan, dan entri terlama akan dihapus. Satu-satunya tujuan catatan ini adalah agar pengguna dapat mengirimkannya secara sukarela kepada pengembang; data tidak pernah dikirimkan secara otomatis dan dapat dihapus dari Pengaturan.</p>
     </section>
 
@@ -305,7 +306,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <ul>
         <li>Aplikasi tidak memerlukan akun maupun pendaftaran. Aplikasi tidak meminta nama, alamat email, atau usia.</li>
         <li>Pengembang tidak mengoperasikan server mana pun yang menyimpan progres pengguna.</li>
-        <li>Cadangan iCloud dan Google disimpan di akun pengguna, bukan di akun pengembang.</li>
+        <li>Salinan di iCloud, Google, dan Google Drive disimpan di akun pengguna, bukan di akun pengembang.</li>
                         <li>Aplikasi tidak menampilkan iklan dan tidak mengintegrasikan jaringan iklan.</li>
         <li>Pengembang tidak melakukan analitik maupun pelacakan penggunaan, dan aplikasi tidak menggunakan pengenal iklan. Komponen pihak ketiga yang mengirimkan data teknis atas inisiatifnya sendiri disebutkan pada bagian "Koneksi jaringan".</li>
         <li>Tidak ada data yang dijual atau diserahkan kepada pihak ketiga untuk tujuan periklanan atau komersial.</li>
@@ -405,14 +406,22 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li><strong>Sifat.</strong> Otomatis, hanya sekali dan hanya di Android.</li>
       </ul>
       
-
-      <p class="base"><strong>Dasar hukum.</strong> Kepentingan sah pengembang untuk menjaga aplikasi tetap mutakhir dan berfungsi serta untuk memverifikasi pembelian (hal 1 sampai 3); persetujuan pengguna, untuk laporan kerusakan (hal 4); dan permintaan pengguna sendiri saat menggunakan fungsi yang bersangkutan (hal 5 sampai 10) serta kepentingan sah pengembang untuk mengetahui jangkauan kampanyenya (hal 11).</p>
+      <h3>12 · Sinkronisasi dengan Google Drive (hanya Android)</h3>
+      <ul>
+        <li><strong>Kapan.</strong> Hanya jika pengguna mengaktifkan opsi «Sinkronkan dengan Google Drive» di Pengaturan aplikasi: saat membuka dan kembali ke aplikasi, untuk membaca salinan dari perangkat lain, dan saat keluar dari aplikasi atau mengakhiri sesi, untuk menyimpan salinan perangkat tersebut. Untuk mengaktifkannya, pengguna masuk dengan akun Google-nya di dialog sistem.</li>
+        <li><strong>Data yang keluar dari perangkat.</strong> Data belajar dan pengaturan, nama model perangkat, dan rentang penggunaan yang dijelaskan di bagian «Data yang disimpan dan lokasinya», serta alamat IP dan data teknis umum dari setiap koneksi. Alamat email akun Google ditampilkan di Pengaturan dan hanya disimpan di perangkat.</li>
+        <li><strong>Penerima.</strong> Google LLC (Amerika Serikat), yang menyimpan salinan di Google Drive milik pengguna sesuai dengan ketentuan dan kebijakan privasinya, yang tersedia di <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a>. Aplikasi hanya meminta izin untuk mengakses folder datanya sendiri, yang tidak terlihat oleh pengguna di Google Drive dan tidak dapat diakses oleh aplikasi lain, serta tidak mengakses file lain apa pun. Pengembang tidak memiliki akses ke salinan tersebut.</li>
+        <li><strong>Tujuan.</strong> Menjaga agar kemajuan pengguna tetap mutakhir di semua perangkatnya.</li>
+        <li><strong>Sifat.</strong> Opsional dan nonaktif secara bawaan. Dapat dinonaktifkan kapan saja dari Pengaturan; tanpa koneksi, aplikasi berfungsi seperti biasa.</li>
+      </ul>
+      
+      <p class="base"><strong>Dasar hukum.</strong> Kepentingan sah pengembang untuk menjaga aplikasi tetap mutakhir dan berfungsi serta memverifikasi pembelian (kasus 1 sampai 3); persetujuan pengguna, untuk laporan kerusakan (kasus 4); permintaan pengguna sendiri saat menggunakan fungsi yang bersangkutan (kasus 5 sampai 10 dan 12); dan kepentingan sah pengembang untuk mengetahui jangkauan kampanyenya (kasus 11).</p>
                 </section>
 
     <section>
       <h2>Ekspor dan impor salinan</h2>
       <p>Pengguna dapat mengekspor salinan data pembelajaran kapan saja. Aplikasi membuat berkas dan meneruskannya ke dialog berbagi pada sistem operasi; tujuan berikutnya ditentukan sepenuhnya oleh pengguna, dan sejak saat itu berkas tersebut tunduk pada ketentuan layanan tujuan pengiriman. Aplikasi tidak mengunggahnya ke mana pun.</p>
-      <p>Proses impor bekerja secara terbalik: pengguna memilih sebuah berkas, dan aplikasi akan membaca serta mengganti data pembelajaran saat ini dengan isi berkas tersebut. Hanya berkas yang dipilih secara jelas yang akan dibaca.</p>
+      <p>Impor bekerja sebaliknya: pengguna memilih sebuah file dan aplikasi menggabungkan isinya dengan data belajar saat ini, dengan mempertahankan untuk setiap elemen versi yang paling akhir dipelajari, atau, jika pengguna memilihnya, mengganti data saat ini dengan isi file tersebut. Hanya file yang dipilih secara tegas yang dibaca.</p>
           </section>
 
     <section>
@@ -466,7 +475,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
     <section>
       <h2>Hak subjek data</h2>
       <p>Data belajar berada di perangkat pengguna dan di bawah kendalinya: data tersebut dapat dilihat dengan mengekspor salinan dan dihapus melalui pengaturan aplikasi atau dengan menghapus instalasi aplikasi. Terkait laporan kerusakan dan korespondensi, pengguna dapat menggunakan hak akses, perbaikan, penghapusan, keberatan, dan pembatasan pemrosesan dengan menghubungi alamat kontak; karena laporan tidak memuat data pengenal, mungkin perlu disebutkan perkiraan tanggal terjadinya kegagalan untuk menemukannya. Terkait data yang diproses Apple dan Google berdasarkan ketentuan mereka sendiri, hak-hak tersebut digunakan terhadap entitas tersebut. Pengguna juga berhak mengajukan pengaduan kepada otoritas pengawas pelindungan data yang berwenang.</p>
-      <p>Cadangan iCloud dihapus melalui opsi "Hapus cadangan iCloud" di pengaturan aplikasi atau melalui pengaturan iCloud perangkat; cadangan Google, melalui pengaturan sistem. Menghapus instalasi aplikasi tidak menghapus cadangan tersebut.</p>
+      <p>Salinan iCloud dihapus dengan opsi «Hapus cadangan iCloud» di Pengaturan aplikasi atau dari pengaturan iCloud perangkat; salinan Google, dari pengaturan sistem; dan salinan Google Drive, dari pengaturan Google Drive (Kelola aplikasi, opsi «Hapus data aplikasi tersembunyi») atau dengan mencabut akses aplikasi ke akun Google. Mencopot aplikasi tidak menghapusnya.</p>
                 </section>
 
     <section>
