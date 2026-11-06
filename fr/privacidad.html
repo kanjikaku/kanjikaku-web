@@ -288,27 +288,16 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
     <p class="fecha">Dernière mise à jour : 30 octobre 2026</p>
     
     <div class="resumen">
-      <!--si:antes-1.7.0-->
       <p>En résumé : les données d'étude restent sur l'appareil de l'utilisateur et, si celui-ci l'a activée, dans sa propre sauvegarde iCloud ou Google. L'application ne requiert aucun compte, le développeur n'exploite aucun serveur stockant des informations relatives aux utilisateurs, et l'application n'affiche aucune publicité et n'effectue aucun suivi.</p>
-      <!--/si:antes-1.7.0-->
-      <!--si:desde-1.7.0-->
-      <p>En résumé : les données d'étude restent sur l'appareil de l'utilisateur et, s'il l'a activé, dans son propre compte iCloud, Google ou Google Drive. L'application ne requiert pas de compte, le développeur n'exploite aucun serveur stockant des informations sur les utilisateurs, et l'application n'affiche pas de publicité ni n'effectue de suivi.</p>
-      <!--/si:desde-1.7.0-->
-            <p>Certaines fonctions établissent toutefois des connexions réseau avec des services tiers. Les sections ci-dessous énumèrent de manière exhaustive les données qui quittent l'appareil, leurs destinataires, leur finalité et le caractère facultatif ou non de leur transmission.</p>
+                  <p>Certaines fonctions établissent toutefois des connexions réseau avec des services tiers. Les sections ci-dessous énumèrent de manière exhaustive les données qui quittent l'appareil, leurs destinataires, leur finalité et le caractère facultatif ou non de leur transmission.</p>
     </div>
 
     <section>
       <h2>Données stockées et emplacement</h2>
       <p>Toutes les données d'apprentissage — les kanjis consultés, le niveau de maîtrise enregistré pour chacun d'eux, les paquets et les séries, les paramètres de l'application et l'historique des sessions — sont enregistrées dans un fichier au sein même de l'application, sur l'appareil de l'utilisateur.</p>
       <p>Ces données y demeurent et ne sont accessibles ni au développeur ni à des tiers, sous la réserve décrite à la section « Rapports de plantage ». La désinstallation de l'application les supprime de l'appareil.</p>
-      <!--si:antes-1.7.0-->
       <p>Sauvegarde dans le compte de l'utilisateur. Sur iOS, tant que l'option « Sauvegarde iCloud » des réglages de l'application est activée, ce qui est le cas par défaut, l'application enregistre une copie compressée des données d'étude et des réglages dans l'iCloud de l'utilisateur, qu'Apple conserve conformément à ses propres conditions. Sur Android, si l'utilisateur a activé la sauvegarde Google, le système y inclut le fichier de progression de l'application. Le développeur n'a accès à aucune de ces deux copies. Toutes deux sont conservées après la désinstallation et permettent de récupérer la progression lors d'une nouvelle installation de l'application.</p>
-      <!--/si:antes-1.7.0-->
-      <!--si:desde-1.7.0-->
-      <p>Sauvegarde et synchronisation dans le compte de l'utilisateur. Sur iOS, tant que l'option « Sauvegarde iCloud » des Réglages de l'application est activée, ce qui est le cas par défaut, l'application enregistre une copie compressée des données d'étude et des réglages dans l'iCloud de l'utilisateur, qu'Apple conserve conformément à ses conditions, et fusionne avec les siennes les données des copies enregistrées par les autres appareils de l'utilisateur disposant du même compte. Sur Android, si l'utilisateur a activé la sauvegarde Google, le système y inclut le fichier de progression de l'application ; et, si l'utilisateur active l'option « Synchroniser avec Google Drive », l'application procède comme sur iOS avec le dossier de données de l'application de son Google Drive (cas 12 de la section « Connexions réseau »). Le développeur n'a accès à aucune de ces copies. Elles sont conservées après la désinstallation et permettent de récupérer la progression lors d'une nouvelle installation.</p>
-      <p>Avec les données d'étude, chaque appareil enregistre son nom de modèle (par exemple « Google Pixel 8 » ou « iPad ») et les intervalles de temps pendant lesquels l'application a été utilisée. Ces données accompagnent les copies décrites et les copies exportées, et servent uniquement à indiquer à l'utilisateur, dans les Réglages, sur quel appareil il a étudié et de quel appareil proviennent les données fusionnées.</p>
-      <!--/si:desde-1.7.0-->
-            <p>L'application conserve en outre un journal local de la pratique de l'écriture : les traits tracés lors des tentatives infructueuses et une ligne de données chiffrées pour chaque tentative. Ce journal est limité à 100 caractères et 500 tentatives, les entrées les plus anciennes étant écrasées. Son unique finalité est de permettre à l'utilisateur de le transmettre volontairement au développeur ; il n'est jamais transmis automatiquement et peut être supprimé depuis les Paramètres.</p>
+                  <p>L'application conserve en outre un journal local de la pratique de l'écriture : les traits tracés lors des tentatives infructueuses et une ligne de données chiffrées pour chaque tentative. Ce journal est limité à 100 caractères et 500 tentatives, les entrées les plus anciennes étant écrasées. Son unique finalité est de permettre à l'utilisateur de le transmettre volontairement au développeur ; il n'est jamais transmis automatiquement et peut être supprimé depuis les Paramètres.</p>
     </section>
 
     <section>
@@ -316,13 +305,8 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       <ul>
         <li>Elle ne requiert aucun compte ni aucune inscription. Elle ne demande aucun nom, aucune adresse e-mail ni aucun âge.</li>
         <li>Le développeur n'exploite aucun serveur hébergeant la progression des utilisateurs.</li>
-        <!--si:antes-1.7.0-->
         <li>Les sauvegardes iCloud et Google sont stockées dans le compte de l'utilisateur, et non dans celui du développeur.</li>
-        <!--/si:antes-1.7.0-->
-        <!--si:desde-1.7.0-->
-        <li>Les copies iCloud, Google et Google Drive sont conservées dans le compte de l'utilisateur, et non dans celui du développeur.</li>
-        <!--/si:desde-1.7.0-->
-                <li>Elle n'affiche aucune publicité et n'intègre aucune régie publicitaire.</li>
+                        <li>Elle n'affiche aucune publicité et n'intègre aucune régie publicitaire.</li>
         <li>Le développeur n'effectue aucune analyse ni aucun suivi de l'utilisation, et l'application n'utilise aucun identifiant publicitaire. Les composants tiers qui transmettent de leur propre chef des données techniques sont identifiés à la section « Connexions réseau ».</li>
         <li>Aucune donnée n'est vendue ni cédée à des tiers à des fins publicitaires ou commerciales.</li>
       </ul>
@@ -422,13 +406,8 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
       </ul>
       
 
-      <!--si:antes-1.7.0-->
       <p class="base"><strong>Base juridique.</strong> L'intérêt légitime du développeur à maintenir l'application à jour et opérationnelle et à vérifier les achats (cas 1 à 3) ; le consentement de l'utilisateur, pour les rapports de plantage (cas 4) ; et la demande de l'utilisateur lui-même lorsqu'il utilise la fonction concernée (cas 5 à 10) ainsi que l'intérêt légitime du développeur à connaître la portée de ses campagnes (cas 11).</p>
-      <!--/si:antes-1.7.0-->
-      <!--si:desde-1.7.0-->
-      <p class="base"><strong>Base juridique.</strong> L'intérêt légitime du développeur à maintenir l'application à jour et opérationnelle et à vérifier les achats (cas 1 à 3) ; le consentement de l'utilisateur, pour les rapports de plantage (cas 4) ; la demande de l'utilisateur lui-même lorsqu'il utilise la fonction concernée (cas 5 à 10 et 12) ; et l'intérêt légitime du développeur à connaître la portée de ses campagnes (cas 11).</p>
-      <!--/si:desde-1.7.0-->
-          </section>
+                </section>
 
     <section>
       <h2>Exportation et importation d'une copie</h2>
@@ -487,13 +466,8 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
     <section>
       <h2>Droits de la personne concernée</h2>
       <p>Les données d'étude se trouvent sur l'appareil de l'utilisateur et sous son contrôle : elles peuvent être consultées en exportant une copie et supprimées depuis les réglages de l'application ou en la désinstallant. En ce qui concerne les rapports de plantage et la correspondance, l'utilisateur peut exercer ses droits d'accès, de rectification, d'effacement, d'opposition et de limitation du traitement en écrivant à l'adresse de contact ; les rapports ne contenant aucune donnée identifiante, il peut être nécessaire d'indiquer la date approximative de la défaillance afin de les retrouver. En ce qui concerne les données qu'Apple et Google traitent conformément à leurs propres conditions, ces droits s'exercent auprès de ces entités. L'utilisateur dispose en outre du droit d'introduire une réclamation auprès de l'autorité de contrôle compétente en matière de protection des données.</p>
-      <!--si:antes-1.7.0-->
       <p>La sauvegarde iCloud est supprimée au moyen de l'option « Supprimer la sauvegarde iCloud » des réglages de l'application ou depuis les réglages iCloud de l'appareil ; la sauvegarde Google, depuis les réglages du système. La désinstallation de l'application ne les supprime pas.</p>
-      <!--/si:antes-1.7.0-->
-      <!--si:desde-1.7.0-->
-      <p>La copie iCloud est supprimée avec l'option « Supprimer la sauvegarde iCloud » des Réglages de l'application ou depuis les réglages iCloud de l'appareil ; la copie Google, depuis les réglages du système ; et celle de Google Drive, depuis les paramètres de Google Drive (Gérer les applications, option « Supprimer les données d'application masquées ») ou en retirant à l'application l'accès au compte Google. La désinstallation de l'application ne les supprime pas.</p>
-      <!--/si:desde-1.7.0-->
-          </section>
+                </section>
 
     <section>
       <h2>Site web</h2>
