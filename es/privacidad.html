@@ -285,7 +285,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Política de privacidad</p>
     <h1>Política de privacidad de la aplicación KanjiKaku</h1>
-    <p class="fecha">Última actualización: 6 de noviembre de 2026</p>
+    <p class="fecha">Última actualización: 13 de noviembre de 2026</p>
     
     <div class="resumen">
       <p>En resumen: los datos de estudio permanecen en el dispositivo del usuario y, si este lo tiene activado, en su propia cuenta de iCloud, de Google o de Google Drive. La aplicación no requiere cuenta, el desarrollador no opera ningún servidor que almacene información de los usuarios, y la aplicación no muestra publicidad ni realiza seguimiento.</p>
@@ -386,12 +386,12 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li><strong>Carácter.</strong> Opcional. Sin descargar ninguna voz, las palabras y las frases suenan con las grabaciones incluidas en la aplicación y con la voz del sistema.</li>
       </ul>
 
-      <!-- Los códigos de centro (29-oct-2026): scripts/cloudflare/worker-codigos.js y src/services/codigosDeCentro.ts. -->
-      <h3>10 · Códigos de centro (sólo Android)</h3>
+      <!-- Los códigos de centro (29-oct-2026; en iOS desde la 1.9.0, 11-nov-2026): scripts/cloudflare/worker-codigos.js, src/services/codigosDeCentro.ts y cursoApple.ts. -->
+      <h3>10 · Códigos de centro</h3>
       <ul>
-        <li><strong>Cuándo.</strong> Cuando el usuario introduce un código facilitado por su centro de estudios y, mientras tenga uno guardado, en cada inicio de la aplicación, para comprobar que sigue vigente.</li>
-        <li><strong>Datos que salen del dispositivo.</strong> El código introducido y un identificador aleatorio de instalación generado por la aplicación, que no identifica al usuario, además de la dirección IP y los datos técnicos ordinarios de toda conexión. No se transmite ningún dato de estudio.</li>
-        <li><strong>Destinatario.</strong> Cloudflare, Inc. (Estados Unidos), que presta el servicio por cuenta del desarrollador. Por cada código se conservan, mientras el código exista, los identificadores de instalación que lo han utilizado y la fecha de la primera y de la última comprobación. La dirección IP sólo se utiliza, en forma de huella, para limitar los intentos fallidos, y se elimina en un plazo de veinticuatro horas.</li>
+        <li><strong>Cuándo.</strong> Cuando el usuario introduce un código facilitado por su centro de estudios y, mientras tenga uno guardado, en cada inicio de la aplicación, para comprobar que sigue vigente. En iOS, además, cuando el usuario canjea ese código en la App Store y cuando restaura sus compras.</li>
+        <li><strong>Datos que salen del dispositivo.</strong> El código introducido y un identificador aleatorio de instalación generado por la aplicación, que no identifica al usuario, además de la dirección IP y los datos técnicos ordinarios de toda conexión. En iOS, en lugar del identificador de instalación, el justificante de la compra gratuita que emite la App Store al canjear el código, firmado por Apple, que contiene los datos de esa transacción (su identificador, la fecha, el producto, la oferta y el país de la tienda) pero no el nombre, el correo electrónico ni otros datos de la cuenta de Apple. No se transmite ningún dato de estudio.</li>
+        <li><strong>Destinatario.</strong> Cloudflare, Inc. (Estados Unidos), que presta el servicio por cuenta del desarrollador. Por cada código se conservan, mientras el código exista, los identificadores de instalación o, en iOS, los identificadores de transacción de Apple que lo han utilizado, y la fecha de la primera y de la última comprobación; del justificante de compra no se conserva nada más. La dirección IP sólo se utiliza, en forma de huella, para limitar los intentos fallidos, y se elimina en un plazo de veinticuatro horas. En iOS, el canje del código lo realiza Apple Inc. conforme a su propia política de privacidad. Cloudflare deduce de la dirección IP el país desde el que se solicita la activación, que se utiliza para comprobar que el código puede activarse en él; cuando no puede, únicamente se suma uno al recuento diario de intentos procedentes de ese país para ese código, que se conserva durante noventa días y no contiene ningún dato que identifique al usuario.</li>
         <li><strong>Finalidad.</strong> Comprobar que el código existe, que no ha caducado y que le quedan plazas; contar cuántas instalaciones lo utilizan; y desbloquear el contenido hasta la fecha fijada para ese código.</li>
         <li><strong>Carácter.</strong> Opcional: sólo se produce si el usuario introduce un código.</li>
       </ul>

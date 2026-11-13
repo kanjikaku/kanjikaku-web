@@ -285,7 +285,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Privacybeleid</p>
     <h1>Privacybeleid voor de applicatie KanjiKaku</h1>
-    <p class="fecha">Laatst bijgewerkt: 6 november 2026</p>
+    <p class="fecha">Laatst bijgewerkt: 13 november 2026</p>
     
     <div class="resumen">
       <p>Samengevat: de studiegegevens blijven op het apparaat van de gebruiker en, als de gebruiker dit heeft ingeschakeld, in diens eigen iCloud-, Google- of Google Drive-account. De applicatie vereist geen account, de ontwikkelaar beheert geen server waarop gebruikersinformatie wordt opgeslagen, en de applicatie toont geen advertenties en volgt de gebruiker niet.</p>
@@ -386,12 +386,12 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li><strong>Aard.</strong> Optioneel. Zonder een stem te downloaden klinken woorden en zinnen met de opnamen die in de applicatie zijn opgenomen en met de systeemstem.</li>
       </ul>
 
-      <!-- Los códigos de centro (29-oct-2026): scripts/cloudflare/worker-codigos.js y src/services/codigosDeCentro.ts. -->
-      <h3>10 · Codes van onderwijsinstellingen (alleen Android)</h3>
+      <!-- Los códigos de centro (29-oct-2026; en iOS desde la 1.9.0, 11-nov-2026): scripts/cloudflare/worker-codigos.js, src/services/codigosDeCentro.ts y cursoApple.ts. -->
+      <h3>10 · Codes van onderwijsinstellingen</h3>
       <ul>
-        <li><strong>Wanneer.</strong> Wanneer de gebruiker een code invoert die door zijn onderwijsinstelling is verstrekt en, zolang er een is opgeslagen, bij elke start van de applicatie, om te controleren of die nog geldig is.</li>
-        <li><strong>Gegevens die het apparaat verlaten.</strong> De ingevoerde code en een willekeurige installatie-ID die door de applicatie wordt aangemaakt en de gebruiker niet identificeert, naast het IP-adres en de gebruikelijke technische gegevens van elke verbinding. Er worden geen studiegegevens verzonden.</li>
-        <li><strong>Ontvanger.</strong> Cloudflare, Inc. (Verenigde Staten), die de dienst namens de ontwikkelaar levert. Per code worden, zolang de code bestaat, de installatie-ID's die hem hebben gebruikt en de datum van de eerste en de laatste controle bewaard. Het IP-adres wordt uitsluitend in gehashte vorm gebruikt om mislukte pogingen te beperken en wordt binnen vierentwintig uur verwijderd.</li>
+        <li><strong>Wanneer.</strong> Wanneer de gebruiker een code invoert die door zijn onderwijsinstelling is verstrekt en, zolang er een is opgeslagen, bij elke start van de applicatie, om te controleren of die nog geldig is. Op iOS bovendien wanneer de gebruiker die code in de App Store inwisselt en wanneer hij zijn aankopen herstelt.</li>
+        <li><strong>Gegevens die het apparaat verlaten.</strong> De ingevoerde code en een willekeurige installatie-ID die door de applicatie wordt aangemaakt en de gebruiker niet identificeert, naast het IP-adres en de gebruikelijke technische gegevens van elke verbinding. Op iOS, in plaats van de installatie-ID, het bewijs van de gratis aankoop dat de App Store bij het inwisselen van de code afgeeft, ondertekend door Apple, met de gegevens van die transactie (de ID, de datum, het product, de aanbieding en het land van de winkel) maar zonder de naam, het e-mailadres of andere gegevens van de Apple-account. Er worden geen studiegegevens verzonden.</li>
+        <li><strong>Ontvanger.</strong> Cloudflare, Inc. (Verenigde Staten), die de dienst namens de ontwikkelaar levert. Per code worden, zolang de code bestaat, de installatie-ID's of, op iOS, de Apple-transactie-ID's die hem hebben gebruikt en de datum van de eerste en de laatste controle bewaard; van het aankoopbewijs wordt verder niets bewaard. Het IP-adres wordt uitsluitend in gehashte vorm gebruikt om mislukte pogingen te beperken en wordt binnen vierentwintig uur verwijderd. Op iOS wordt de code ingewisseld door Apple Inc., volgens zijn eigen privacybeleid. Cloudflare leidt uit het IP-adres het land af van waaruit de activering wordt aangevraagd; daarmee wordt gecontroleerd of de code daar mag worden geactiveerd. Is dat niet het geval, dan wordt uitsluitend de dagelijkse telling van pogingen uit dat land voor die code met één verhoogd; deze telling wordt negentig dagen bewaard en bevat geen gegevens waarmee de gebruiker kan worden geïdentificeerd.</li>
         <li><strong>Doel.</strong> Controleren of de code bestaat, niet is verlopen en nog plaatsen vrij heeft; tellen hoeveel installaties hem gebruiken; en de inhoud ontgrendelen tot de datum die voor die code is vastgesteld.</li>
         <li><strong>Aard.</strong> Optioneel: dit gebeurt alleen als de gebruiker een code invoert.</li>
       </ul>

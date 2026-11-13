@@ -285,7 +285,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Integritetspolicy</p>
     <h1>Integritetspolicy för applikationen KanjiKaku</h1>
-    <p class="fecha">Senast uppdaterad: 6 november 2026</p>
+    <p class="fecha">Senast uppdaterad: 13 november 2026</p>
     
     <div class="resumen">
       <p>Sammanfattningsvis: studieuppgifterna stannar på användarens enhet och, om användaren har aktiverat det, i hens eget iCloud-, Google- eller Google Drive-konto. Appen kräver inget konto, utvecklaren driver ingen server som lagrar uppgifter om användarna, och appen visar ingen reklam och utför ingen spårning.</p>
@@ -386,12 +386,12 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li><strong>Karaktär.</strong> Frivilligt. Utan nedladdade röster spelas ord och meningar upp med de inspelningar som ingår i applikationen och med systemets röst.</li>
       </ul>
 
-      <!-- Los códigos de centro (29-oct-2026): scripts/cloudflare/worker-codigos.js y src/services/codigosDeCentro.ts. -->
-      <h3>10 · Koder från utbildningsinstitutioner (endast Android)</h3>
+      <!-- Los códigos de centro (29-oct-2026; en iOS desde la 1.9.0, 11-nov-2026): scripts/cloudflare/worker-codigos.js, src/services/codigosDeCentro.ts y cursoApple.ts. -->
+      <h3>10 · Koder från utbildningsinstitutioner</h3>
       <ul>
-        <li><strong>När.</strong> När användaren anger en kod som tillhandahållits av hens utbildningsinstitution och, så länge en kod är sparad, vid varje start av applikationen, för att kontrollera att den fortfarande gäller.</li>
-        <li><strong>Uppgifter som lämnar enheten.</strong> Den angivna koden och en slumpmässig installationsidentifierare som skapas av applikationen och som inte identifierar användaren, samt IP-adressen och de sedvanliga tekniska uppgifterna för varje anslutning. Inga studieuppgifter överförs.</li>
-        <li><strong>Mottagare.</strong> Cloudflare, Inc. (USA), som tillhandahåller tjänsten för utvecklarens räkning. För varje kod sparas, så länge koden finns, de installationsidentifierare som har använt den samt datum för den första och den senaste kontrollen. IP-adressen används endast i hashad form för att begränsa misslyckade försök och raderas inom tjugofyra timmar.</li>
+        <li><strong>När.</strong> När användaren anger en kod som tillhandahållits av hens utbildningsinstitution och, så länge en kod är sparad, vid varje start av applikationen, för att kontrollera att den fortfarande gäller. På iOS dessutom när användaren löser in koden i App Store och när hen återställer sina köp.</li>
+        <li><strong>Uppgifter som lämnar enheten.</strong> Den angivna koden och en slumpmässig installationsidentifierare som skapas av applikationen och som inte identifierar användaren, samt IP-adressen och de sedvanliga tekniska uppgifterna för varje anslutning. På iOS, i stället för installationsidentifieraren, kvittot för det kostnadsfria köp som App Store utfärdar när koden löses in, signerat av Apple, som innehåller uppgifterna om transaktionen (dess identifierare, datum, produkt, erbjudande och butikens land) men inte namn, e-postadress eller andra uppgifter om Apple-kontot. Inga studieuppgifter överförs.</li>
+        <li><strong>Mottagare.</strong> Cloudflare, Inc. (USA), som tillhandahåller tjänsten för utvecklarens räkning. För varje kod sparas, så länge koden finns, de installationsidentifierare eller, på iOS, de Apple-transaktionsidentifierare som har använt den samt datum för den första och den senaste kontrollen; inget annat från köpkvittot sparas. IP-adressen används endast i hashad form för att begränsa misslyckade försök och raderas inom tjugofyra timmar. På iOS löses koden in av Apple Inc. enligt dess egen integritetspolicy. Cloudflare härleder från IP-adressen det land från vilket aktiveringen begärs, vilket används för att kontrollera att koden får aktiveras där. Om den inte får det ökas enbart den dagliga räkningen av försök från det landet för den koden med ett; räkningen sparas i nittio dagar och innehåller inga uppgifter som identifierar användaren.</li>
         <li><strong>Ändamål.</strong> Att kontrollera att koden finns, inte har gått ut och har platser kvar; att räkna hur många installationer som använder den; och att låsa upp innehållet till och med det datum som fastställts för koden.</li>
         <li><strong>Karaktär.</strong> Frivillig: sker endast om användaren anger en kod.</li>
       </ul>

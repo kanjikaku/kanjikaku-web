@@ -14,10 +14,10 @@
     "publicada": true
   },
   "ios": {
-    "build": 61,
-    "version": "1.8.0",
+    "build": 63,
+    "version": "1.9.0",
     "tienda": "https://apps.apple.com/app/id6808606696",
     "publicada": true
   },
-  "privacidad_actualizada": "2026-11-06"
+  "privacidad_actualizada": "2026-11-13"
 }

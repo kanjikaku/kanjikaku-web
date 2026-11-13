@@ -285,7 +285,7 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
   <article>
     <p class="label">Politique de confidentialité</p>
     <h1>Politique de confidentialité de l'application KanjiKaku</h1>
-    <p class="fecha">Dernière mise à jour : 6 novembre 2026</p>
+    <p class="fecha">Dernière mise à jour : 13 novembre 2026</p>
     
     <div class="resumen">
       <p>En résumé : les données d'étude restent sur l'appareil de l'utilisateur et, s'il l'a activé, dans son propre compte iCloud, Google ou Google Drive. L'application ne requiert pas de compte, le développeur n'exploite aucun serveur stockant des informations sur les utilisateurs, et l'application n'affiche pas de publicité ni n'effectue de suivi.</p>
@@ -386,12 +386,12 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li><strong>Caractère.</strong> Facultatif. Sans télécharger de voix, les mots et les phrases sont lus avec les enregistrements inclus dans l’application et avec la voix du système.</li>
       </ul>
 
-      <!-- Los códigos de centro (29-oct-2026): scripts/cloudflare/worker-codigos.js y src/services/codigosDeCentro.ts. -->
-      <h3>10 · Codes d'établissement (Android uniquement)</h3>
+      <!-- Los códigos de centro (29-oct-2026; en iOS desde la 1.9.0, 11-nov-2026): scripts/cloudflare/worker-codigos.js, src/services/codigosDeCentro.ts y cursoApple.ts. -->
+      <h3>10 · Codes d'établissement</h3>
       <ul>
-        <li><strong>Quand.</strong> Lorsque l'utilisateur saisit un code fourni par son établissement d'enseignement et, tant qu'un code est enregistré, à chaque démarrage de l'application, afin de vérifier qu'il est toujours valide.</li>
-        <li><strong>Données quittant l’appareil.</strong> Le code saisi et un identifiant d'installation aléatoire généré par l'application, qui n'identifie pas l'utilisateur, ainsi que l'adresse IP et les données techniques ordinaires de toute connexion. Aucune donnée d'étude n'est transmise.</li>
-        <li><strong>Destinataire.</strong> Cloudflare, Inc. (États-Unis), qui fournit le service pour le compte du développeur. Pour chaque code sont conservés, tant que le code existe, les identifiants d'installation qui l'ont utilisé ainsi que la date de la première et de la dernière vérification. L'adresse IP n'est utilisée que sous forme d'empreinte, afin de limiter les tentatives infructueuses, et elle est supprimée dans un délai de vingt-quatre heures.</li>
+        <li><strong>Quand.</strong> Lorsque l'utilisateur saisit un code fourni par son établissement d'enseignement et, tant qu'un code est enregistré, à chaque démarrage de l'application, afin de vérifier qu'il est toujours valide. Sur iOS, également lorsque l'utilisateur utilise ce code dans l'App Store et lorsqu'il restaure ses achats.</li>
+        <li><strong>Données quittant l’appareil.</strong> Le code saisi et un identifiant d'installation aléatoire généré par l'application, qui n'identifie pas l'utilisateur, ainsi que l'adresse IP et les données techniques ordinaires de toute connexion. Sur iOS, à la place de l'identifiant d'installation, le justificatif de l'achat gratuit que l'App Store émet lors de l'utilisation du code, signé par Apple, qui contient les données de cette transaction (son identifiant, la date, le produit, l'offre et le pays de la boutique) mais ni le nom, ni l'adresse e-mail, ni aucune autre donnée du compte Apple. Aucune donnée d'étude n'est transmise.</li>
+        <li><strong>Destinataire.</strong> Cloudflare, Inc. (États-Unis), qui fournit le service pour le compte du développeur. Pour chaque code sont conservés, tant que le code existe, les identifiants d'installation ou, sur iOS, les identifiants de transaction Apple qui l'ont utilisé, ainsi que la date de la première et de la dernière vérification ; rien d'autre n'est conservé du justificatif d'achat. L'adresse IP n'est utilisée que sous forme d'empreinte, afin de limiter les tentatives infructueuses, et elle est supprimée dans un délai de vingt-quatre heures. Sur iOS, l'utilisation du code est effectuée par Apple Inc. conformément à sa propre politique de confidentialité. Cloudflare déduit de l'adresse IP le pays depuis lequel l'activation est demandée, ce qui permet de vérifier que le code peut y être activé ; dans le cas contraire, seul le décompte quotidien des tentatives en provenance de ce pays pour ce code est incrémenté d'une unité. Ce décompte est conservé pendant quatre-vingt-dix jours et ne contient aucune donnée permettant d'identifier l'utilisateur.</li>
         <li><strong>Finalité.</strong> Vérifier que le code existe, qu'il n'a pas expiré et qu'il reste des places ; compter le nombre d'installations qui l'utilisent ; et débloquer le contenu jusqu'à la date fixée pour ce code.</li>
         <li><strong>Caractère.</strong> Facultatif : cela ne se produit que si l'utilisateur saisit un code.</li>
       </ul>
