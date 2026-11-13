@@ -386,12 +386,12 @@ article a[href^="http"]:hover, article a[href^="mailto"]:hover { color: var(--sh
         <li><strong>Caráter.</strong> Opcional. Sem baixar nenhuma voz, as palavras e as frases tocam com as gravações incluídas no aplicativo e com a voz do sistema.</li>
       </ul>
 
-      <!-- Los códigos de centro (29-oct-2026; en iOS desde la 1.9.0, 11-nov-2026): scripts/cloudflare/worker-codigos.js, src/services/codigosDeCentro.ts y cursoApple.ts. -->
-      <h3>10 · Códigos da instituição</h3>
+      <!-- Los códigos de centro (29-oct-2026): scripts/cloudflare/worker-codigos.js y src/services/codigosDeCentro.ts. -->
+      <h3>10 · Códigos da instituição (só Android)</h3>
       <ul>
-        <li><strong>Quando.</strong> Quando o usuário insere um código fornecido pela sua instituição de ensino e, enquanto houver um guardado, a cada início do aplicativo, para verificar se continua válido. No iOS, também quando o usuário resgata esse código na App Store e quando restaura suas compras.</li>
-        <li><strong>Dados que saem do dispositivo.</strong> O código inserido e um identificador aleatório de instalação gerado pelo aplicativo, que não identifica o usuário, além do endereço IP e dos dados técnicos comuns de qualquer conexão. No iOS, em vez do identificador de instalação, o comprovante da compra gratuita que a App Store emite ao resgatar o código, assinado pela Apple, que contém os dados dessa transação (seu identificador, a data, o produto, a oferta e o país da loja), mas não o nome, o endereço de e-mail nem outros dados da conta Apple. Nenhum dado de estudo é transmitido.</li>
-        <li><strong>Destinatário.</strong> Cloudflare, Inc. (Estados Unidos), que presta o serviço em nome do desenvolvedor. Para cada código são conservados, enquanto o código existir, os identificadores de instalação ou, no iOS, os identificadores de transação da Apple que o utilizaram, e a data da primeira e da última verificação; do comprovante de compra não se conserva mais nada. O endereço IP é usado apenas na forma de hash, para limitar as tentativas malsucedidas, e é eliminado em até vinte e quatro horas. No iOS, o resgate do código é realizado pela Apple Inc. de acordo com sua própria política de privacidade.</li>
+        <li><strong>Quando.</strong> Quando o usuário insere um código fornecido pela sua instituição de ensino e, enquanto houver um guardado, a cada início do aplicativo, para verificar se continua válido.</li>
+        <li><strong>Dados que saem do dispositivo.</strong> O código inserido e um identificador aleatório de instalação gerado pelo aplicativo, que não identifica o usuário, além do endereço IP e dos dados técnicos comuns de qualquer conexão. Nenhum dado de estudo é transmitido.</li>
+        <li><strong>Destinatário.</strong> Cloudflare, Inc. (Estados Unidos), que presta o serviço em nome do desenvolvedor. Para cada código são conservados, enquanto o código existir, os identificadores de instalação que o utilizaram e a data da primeira e da última verificação. O endereço IP é usado apenas na forma de hash, para limitar as tentativas malsucedidas, e é eliminado em até vinte e quatro horas.</li>
         <li><strong>Finalidade.</strong> Verificar se o código existe, se não expirou e se ainda tem vagas; contar quantas instalações o utilizam; e desbloquear o conteúdo até a data fixada para esse código.</li>
         <li><strong>Caráter.</strong> Opcional: só ocorre se o usuário inserir um código.</li>
       </ul>
