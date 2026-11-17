@@ -180,6 +180,14 @@ mark::before { content: ""; position: absolute; inset: .06em 0 -.02em 0; backgro
 .tutoriales a.carta { color: inherit; text-decoration: none; width: 100%; transition: transform .2s; }
 @media (max-width: 640px) { .tutoriales .cartas { grid-template-columns: minmax(0, 380px); } }
 .tutoriales a.carta:hover, .tutoriales a.carta:focus-visible { transform: translateY(-2px); }
+/* Que se vea que son vídeos (16-nov-2026; Álvaro: «que se vea que son links a vídeos»): el triángulo de play y
+   la duración, a la derecha de cada tarjeta. */
+.tutoriales .tut-video { margin-left: auto; padding-left: 12px; display: flex; flex-direction: column; align-items: center; gap: 3px; flex-shrink: 0; }
+.tutoriales .tut-play { width: 36px; height: 36px; border-radius: 50%; background: var(--hanko); display: grid; place-items: center; box-shadow: 0 6px 14px -8px rgba(0,0,0,.5); }
+.tutoriales .tut-play svg { width: 14px; height: 14px; margin-left: 2px; fill: var(--sobre-hanko); }
+.tutoriales .tut-dura { font-size: 12px; font-weight: 600; color: var(--suave); font-variant-numeric: tabular-nums; }
+.tutoriales a.carta:hover .tut-play, .tutoriales a.carta:focus-visible .tut-play { transform: scale(1.08); }
+.tutoriales .tut-play { transition: transform .2s; }
 .tutoriales .tut-ingles { font-size: 12px; font-weight: 600; color: var(--suave); text-transform: uppercase; letter-spacing: .04em; margin-top: 2px; }
 .tutoriales .envoltura { text-align: center; }
 .tutoriales .dos { text-align: left; }
@@ -420,6 +428,7 @@ footer a:hover { color: var(--oro); }
     </div>
   </section>
 
+
   <!-- ══ TRES FORMAS DE APRENDER (1.4.0) ═══════════════════════ -->
   <section class="franja dia formas" id="formas" style="padding-top:0">
     <div class="agua" style="left:-8%;top:4%" aria-hidden="true">学</div>
@@ -441,6 +450,7 @@ footer a:hover { color: var(--oro); }
     </div>
   </section>
   
+
   <!-- ══ EL CAMINO: 字 a pincel, un trazo por ejercicio ════════ -->
   <section class="franja dia camino" id="camino" style="padding-top:0" data-camino>
     <div class="camino-pista"><div class="envoltura camino-escena">
@@ -487,9 +497,11 @@ footer a:hover { color: var(--oro); }
           <li class="carta"><span class="sello" aria-hidden="true">向</span><span>Kierunek każdej kreski</span></li>
           <li class="carta"><span class="sello" aria-hidden="true">似</span><span>Podobne kanji</span></li>
           <li class="carta"><span class="sello" aria-hidden="true">部</span><span>Źle umieszczone radykały</span></li>
+
           <li class="carta"><span class="sello" aria-hidden="true">余</span><span>Dodatkowe kreski</span></li>
           <li class="carta"><span class="sello naranja" aria-hidden="true">寛</span><span>Większy margines, gdy kanji ci nie wychodzi</span></li>
-                  </ul>
+          
+        </ul>
       </div>
       <div class="visual">
         <div class="pareja">
@@ -647,19 +659,23 @@ footer a:hover { color: var(--oro); }
   <!-- ══ TUTORIALES ════════════════════════════════════════════ -->
   <!-- Los enlaces pasan por /ir/video/ para contarlos; construir.mjs pone el
        idioma y quita «En inglés» donde ya hay vídeo propio (tutoriales.json). -->
+  <!-- Los nuevos, con voz (16-nov-2026; Álvaro: «cambia la web para añadir estos tutoriales… que haya un
+       espacio para ellos»; «esos tutoriales [los viejos] ya dejamos de linkarlos en nuestra web»). El vídeo de
+       la portada sigue siendo el anuncio. Los viejos conservan sus /ir/video/ (ver «antiguos» en tutoriales.json). -->
   <section class="franja dia tutoriales" id="tutoriales" style="padding-top:0">
     <div class="envoltura">
       <p class="ceja"><span class="sello" aria-hidden="true">導</span><span>Poradniki</span></p>
       <h2><span>Naucz się z niej korzystać</span> <mark>na wideo</mark></h2>
-      <p class="sub">Krok po kroku, z działającą aplikacją i jej dźwiękiem.</p>
+      <p class="sub">Krok po kroku, z głosem i działającą aplikacją.</p>
       <ul class="cartas en-fila">
-        <li><a class="carta" href="/ir/video/ruta/pl/" data-tut="ruta" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">道</span><span class="dos"><b>Import ścieżki nauki</b><small>Kanji z twojego podręcznika lub kursu, w ich kolejności</small><small class="tut-ingles">Po angielsku</small></span></a></li>
-        <li><a class="carta" href="/ir/video/baraja/pl/" data-tut="baraja" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">札</span><span class="dos"><b>Tworzenie talii od zera</b><small>Z wybranymi przez ciebie kanji</small><small class="tut-ingles">Po angielsku</small></span></a></li>
-        <li><a class="carta" href="/ir/video/aprender/pl/" data-tut="aprender" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">学</span><span class="dos"><b>Jak uczy się kanji</b><small>Pełna sesja: rozpoznawanie, czytanie i pisanie</small><small class="tut-ingles">Po angielsku</small></span></a></li>
-        <li><a class="carta" href="/ir/video/codigo/pl/" data-tut="codigo" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">鍵</span><span class="dos"><b>Aktywacja kodu twojej szkoły</b><small>Jeśli szkoła lub szkoła językowa dała ci kod</small><small class="tut-ingles">Po angielsku</small></span></a></li>
+        <li><a class="carta" href="/ir/video/crearbaraja/pl/" data-tut="crearbaraja" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">札</span><span class="dos"><b>Stwórz własną talię kanji</b><small>Z wybranymi przez ciebie kanji, krok po kroku</small><small class="tut-ingles">Po angielsku</small></span><span class="tut-video" aria-hidden="true"><span class="tut-play"><svg viewBox="0 0 12 14"><path d="M0 0 12 7 0 14z"/></svg></span><span class="tut-dura">2:05</span></span></a></li>
+        <li><a class="carta" href="/ir/video/importarbaraja/pl/" data-tut="importarbaraja" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">受</span><span class="dos"><b>Zaimportuj talię swojego nauczyciela</b><small>I dopasuj ją do tego, czego się uczysz</small><small class="tut-ingles">Po angielsku</small></span><span class="tut-video" aria-hidden="true"><span class="tut-play"><svg viewBox="0 0 12 14"><path d="M0 0 12 7 0 14z"/></svg></span><span class="tut-dura">1:51</span></span></a></li>
+        <li><a class="carta" href="/ir/video/sesion/pl/" data-tut="sesion" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">学</span><span class="dos"><b>Pełna sesja ćwiczeń</b><small>Rozpoznawanie, czytanie i pisanie, od początku do końca</small><small class="tut-ingles">Po angielsku</small></span><span class="tut-video" aria-hidden="true"><span class="tut-play"><svg viewBox="0 0 12 14"><path d="M0 0 12 7 0 14z"/></svg></span><span class="tut-dura">7:45</span></span></a></li>
+        <li><a class="carta" href="/ir/video/sesioncorta/pl/" data-tut="sesioncorta" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">速</span><span class="dos"><b>Sesja w 4 minuty</b><small>Najważniejsze w skrócie</small><small class="tut-ingles">Po angielsku</small></span><span class="tut-video" aria-hidden="true"><span class="tut-play"><svg viewBox="0 0 12 14"><path d="M0 0 12 7 0 14z"/></svg></span><span class="tut-dura">3:50</span></span></a></li>
       </ul>
     </div>
   </section>
+
 
   <!-- ══ COPIA EN LA NUBE (1.4.0) ══════════════════════════════ -->
   <!-- Lo que hace de verdad (docs/COPIA-EN-LA-NUBE.md): en iOS, el iCloud del
@@ -679,13 +695,17 @@ footer a:hover { color: var(--oro); }
     </div>
   </section>
   
+
   <!-- ══ TENERLA ═══════════════════════════════════════════════ -->
   <section class="franja noche tenerla" id="tenerla">
     <div class="envoltura">
       <img class="icono" src="/medios/icono.png" alt="" width="120" height="120" loading="lazy">
+
+
       <p class="eyebrow">Już dostępna</p>
       <h2>Pobierz ją za darmo</h2>
       <p class="sub">Pierwsze 50 kanji jest za darmo, bez limitu czasu. Jednorazowa płatność odblokowuje pozostałe kanji i słownictwo oraz przykładowe zdania.</p>
+
       <div class="botones">
         <a class="insignia android" href="/ir/play/pl/" data-tienda="android" rel="noopener"><img src="/insignias/google-play-pl.png" alt="Google Play" height="72"></a>
         <a class="insignia ios" href="/ir/appstore/pl/" data-tienda="ios" rel="noopener"><img src="/insignias/app-store-pl.svg" alt="App Store" height="48"></a>
