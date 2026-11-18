@@ -5,9 +5,35 @@
     "SÓLO pone el nombre. El precio rebajado se pone en App Store Connect (calendario de precios del producto) y en Play Console (oferta del producto): la app enseña y cobra siempre el precio que le da la tienda. Por eso todas nacen con activa: false; se pone true cuando el precio ya está rebajado en las consolas para esas fechas.",
     "Si dos activas coinciden en fecha gana la primera de la lista. Para añadir otra: copiar un bloque y cambiar id, fechas y nombres. El −XX % del nombre es texto: cámbialo a la vez que el descuento de las consolas.",
     "Se publica con: node web/construir.mjs && node web/publicar.mjs \"mensaje\". La app lo ve en cuanto GitHub Pages refresca (un minuto).",
-    "launch70 (15-oct-2026): activa del 15-oct al 14-nov en las dos tiendas (calendario de Apple hasta el 15-nov y oferta lanzamiento-70 de Play hasta el 14-nov a las 23:00 UTC). Apagarla aquí si se cancela la rebaja en las consolas."
+    "launch70 (15-oct-2026): activa del 15-oct al 14-nov en las dos tiendas (calendario de Apple hasta el 15-nov y oferta lanzamiento-70 de Play hasta el 14-nov a las 23:00 UTC). Apagarla aquí si se cancela la rebaja en las consolas.",
+    "blackfriday (aprobada el 18-nov-2026): la rebaja del lunes 23 al lunes 30-nov en las dos tiendas. Encendida el 18-nov-2026, con los precios ya programados: Apple, calendario de kanjikaku.contenido del 23-nov al 1-dic (fin excluido; el resto de países, automáticos desde España); Play, la oferta black-friday sobre «permanente», del 22-nov 23:00 UTC al 30-nov 23:00 UTC, en 174 países. Sin «−XX %» en el nombre: la normativa europea pide que el precio anterior de una rebaja sea el más bajo de los 30 días previos, y hasta el 15-nov fue el de lanzamiento. Desde la 1.10.0 sale también en «Avisos» del menú, a quien no ha comprado (avisoDeOferta.ts)."
   ],
   "ofertas": [
+    {
+      "id": "blackfriday",
+      "activa": true,
+      "desde": "2026-11-23",
+      "hasta": "2026-11-30",
+      "tiendas": [
+        "ios",
+        "android"
+      ],
+      "nombre": {
+        "es": "Black Friday",
+        "en": "Black Friday",
+        "de": "Black Friday",
+        "fr": "Black Friday",
+        "it": "Black Friday",
+        "pt": "Black Friday",
+        "pt-PT": "Black Friday",
+        "nl": "Black Friday",
+        "sv": "Black Friday",
+        "pl": "Black Friday",
+        "ind": "Black Friday",
+        "vi": "Black Friday",
+        "ko": "블랙 프라이데이"
+      }
+    },
     {
       "id": "launch70",
       "activa": true,
