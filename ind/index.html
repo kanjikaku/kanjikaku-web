@@ -60,7 +60,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 
 /* El desplegable de idioma: lo genera `construir.mjs` como enlaces dentro de un <details>. */
 .lang { position: relative; }
-.lang details > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--borde); border-radius: 999px; padding: 4px 10px 4px 8px; color: var(--tinta-suave); font-size: 12px; font-weight: 600; }
+.lang details > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--borde); border-radius: 999px; padding: 4px 10px 4px 8px; color: var(--tinta-suave); font-size: 12px; font-weight: 600; letter-spacing: .08em; }
 .lang details > summary::-webkit-details-marker { display: none; }
 .lang details > summary:hover, .lang details[open] > summary { color: var(--tinta); border-color: var(--tinta); }
 .lang .globo { width: 16px; height: 16px; }
@@ -94,7 +94,7 @@ mark::before { content: ""; position: absolute; inset: .06em 0 -.02em 0; backgro
 /* ── El móvil ──────────────────────────────────────────────────── */
 .movil { position: relative; width: min(330px, 74vw); aspect-ratio: 600 / 1017; padding: 9px; border-radius: 46px; background: #1C1A17; box-shadow: 0 50px 90px -30px rgba(20,12,4,.55), 0 20px 40px -20px rgba(20,12,4,.35), inset 0 0 0 2px #3A3630; }
 .movil::after { content: ""; position: absolute; left: 50%; top: 13px; width: 16%; height: 5px; margin-left: -8%; border-radius: 99px; background: rgba(255,255,255,.14); }
-.movil > img, .movil > video { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 37px; background: var(--sumi); }
+.movil > img, .movil > video, .movil > .partida { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 37px; background: #000; }
 .visual { position: relative; display: flex; justify-content: center; align-items: center; min-height: 420px; }
 .inclinado { transform: perspective(1800px) rotateY(-14deg) rotateX(5deg) rotateZ(-4deg); }
 .girado-d { transform: rotate(3deg); } .girado-i { transform: rotate(-3deg); }
@@ -135,7 +135,7 @@ mark::before { content: ""; position: absolute; inset: .06em 0 -.02em 0; backgro
 .icono-sello { position: absolute; top: 4%; right: 6%; width: 86px; transform: rotate(8deg); mix-blend-mode: multiply; }
 
 /* La frase del profesor, entre la portada y el resto. */
-.cita { text-align: center; padding-bottom: clamp(56px, 7vw, 96px); }
+.cita { text-align: center; padding-block: clamp(64px, 8vw, 110px); }
 .lema { font: 800 clamp(34px, 4.8vw, 64px)/1.1 var(--texto); letter-spacing: -.03em; margin: 0; }
 .lema em { font-style: normal; color: var(--rojo-t); }
 .atribucion { color: var(--suave); margin: 18px 0 0; font-size: 16px; }
@@ -144,7 +144,7 @@ mark::before { content: ""; position: absolute; inset: .06em 0 -.02em 0; backgro
 .pareja { display: flex; justify-content: center; align-items: flex-start; }
 /* El anuncio: una miniatura y, al pulsar, el vídeo de YouTube (antes no se carga nada de YouTube). */
 .anuncio-caja { max-width: 960px; margin: 34px auto 0; }
-.anuncio { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 0; border-radius: 22px; overflow: hidden; cursor: pointer; background: var(--sumi); box-shadow: 0 40px 80px -34px rgba(20,12,4,.55); }
+.anuncio { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 0; border-radius: 22px; overflow: hidden; cursor: pointer; background: #000; box-shadow: 0 40px 80px -34px rgba(20,12,4,.55); }
 .anuncio img, .anuncio iframe { display: block; width: 100%; height: 100%; object-fit: cover; border: 0; }
 .anuncio .reproducir { position: absolute; right: 3.5%; bottom: 6%; width: clamp(56px, 8vw, 92px); aspect-ratio: 1; border-radius: 50%; background: #C8102E; box-shadow: 0 12px 30px rgba(0,0,0,.35); transition: transform .2s; }
 .anuncio .reproducir::after { content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-35%, -50%); border-style: solid; border-width: .9em 0 .9em 1.4em; font-size: clamp(11px, 1.6vw, 18px); border-color: transparent transparent transparent #FBF8F1; }
@@ -161,6 +161,8 @@ mark::before { content: ""; position: absolute; inset: .06em 0 -.02em 0; backgro
 .carta .dos { display: flex; flex-direction: column; line-height: 1.25; }
 .carta .dos small { font-size: 14px; font-weight: 400; color: var(--suave); }
 .modos .carta { min-width: min(100%, 300px); }
+.formas .sub + .cartas { margin-top: 30px; }
+.formas .podcast { margin-top: 30px; }
 /* El clip del podcast va tal cual (ya lleva su teléfono dibujado): en vertical, sin marco de móvil. */
 .clip { width: min(300px, 70vw); aspect-ratio: 9 / 16; border-radius: 26px; overflow: hidden; background: #1C1A17; box-shadow: 0 50px 90px -30px rgba(20,12,4,.55), 0 20px 40px -20px rgba(20,12,4,.35); }
 .clip video { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -168,6 +170,8 @@ mark::before { content: ""; position: absolute; inset: .06em 0 -.02em 0; backgro
 .sello.naranja { background: var(--naranja); }
 
 /* ── Copia en la nube (1.4.0) ──────────────────────────────────── */
+.copia { text-align: center; padding-bottom: 0; }
+.copia .ceja { justify-content: center; }
 .copia .sub { margin-inline: auto; }
 .copia .cartas { justify-content: center; text-align: left; }
 /* En el móvil, una carta bajo la otra y del mismo ancho: dos anchos distintos centrados parecen torcidos. */
@@ -184,7 +188,7 @@ mark::before { content: ""; position: absolute; inset: .06em 0 -.02em 0; backgro
 .tutoriales .tut-dura { font-size: 12px; font-weight: 600; color: var(--suave); font-variant-numeric: tabular-nums; }
 .tutoriales a.carta:hover .tut-play, .tutoriales a.carta:focus-visible .tut-play { transform: scale(1.08); }
 .tutoriales .tut-play { transition: transform .2s; }
-.tutoriales .tut-ingles { font-size: 12px; font-weight: 600; color: var(--suave); margin-top: 2px; }
+.tutoriales .tut-ingles { font-size: 12px; font-weight: 600; color: var(--suave); text-transform: uppercase; letter-spacing: .04em; margin-top: 2px; }
 .tutoriales .envoltura { text-align: center; }
 .tutoriales .dos { text-align: left; }
 @media (max-width: 640px) { .copia .cartas { flex-direction: column; align-items: center; } .copia .carta { width: min(100%, 340px); } }
@@ -222,6 +226,19 @@ mark::before { content: ""; position: absolute; inset: .06em 0 -.02em 0; backgro
 .curva text { font: 600 13px var(--texto); fill: var(--claro-suave); }
 
 /* ── Día y noche ───────────────────────────────────────────────── */
+.partida-franja { background: linear-gradient(168deg, var(--washi) 0 56%, var(--sumi) 56% 100%); }
+.partida-franja .cabecera-centro { text-align: center; max-width: 820px; margin: 0 auto; }
+.partida-franja .cabecera-centro .ceja { justify-content: center; }
+.partida-franja .sub { margin-inline: auto; }
+.partida { position: relative; overflow: hidden; }
+.partida img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.partida img + img { clip-path: polygon(0 62%, 100% 44%, 100% 100%, 0 100%); }
+.partida-franja .visual { margin-top: 56px; }
+.partida-franja .carta { position: absolute; z-index: 4; }
+.partida-franja .carta.de-dia { left: calc(50% - 300px); top: 22%; }
+.partida-franja .carta.de-noche { right: calc(50% - 300px); top: 62%; background: var(--sumi-carta); color: var(--claro); border-color: var(--borde-noche); }
+@media (max-width: 700px) { .partida-franja .carta.de-dia { left: 2%; } .partida-franja .carta.de-noche { right: 2%; } }
+
 /* ── Idiomas ───────────────────────────────────────────────────── */
 .idiomas-lista { display: flex; flex-wrap: wrap; gap: 10px; margin: 34px 0 0; padding: 0; list-style: none; }
 .idiomas-lista a { display: inline-block; text-decoration: none; background: var(--carta); border: 1.5px solid var(--linea); border-radius: 12px; padding: 9px 15px; font-weight: 600; box-shadow: 0 10px 20px -14px rgba(60,40,20,.45); }
@@ -229,19 +246,6 @@ mark::before { content: ""; position: absolute; inset: .06em 0 -.02em 0; backgro
 .idiomas-lista li:nth-child(odd) a { transform: rotate(-1.5deg); } .idiomas-lista li:nth-child(even) a { transform: rotate(1.5deg); }
 
 /* ── Tenerla ───────────────────────────────────────────────────── */
-/* Paso 2 (20-nov-2026): las secciones que se juntaron llevan su segundo bloque con un h3, que separa
-   más por arriba que por abajo. */
-.sub-titulo { margin: clamp(72px, 9vw, 120px) 0 0; font-size: clamp(28px, 3.2vw, 44px); font-weight: 800; letter-spacing: -.03em; line-height: 1.08; text-wrap: balance; }
-.sub-titulo + .sub { margin-top: 16px; }
-.sub.junto { margin-top: 10px; }
-.tutoriales .sub { margin-inline: auto; }
-.repaso .curva text { fill: var(--suave); }
-.repaso .modos { margin-top: 30px; }
-.repaso .podcast { margin-top: 22px; }
-.copia { text-align: center; }
-.tenerla .idiomas .sub-titulo { margin-top: clamp(56px, 7vw, 88px); }
-.tenerla .idiomas-lista { justify-content: center; max-width: 760px; margin-inline: auto; }
-.tenerla .idiomas-lista a { color: var(--claro); }
 .tenerla { text-align: center; }
 .tenerla .sub { margin-inline: auto; }
 .tenerla .botones { justify-content: center; }
@@ -260,7 +264,7 @@ mark::before { content: ""; position: absolute; inset: .06em 0 -.02em 0; backgro
 
 footer { background: var(--sumi-carta); color: var(--claro-suave); padding-block: 32px; font-size: 14px; }
 footer .envoltura { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-footer nav { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-left: auto; }
+footer nav { display: flex; gap: 20px; margin-left: auto; }
 footer a { color: var(--claro); text-decoration: none; }
 footer a:hover { color: var(--oro); }
 
@@ -391,6 +395,7 @@ footer a:hover { color: var(--oro); }
     <div class="agua" style="right:-8%;top:10%" aria-hidden="true">書</div>
     <div class="envoltura fila">
       <div>
+        <p class="ceja"><span class="sello" aria-hidden="true">書</span><span>Menulis</span></p>
         <h1><span>Tulis kanji</span> <mark>goresan demi goresan</mark></h1>
         <p class="lead">Aplikasi belajar yang membuatmu menggambar kanji dengan jari, goresan demi goresan dan dengan urutan yang benar. Aplikasi ini menunjukkan dari apa kanji itu terbentuk, dan memperingatkanmu saat kamu tertukar antara dua kanji yang mirip.</p>
         <div class="botones">
@@ -408,13 +413,11 @@ footer a:hover { color: var(--oro); }
     </div>
   </section>
 
-  <!-- ══ 2 · EN MARCHA: el anuncio y los tutoriales ═══════════
-       Paso 2 de la auditoría Hallmark/Impeccable (20-nov-2026): de 16 secciones a 8. Se juntan los dos
-       bloques de vídeo; los tutoriales enlazan por /ir/video/ (construir.mjs pone el idioma y quita
-       «En inglés» donde ya hay vídeo propio, tutoriales.json). -->
-  <section class="franja dia tutoriales" id="anuncio" style="padding-top:0">
+  <!-- ══ EL ANUNCIO ════════════════════════════════════════════ -->
+  <section class="franja dia" id="anuncio" style="padding-top:0">
     <div class="envoltura">
-      <h2><span>Aplikasinya,</span> <span>dalam 92 detik</span></h2>
+      <p class="ceja"><span class="sello" aria-hidden="true">映</span><span>Video</span></p>
+      <h2><span>Aplikasinya,</span> <mark>dalam 92 detik</mark></h2>
       <div class="anuncio-caja">
         <button class="anuncio" type="button" data-yt="9xRpTTS8hug" aria-label="Tonton video di YouTube">
           <img src="/medios/ind/anuncio.webp" alt="" width="1280" height="720" loading="lazy">
@@ -422,22 +425,38 @@ footer a:hover { color: var(--oro); }
         </button>
         <p class="anuncio-nota">Video dimuat dari YouTube saat kamu mengetuknya.</p>
       </div>
-      <h3 class="sub-titulo"><span>Belajar memakainya</span> <span>lewat video</span></h3>
-      <p class="sub">Langkah demi langkah, dengan suara dan aplikasi yang berjalan.</p>
-      <ul class="cartas en-fila">
-        <li><a class="carta" href="/ir/video/crearbaraja/ind/" data-tut="crearbaraja" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">札</span><span class="dos"><b>Buat dek kanji milikmu sendiri</b><small>Dengan kanji yang kamu pilih, langkah demi langkah</small><small class="tut-ingles">Dalam bahasa Inggris</small></span><span class="tut-video" aria-hidden="true"><span class="tut-play"><svg viewBox="0 0 12 14"><path d="M0 0 12 7 0 14z"/></svg></span><span class="tut-dura">2:05</span></span></a></li>
-        <li><a class="carta" href="/ir/video/importarbaraja/ind/" data-tut="importarbaraja" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">受</span><span class="dos"><b>Impor dek dari gurumu</b><small>Lalu sesuaikan dengan yang kamu pelajari</small><small class="tut-ingles">Dalam bahasa Inggris</small></span><span class="tut-video" aria-hidden="true"><span class="tut-play"><svg viewBox="0 0 12 14"><path d="M0 0 12 7 0 14z"/></svg></span><span class="tut-dura">1:51</span></span></a></li>
-        <li><a class="carta" href="/ir/video/sesion/ind/" data-tut="sesion" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">学</span><span class="dos"><b>Satu sesi latihan lengkap</b><small>Mengenali, membaca, dan menulis, dari awal sampai akhir</small><small class="tut-ingles">Dalam bahasa Inggris</small></span><span class="tut-video" aria-hidden="true"><span class="tut-play"><svg viewBox="0 0 12 14"><path d="M0 0 12 7 0 14z"/></svg></span><span class="tut-dura">7:45</span></span></a></li>
-        <li><a class="carta" href="/ir/video/sesioncorta/ind/" data-tut="sesioncorta" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">速</span><span class="dos"><b>Satu sesi dalam 4 menit</b><small>Intinya, sekilas pandang</small><small class="tut-ingles">Dalam bahasa Inggris</small></span><span class="tut-video" aria-hidden="true"><span class="tut-play"><svg viewBox="0 0 12 14"><path d="M0 0 12 7 0 14z"/></svg></span><span class="tut-dura">3:50</span></span></a></li>
-      </ul>
     </div>
   </section>
+
+
+  <!-- ══ TRES FORMAS DE APRENDER (1.4.0) ═══════════════════════ -->
+  <section class="franja dia formas" id="formas" style="padding-top:0">
+    <div class="agua" style="left:-8%;top:4%" aria-hidden="true">学</div>
+    <div class="envoltura fila invertida">
+      <div>
+        <p class="ceja"><span class="sello" aria-hidden="true">学</span><span>Tiga cara</span></p>
+        <h2><span>Tiga cara belajar,</span> <mark>berdampingan</mark></h2>
+        <p class="sub">Gunakan bersama atau terpisah.</p>
+        <ul class="cartas modos">
+          <li class="carta"><span class="sello" aria-hidden="true">書</span><span class="dos"><b>Latihan</b><small>dengan menulis tangan</small></span></li>
+          <li class="carta"><span class="sello" aria-hidden="true">札</span><span class="dos"><b>Kartu hafalan</b><small>untuk mengulang sesuai ritmemu</small></span></li>
+          <li class="carta"><span class="sello" aria-hidden="true">聴</span><span class="dos"><b>Podcast</b><small>untuk didengarkan tanpa melihat</small></span></li>
+        </ul>
+        <p class="sub podcast">Dengan mode podcast, kosakata diputar dalam bahasa Jepang dan bahasamu tanpa perlu melihat layar: di mobil, di tempat gym, atau saat berjalan. Tetap berbunyi saat layar terkunci.</p>
+      </div>
+      <div class="visual">
+        <div class="clip girado-d"><video src="/medios/ind/podcast.mp4" poster="/medios/ind/podcast.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Video: mode podcast"></video></div>
+      </div>
+    </div>
+  </section>
+  
 
   <!-- ══ EL CAMINO: 字 a pincel, un trazo por ejercicio ════════ -->
   <section class="franja dia camino" id="camino" style="padding-top:0" data-camino>
     <div class="camino-pista"><div class="envoltura camino-escena">
       <div class="ji-texto">
-        <h2><span>Enam latihan,</span> <span>satu jalan</span></h2>
+        <p class="ceja"><span class="sello" aria-hidden="true">道</span><span>Latihan</span></p>
+        <h2><span>Enam latihan,</span> <mark>satu jalan</mark></h2>
         <p class="sub">字 ditulis dengan enam goresan, dan setiap kanji melewati enam latihan: dari pertama kali kamu melihatnya sampai kamu menulisnya dari ingatan.</p>
       </div>
       <div class="ji" aria-hidden="true">
@@ -458,66 +477,66 @@ footer a:hover { color: var(--oro); }
     </div></div>
   </section>
 
-  <!-- ══ 4 · CORRECCIÓN, con la frase del profesor delante ════ -->
-  <section class="franja noche" id="correccion">
-    <div class="agua" style="left:-10%;top:18%" aria-hidden="true">正</div>
+  <!-- ══ La frase del profesor ═════════════════════════════════ -->
+  <section class="franja noche cita">
     <div class="envoltura">
-      <div class="cita">
-        <p class="lema">Pikiran <em>mengingat</em><br>apa yang tangan tulis.</p>
-        <p class="atribucion">Hal yang selalu diulang oleh guru bahasa Jepang saya, kelas demi kelas.</p>
-      </div>
-      <div class="fila">
-        <div>
-          <h2><span>Goresan terbalik?</span> <span>Aplikasi mendeteksinya.</span></h2>
+      <p class="lema">Pikiran <em>mengingat</em><br>apa yang tangan tulis.</p>
+      <p class="atribucion">Hal yang selalu diulang oleh guru bahasa Jepang saya, kelas demi kelas.</p>
+    </div>
+  </section>
+
+  <!-- ══ CORRECCIÓN ════════════════════════════════════════════ -->
+  <section class="franja noche" id="correccion" style="padding-top:0">
+    <div class="agua" style="left:-10%;top:18%" aria-hidden="true">正</div>
+    <div class="envoltura fila">
+      <div>
+        <p class="ceja"><span class="sello" aria-hidden="true">正</span><span>Koreksi</span></p>
+        <h2><span>Goresan terbalik?</span> <mark>Aplikasi mendeteksinya.</mark></h2>
         <ul class="cartas">
           <li class="carta"><span class="sello" aria-hidden="true">順</span><span>Urutan goresan</span></li>
           <li class="carta"><span class="sello" aria-hidden="true">向</span><span>Arah setiap goresan</span></li>
           <li class="carta"><span class="sello" aria-hidden="true">似</span><span>Kanji yang mirip</span></li>
           <li class="carta"><span class="sello" aria-hidden="true">部</span><span>Radikal yang salah tempat</span></li>
+
           <li class="carta"><span class="sello" aria-hidden="true">余</span><span>Goresan berlebih</span></li>
           <li class="carta"><span class="sello naranja" aria-hidden="true">寛</span><span>Lebih longgar untuk kanji yang sulit</span></li>
-                  </ul>
-        </div>
-        <div class="visual">
-          <div class="pareja">
-            <div class="movil"><img src="/medios/ind/correccion.webp" alt="" width="600" height="1017" loading="lazy"></div>
-            <div class="movil"><video src="/medios/ind/escritura.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Video: aplikasi mengoreksi kanji yang ditulis seperti kanji lain"></video></div>
-          </div>
+          
+        </ul>
+      </div>
+      <div class="visual">
+        <div class="pareja">
+          <div class="movil"><img src="/medios/ind/correccion.webp" alt="" width="600" height="1017" loading="lazy"></div>
+          <div class="movil"><video src="/medios/ind/escritura.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Video: aplikasi mengoreksi kanji yang ditulis seperti kanji lain"></video></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ 5 · DEL RADICAL A LA FRASE (origen, biblioteca y vocabulario) ══ -->
-  <section class="franja dia" id="vocabulario">
-    <div class="agua" style="right:-6%;top:6%" aria-hidden="true">会</div>
+  <!-- ══ ORIGEN ════════════════════════════════════════════════ -->
+  <section class="franja dia" id="origen">
     <div class="envoltura fila invertida">
       <div>
-        <h2><span>Dari radikal</span> <span>hingga kalimat</span></h2>
+        <p class="ceja"><span class="sello" aria-hidden="true">源</span><span>Asal-usul</span></p>
+        <h2><span>Pelajari</span> <mark>dari mana setiap kanji</mark> <span>berasal</span></h2>
         <div class="formula" aria-hidden="true">
           <span class="pieza"><b>亻</b><small>orang</small></span><span class="op">+</span>
           <span class="pieza"><b>木</b><small>pohon</small></span><span class="op">=</span>
           <span class="pieza rojo"><b>休</b><small>istirahat</small></span>
         </div>
-        <p class="sub">2.141 kanji, dengan tingkat JLPT, radikal, dan cara bacanya.</p>
-        <p class="sub junto">Hampir 20.000 kata dan lebih dari 19.000 kalimat contoh.</p>
       </div>
       <div class="visual">
-        <div class="escalera">
-          <div class="paso"><span class="carta"><span class="sello" aria-hidden="true">会</span><span>Kanji</span></span><div class="movil"><img src="/medios/ind/kanji.webp" alt="" width="600" height="1017" loading="lazy"></div></div>
-          <div class="paso"><span class="carta"><span class="sello" style="width:auto;padding-inline:6px" aria-hidden="true">会社</span><span>Kata</span></span><div class="movil"><img src="/medios/ind/palabra.webp" alt="" width="600" height="1017" loading="lazy"></div></div>
-          <div class="paso"><span class="carta"><span class="sello" aria-hidden="true">文</span><span>Kalimat</span></span><div class="movil"><img src="/medios/ind/frases.webp" alt="" width="600" height="1017" loading="lazy"></div></div>
-        </div>
+        <div class="movil girado-i"><img src="/medios/ind/origen.webp" alt="" width="600" height="1017" loading="lazy"></div>
       </div>
     </div>
   </section>
 
-  <!-- ══ 6 · ESCÁNER ═══════════════════════════════════════════ -->
+  <!-- ══ ESCÁNER ═══════════════════════════════════════════════ -->
   <section class="franja noche" id="escaner">
     <div class="agua" style="right:-12%;top:30%" aria-hidden="true">読</div>
     <div class="envoltura fila">
       <div>
-        <h2><span>Pindai sebuah teks</span> <span>dan pelajari kanjinya</span></h2>
+        <p class="ceja"><span class="sello" aria-hidden="true">読</span><span>Pemindai</span></p>
+        <h2><span>Pindai catatan, buku,</span> <mark>apa saja</mark></h2>
         <p class="sub">Dapatkan kanji dan kata dalam bentuk kamus, meskipun sudah dikonjugasi.</p>
         <ul class="cartas" lang="ja">
           <li class="carta conj"><i>寒かった</i><em>→</em><span>寒い</span></li>
@@ -532,57 +551,89 @@ footer a:hover { color: var(--oro); }
     </div>
   </section>
 
-  <!-- ══ 7 · REPASO: el espaciado, las tres formas y la copia ══
-       La copia (docs/COPIA-EN-LA-NUBE.md): en iOS, el iCloud del usuario con «Copia en iCloud» encendido;
-       en Android, la copia de Google si está activada, una vez al día como mucho. Por eso la aclaración. -->
-  <section class="franja dia repaso" id="repaso">
-    <div class="agua" style="left:-8%;top:10%" aria-hidden="true">覚</div>
-    <div class="envoltura">
-      <div class="fila">
-        <div>
-          <h2><span>Ulas</span> <span>tepat sebelum Anda lupa</span></h2>
-          <p class="sub">Pengulangan berjarak menampilkan kembali setiap kartu di waktu yang tepat.</p>
+  <!-- ══ VOCABULARIO ═══════════════════════════════════════════ -->
+  <section class="franja dia" id="vocabulario">
+    <div class="agua" style="right:-6%;top:6%" aria-hidden="true">会</div>
+    <div class="envoltura fila invertida">
+      <div>
+        <p class="ceja"><span class="sello" aria-hidden="true">語</span><span>Kosakata</span></p>
+        <h2><span>Dari kanji ke kata,</span> <mark>hingga ke kalimat</mark></h2>
+        <p class="sub">Hampir 20.000 kata dan lebih dari 19.000 kalimat contoh.</p>
+      </div>
+      <div class="visual">
+        <div class="escalera">
+          <div class="paso"><span class="carta"><span class="sello" aria-hidden="true">会</span><span>Kanji</span></span><div class="movil"><img src="/medios/ind/kanji.webp" alt="" width="600" height="1017" loading="lazy"></div></div>
+          <div class="paso"><span class="carta"><span class="sello" style="width:auto;padding-inline:6px" aria-hidden="true">会社</span><span>Kata</span></span><div class="movil"><img src="/medios/ind/palabra.webp" alt="" width="600" height="1017" loading="lazy"></div></div>
+          <div class="paso"><span class="carta"><span class="sello" aria-hidden="true">文</span><span>Kalimat</span></span><div class="movil"><img src="/medios/ind/frases.webp" alt="" width="600" height="1017" loading="lazy"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ REPASO ════════════════════════════════════════════════ -->
+  <section class="franja noche" id="repaso">
+    <div class="agua" style="left:-8%;top:24%" aria-hidden="true">覚</div>
+    <div class="envoltura fila">
+      <div>
+        <p class="ceja"><span class="sello" aria-hidden="true">覚</span><span>Ulasan</span></p>
+        <h2><span>Ulas</span> <mark>tepat sebelum Anda lupa</mark></h2>
+        <p class="sub">Pengulangan berjarak menampilkan kembali setiap kartu di waktu yang tepat.</p>
         <svg class="curva" viewBox="0 0 520 190" role="img" aria-label="Kurva kelupaan dengan pengulangan berjeda">
           <path d="M20 150 C 70 150, 120 190, 500 186" fill="none" stroke="#6B6558" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round" transform="translate(0,-30)"/>
           <path d="M20 40 C 40 90, 70 110, 104 112 L104 40 C 130 80, 170 92, 208 94 L208 40 C 250 64, 300 72, 350 74 L350 40 C 400 52, 460 56, 500 57" fill="none" stroke="#D9A441" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-          <g fill="#C8102E" stroke-width="4" style="stroke:var(--fondo)"><circle cx="20" cy="40" r="9"/><circle cx="104" cy="40" r="9"/><circle cx="208" cy="40" r="9"/><circle cx="350" cy="40" r="9"/></g>
+          <g fill="#C8102E" stroke="#0F0E0B" stroke-width="4"><circle cx="20" cy="40" r="9"/><circle cx="104" cy="40" r="9"/><circle cx="208" cy="40" r="9"/><circle cx="350" cy="40" r="9"/></g>
           <text x="20" y="16" text-anchor="middle">hari ini</text><text x="104" y="16" text-anchor="middle">3 hari</text><text x="208" y="16" text-anchor="middle">1 minggu</text><text x="350" y="16" text-anchor="middle">1 bulan</text>
         </svg>
-        <ul class="cartas modos">
-          <li class="carta"><span class="sello" aria-hidden="true">書</span><span class="dos"><b>Latihan</b><small>dengan menulis tangan</small></span></li>
-          <li class="carta"><span class="sello" aria-hidden="true">札</span><span class="dos"><b>Kartu hafalan</b><small>untuk mengulang sesuai ritmemu</small></span></li>
-          <li class="carta"><span class="sello" aria-hidden="true">聴</span><span class="dos"><b>Podcast</b><small>untuk didengarkan tanpa melihat</small></span></li>
-        </ul>
-        <p class="sub podcast">Dengan mode podcast, kosakata diputar dalam bahasa Jepang dan bahasamu tanpa perlu melihat layar: di mobil, di tempat gym, atau saat berjalan. Tetap berbunyi saat layar terkunci.</p>
-                  </div>
-        <div class="visual">
-          <div class="clip girado-d"><video src="/medios/ind/podcast.mp4" poster="/medios/ind/podcast.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Video: mode podcast"></video></div>
-                  </div>
       </div>
-      <div class="copia">
-        <h3 class="sub-titulo"><span>Kemajuanmu</span> <span>tetap aman</span></h3>
-  <p class="sub">Jika kamu menghapus aplikasi, kemajuanmu kembali saat memasangnya lagi.</p>
-      <ul class="cartas en-fila">
-        <li class="carta"><span class="sello" aria-hidden="true">雲</span><span class="dos"><b>iPhone</b><small>di iCloud-mu</small></span></li>
-        <li class="carta"><span class="sello" aria-hidden="true">控</span><span class="dos"><b>Android</b><small>di cadangan Google-mu</small></span></li>
-      </ul>
-      <p class="aclaracion">Cadangan iCloud atau Google harus aktif di ponsel. Di Android, sistem membuat cadangan paling banyak sekali sehari. Cadangan masuk ke akunmu, bukan ke server kami.</p>
+      <div class="visual">
+        <div class="movil girado-d"><img src="/medios/ind/progreso.webp" alt="" width="600" height="1017" loading="lazy"></div>
       </div>
-          </div>
+    </div>
   </section>
 
-  <!-- ══ 8 · TENERLA, en tu idioma ═════════════════════════════ -->
-  <section class="franja noche tenerla" id="tenerla">
+  <!-- ══ DÍA Y NOCHE ═══════════════════════════════════════════ -->
+  <section class="franja dia partida-franja" id="biblioteca">
     <div class="envoltura">
-      <img class="icono" src="/medios/icono.png" alt="" width="120" height="120" loading="lazy">
-      <h2>Unduh gratis</h2>
-      <p class="sub">50 kanji pertama gratis tanpa batas waktu. Sekali bayar membuka sisa kanji dan kosakata, serta contoh kalimat.</p>
-      <div class="botones">
-        <a class="insignia android" href="/ir/play/ind/" data-tienda="android" rel="noopener"><img src="/insignias/google-play-ind.png" alt="Google Play" height="72"></a>
-        <a class="insignia ios" href="/ir/appstore/ind/" data-tienda="ios" rel="noopener"><img src="/insignias/app-store-ind.svg" alt="App Store" height="48"></a>
+      <div class="cabecera-centro">
+        <p class="ceja"><span class="sello" aria-hidden="true">昼</span><span>Pustaka</span></p>
+        <h2><span>2.141 kanji,</span> <mark>siang atau malam</mark></h2>
+        <p class="sub">Dengan tingkat JLPT, radikal, dan cara bacanya.</p>
       </div>
-      <div class="idiomas" id="idiomas">
-        <h3 class="sub-titulo"><span>Belajar bahasa Jepang</span> <span>dalam bahasa Anda</span></h3>
+      <div class="visual">
+        <span class="carta de-dia"><span class="sello" aria-hidden="true">昼</span><span>Siang</span></span>
+        <div class="movil"><div class="partida"><img src="/medios/ind/buscador-dia.webp" alt="" width="600" height="1017" loading="lazy"><img src="/medios/ind/buscador-noche.webp" alt="" width="600" height="1017" loading="lazy"></div></div>
+        <span class="carta de-noche"><span class="sello" aria-hidden="true">夜</span><span>Malam</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PRÁCTICA ══════════════════════════════════════════════ -->
+  <section class="franja noche" id="practica">
+    <div class="agua" style="right:-10%;top:20%" aria-hidden="true">試</div>
+    <div class="envoltura fila invertida">
+      <div>
+        <p class="ceja"><span class="sello" aria-hidden="true">試</span><span>Latihan</span></p>
+        <h2><span>Cara baca, arti</span> <mark>dan penulisan</mark></h2>
+        <p class="sub">Tiga kartu per kanji, masing-masing dengan temponya sendiri.</p>
+        <ul class="cartas en-fila">
+          <li class="carta"><span class="sello" aria-hidden="true">読</span><span>Bacaan</span></li>
+          <li class="carta"><span class="sello" aria-hidden="true">意</span><span>Arti</span></li>
+          <li class="carta"><span class="sello" aria-hidden="true">書</span><span>Menulis</span></li>
+        </ul>
+      </div>
+      <div class="visual">
+        <div class="movil girado-i"><img src="/medios/ind/test.webp" alt="" width="600" height="1017" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ IDIOMAS ═══════════════════════════════════════════════ -->
+  <section class="franja dia" id="idiomas">
+    <div class="agua" style="left:-6%;top:14%" aria-hidden="true">言</div>
+    <div class="envoltura fila">
+      <div>
+        <p class="ceja"><span class="sello" aria-hidden="true">言</span><span>Bahasa</span></p>
+        <h2><span>Belajar bahasa Jepang</span> <mark>dalam bahasa Anda</mark></h2>
         <p class="sub">Dua belas bahasa, satu aplikasi.</p>
         <ul class="idiomas-lista">
           <li><a href="/es/" hreflang="es" lang="es">Español</a></li>
@@ -598,6 +649,66 @@ footer a:hover { color: var(--oro); }
           <li><a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a></li>
           <li><a href="/ko/" hreflang="ko" lang="ko">한국어</a></li>
         </ul>
+      </div>
+      <div class="visual">
+        <div class="movil girado-d"><img src="/medios/ind/idiomas.webp" alt="" width="600" height="1017" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TUTORIALES ════════════════════════════════════════════ -->
+  <!-- Los enlaces pasan por /ir/video/ para contarlos; construir.mjs pone el
+       idioma y quita «En inglés» donde ya hay vídeo propio (tutoriales.json). -->
+  <!-- Los nuevos, con voz (16-nov-2026; Álvaro: «cambia la web para añadir estos tutoriales… que haya un
+       espacio para ellos»; «esos tutoriales [los viejos] ya dejamos de linkarlos en nuestra web»). El vídeo de
+       la portada sigue siendo el anuncio. Los viejos conservan sus /ir/video/ (ver «antiguos» en tutoriales.json). -->
+  <section class="franja dia tutoriales" id="tutoriales" style="padding-top:0">
+    <div class="envoltura">
+      <p class="ceja"><span class="sello" aria-hidden="true">導</span><span>Tutorial</span></p>
+      <h2><span>Belajar memakainya</span> <mark>lewat video</mark></h2>
+      <p class="sub">Langkah demi langkah, dengan suara dan aplikasi yang berjalan.</p>
+      <ul class="cartas en-fila">
+        <li><a class="carta" href="/ir/video/crearbaraja/ind/" data-tut="crearbaraja" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">札</span><span class="dos"><b>Buat dek kanji milikmu sendiri</b><small>Dengan kanji yang kamu pilih, langkah demi langkah</small><small class="tut-ingles">Dalam bahasa Inggris</small></span><span class="tut-video" aria-hidden="true"><span class="tut-play"><svg viewBox="0 0 12 14"><path d="M0 0 12 7 0 14z"/></svg></span><span class="tut-dura">2:05</span></span></a></li>
+        <li><a class="carta" href="/ir/video/importarbaraja/ind/" data-tut="importarbaraja" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">受</span><span class="dos"><b>Impor dek dari gurumu</b><small>Lalu sesuaikan dengan yang kamu pelajari</small><small class="tut-ingles">Dalam bahasa Inggris</small></span><span class="tut-video" aria-hidden="true"><span class="tut-play"><svg viewBox="0 0 12 14"><path d="M0 0 12 7 0 14z"/></svg></span><span class="tut-dura">1:51</span></span></a></li>
+        <li><a class="carta" href="/ir/video/sesion/ind/" data-tut="sesion" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">学</span><span class="dos"><b>Satu sesi latihan lengkap</b><small>Mengenali, membaca, dan menulis, dari awal sampai akhir</small><small class="tut-ingles">Dalam bahasa Inggris</small></span><span class="tut-video" aria-hidden="true"><span class="tut-play"><svg viewBox="0 0 12 14"><path d="M0 0 12 7 0 14z"/></svg></span><span class="tut-dura">7:45</span></span></a></li>
+        <li><a class="carta" href="/ir/video/sesioncorta/ind/" data-tut="sesioncorta" target="_blank" rel="noopener"><span class="sello" aria-hidden="true">速</span><span class="dos"><b>Satu sesi dalam 4 menit</b><small>Intinya, sekilas pandang</small><small class="tut-ingles">Dalam bahasa Inggris</small></span><span class="tut-video" aria-hidden="true"><span class="tut-play"><svg viewBox="0 0 12 14"><path d="M0 0 12 7 0 14z"/></svg></span><span class="tut-dura">3:50</span></span></a></li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ══ COPIA EN LA NUBE (1.4.0) ══════════════════════════════ -->
+  <!-- Lo que hace de verdad (docs/COPIA-EN-LA-NUBE.md): en iOS, el iCloud del
+       usuario con «Copia en iCloud» encendido; en Android, la copia de Google
+       si está activada, una vez al día como mucho. Por eso la aclaración. -->
+  <section class="franja noche copia" id="copia">
+    <div class="agua" style="right:-6%;top:-8%" aria-hidden="true">守</div>
+    <div class="envoltura">
+      <p class="ceja"><span class="sello" aria-hidden="true">守</span><span>Cadangan di cloud</span></p>
+      <h2><span>Kemajuanmu</span> <mark>tetap aman</mark></h2>
+      <p class="sub">Jika kamu menghapus aplikasi, kemajuanmu kembali saat memasangnya lagi.</p>
+      <ul class="cartas en-fila">
+        <li class="carta"><span class="sello" aria-hidden="true">雲</span><span class="dos"><b>iPhone</b><small>di iCloud-mu</small></span></li>
+        <li class="carta"><span class="sello" aria-hidden="true">控</span><span class="dos"><b>Android</b><small>di cadangan Google-mu</small></span></li>
+      </ul>
+      <p class="aclaracion">Cadangan iCloud atau Google harus aktif di ponsel. Di Android, sistem membuat cadangan paling banyak sekali sehari. Cadangan masuk ke akunmu, bukan ke server kami.</p>
+    </div>
+  </section>
+  
+
+  <!-- ══ TENERLA ═══════════════════════════════════════════════ -->
+  <section class="franja noche tenerla" id="tenerla">
+    <div class="envoltura">
+      <img class="icono" src="/medios/icono.png" alt="" width="120" height="120" loading="lazy">
+
+
+      <p class="eyebrow">Sudah tersedia</p>
+      <h2>Unduh gratis</h2>
+      <p class="sub">50 kanji pertama gratis tanpa batas waktu. Sekali bayar membuka sisa kanji dan kosakata, serta contoh kalimat.</p>
+
+      <div class="botones">
+        <a class="insignia android" href="/ir/play/ind/" data-tienda="android" rel="noopener"><img src="/insignias/google-play-ind.png" alt="Google Play" height="72"></a>
+        <a class="insignia ios" href="/ir/appstore/ind/" data-tienda="ios" rel="noopener"><img src="/insignias/app-store-ind.svg" alt="App Store" height="48"></a>
       </div>
       <div class="siguenos">
         <p>Ikuti kami: satu kanji setiap hari</p>
