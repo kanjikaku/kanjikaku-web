@@ -6,9 +6,37 @@
     "Si dos activas coinciden en fecha gana la primera de la lista. Para añadir otra: copiar un bloque y cambiar id, fechas y nombres. El −XX % del nombre es texto: cámbialo a la vez que el descuento de las consolas.",
     "Se publica con: node web/construir.mjs && node web/publicar.mjs \"mensaje\". La app lo ve en cuanto GitHub Pages refresca (un minuto).",
     "launch70 (15-oct-2026): activa del 15-oct al 14-nov en las dos tiendas (calendario de Apple hasta el 15-nov y oferta lanzamiento-70 de Play hasta el 14-nov a las 23:00 UTC). Apagarla aquí si se cancela la rebaja en las consolas.",
-    "blackfriday (aprobada el 18-nov-2026): la rebaja del lunes 23 al lunes 30-nov en las dos tiendas. Encendida el 18-nov-2026, con los precios ya programados: Apple, calendario de kanjikaku.contenido del 23-nov al 1-dic (fin excluido; el resto de países, automáticos desde España); Play, la oferta black-friday sobre «permanente», del 22-nov 23:00 UTC al 30-nov 23:00 UTC, en 174 países. Sin «−XX %» en el nombre: la normativa europea pide que el precio anterior de una rebaja sea el más bajo de los 30 días previos, y hasta el 15-nov fue el de lanzamiento. Desde la 1.10.0 sale también en «Avisos» del menú, a quien no ha comprado (avisoDeOferta.ts)."
+    "blackfriday (aprobada el 18-nov-2026): la rebaja del lunes 23 al lunes 30-nov en las dos tiendas. Encendida el 18-nov-2026, con los precios ya programados: Apple, calendario de kanjikaku.contenido del 23-nov al 1-dic (fin excluido; el resto de países, automáticos desde España); Play, la oferta black-friday sobre «permanente», del 22-nov 23:00 UTC al 30-nov 23:00 UTC, en 174 países. Sin «−XX %» en el nombre: la normativa europea pide que el precio anterior de una rebaja sea el más bajo de los 30 días previos, y hasta el 15-nov fue el de lanzamiento. Desde la 1.10.0 sale también en «Avisos» del menú, a quien no ha comprado (avisoDeOferta.ts).",
+    "blackfriday-ultimos (26-nov-2026; Álvaro: «un aviso de últimos días»): la misma rebaja, los dos últimos días (29 y 30-nov), con «· últimos días» en el nombre. Va delante de blackfriday para ganarle esos días; con otro id, el aviso del menú vuelve a salir también a quien cerró el de blackfriday. Desde la 1.11 hay además un campo ultimosDias para las ofertas que vengan."
   ],
   "ofertas": [
+    {
+      "id": "blackfriday-ultimos",
+      "activa": true,
+      "desde": "2026-11-29",
+      "hasta": "2026-11-30",
+      "tiendas": [
+        "ios",
+        "android"
+      ],
+      "nombre": {
+        "es": "Black Friday · últimos días",
+        "en": "Black Friday · last days",
+        "de": "Black Friday · letzte Tage",
+        "fr": "Black Friday · derniers jours",
+        "it": "Black Friday · ultimi giorni",
+        "pt": "Black Friday · últimos dias",
+        "pt-PT": "Black Friday · últimos dias",
+        "nl": "Black Friday · laatste dagen",
+        "sv": "Black Friday · sista dagarna",
+        "pl": "Black Friday · ostatnie dni",
+        "ind": "Black Friday · hari terakhir",
+        "vi": "Black Friday · những ngày cuối",
+        "ko": "블랙 프라이데이 · 마지막 며칠",
+        "my": "ဘလက်ဖရိုက်ဒေး · နောက်ဆုံးရက်များ",
+        "th": "แบล็กฟรายเดย์ · วันสุดท้าย"
+      }
+    },
     {
       "id": "blackfriday",
       "activa": true,
@@ -31,7 +59,9 @@
         "pl": "Black Friday",
         "ind": "Black Friday",
         "vi": "Black Friday",
-        "ko": "블랙 프라이데이"
+        "ko": "블랙 프라이데이",
+        "my": "ဘလက်ဖရိုက်ဒေး",
+        "th": "แบล็กฟรายเดย์"
       }
     },
     {
@@ -55,7 +85,9 @@
         "pl": "Cena początkowa: −70 %",
         "ind": "Harga peluncuran: −70 %",
         "vi": "Giá ra mắt: −70 %",
-        "ko": "출시 기념 가격: −70 %"
+        "ko": "출시 기념 가격: −70 %",
+        "my": "စတင်ဖြန့်ချိဈေး: −70 %",
+        "th": "ราคาเปิดตัว: −70 %"
       }
     },
     {
@@ -79,7 +111,9 @@
         "pl": "Black Friday: −10 %",
         "ind": "Black Friday: −10 %",
         "vi": "Black Friday: −10 %",
-        "ko": "블랙 프라이데이: −10 %"
+        "ko": "블랙 프라이데이: −10 %",
+        "my": "ဘလက်ဖရိုက်ဒေး: −10 %",
+        "th": "แบล็กฟรายเดย์: −10 %"
       }
     },
     {
@@ -103,7 +137,9 @@
         "pl": "Boże Narodzenie: −20 %",
         "ind": "Natal: −20 %",
         "vi": "Giáng sinh: −20 %",
-        "ko": "크리스마스: −20 %"
+        "ko": "크리스마스: −20 %",
+        "my": "ခရစ္စမတ်: −20 %",
+        "th": "คริสต์มาส: −20 %"
       }
     },
     {
@@ -127,7 +163,9 @@
         "pl": "Japoński Nowy Rok (正月): −15 %",
         "ind": "Tahun Baru Jepang (正月): −15 %",
         "vi": "Tết Nhật Bản (正月): −15 %",
-        "ko": "일본 설날 (正月): −15 %"
+        "ko": "일본 설날 (正月): −15 %",
+        "my": "ဂျပန်နှစ်သစ်ကူး (正月): −15 %",
+        "th": "ปีใหม่ญี่ปุ่น (正月): −15 %"
       }
     },
     {
@@ -151,7 +189,9 @@
         "pl": "Hanami (花見): −10 %",
         "ind": "Hanami (花見): −10 %",
         "vi": "Hanami (花見): −10 %",
-        "ko": "하나미 (花見): −10 %"
+        "ko": "하나미 (花見): −10 %",
+        "my": "ဟာနာမိ (花見): −10 %",
+        "th": "ฮานามิ (花見): −10 %"
       }
     },
     {
@@ -175,7 +215,9 @@
         "pl": "Golden Week: −15 %",
         "ind": "Golden Week: −15 %",
         "vi": "Golden Week: −15 %",
-        "ko": "골든 위크: −15 %"
+        "ko": "골든 위크: −15 %",
+        "my": "ရွှေရောင်ရက်သတ္တပတ်: −15 %",
+        "th": "โกลเดนวีก: −15 %"
       }
     },
     {
@@ -199,7 +241,9 @@
         "pl": "Tanabata (七夕): −10 %",
         "ind": "Tanabata (七夕): −10 %",
         "vi": "Tanabata (七夕): −10 %",
-        "ko": "타나바타 (七夕): −10 %"
+        "ko": "타나바타 (七夕): −10 %",
+        "my": "တာနာဘာတာ (七夕): −10 %",
+        "th": "ทานาบาตะ (七夕): −10 %"
       }
     },
     {
@@ -223,7 +267,9 @@
         "pl": "Letnia oferta: −15 %",
         "ind": "Promo musim panas: −15 %",
         "vi": "Ưu đãi mùa hè: −15 %",
-        "ko": "여름 특가: −15 %"
+        "ko": "여름 특가: −15 %",
+        "my": "နွေရာသီ အထူးလျှော့ဈေး: −15 %",
+        "th": "โปรฤดูร้อน: −15 %"
       }
     },
     {
@@ -247,7 +293,9 @@
         "pl": "Obon (お盆): −10 %",
         "ind": "Obon (お盆): −10 %",
         "vi": "Obon (お盆): −10 %",
-        "ko": "오봉 (お盆): −10 %"
+        "ko": "오봉 (お盆): −10 %",
+        "my": "အိုဘုန် (お盆): −10 %",
+        "th": "โอบ้ง (お盆): −10 %"
       }
     }
   ]
